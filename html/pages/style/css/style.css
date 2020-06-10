@@ -1,0 +1,19 @@
+header {
+  width: 100%;
+  height: 50px; }
+
+html {
+  margin: 0;
+  padding: 0;
+  color: #ff0000; }
+
+body {
+  background: #B5C76A;
+  margin: 0;
+  padding: 0; }
+  body main {
+    padding: 10px; }
+  body header {
+    padding: 10px; }
+  body footer {
+    padding: 10px; }
