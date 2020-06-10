@@ -101,6 +101,8 @@ hr {
 
 input, select {
     vertical-align:middle;
+    border: none;
+    background: none;
 }
 ul{
     list-style:none;

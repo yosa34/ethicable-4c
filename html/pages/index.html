@@ -1,12 +1,52 @@
 <!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="./style/css/style.css">
-    <title>ethicable</title>
-</head>
-<body>
-</body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ethicable｜ログイン画面</title>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script src="./js/firebase.js"></script>
+    <link rel="stylesheet" href="./style/css/reset.css">
+    <link rel="stylesheet" href="./style/css/login.css">
+
+  </head>
+  <body id="login">
+    <main>
+        <section>
+            <h1>ethicable</h1>
+          <!-- Googleアカウントを持っていない人用のログインフォーム-->
+          <form action="">
+            <p>
+              <img src="./image/icon/icon_mail.png" alt="ユーザーID">
+              <input type="email" name="user_id" id="user_id" >
+            </p>
+           <p>
+              <img src="./image/icon/icon_key.png" alt="ユーザーパスワード">
+              <input type="password" name="password" id="password" >
+           </p>
+            <button type="submit">ログイン</button>
+          </form>
+          <div>
+            <p>
+              <!-- 新規登録ボタン設置場所 -->
+              <a href="#">新規登録する方はこちら</a>
+            </p>
+            <p>または</p>
+            <p>
+              <!-- Googleサインインボタン設置場所 -->
+              <button type="submit">Sign in with Google Sample</button>
+            </p>
+          </div>
+        </section>
+    </main>
+  </body>
 </html>

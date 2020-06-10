@@ -12,7 +12,7 @@ var sass = require('gulp-sass');
 */
 gulp.task('sass', function(done){
     // stream
-    gulp.src('./html/pages/style/sass/style.scss') //タスクで処理するソースの指定
+    gulp.src('./html/pages/style/sass/*.scss') //タスクで処理するソースの指定
     .pipe(sass()) //処理させるモジュールを指定
     .pipe(gulp.dest('./html/pages/style/css/')); //保存先を指定
 

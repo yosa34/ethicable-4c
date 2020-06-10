@@ -1,0 +1,59 @@
+@charset "UTF-8";
+/*
+  SASSの見本用
+
+  Login画面専用ファイル
+  作成者：小川紗世
+  ファイル変更者：小川紗世
+*/
+body#login {
+  text-align: center;
+  width: 100%;
+  height: 100vh; }
+  body#login h1 {
+    color: #FFF;
+    font-size: 36px;
+    font-weight: bold; }
+  body#login main {
+    width: 100%; }
+    body#login main section {
+      background: #B5C76A;
+      width: 100%;
+      padding: 50px 0; }
+
+/*
+
+
+    よく使う関数
+
+
+*/
+.quote {
+  content: "ハロー"; }
+
+.unquote {
+  content: ハロー; }
+
+.abs {
+  width: 50px; }
+
+.ceil {
+  width: 34px; }
+
+.floor {
+  width: 33px; }
+
+.round {
+  width: 33px; }
+
+.rgba {
+  color: rgba(152, 171, 142, 0.3); }
+
+.mix {
+  color: #7c0071; }
+
+.lighten {
+  color: #7bdd91; }
+
+.darken {
+  color: #081e0d; }
