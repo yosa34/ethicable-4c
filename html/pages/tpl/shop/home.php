@@ -2,7 +2,7 @@
 <title>ethicable｜SHOP｜HOME画面</title>
 
 </head>
-  <body id="login">
+  <body id="shop_home">
     <main>
         <section>
         </section>

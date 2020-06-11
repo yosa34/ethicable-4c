@@ -29,7 +29,16 @@ body#login{
       background: $main_color;
       width: $width_main;
       padding: 50px 0;
-
+    }
+    form{
+      width: 500px;
+      margin: 0 auto;
+      p{
+        width: 200px;
+        margin: 0 auto;
+        border-bottom: 2px solid $border_color;
+        padding: 2px 10px;
+      }
     }
   }
 }
