@@ -1,6 +1,6 @@
 <?php
     /*
-    ページ詳細：商品ホーム画面
+    ページ詳細：マイページ
     作成者：小川紗世
     編集者：2020/06/12小川紗世
     */
@@ -17,10 +17,10 @@
 
 </script>
 <!-- SHOP HOME画面 -->
-<title>ethicable｜SHOP｜HOME画面</title>
+<title>ethicable｜マイページ</title>
 
 </head>
-  <body id="shop_home">
+  <body id="mypage">
     <main>
         <section>
         </section>
