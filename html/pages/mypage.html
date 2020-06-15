@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ethicable｜マイページ画面</title>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
+
+    <!-- firestoreDB接続 どっかで共通化てもいい-->
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>	
+
+    <!-- Initialize Firebase -->
+    <script src="./js/firebase.js"></script>
+    <link rel="stylesheet" href="./style/css/reset.css">
+
+    <!-- mypage.js -->
+    <script src="./js/mypage.js"></script>	
+
+  </head>
+
+  <script>
+      const db = firebase.firestore();
+
+      firebase.auth().onAuthStateChanged(function (user) {
+
+        console.log(user.uid);
+        // firebase データ読み込み
+        db.collection('user').doc(user.uid).get().then((doc) => {
+        if (doc.exists) {
+        var data = doc.data();
+        this.detail.push({
+            key:doc.id,
+            user_id:data.user_id,
+            name:data.name,
+            user_name:data.user_name,
+            school:data.school,
+            message:data.message,
+            image:data.image,
+            item_image:data.item_image,
+            status:data.status
+            });
+        //    console.log(this.detail);
+        }
+        }).then(() => { //※追加
+            // console.log(receiversData); //※追加
+        }).catch(function (error) {
+            console.log("Error getting document:", error);
+        });
+    });   
+
+
+
+
+  </script>
+
+  <body id="mypage">
+    <main>
+        <section>
+            <h1>mypage</h1>
+        </section>
+    </main>
+  </body>
+</html>

@@ -17,7 +17,7 @@
         //ログイン状態判別
         if (user) {
           console.log(user.uid);
-          // firebase データ読み込み
+          // DB ユーザー情報読み込み
           let citiesRef = db.collection('user').where("user_id", "==", user.uid);
           let allCities = citiesRef.get().then(snapshot => {
               snapshot.forEach(doc => {
@@ -49,6 +49,7 @@
         <section>
         <button id="logout" onClick="logout()">logout</button>
         <a href="./shop_home.php">shop</a>
+        <a href="./mypage.html">mypage</a>
 
         </section>
     </main>
