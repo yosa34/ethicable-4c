@@ -1,7 +1,7 @@
 <!--
   ページ詳細：Login画面
   作成者：小川紗世
-  編集者：2020/06/11小川紗世
+  編集者：2020/06/12小川紗世
 -->
 <!DOCTYPE html>
 <html>
@@ -18,28 +18,36 @@
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-auth.js"></script>
 
+    <!-- firestoreDB接続 どっかで共通化てもいい-->
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>
+
     <!-- Initialize Firebase -->
     <script src="./js/firebase.js"></script>
     <link rel="stylesheet" href="./style/css/reset.css">
     <link rel="stylesheet" href="./style/css/login.css">
 
+    <!-- login.js -->
+    <script src="./js/login.js"></script>
+
+
   </head>
+
   <body id="login">
     <main>
         <section>
             <h1>ethicable</h1>
-            <p>oooooooo</p>
           <!-- Googleアカウントを持っていない人用のログインフォーム-->
           <form action="">
             <p>
-              <img src="./image/icon/icon_mail.png" alt="ユーザーID">
-              <input type="email" name="user_id" id="user_id" >
+              <img src="./image/icon/icon_mail.png" alt="メールアドレス">
+              <input type="email" name="email" id="email" >
             </p>
             <p>
                 <img src="./image/icon/icon_key.png" alt="ユーザーパスワード">
                 <input type="password" name="password" id="password" >
             </p>
-            <button type="submit">ログイン</button>
+            <button type="button" onClick="email_login()">ログイン</button>
           </form>
           <div>
             <p>
@@ -49,7 +57,7 @@
             <p>または</p>
             <p>
               <!-- Googleサインインボタン設置場所 -->
-              <button type="submit">Sign in with Google Sample</button>
+              <button type="submit" onClick="google_login()">Sign in with Google Sample</button>
             </p>
           </div>
         </section>
