@@ -11,6 +11,10 @@
 
 </head>
   <body id="remake_data">
+    <!-- header -->
+    <?php include "./tpl/header.html"; ?>
+
+    <!-- main -->
     <main>
         <section>
         </section>

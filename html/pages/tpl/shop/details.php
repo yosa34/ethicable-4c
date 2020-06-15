@@ -20,6 +20,10 @@
 
 </head>
   <body id="shop_details">
+    <!-- header -->
+    <?php include "./tpl/header.html"; ?>
+
+    <!-- main -->
     <main>
         <section>
         </section>

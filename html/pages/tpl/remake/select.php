@@ -11,6 +11,10 @@
 
 </head>
   <body id="remake_select">
+    <!-- header -->
+    <?php include "./tpl/header.html"; ?>
+
+    <!-- main -->
     <main>
         <section>
         </section>

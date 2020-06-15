@@ -45,6 +45,10 @@
 <!-- REMAKE HOME画面 -->
 <title>ethicable｜REMAKE｜HOME画面</title>
   <body id="remake_home">
+    <!-- header -->
+    <?php include "./tpl/header.html"; ?>
+
+    <!-- main -->
     <main>
         <section>
         <button id="logout" onClick="logout()">logout</button>

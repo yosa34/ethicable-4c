@@ -21,6 +21,10 @@
 
 </head>
   <body id="mypage">
+    <!-- header -->
+    <?php include "./tpl/header.html"; ?>
+
+    <!-- main -->
     <main>
         <section>
         </section>

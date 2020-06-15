@@ -11,6 +11,10 @@
 
 </head>
   <body id="remake_corse">
+    <!-- header -->
+    <?php include "./tpl/header.html"; ?>
+
+    <!-- main -->
     <main>
         <section>
         </section>
