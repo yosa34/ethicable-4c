@@ -17,5 +17,6 @@
     <!-- main -->
     <main>
         <section>
+          <h1>QRコードの生成</h1>
         </section>
     </main>
