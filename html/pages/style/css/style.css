@@ -67,3 +67,19 @@ footer {
 
 main {
   margin: 100px 0 170px; }
+  main button[type="submit"] {
+    display: block;
+    border: none;
+    background: #B5C76A;
+    color: #FFF;
+    font-size: 45px;
+    font-weight: bold;
+    width: 80%;
+    padding: 20px 0;
+    margin: 50px auto;
+    border-radius: 15px; }
+
+#remake_corse main section > p {
+  margin: 50px auto;
+  text-align: center;
+  font-size: 30px; }
