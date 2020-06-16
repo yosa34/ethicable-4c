@@ -17,13 +17,15 @@
                         &:nth-child(1){
                             margin: 60px 0 100px;
                         }
+                        // ボタンがアクティブになった時
                         &#active{
                             border-color: $active_border_color;
+                            box-shadow: 0 0 20px rgba(255,175,106,0.8);
                         }
+                        // ボタンが押せない時
                         &#none_click{
                             pointer-events: none;
-                            background: #000;
-                            opacity: 0.8;
+                            background: rgba(0, 0, 0, 0.300);
                         }
 
 

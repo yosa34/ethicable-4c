@@ -125,11 +125,11 @@ main {
     #remake_corse main section article ul li:nth-child(1) {
       margin: 60px 0 100px; }
     #remake_corse main section article ul li#active {
-      border-color: #FFAF6A; }
+      border-color: #FFAF6A;
+      box-shadow: 0 0 20px rgba(255, 175, 106, 0.8); }
     #remake_corse main section article ul li#none_click {
       pointer-events: none;
-      background: #000;
-      opacity: 0.8; }
+      background: rgba(0, 0, 0, 0.3); }
     #remake_corse main section article ul li h2 {
       font-size: 45px;
       font-weight: bold; }
