@@ -17,5 +17,6 @@
     <!-- main -->
     <main>
         <section>
+          <h1>コース選択</h1>
         </section>
     </main>
