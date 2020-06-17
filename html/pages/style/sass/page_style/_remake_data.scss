@@ -1,0 +1,28 @@
+#remake_data{
+    h2{
+        font-size: 50px;
+        text-align: center;
+    }
+    main{
+
+        section{
+            div{
+                >p{
+                    width: 60%;
+                    &:nth-child(1){
+                        height: 500px;
+                        padding: 10px;
+                        margin: 20px auto;
+                        border: 2px solid $background_color_sub;
+                    }
+                    &:nth-child(2){
+                        margin: 5px auto;
+                        text-align: right;
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+
+    }
+}

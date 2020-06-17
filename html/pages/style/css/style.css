@@ -84,6 +84,44 @@ main {
     padding: 20px 0;
     margin: 50px auto;
     border-radius: 15px; }
+  main div > input[type="button"]:nth-child(1) {
+    display: block;
+    border: none;
+    background: #F5F5F5;
+    color: #707070;
+    border: 2px solid #707070;
+    font-size: 45px;
+    font-weight: bold;
+    width: 80%;
+    padding: 20px 0;
+    margin: 50px auto;
+    border-radius: 15px; }
+  main table.main_table {
+    width: 80%;
+    margin: 30px auto;
+    background: #B5C76A; }
+    main table.main_table tr {
+      font-size: 30px; }
+      main table.main_table tr th, main table.main_table tr td {
+        padding: 30px 20px; }
+      main table.main_table tr th {
+        color: #FFF;
+        width: 25%;
+        text-align: right; }
+      main table.main_table tr td {
+        background: #FFF; }
+  main div.button_list {
+    display: flex;
+    position: absolute;
+    bottom: 200px;
+    right: 0;
+    left: 0;
+    width: 80%;
+    margin: 0 auto; }
+    main div.button_list > input[type="button"]:first-of-type {
+      margin-right: 10px; }
+    main div.button_list > input[type="button"]:last-of-type {
+      margin-left: 10px; }
 
 #remake_home main section:nth-child(1) {
   background: #F5F5F5;
@@ -145,3 +183,19 @@ main {
   margin: 200px auto 50px;
   text-align: center;
   font-size: 30px; }
+
+#remake_data h2 {
+  font-size: 50px;
+  text-align: center; }
+
+#remake_data main section div > p {
+  width: 60%; }
+  #remake_data main section div > p:nth-child(1) {
+    height: 500px;
+    padding: 10px;
+    margin: 20px auto;
+    border: 2px solid #F5F5F5; }
+  #remake_data main section div > p:nth-child(2) {
+    margin: 5px auto;
+    text-align: right;
+    font-size: 15px; }
