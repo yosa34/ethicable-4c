@@ -56,13 +56,11 @@
   firebase.auth().onAuthStateChanged(function(user) {
         //ログイン状態判別
         if (user) {
-          console.log(user.uid);
           // firebase ユーザーデータ読み込み
           let citiesRef = db.collection('user').where("user_id", "==", user.uid);
           let allCities = citiesRef.get().then(snapshot => {
               snapshot.forEach(doc => {
                 const data = doc.data()
-                console.log(data);
               });
             })
             .catch(err => {
