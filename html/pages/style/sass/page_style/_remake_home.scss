@@ -1,0 +1,52 @@
+#remake_home{
+    main{
+        section{
+            // 現在発行中のQRコード
+            &:nth-child(1){
+                background: $background_color_sub;
+                padding: 40px 25px;
+                div{
+                    h2{
+                        font-size: 45px;
+                        font-weight: bold;
+                    }
+                    // 発行中未使用QRコート一覧
+                    div{
+                        ul{
+                            li{
+                                width: 70%;
+                                margin: 25px auto;
+                                a{
+                                    width: 100%;
+                                    height: 600px;
+                                    background: $background_color_main;
+                                    border: 2px solid $header_border_color;
+                                    border-radius: 20px;
+                                }
+                            }
+                        }
+                    }
+
+                    // 「リメイクする」ボタン
+                    >a{
+                        border: 4px solid $border_color_sub;
+                        background: $background_color_main;
+                        color: $border_color_sub;
+
+                        font-size: 45px;
+                        font-weight: bold;
+                        text-align: center;
+                        border-radius: 15px;
+
+                        width: 60%;
+                        padding: 30px 0;
+                        margin: 0 auto;
+                    }
+                }
+            }
+            &:nth-child(2){
+
+            }
+        }
+    }
+}
