@@ -5,8 +5,7 @@
     編集者：2020/06/12小川紗世
     */
 ?>
-<<<<<<< HEAD
-=======
+
 <script>
   const db = firebase.firestore();
 
@@ -43,7 +42,6 @@
 
 </script>
 
->>>>>>> 1a6d3ce5cc2c24e3650c5e440d62cd77164368c1
 
 <!-- REMAKE HOME画面 -->
 <title>ethicable｜REMAKE｜HOME画面</title>
