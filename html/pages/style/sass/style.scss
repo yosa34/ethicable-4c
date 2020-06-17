@@ -2,8 +2,9 @@
 @import "./import/color";
 @import "./import/size";
 
-// デザイン関数
-
+// Mixin
+@import "./mixin/botton";
+@import "./mixin/table";
 
 // 固定デザイン
 @import "./import/header";
@@ -14,6 +15,7 @@
 // @import "./page_style/ページネーム";
 
 @import './page_style/main';
+@import './page_style/login';
 
 // remake
 @import './page_style/remake_home';

@@ -20,11 +20,11 @@
             <h1>読み取りデータの確認</h1>
             <div>
                 <p>
-                    <img src="" alt="商品画像">
+                    <img src="./image/product/414443.jpg" alt="商品画像">
                 </p>
                 <p>商品ID:000000</p>
                 <h2>商品名</h2>
-                <table class="main_table">
+                <table>
                     <tr>
                         <th>カラー:</th>
                         <td>aaa</td>
@@ -39,7 +39,7 @@
                     </tr>
                 </table>
             </div>
-            <div class="button_list">
+            <div>
                 <input type="button" value="戻る">
                 <input type="button" value="リメイク開始">
             </div>
