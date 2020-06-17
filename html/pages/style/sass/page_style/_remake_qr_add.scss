@@ -1,0 +1,30 @@
+#remake_qr_add{
+    main{
+        section{
+            // 発行中未使用QRコート一覧
+            div{
+                width: 70%;
+                margin: 25px auto;
+                height: 600px;
+                background: $background_color_main;
+                border: 2px solid $header_border_color;
+                border-radius: 20px;
+            }
+            p{
+                width: 70%;
+                margin: 200px auto 0;
+                text-align: center;
+                font-size: 40px;
+                &:last-of-type{
+                    margin-top: 20px;
+                    a{
+                        display: inline-block;
+                        color: $link_color;
+                        padding: 10px 30px;
+                        border-bottom: 2px solid $link_color;
+                    }
+                }
+            }
+        }
+    }
+}

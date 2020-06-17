@@ -259,3 +259,128 @@ main {
   border-radius: 15px;
   text-align: center;
   margin-left: 10px; }
+
+#remake_datails main section div table {
+  width: 80%;
+  margin: 30px auto;
+  background: #B5C76A; }
+  #remake_datails main section div table tr {
+    font-size: 30px; }
+    #remake_datails main section div table tr th, #remake_datails main section div table tr td {
+      padding: 30px 20px; }
+    #remake_datails main section div table tr th {
+      color: #FFF;
+      width: 25%;
+      text-align: right; }
+    #remake_datails main section div table tr td {
+      background: #FFF; }
+
+#remake_datails main section div:last-of-type {
+  display: flex;
+  position: absolute;
+  bottom: 200px;
+  right: 0;
+  left: 0;
+  width: 80%;
+  margin: 0 auto; }
+
+#remake_datails main section div > input[type="button"]:first-of-type {
+  display: block;
+  background: #F5F5F5;
+  color: #707070;
+  border: 2px solid #707070;
+  font-size: 45px;
+  font-weight: bold;
+  width: 80%;
+  padding: 20px 0;
+  margin: 50px auto;
+  border-radius: 15px;
+  text-align: center;
+  margin-right: 10px; }
+
+#remake_datails main section div > input[type="button"]:last-of-type {
+  display: block;
+  background: #B5C76A;
+  color: #FFF;
+  border: 2px solid none;
+  font-size: 45px;
+  font-weight: bold;
+  width: 80%;
+  padding: 20px 0;
+  margin: 50px auto;
+  border-radius: 15px;
+  text-align: center;
+  margin-left: 10px; }
+
+#remake_select main section div table {
+  width: 80%;
+  margin: 30px auto;
+  background: #B5C76A; }
+  #remake_select main section div table tr {
+    font-size: 30px; }
+    #remake_select main section div table tr th, #remake_select main section div table tr td {
+      padding: 30px 20px; }
+    #remake_select main section div table tr th {
+      color: #FFF;
+      width: 25%;
+      text-align: right; }
+    #remake_select main section div table tr td {
+      background: #FFF; }
+
+#remake_select main section div:last-of-type {
+  display: flex;
+  position: absolute;
+  bottom: 200px;
+  right: 0;
+  left: 0;
+  width: 80%;
+  margin: 0 auto; }
+
+#remake_select main section div > input[type="button"]:first-of-type {
+  display: block;
+  background: #F5F5F5;
+  color: #707070;
+  border: 2px solid #707070;
+  font-size: 45px;
+  font-weight: bold;
+  width: 80%;
+  padding: 20px 0;
+  margin: 50px auto;
+  border-radius: 15px;
+  text-align: center;
+  margin-right: 10px; }
+
+#remake_select main section div > input[type="button"]:last-of-type {
+  display: block;
+  background: #B5C76A;
+  color: #FFF;
+  border: 2px solid none;
+  font-size: 45px;
+  font-weight: bold;
+  width: 80%;
+  padding: 20px 0;
+  margin: 50px auto;
+  border-radius: 15px;
+  text-align: center;
+  margin-left: 10px; }
+
+#remake_qr_add main section div {
+  width: 70%;
+  margin: 25px auto;
+  height: 600px;
+  background: #FFF;
+  border: 2px solid #707070;
+  border-radius: 20px; }
+
+#remake_qr_add main section p {
+  width: 70%;
+  margin: 200px auto 0;
+  text-align: center;
+  font-size: 40px; }
+  #remake_qr_add main section p:last-of-type {
+    margin-top: 20px; }
+    #remake_qr_add main section p:last-of-type a {
+      display: inline-block;
+      color: #B5C76A;
+      padding: 10px 30px;
+      border-bottom: 2px solid #B5C76A; }
