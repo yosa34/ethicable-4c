@@ -72,6 +72,7 @@ main {
     text-align: center;
     padding: 70px 0;
     color: #B5C76A; }
+  main input[type="button"],
   main button[type="submit"] {
     display: block;
     border: none;

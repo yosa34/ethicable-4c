@@ -36,6 +36,6 @@
             </ul>
           </article>
           <p>QRコードをスキャンして商品情報を読み取ることができます。</p>
-          <button type="submit">カメラを起動する</button>
+          <input type="button" value="カメラを起動する">
         </section>
     </main>
