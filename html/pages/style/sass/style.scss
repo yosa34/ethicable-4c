@@ -1,26 +1,22 @@
+@import './setting/**';
+
 // デザイン変数
 @import "./import/color";
 @import "./import/size";
 
 // Mixin
-@import "./mixin/botton";
-@import "./mixin/table";
+@import "./mixin/**";
 
 // 固定デザイン
-@import "./import/header";
-@import "./import/footer";
+@import "./import/**";
 
 
 // ページデザイン
 // @import "./page_style/ページネーム";
 
-@import './page_style/main';
-@import './page_style/login';
+@import './base/**';
 
-// remake
-@import './page_style/remake_home';
-@import './page_style/remake_corse';
-@import './page_style/remake_data';
-@import './page_style/remake_details';
-@import './page_style/remake_select';
-@import './page_style/remake_qr_add';
+@import './module/**';
+
+// page_styleの下層
+@import './page/**';
