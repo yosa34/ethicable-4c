@@ -18,5 +18,30 @@
     <main>
         <section>
             <h1>読み取りデータの確認</h1>
+            <div>
+                <p>
+                    <img src="./image/product/414443.jpg" alt="商品画像">
+                </p>
+                <p>商品ID:000000</p>
+                <h2>商品名</h2>
+                <table>
+                    <tr>
+                        <th>カラー:</th>
+                        <td>aaa</td>
+                    </tr>
+                    <tr>
+                        <th>サイズ:</th>
+                        <td>bbb</td>
+                    </tr>
+                    <tr>
+                        <th>部門:</th>
+                        <td>ccc</td>
+                    </tr>
+                </table>
+            </div>
+            <div>
+                <input type="button" value="戻る">
+                <input type="button" value="リメイク開始">
+            </div>
         </section>
     </main>

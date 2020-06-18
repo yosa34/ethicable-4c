@@ -18,5 +18,11 @@
     <main>
         <section>
           <h1>リサイクル詳細確認</h1>
+
+          
+          <div>
+              <input type="button" value="戻る">
+              <input type="button" value="QRコード発行">
+          </div>
         </section>
     </main>

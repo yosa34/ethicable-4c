@@ -1,17 +1,22 @@
+@import './setting/**';
+
 // デザイン変数
 @import "./import/color";
 @import "./import/size";
 
-// デザイン関数
-
+// Mixin
+@import "./mixin/**";
 
 // 固定デザイン
-@import "./import/header";
-@import "./import/footer";
+@import "./import/**";
 
 
 // ページデザイン
 // @import "./page_style/ページネーム";
 
-@import './page_style/index';
-@import './page_style/main';
+@import './base/**';
+
+@import './module/**';
+
+// page_styleの下層
+@import './page/**';

@@ -25,20 +25,19 @@
     <!-- Initialize Firebase -->
     <script src="./js/firebase.js"></script>
     <link rel="stylesheet" href="./style/css/reset.css">
-    <link rel="stylesheet" href="./style/css/login.css">
+    <link rel="stylesheet" href="./style/css/style.css">
 
     <!-- login.js -->
     <script src="./js/login.js"></script>
-
 
   </head>
 
   <body id="login">
     <main>
         <section>
-            <h1>ethicable</h1>
+          <h1>ethicable</h1>
           <!-- Googleアカウントを持っていない人用のログインフォーム-->
-          <form action="">
+          <div>
             <p>
               <img src="./image/icon/icon_mail.png" alt="メールアドレス">
               <input type="email" name="email" id="email" >
@@ -47,8 +46,9 @@
                 <img src="./image/icon/icon_key.png" alt="ユーザーパスワード">
                 <input type="password" name="password" id="password" >
             </p>
-            <button type="button" onClick="email_login()">ログイン</button>
-          </form>
+            <a href="javascript:void(0)" onClick="email_login()">ログイン</a>
+          </div>
+
           <div>
             <p>
               <!-- 新規登録ボタン設置場所 -->

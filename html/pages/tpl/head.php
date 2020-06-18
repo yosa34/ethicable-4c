@@ -25,7 +25,10 @@
 
   <!-- jqueryバージョン３ -->
   <script type="text/javascript" src="./js/jquery-3.3.1.min.js"></script>
-  
+
+  <!-- Vue.jsインストール -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
   <!-- The core Firebase JS SDK is always required and must be listed first -->
   <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
 
@@ -54,17 +57,12 @@
         //ログイン状態判別
         if (user) {
           console.log(user.uid);
-          // firebase データ読み込み
+          // firebase ユーザーデータ読み込み
           let citiesRef = db.collection('user').where("user_id", "==", user.uid);
           let allCities = citiesRef.get().then(snapshot => {
               snapshot.forEach(doc => {
                 const data = doc.data()
                 console.log(data);
-                // var userData = [];
-                // this.userData.push({
-                //   key:doc.id,
-                //   });
-                // console.log(this.userData);
               });
             })
             .catch(err => {

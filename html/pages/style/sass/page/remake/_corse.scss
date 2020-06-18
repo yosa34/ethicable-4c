@@ -1,0 +1,57 @@
+#remake_corse{
+    main{
+        section{
+            article{
+                ul{
+                    width: 80%;
+                    margin: 0 auto;
+                    li{
+                        width: 100%;
+                        height: 400px;
+                        padding: 60px 10px;
+                        text-align: center;
+
+                        background: $background_color_main;
+                        border: 3px solid $header_border_color;
+                        border-radius: 20px;
+                        &:nth-child(1){
+                            margin: 60px 0 100px;
+                        }
+                        // ボタンがアクティブになった時
+                        &#active{
+                            border-color: $active_border_color;
+                            box-shadow: 0 0 20px rgba(255,175,106,0.8);
+                        }
+                        // ボタンが押せない時
+                        &#none_click{
+                            pointer-events: none;
+                            background: rgba(0, 0, 0, 0.300);
+                        }
+
+
+                        h2{
+                            font-size: 45px;
+                            font-weight: bold;
+                        }
+                        p{
+                            margin: 30px 0;
+                            font-size: 30px;
+                            b{
+                                font-size: 24px;
+                                color: $alert_color;
+                            }
+                        }
+                    }
+                }
+            }
+            >p{
+                margin: 200px auto 50px;
+                text-align: center;
+                font-size: 30px;
+            }
+            input[type="button"]{
+                @include input_button(20px,$main_color,$botton_color,none);
+            }
+        }
+    }
+}

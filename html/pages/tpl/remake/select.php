@@ -17,6 +17,12 @@
     <!-- main -->
     <main>
         <section>
-          <h1>リサイクルイメージ＆カラー選択</h1>
+          <h1>リサイクルイメージ＆カラー<br>選択</h1>
+
+          
+          <div>
+              <input type="button" value="戻る">
+              <input type="button" value="確認">
+          </div>
         </section>
     </main>

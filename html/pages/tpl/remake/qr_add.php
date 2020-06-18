@@ -18,5 +18,10 @@
     <main>
         <section>
           <h1>QRコードの生成</h1>
+          <div>
+            QRコード表示場所
+          </div>
+          <p>ホームへ戻っても、QRコードを確認することができます。</p>
+          <p><a href="">ホームへ戻る</a></p>
         </section>
     </main>
