@@ -57,7 +57,7 @@
             <div>
               <ul>
                 <li>
-                  <a href="#">
+                  <a href="qr_detail.php">
                     QRコード表示場所
                   </a>
                 </li>
