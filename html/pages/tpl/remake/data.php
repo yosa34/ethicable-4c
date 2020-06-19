@@ -10,6 +10,7 @@
 
   //サンプルで送られてきた仮定の商品ID
   var product_id = 426847;
+
   
   firebase.auth().onAuthStateChanged(function(user) {
       //ログイン状態判別
@@ -25,6 +26,7 @@
               .get().then(function(querySnapshot) {
                   querySnapshot.forEach(function(doc) {
                     const color = doc.data()
+                    //colorの出力
                     var elem = document.getElementById("color_name");
                     elem.innerHTML = color.color_id+" "+color.color_name;
                   });
@@ -38,6 +40,7 @@
               .get().then(function(querySnapshot) {
                   querySnapshot.forEach(function(doc) {
                     const size = doc.data()
+                    //サイズの取得
                     var elem = document.getElementById("size_name");
                     elem.innerHTML = size.size_name;
                   });
@@ -55,7 +58,8 @@
               db.collection("department").where("department_id", "==", Number(department_id))
               .get().then(function(querySnapshot) {
                   querySnapshot.forEach(function(doc) {
-                    var department = doc.data()
+                    department = doc.data()
+                    //部門名の出力
                     var elem = document.getElementById("department_name");
                     elem.innerHTML = department.department_name;
                   });
@@ -64,23 +68,21 @@
                   console.log("Error getting documents: ", error);
               });
 
+
               //カテゴリーの取得
-              // db.collection("category").where("category_id", "==", Number(category_id))
-              // .get().then(function(querySnapshot) {
-              //     querySnapshot.forEach(function(doc) {
-              //       const category = doc.data()
-              //       var elem = document.getElementById("category_name");
-              //       elem.innerHTML = category.category_name;
-                    
-              //     });
-              // })
-              // .catch(function(error) {
-              //     console.log("Error getting documents: ", error);
-              // });
+              db.collection("category").where("category_id", "==", Number(category_id))
+              .get().then(function(querySnapshot) {
+                  querySnapshot.forEach(function(doc) {
+                    const category = doc.data()
+                    //カテゴリーの出力
+                    var elem = document.getElementById("department_name");
+                    elem.innerHTML += " "+category.category_name;
+                  });
+              })
+              .catch(function(error) {
+                  console.log("Error getting documents: ", error);
+              });
 
-
-              
-              
             });
           })
           .catch(err => {
