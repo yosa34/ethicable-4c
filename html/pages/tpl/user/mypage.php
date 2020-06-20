@@ -36,8 +36,8 @@
             <div>
                 <p>履歴</p>
                 <ul>
-                    <li><a href="#">ドキドキコース履歴</a></li>
-                    <li><a href="#">ワクワクコース履歴</a></li>
+                    <li><a href="user_remake_history.php?corse=1">ドキドキコース履歴</a></li>
+                    <li><a href="user_remake_history.php?corse=0">ワクワクコース履歴</a></li>
                     <li><a href="#">購入履歴</a></li>
                 </ul>
             </div>

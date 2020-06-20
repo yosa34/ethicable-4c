@@ -520,6 +520,15 @@ header {
       background: #707070;
       color: #FFF; }
 
+#remake_history main > div {
+  background: #B5C76A;
+  text-align: center;
+  padding: 20px 10px; }
+  #remake_history main > div p {
+    color: #FFF;
+    font-weight: bold;
+    font-size: 40px; }
+
 #setting_change main > div {
   background: #B5C76A;
   text-align: center;

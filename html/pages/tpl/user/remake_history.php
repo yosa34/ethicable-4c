@@ -19,7 +19,7 @@
 <title>ethicable｜マイページ</title>
 
 </head>
-  <body id="mypage">
+  <body id="remake_history">
     <!-- header -->
     <?php include "./tpl/header.html"; ?>
 
