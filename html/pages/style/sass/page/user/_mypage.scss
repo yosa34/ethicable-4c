@@ -1,0 +1,75 @@
+#mypage{
+    background: $background_color_sub;
+    main{
+        section{
+            // エコポイント
+            &:first-of-type{
+                padding: 50px 30px;
+                div{
+                    display: flex;
+                    width: 80%;
+                    margin: 0 auto;
+                    p{
+                        &:first-of-type{
+                            background: $main_color;
+                            width: 40%;
+                            padding: 50px 0;
+                            color: $font-color;
+                            font-size: 40px;
+                            text-align: center;
+                            border-radius: 15px 0px 0px 15px;
+                        }
+                        &:last-of-type{
+                            background: $background_color_main;
+                            width: 60%;
+                            padding: 30px;
+                            text-align: right;
+                            font-size: 60px;
+                            font-weight: bold;
+                            color: $main_color;
+                            border-radius: 0px 15px 15px 0px;
+                            b{
+                                padding-left: 30px;
+                                font-size: 40px;
+                                color: $main_color;
+                            }
+                        }
+                    }
+                }
+            }
+            // リンク一覧
+            &:last-of-type{
+                div{
+                    >p{
+                        padding: 30px 20px 10px;
+                        font-size: 30px;
+                    }
+                    ul{
+                        border-top: 2px solid $header_border_color;
+                        border-bottom: 2px solid $header_border_color;
+                        li{
+                            background: $background_color_main;
+                            font-size: 40px;
+                            padding: 40px 60px;
+                            border-bottom: 1px solid $header_border_color;
+                            &:last-of-type{
+                                border-bottom: none;
+                            }
+                        }
+                    }
+                }
+                >p{
+                    position: absolute;
+                    bottom: 300px;
+                    width: 100%;
+                    background: $background_color_main;
+                    padding: 20px 0;
+                    font-size: 30px;
+                    border-top: 2px solid $header_border_color;
+                    border-bottom: 2px solid $header_border_color;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
