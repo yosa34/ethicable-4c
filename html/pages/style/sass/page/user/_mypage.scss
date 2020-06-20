@@ -68,12 +68,17 @@
                     position: absolute;
                     bottom: 300px;
                     width: 100%;
-                    background: $background_color_main;
+                    background: $botton_color;
                     padding: 20px 0;
                     font-size: 30px;
-                    border-top: 2px solid $header_border_color;
-                    border-bottom: 2px solid $header_border_color;
+                    border-top: 2px solid $botton_background;
+                    border-bottom: 2px solid $botton_background;
                     text-align: center;
+                    color: $botton_background;
+                    &:active{
+                        background: $header_border_color;
+                        color: $font-color;
+                    }
                 }
             }
         }

@@ -512,9 +512,13 @@ header {
     background: #FFF;
     padding: 20px 0;
     font-size: 30px;
-    border-top: 2px solid #707070;
-    border-bottom: 2px solid #707070;
-    text-align: center; }
+    border-top: 2px solid #969696;
+    border-bottom: 2px solid #969696;
+    text-align: center;
+    color: #969696; }
+    #mypage main section:last-of-type > p:active {
+      background: #707070;
+      color: #FFF; }
 
 #setting_change main > div {
   background: #B5C76A;
