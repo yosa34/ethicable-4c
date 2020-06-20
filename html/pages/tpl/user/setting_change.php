@@ -47,17 +47,42 @@
 
     <!-- main -->
     <main>
+        <div>
+            <p>個人情報設定変更</p>
+        </div>
         <section>
-            <div id="app">
-                <p>Gmail：<input type="text" id="mail" v-bind:value=mail></p>
-                <p>Password：<input type="text" id="pass" v-bind:value=pass></p>
-                <p>性別：<input type="text" id="gender" v-bind:value=gender></p>
-                <p>年齢：<input type="text" id="age" v-bind:value=age></p>
-                <p>住所：<input type="text" id="address"v-bind:value=address></p>
-                <p>クレジット：<input type="text" id="credit_card" v-bind:value=credit_card></p>
-            </div>
-
-            <a href="javascript:void(0)" onClick="register()">更新する</a>
+            <table id="app">
+                <tr>
+                    <th>Gmail：</th>
+                    <td><input type="text" id="mail" v-bind:value=mail></td>
+                </tr>
+                <tr>
+                    <th>Password：</th>
+                    <td><input type="text" id="pass" v-bind:value=pass></td>
+                </tr>
+                <tr>
+                    <th>性別：</th>
+                    <td><input type="text" id="gender" v-bind:value=gender></td>
+                </tr>
+                <tr>
+                    <th>年齢：</th>
+                    <td><input type="text" id="age" v-bind:value=age></td>
+                </tr>
+                <tr>
+                    <th>住所：</th>
+                    <td><input type="text" id="address"v-bind:value=address></td>
+                </tr>
+                <tr>
+                    <th>クレジット：</th>
+                    <td>
+                        <input type="text" id="credit_card" v-bind:value=credit_card>
+                        <p><b>セキュリティコード</b>はクレジットカード裏面の末尾3桁(一部4桁)の数字です。(一部のクレジットカードの場合、カード表面右上にある4桁の数字となります。)</p>
+                    </td>
+                </tr>
+            </table>
+            <p>
+                <a href="javascript:void(0)" onClick="register()">更新する</a>
+            </p>
         </section>
     </main>
     <script>

@@ -475,3 +475,52 @@ header {
     border-top: 2px solid #707070;
     border-bottom: 2px solid #707070;
     text-align: center; }
+
+#setting_change main > div {
+  background: #B5C76A;
+  text-align: center;
+  padding: 20px 10px; }
+  #setting_change main > div p {
+    color: #FFF;
+    font-weight: bold;
+    font-size: 40px; }
+
+#setting_change main section table {
+  width: 80%;
+  margin: 30px auto;
+  background: #FFF; }
+  #setting_change main section table * {
+    font-size: 35px; }
+  #setting_change main section table tr {
+    font-size: 30px; }
+    #setting_change main section table tr th, #setting_change main section table tr td {
+      padding: 30px 20px; }
+    #setting_change main section table tr th {
+      color: #B5C76A;
+      width: 25%;
+      text-align: right; }
+    #setting_change main section table tr td {
+      background: #FFF; }
+  #setting_change main section table input {
+    border-bottom: 2px solid #B5C76A;
+    padding: 10px;
+    width: 100%; }
+  #setting_change main section table td p {
+    padding: 20px 0;
+    font-size: 20px; }
+    #setting_change main section table td p b {
+      font-size: 20px;
+      color: #B5C76A; }
+
+#setting_change main section > p a {
+  display: block;
+  background: #B5C76A;
+  color: #FFF;
+  border: 2px solid none;
+  font-size: 45px;
+  font-weight: bold;
+  width: 80%;
+  padding: 20px 0;
+  margin: 50px auto;
+  border-radius: 15px;
+  text-align: center; }
