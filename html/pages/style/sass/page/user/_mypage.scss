@@ -50,10 +50,16 @@
                         li{
                             background: $background_color_main;
                             font-size: 40px;
-                            padding: 40px 60px;
                             border-bottom: 1px solid $header_border_color;
                             &:last-of-type{
                                 border-bottom: none;
+                            }
+                            a{
+                                padding: 40px 60px;
+                                &:active{
+                                    background: $header_border_color;
+                                    color: $font-color;
+                                }
                             }
                         }
                     }

@@ -116,6 +116,10 @@ header {
         font-size: 20px;
         width: 60%;
         margin: 20px auto; }
+        #login main div:nth-of-type(1) a:active {
+          background: #B5C76A;
+          color: #FFF;
+          border: 2px solid #FFF; }
 
 #qr_detail main > p {
   font-size: 30px;
@@ -201,6 +205,10 @@ header {
   margin: 50px auto;
   border-radius: 15px;
   text-align: center; }
+  #remake_corse main section input[type="button"]:active {
+    background: none;
+    color: #B5C76A;
+    border: 2px solid #B5C76A; }
 
 #remake_data h2 {
   font-size: 50px;
@@ -256,6 +264,10 @@ header {
   border-radius: 15px;
   text-align: center;
   margin-right: 10px; }
+  #remake_data main section div > input[type="button"]:first-of-type:active {
+    background: #707070;
+    color: #F5F5F5;
+    border: 2px solid #F5F5F5; }
 
 #remake_data main section div > input[type="button"]:last-of-type {
   display: block;
@@ -270,6 +282,10 @@ header {
   border-radius: 15px;
   text-align: center;
   margin-left: 10px; }
+  #remake_data main section div > input[type="button"]:last-of-type:active {
+    background: none;
+    color: #B5C76A;
+    border: 2px solid #B5C76A; }
 
 #remake_datails main section div table {
   width: 80%;
@@ -308,6 +324,10 @@ header {
   border-radius: 15px;
   text-align: center;
   margin-right: 10px; }
+  #remake_datails main section div > input[type="button"]:first-of-type:active {
+    background: #707070;
+    color: #F5F5F5;
+    border: 2px solid #F5F5F5; }
 
 #remake_datails main section div > input[type="button"]:last-of-type {
   display: block;
@@ -322,6 +342,10 @@ header {
   border-radius: 15px;
   text-align: center;
   margin-left: 10px; }
+  #remake_datails main section div > input[type="button"]:last-of-type:active {
+    background: none;
+    color: #B5C76A;
+    border: 2px solid #B5C76A; }
 
 #remake_home main section:nth-child(1) {
   background: #F5F5F5;
@@ -349,6 +373,10 @@ header {
     width: 60%;
     padding: 30px 0;
     margin: 0 auto; }
+    #remake_home main section:nth-child(1) div > a:active {
+      border: none;
+      background: #B5C76A;
+      color: #FFF; }
 
 #remake_qr_add main section div {
   width: 70%;
@@ -408,6 +436,10 @@ header {
   border-radius: 15px;
   text-align: center;
   margin-right: 10px; }
+  #remake_select main section div > input[type="button"]:first-of-type:active {
+    background: #707070;
+    color: #F5F5F5;
+    border: 2px solid #F5F5F5; }
 
 #remake_select main section div > input[type="button"]:last-of-type {
   display: block;
@@ -422,6 +454,10 @@ header {
   border-radius: 15px;
   text-align: center;
   margin-left: 10px; }
+  #remake_select main section div > input[type="button"]:last-of-type:active {
+    background: none;
+    color: #B5C76A;
+    border: 2px solid #B5C76A; }
 
 #mypage {
   background: #F5F5F5; }
@@ -461,10 +497,14 @@ header {
     #mypage main section:last-of-type div ul li {
       background: #FFF;
       font-size: 40px;
-      padding: 40px 60px;
       border-bottom: 1px solid #707070; }
       #mypage main section:last-of-type div ul li:last-of-type {
         border-bottom: none; }
+      #mypage main section:last-of-type div ul li a {
+        padding: 40px 60px; }
+        #mypage main section:last-of-type div ul li a:active {
+          background: #707070;
+          color: #FFF; }
   #mypage main section:last-of-type > p {
     position: absolute;
     bottom: 300px;
@@ -524,3 +564,7 @@ header {
   margin: 50px auto;
   border-radius: 15px;
   text-align: center; }
+  #setting_change main section > p a:active {
+    background: none;
+    color: #B5C76A;
+    border: 2px solid #B5C76A; }
