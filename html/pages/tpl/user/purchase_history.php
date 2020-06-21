@@ -1,6 +1,6 @@
 <?php
     /*
-    ページ詳細：マイページ
+    ページ詳細：購入履歴
     作成者：小川紗世
     編集者：2020/06/12小川紗世
     */
@@ -16,24 +16,18 @@
 
 
 <!-- SHOP HOME画面 -->
-<title>ethicable｜マイページ｜コース使用履歴</title>
+<title>ethicable｜マイページ｜購入履歴</title>
 
 </head>
-  <body id="remake_history">
+  <body id="purchase_history">
     <!-- header -->
     <?php include "./tpl/header.html"; ?>
 
     <!-- main -->
     <main>
         <div>
-            <p>コース使用履歴</p>
+            <p>購入履歴</p>
         </div>
-        <p>コース変更：
-            <select name="course">
-                <option value="1">ドキドキ</option>
-                <option value="2">ワクワク</option>
-            </select>
-        </p>
         <section>
             <ul>
                 <li></li>

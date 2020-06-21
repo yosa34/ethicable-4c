@@ -1,0 +1,14 @@
+#purchase_history{
+    main{
+        >div{
+            background: $main_color;
+            text-align: center;
+            padding: 20px 10px;
+            p{
+                color: $font-color;
+                font-weight: bold;
+                font-size: 40px;
+            }
+        }
+    }
+}

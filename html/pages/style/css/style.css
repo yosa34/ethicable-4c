@@ -13,7 +13,8 @@ footer {
   bottom: 5px;
   left: 0;
   right: 0;
-  border-top: 2px solid #B5C76A; }
+  border-top: 2px solid #B5C76A;
+  background: #FFF; }
   footer ul {
     width: 100%;
     height: 170px;
@@ -520,6 +521,15 @@ header {
       background: #707070;
       color: #FFF; }
 
+#purchase_history main > div {
+  background: #B5C76A;
+  text-align: center;
+  padding: 20px 10px; }
+  #purchase_history main > div p {
+    color: #FFF;
+    font-weight: bold;
+    font-size: 40px; }
+
 #remake_history main > div {
   background: #B5C76A;
   text-align: center;
@@ -528,6 +538,34 @@ header {
     color: #FFF;
     font-weight: bold;
     font-size: 40px; }
+
+#remake_history main > p {
+  font-size: 40px;
+  padding: 50px 40px;
+  position: relative; }
+  #remake_history main > p select {
+    background-color: white;
+    border: thin solid #B5C76A;
+    border-radius: 4px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 10px 100px 10px 20px;
+    /* reset */
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    content: "";
+    width: 65%;
+    height: 60%;
+    right: 1em;
+    top: 30px;
+    position: absolute;
+    background-image: linear-gradient(to bottom left, #B5C76A 30%, transparent 40%), linear-gradient(to bottom right, #B5C76A 30%, transparent 40%), linear-gradient(to right, #f1ffb8, #f1ffb8);
+    background-position: calc(100% - 48px) calc(1em + 2px), calc(100% - 18px) calc(1em + 2px), 100% 0;
+    background-size: 30px 30px, 30px 26px, 100px 100px;
+    background-repeat: no-repeat; }
 
 #setting_change main > div {
   background: #B5C76A;

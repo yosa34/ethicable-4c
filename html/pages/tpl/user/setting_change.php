@@ -38,7 +38,7 @@
 
 
 <!-- SHOP HOME画面 -->
-<title>ethicable｜マイページ｜プロフィール変更</title>
+<title>ethicable｜マイページ｜個人情報設定変更</title>
 
 </head>
   <body id="setting_change">
