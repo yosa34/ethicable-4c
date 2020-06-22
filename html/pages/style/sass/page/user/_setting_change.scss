@@ -1,0 +1,42 @@
+#setting_change{
+    main{
+        >div{
+            background: $main_color;
+            text-align: center;
+            padding: 20px 10px;
+            p{
+                color: $font-color;
+                font-weight: bold;
+                font-size: 40px;
+            }
+        }
+        section{
+            table{
+                *{
+                    font-size: 35px;
+                }
+                @include table_main($background_color_main,$main_color,);
+                input{
+                    border-bottom: 2px solid $border_color_sub;
+                    padding: 10px;
+                    width: 100%;
+                }
+                td{
+                    p{
+                        padding: 20px 0;
+                        font-size: 20px;
+                        b{
+                            font-size: 20px;
+                            color: $main_color;
+                        }
+                    }
+                }
+            }
+            >p{
+                a{
+                    @include input_button(20px,$main_color,$botton_color,none);
+                }
+            }
+        }
+    }
+}
