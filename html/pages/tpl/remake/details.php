@@ -5,9 +5,8 @@
     編集者：2020/06/12小川紗世
     */
 ?>
-
 <script>
-
+  const db = firebase.firestore();
     // GET URLのパラメータ取得
     let arg  = new Object;
     url = location.search.substring(1).split('&');
@@ -123,7 +122,6 @@
               .catch(function(error) {
                   console.log("Error getting documents: ", error);
               });
-
             });
           })
           .catch(err => {
