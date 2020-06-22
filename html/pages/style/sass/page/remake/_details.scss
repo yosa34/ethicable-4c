@@ -1,0 +1,31 @@
+#remake_datails{
+    main{
+        section{
+            div{
+
+                // 商品情報テーブル
+                table{
+                    @include table_main;
+                }
+
+                // ボタンのdiv
+                &:last-of-type{
+                    @include button_bottom_div;
+                }
+                >input[type="button"]{
+                    // 左のボタン
+                    &:first-of-type{
+                        @include input_button(20px);
+                        margin-right: 10px;
+                    }
+                    // 右のボタン
+                    &:last-of-type{
+                        @include input_button(20px, $border_color_sub, $botton_color,none );
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+
+    }
+}

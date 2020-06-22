@@ -1,0 +1,9 @@
+main{
+    margin: $header_height 0 $footer_height;
+    h1{
+        font-size: 70px;
+        text-align: center;
+        padding: 70px 0;
+        color: $title_main_color;
+    }
+}

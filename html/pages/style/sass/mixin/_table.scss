@@ -1,0 +1,19 @@
+@mixin table_main($background: $main_color, $th_color:$table_th_color, $tb_background:$background_color_main) {
+    width: 80%;
+    margin: 30px auto;
+    background: $background;
+    tr{
+        font-size: 30px;
+        th,td{
+            padding: 30px 20px;
+        }
+        th{
+            color: $th_color;
+            width: 25%;
+            text-align: right;
+        }
+        td{
+            background: $tb_background;
+        }
+    }
+}
