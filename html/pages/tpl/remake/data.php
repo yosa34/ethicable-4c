@@ -17,6 +17,5 @@
     <!-- main -->
     <main>
         <section>
-            <h1>読み取りデータの確認</h1>
         </section>
     </main>

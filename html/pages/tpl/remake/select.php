@@ -17,6 +17,5 @@
     <!-- main -->
     <main>
         <section>
-          <h1>リサイクルイメージ＆カラー選択</h1>
         </section>
     </main>

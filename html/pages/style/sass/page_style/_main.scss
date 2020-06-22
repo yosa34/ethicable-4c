@@ -1,25 +1,21 @@
-main{
-    margin: $header_height 0 $footer_height;
 
-    h1{
-        font-size: 70px;
-        text-align: center;
-        padding: 70px 0;
-        color: $title_main_color;
-    }
+// html{
+//   margin: 0;
+//   padding: 0;
+//   color: $red;
+// }
 
-    input[type="button"],
-    button[type="submit"]{
-        display: block;
-        border: none;
-        background: $main_color;
-        color: $botton_color;
-        font-size: 45px;
-        font-weight: bold;
-
-        width: 80%;
-        padding: 20px 0;
-        margin: 50px auto;
-        border-radius: 15px;
-    }
-}
+// body {
+//   background: $main_color;
+//   margin: 0;
+//   padding: 0;
+//   main{
+//     padding: 10px;
+//   }
+//   header{
+//     padding: 10px;
+//   }
+//   footer{
+//     padding: 10px;
+//   }
+// }
