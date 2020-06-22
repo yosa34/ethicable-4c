@@ -25,8 +25,6 @@ function logout(){
 firebase.auth().onAuthStateChanged(function (user) {
     
     if (user) {
-        console.log('login');
-        console.log(user);
         
         setTimeout(function () {
             location.href = "./remake_home.php"
