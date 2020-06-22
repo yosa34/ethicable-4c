@@ -8,10 +8,9 @@
 
 <script>
 
-  //サンプルで送られてきた仮定の商品ID
-  var product_id = 426847;
+  //QRで読み取った時の商品ID受け取り
+  var product_id = <?php  echo($_GET['product_id']); ?>;
 
-  
   firebase.auth().onAuthStateChanged(function(user) {
       //ログイン状態判別
       if (user) {
@@ -68,7 +67,6 @@
                   console.log("Error getting documents: ", error);
               });
 
-
               //カテゴリーの取得
               db.collection("category").where("category_id", "==", Number(category_id))
               .get().then(function(querySnapshot) {
@@ -110,7 +108,7 @@
             <h1>読み取りデータの確認</h1>
             <div>
                 <p>
-                    <img src="./image/product/414443.jpg" alt="商品画像">
+                    <img src="./image/product/<?php  echo($_GET['product_id']); ?>.jpg" alt="商品画像">
                 </p>
                 <p>商品ID:000000</p>
                 <h2>商品名</h2>
