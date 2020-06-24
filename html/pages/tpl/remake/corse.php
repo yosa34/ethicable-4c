@@ -36,6 +36,10 @@ firebase.auth().onAuthStateChanged(function(user) {
       });
 
 });
+function qrclick(){
+  document.getElementById("file_upload").click();
+}
+
 
 </script>
 
@@ -82,11 +86,5 @@ firebase.auth().onAuthStateChanged(function(user) {
           </form>
         </section>
     </main>
-    <script>
-        function qrclick(){
-          document.getElementById("file_upload").click();
-          
-        }
-    </script>
 
 
