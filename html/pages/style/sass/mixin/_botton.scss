@@ -22,4 +22,10 @@
     margin: 50px auto;
     border-radius: 15px;
     text-align: center;
+
+    &:active{
+        background: $border_color;
+        color: $background;
+        border: 2px solid $background;
+    }
 }
