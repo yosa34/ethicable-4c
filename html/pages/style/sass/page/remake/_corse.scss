@@ -51,6 +51,7 @@
             input[type="button"]{
                 @include input_button(20px,$main_color,$botton_color,none);
             }
+            
         }
     }
 }
