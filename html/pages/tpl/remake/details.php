@@ -6,11 +6,10 @@
     */
 ?>
 <script>
-  const db = firebase.firestore();
+  
     // GET URLのパラメータ取得
     let arg  = new Object;
     url = location.search.substring(1).split('&');
-    console.log(url);
     
     for(i=0; url[i]; i++) {
         var k = url[i].split('=');
@@ -19,7 +18,6 @@
     let product_id = arg.product_id;
     let product = arg.product;
     let color = arg.color;
-
 
     //選択colorの取得
     db.collection("color").where("color_id", "==", Number(color))
@@ -59,7 +57,6 @@
 
               var elem4 = document.getElementById("product_explanation");
               elem4.innerHTML = data.product_explanation;
-
 
 
               //colorの取得
