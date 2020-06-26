@@ -40,7 +40,7 @@
                                 color: $alert_color;
                             }
                         }
-                    }
+                    }s
                 }
             }
             >p{
@@ -50,6 +50,9 @@
             }
             input[type="button"]{
                 @include input_button(20px,$main_color,$botton_color,none);
+            }
+            #file_upload{
+                display:none;
             }
             
         }
