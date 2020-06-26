@@ -6,7 +6,7 @@
     */
 ?>
 <script>
-  
+
     // GET URLのパラメータ取得
     let arg  = new Object;
     url = location.search.substring(1).split('&');
@@ -18,8 +18,11 @@
     let product_id = arg.product_id;
     let product = arg.product;
     let color = arg.color;
+    let corse_number = arg.corse_number;
 
-    //選択colorの取得
+
+
+    //リサイクルイメージ情報（イメージとカラー）
     db.collection("color").where("color_id", "==", Number(color))
     .get().then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
@@ -45,16 +48,29 @@
             snapshot.forEach(doc => {
               const data = doc.data()
 
+              //それぞれの名前を出力する
+              //コースの名前
+              if(corse_number == 1){
+                var elem = document.getElementById("couse_name");
+                elem.innerHTML = "ワクワクコース";
+              }else if(corse_number == 2){
+                var elem = document.getElementById("couse_name");
+                elem.innerHTML = "ドキドキコース";
+              }
 
+              //商品の名前
               var elem1 = document.getElementById("product_name");
               elem1.innerHTML = data.product_name;
 
+              //ID
               var elem2 = document.getElementById("product_id");
               elem2.innerHTML = data.product_id;
 
+              //素材
               var elem3 = document.getElementById("product_material");
               elem3.innerHTML = data.product_material;
 
+              //説明
               var elem4 = document.getElementById("product_explanation");
               elem4.innerHTML = data.product_explanation;
 
@@ -87,38 +103,38 @@
                   console.log("Error getting documents: ", error);
               });
 
-              //部門IDとカテゴリーIDの分割
-              let str = String( data.product_department );
-              let category_id = str.substr( 0, 1 );
-              let department_id = str.substr( 1, 2 );
+              // //部門IDとカテゴリーIDの分割
+              // let str = String( data.product_department );
+              // let category_id = str.substr( 0, 1 );
+              // let department_id = str.substr( 1, 2 );
 
-              //部門の取得
-              db.collection("department").where("department_id", "==", Number(department_id))
-              .get().then(function(querySnapshot) {
-                  querySnapshot.forEach(function(doc) {
-                    department = doc.data()
-                    //部門名の出力
-                    var elem = document.getElementById("department_name");
-                    elem.innerHTML = department.department_name;
-                  });
-              })
-              .catch(function(error) {
-                  console.log("Error getting documents: ", error);
-              });
+              // //部門の取得
+              // db.collection("department").where("department_id", "==", Number(department_id))
+              // .get().then(function(querySnapshot) {
+              //     querySnapshot.forEach(function(doc) {
+              //       department = doc.data()
+              //       //部門名の出力
+              //       var elem = document.getElementById("department_name");
+              //       elem.innerHTML = department.department_name;
+              //     });
+              // })
+              // .catch(function(error) {
+              //     console.log("Error getting documents: ", error);
+              // });
 
-              //カテゴリーの取得
-              db.collection("category").where("category_id", "==", Number(category_id))
-              .get().then(function(querySnapshot) {
-                  querySnapshot.forEach(function(doc) {
-                    const category = doc.data()
-                    //カテゴリーの出力
-                    var elem = document.getElementById("department_name");
-                    elem.innerHTML += " "+category.category_name;
-                  });
-              })
-              .catch(function(error) {
-                  console.log("Error getting documents: ", error);
-              });
+              // //カテゴリーの取得
+              // db.collection("category").where("category_id", "==", Number(category_id))
+              // .get().then(function(querySnapshot) {
+              //     querySnapshot.forEach(function(doc) {
+              //       const category = doc.data()
+              //       //カテゴリーの出力
+              //       var elem = document.getElementById("department_name");
+              //       elem.innerHTML += " "+category.category_name;
+              //     });
+              // })
+              // .catch(function(error) {
+              //     console.log("Error getting documents: ", error);
+              // });
             });
           })
           .catch(err => {
@@ -144,7 +160,7 @@
           <h1>リサイクル詳細確認</h1>
           <div>
               <p>イメージ名
-                  <img src="./image/category/<?php  echo($_GET['product']); ?>.png" alt="イメージ画像">
+                  <img src="./image/category/<?php  echo($_GET['category']); ?>.png" alt="イメージ画像">
               </p>
               <p>選択カラー</p>
               <p id='select_color'></p>
