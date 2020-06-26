@@ -36,6 +36,10 @@ firebase.auth().onAuthStateChanged(function(user) {
       });
 
 });
+function qrclick(){
+  document.getElementById("file_upload").click();
+}
+
 
 </script>
 
@@ -68,18 +72,19 @@ firebase.auth().onAuthStateChanged(function(user) {
             </ul>
           </article>
           <p>QRコードをスキャンして商品情報を読み取ることができます。</p>
-          <input type="button" value="カメラを起動する">
 
           <form name="myform" method="post">
             <input name="date" type=text size=50 class=qrcode-text>
               <label class=qrcode-text-btn for="file_upload">
+
+                <input type="button" onclick="qrclick()" value="カメラを起動する">
+                <!-- 隠す -->
                 <input id="file_upload" type=file accept="image/*" capture=environment onclick="return showQRIntro();" onchange="openQRCamera(this);" tabindex=-1>
+              
               </label>
               <input class="hidden" type=text name="cn">
-              <!-- hiddenする予定 -->
-            <input type="submit" value="次ページ">
           </form>
-
         </section>
     </main>
+
 
