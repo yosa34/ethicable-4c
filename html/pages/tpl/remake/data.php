@@ -5,6 +5,7 @@
     編集者：2020/06/12小川紗世
     */
 ?>
+
 <!-- QRコード用 -->
 <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
 <script type="text/javascript" src="./js/reader.js"></script>
@@ -21,6 +22,7 @@
       arg[k[0]] = k[1];
   }
   let product_id = arg.product_id;
+  let corse_number = arg.corse_number;
 
 
   firebase.auth().onAuthStateChanged(function(user) {
@@ -106,7 +108,7 @@
 
   function remake_select(){
     var next_page = "./remake_select.php";
-    location.href = next_page+"?product_id=" + product_id;
+    location.href = next_page+"?product_id=" + product_id + "&corse_number=" + corse_number;
 
   }
 
