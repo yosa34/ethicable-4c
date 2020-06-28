@@ -15,9 +15,27 @@
     <!-- main -->
     <main>
         <section>
+<<<<<<< HEAD
         <button id="logout" onClick="logout()">logout</button>
         <a href="./shop_home.php">shop</a>
 
+=======
+          <div>
+            <h2>現在発行中のQRコード</h2>
+            <div>
+              <ul>
+                <li>
+                  <a href="qr_detail.php">
+                    QRコード表示場所
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <a href="./remake_corse.php">リメイクする</a>
+          </div>
+        </section>
+        <section>
+>>>>>>> fcc0ddc2b3f698411e15672717697b71365ce991
         </section>
     </main>
 

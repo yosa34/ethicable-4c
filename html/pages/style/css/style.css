@@ -1,30 +1,10 @@
-header {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  height: 100px;
-  background: #FFF;
-  border-bottom: 1px solid #707070;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0; }
-  header ul {
-    display: flex;
-    justify-content: end; }
-    header ul li {
-      width: auto;
-      padding: 0 10px; }
-      header ul li a {
-        display: block;
-        box-sizing: border-box;
-        width: 100%;
-        height: 100%;
-        padding: 25px 0; }
-  header p {
-    padding: 10px; }
-  header img {
-    height: 100%; }
+main {
+  margin: 100px 0 170px; }
+  main h1 {
+    font-size: 70px;
+    text-align: center;
+    padding: 70px 0;
+    color: #B5C76A; }
 
 footer {
   width: 100%;
@@ -33,7 +13,8 @@ footer {
   bottom: 5px;
   left: 0;
   right: 0;
-  border-top: 2px solid #B5C76A; }
+  border-top: 2px solid #B5C76A;
+  background: #FFF; }
   footer ul {
     width: 100%;
     height: 170px;
@@ -64,3 +45,580 @@ footer {
           margin: 10px 0 0;
           font-weight: bold;
           color: #B5C76A; }
+<<<<<<< HEAD
+=======
+
+header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100px;
+  background: #FFF;
+  border-bottom: 1px solid #707070;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0; }
+  header ul {
+    display: flex;
+    justify-content: end; }
+    header ul li {
+      width: auto;
+      padding: 0 10px; }
+      header ul li a {
+        display: block;
+        box-sizing: border-box;
+        width: 100%;
+        height: 100%;
+        padding: 25px 0; }
+  header p {
+    padding: 10px; }
+  header img {
+    height: 100%; }
+
+#login {
+  text-align: center;
+  width: 100%;
+  height: 100vh; }
+  #login h1 {
+    color: #FFF;
+    font-size: 36px;
+    font-weight: bold;
+    padding: 0; }
+  #login main {
+    width: 100%;
+    margin: 0;
+    padding: 0; }
+    #login main section {
+      background: #B5C76A;
+      width: 100%;
+      padding: 10px 0 30px; }
+    #login main div:nth-of-type(1) {
+      margin: 0 auto; }
+      #login main div:nth-of-type(1) p {
+        display: flex;
+        width: 200px;
+        margin: 20px auto;
+        border-bottom: 2px solid #FFF;
+        padding: 2px 10px; }
+        #login main div:nth-of-type(1) p img {
+          height: 100%; }
+      #login main div:nth-of-type(1) a {
+        display: block;
+        background: #FFF;
+        color: #B5C76A;
+        border: 2px solid #B5C76A;
+        font-size: 45px;
+        font-weight: bold;
+        width: 80%;
+        padding: 10px 0;
+        margin: 50px auto;
+        border-radius: 15px;
+        text-align: center;
+        border-width: 4px;
+        font-size: 20px;
+        width: 60%;
+        margin: 20px auto; }
+        #login main div:nth-of-type(1) a:active {
+          background: #B5C76A;
+          color: #FFF;
+          border: 2px solid #FFF; }
+
+#qr_detail main > p {
+  font-size: 30px;
+  padding: 20px 30px 100px; }
+
+#qr_detail main section {
+  width: 80%;
+  margin: 0 auto; }
+  #qr_detail main section > p {
+    text-align: center;
+    font-size: 38px; }
+    #qr_detail main section > p b {
+      line-height: 3;
+      font-size: 30px; }
+  #qr_detail main section div:first-of-type {
+    width: 90%;
+    margin: 25px auto 200px;
+    height: 600px;
+    background: #FFF;
+    border: 2px solid #707070;
+    border-radius: 20px; }
+  #qr_detail main section div:last-of-type {
+    width: 80%;
+    margin: 20px auto;
+    position: absolute;
+    bottom: 300px;
+    left: 0;
+    right: 0;
+    background: #969696;
+    border: 2px solid #707070; }
+    #qr_detail main section div:last-of-type p {
+      text-align: center;
+      color: #FFF;
+      padding: 15px 0;
+      font-size: 39px; }
+      #qr_detail main section div:last-of-type p b {
+        color: #FFF;
+        font-size: 30px; }
+
+#remake_corse main section article ul {
+  width: 80%;
+  margin: 0 auto; }
+  #remake_corse main section article ul li {
+    width: 100%;
+    height: 400px;
+    padding: 60px 10px;
+    text-align: center;
+    background: #FFF;
+    border: 3px solid #707070;
+    border-radius: 20px; }
+    #remake_corse main section article ul li:nth-child(1) {
+      margin: 60px 0 100px; }
+    #remake_corse main section article ul li#active {
+      border-color: #FFAF6A;
+      box-shadow: 0 0 20px rgba(255, 175, 106, 0.8); }
+    #remake_corse main section article ul li#none_click {
+      pointer-events: none;
+      background: rgba(0, 0, 0, 0.3); }
+    #remake_corse main section article ul li h2 {
+      font-size: 45px;
+      font-weight: bold; }
+    #remake_corse main section article ul li p {
+      margin: 30px 0;
+      font-size: 30px; }
+      #remake_corse main section article ul li p b {
+        font-size: 24px;
+        color: #FFAF6A; }
+
+#remake_corse main section > p {
+  margin: 200px auto 50px;
+  text-align: center;
+  font-size: 30px; }
+
+#remake_corse main section input[type="button"] {
+  display: block;
+  background: #B5C76A;
+  color: #FFF;
+  border: 2px solid none;
+  font-size: 45px;
+  font-weight: bold;
+  width: 80%;
+  padding: 20px 0;
+  margin: 50px auto;
+  border-radius: 15px;
+  text-align: center; }
+  #remake_corse main section input[type="button"]:active {
+    background: none;
+    color: #B5C76A;
+    border: 2px solid #B5C76A; }
+
+#remake_data h2 {
+  font-size: 50px;
+  text-align: center; }
+
+#remake_data main section div > p {
+  width: 60%; }
+  #remake_data main section div > p img {
+    width: 100%; }
+  #remake_data main section div > p:nth-child(1) {
+    min-height: 500px;
+    margin: 10px auto 20px;
+    border: 2px solid #F5F5F5; }
+  #remake_data main section div > p:nth-child(2) {
+    margin: 5px auto;
+    text-align: right;
+    font-size: 20px; }
+
+#remake_data main section div table {
+  width: 80%;
+  margin: 30px auto;
+  background: #B5C76A; }
+  #remake_data main section div table tr {
+    font-size: 30px; }
+    #remake_data main section div table tr th, #remake_data main section div table tr td {
+      padding: 30px 20px; }
+    #remake_data main section div table tr th {
+      color: #FFF;
+      width: 25%;
+      text-align: right; }
+    #remake_data main section div table tr td {
+      background: #FFF; }
+
+#remake_data main section div:last-of-type {
+  display: flex;
+  position: absolute;
+  bottom: 200px;
+  right: 0;
+  left: 0;
+  width: 80%;
+  margin: 0 auto; }
+
+#remake_data main section div > input[type="button"]:first-of-type {
+  display: block;
+  background: #F5F5F5;
+  color: #707070;
+  border: 2px solid #707070;
+  font-size: 45px;
+  font-weight: bold;
+  width: 80%;
+  padding: 20px 0;
+  margin: 50px auto;
+  border-radius: 15px;
+  text-align: center;
+  margin-right: 10px; }
+  #remake_data main section div > input[type="button"]:first-of-type:active {
+    background: #707070;
+    color: #F5F5F5;
+    border: 2px solid #F5F5F5; }
+
+#remake_data main section div > input[type="button"]:last-of-type {
+  display: block;
+  background: #B5C76A;
+  color: #FFF;
+  border: 2px solid none;
+  font-size: 45px;
+  font-weight: bold;
+  width: 80%;
+  padding: 20px 0;
+  margin: 50px auto;
+  border-radius: 15px;
+  text-align: center;
+  margin-left: 10px; }
+  #remake_data main section div > input[type="button"]:last-of-type:active {
+    background: none;
+    color: #B5C76A;
+    border: 2px solid #B5C76A; }
+
+#remake_datails main section div table {
+  width: 80%;
+  margin: 30px auto;
+  background: #B5C76A; }
+  #remake_datails main section div table tr {
+    font-size: 30px; }
+    #remake_datails main section div table tr th, #remake_datails main section div table tr td {
+      padding: 30px 20px; }
+    #remake_datails main section div table tr th {
+      color: #FFF;
+      width: 25%;
+      text-align: right; }
+    #remake_datails main section div table tr td {
+      background: #FFF; }
+
+#remake_datails main section div:last-of-type {
+  display: flex;
+  position: absolute;
+  bottom: 200px;
+  right: 0;
+  left: 0;
+  width: 80%;
+  margin: 0 auto; }
+
+#remake_datails main section div > input[type="button"]:first-of-type {
+  display: block;
+  background: #F5F5F5;
+  color: #707070;
+  border: 2px solid #707070;
+  font-size: 45px;
+  font-weight: bold;
+  width: 80%;
+  padding: 20px 0;
+  margin: 50px auto;
+  border-radius: 15px;
+  text-align: center;
+  margin-right: 10px; }
+  #remake_datails main section div > input[type="button"]:first-of-type:active {
+    background: #707070;
+    color: #F5F5F5;
+    border: 2px solid #F5F5F5; }
+
+#remake_datails main section div > input[type="button"]:last-of-type {
+  display: block;
+  background: #B5C76A;
+  color: #FFF;
+  border: 2px solid none;
+  font-size: 45px;
+  font-weight: bold;
+  width: 80%;
+  padding: 20px 0;
+  margin: 50px auto;
+  border-radius: 15px;
+  text-align: center;
+  margin-left: 10px; }
+  #remake_datails main section div > input[type="button"]:last-of-type:active {
+    background: none;
+    color: #B5C76A;
+    border: 2px solid #B5C76A; }
+
+#remake_home main section:nth-child(1) {
+  background: #F5F5F5;
+  padding: 40px 25px; }
+  #remake_home main section:nth-child(1) div h2 {
+    font-size: 45px;
+    font-weight: bold; }
+  #remake_home main section:nth-child(1) div div ul li {
+    width: 70%;
+    margin: 25px auto; }
+    #remake_home main section:nth-child(1) div div ul li a {
+      width: 100%;
+      height: 600px;
+      background: #FFF;
+      border: 2px solid #707070;
+      border-radius: 20px; }
+  #remake_home main section:nth-child(1) div > a {
+    border: 4px solid #B5C76A;
+    background: #FFF;
+    color: #B5C76A;
+    font-size: 45px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 15px;
+    width: 60%;
+    padding: 30px 0;
+    margin: 0 auto; }
+    #remake_home main section:nth-child(1) div > a:active {
+      border: none;
+      background: #B5C76A;
+      color: #FFF; }
+
+#remake_qr_add main section div {
+  width: 70%;
+  margin: 25px auto;
+  height: 600px;
+  background: #FFF;
+  border: 2px solid #707070;
+  border-radius: 20px; }
+
+#remake_qr_add main section p {
+  width: 70%;
+  margin: 200px auto 0;
+  text-align: center;
+  font-size: 40px; }
+  #remake_qr_add main section p:last-of-type {
+    margin-top: 20px; }
+    #remake_qr_add main section p:last-of-type a {
+      display: inline-block;
+      color: #B5C76A;
+      padding: 10px 30px;
+      border-bottom: 2px solid #B5C76A; }
+
+#remake_select main section div table {
+  width: 80%;
+  margin: 30px auto;
+  background: #B5C76A; }
+  #remake_select main section div table tr {
+    font-size: 30px; }
+    #remake_select main section div table tr th, #remake_select main section div table tr td {
+      padding: 30px 20px; }
+    #remake_select main section div table tr th {
+      color: #FFF;
+      width: 25%;
+      text-align: right; }
+    #remake_select main section div table tr td {
+      background: #FFF; }
+
+#remake_select main section div:last-of-type {
+  display: flex;
+  position: absolute;
+  bottom: 200px;
+  right: 0;
+  left: 0;
+  width: 80%;
+  margin: 0 auto; }
+
+#remake_select main section div > input[type="button"]:first-of-type {
+  display: block;
+  background: #F5F5F5;
+  color: #707070;
+  border: 2px solid #707070;
+  font-size: 45px;
+  font-weight: bold;
+  width: 80%;
+  padding: 20px 0;
+  margin: 50px auto;
+  border-radius: 15px;
+  text-align: center;
+  margin-right: 10px; }
+  #remake_select main section div > input[type="button"]:first-of-type:active {
+    background: #707070;
+    color: #F5F5F5;
+    border: 2px solid #F5F5F5; }
+
+#remake_select main section div > input[type="button"]:last-of-type {
+  display: block;
+  background: #B5C76A;
+  color: #FFF;
+  border: 2px solid none;
+  font-size: 45px;
+  font-weight: bold;
+  width: 80%;
+  padding: 20px 0;
+  margin: 50px auto;
+  border-radius: 15px;
+  text-align: center;
+  margin-left: 10px; }
+  #remake_select main section div > input[type="button"]:last-of-type:active {
+    background: none;
+    color: #B5C76A;
+    border: 2px solid #B5C76A; }
+
+#mypage {
+  background: #F5F5F5; }
+  #mypage main section:first-of-type {
+    padding: 50px 30px; }
+    #mypage main section:first-of-type div {
+      display: flex;
+      width: 80%;
+      margin: 0 auto; }
+      #mypage main section:first-of-type div p:first-of-type {
+        background: #B5C76A;
+        width: 40%;
+        padding: 50px 0;
+        color: #FFF;
+        font-size: 40px;
+        text-align: center;
+        border-radius: 15px 0px 0px 15px; }
+      #mypage main section:first-of-type div p:last-of-type {
+        background: #FFF;
+        width: 60%;
+        padding: 30px;
+        text-align: right;
+        font-size: 60px;
+        font-weight: bold;
+        color: #B5C76A;
+        border-radius: 0px 15px 15px 0px; }
+        #mypage main section:first-of-type div p:last-of-type b {
+          padding-left: 30px;
+          font-size: 40px;
+          color: #B5C76A; }
+  #mypage main section:last-of-type div > p {
+    padding: 30px 20px 10px;
+    font-size: 30px; }
+  #mypage main section:last-of-type div ul {
+    border-top: 2px solid #707070;
+    border-bottom: 2px solid #707070; }
+    #mypage main section:last-of-type div ul li {
+      background: #FFF;
+      font-size: 40px;
+      border-bottom: 1px solid #707070; }
+      #mypage main section:last-of-type div ul li:last-of-type {
+        border-bottom: none; }
+      #mypage main section:last-of-type div ul li a {
+        padding: 40px 60px; }
+        #mypage main section:last-of-type div ul li a:active {
+          background: #707070;
+          color: #FFF; }
+  #mypage main section:last-of-type > p {
+    position: absolute;
+    bottom: 300px;
+    width: 100%;
+    background: #FFF;
+    padding: 20px 0;
+    font-size: 30px;
+    border-top: 2px solid #969696;
+    border-bottom: 2px solid #969696;
+    text-align: center;
+    color: #969696; }
+    #mypage main section:last-of-type > p:active {
+      background: #707070;
+      color: #FFF; }
+
+#purchase_history main > div {
+  background: #B5C76A;
+  text-align: center;
+  padding: 20px 10px; }
+  #purchase_history main > div p {
+    color: #FFF;
+    font-weight: bold;
+    font-size: 40px; }
+
+#remake_history main > div {
+  background: #B5C76A;
+  text-align: center;
+  padding: 20px 10px; }
+  #remake_history main > div p {
+    color: #FFF;
+    font-weight: bold;
+    font-size: 40px; }
+
+#remake_history main > p {
+  font-size: 40px;
+  padding: 50px 40px;
+  position: relative; }
+  #remake_history main > p select {
+    background-color: white;
+    border: thin solid #B5C76A;
+    border-radius: 4px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 10px 100px 10px 20px;
+    /* reset */
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    content: "";
+    width: 65%;
+    height: 60%;
+    right: 1em;
+    top: 30px;
+    position: absolute;
+    background-image: linear-gradient(to bottom left, #B5C76A 30%, transparent 40%), linear-gradient(to bottom right, #B5C76A 30%, transparent 40%), linear-gradient(to right, #f1ffb8, #f1ffb8);
+    background-position: calc(100% - 48px) calc(1em + 2px), calc(100% - 18px) calc(1em + 2px), 100% 0;
+    background-size: 30px 30px, 30px 26px, 100px 100px;
+    background-repeat: no-repeat; }
+
+#setting_change main > div {
+  background: #B5C76A;
+  text-align: center;
+  padding: 20px 10px; }
+  #setting_change main > div p {
+    color: #FFF;
+    font-weight: bold;
+    font-size: 40px; }
+
+#setting_change main section table {
+  width: 80%;
+  margin: 30px auto;
+  background: #FFF; }
+  #setting_change main section table * {
+    font-size: 35px; }
+  #setting_change main section table tr {
+    font-size: 30px; }
+    #setting_change main section table tr th, #setting_change main section table tr td {
+      padding: 30px 20px; }
+    #setting_change main section table tr th {
+      color: #B5C76A;
+      width: 25%;
+      text-align: right; }
+    #setting_change main section table tr td {
+      background: #FFF; }
+  #setting_change main section table input {
+    border-bottom: 2px solid #B5C76A;
+    padding: 10px;
+    width: 100%; }
+  #setting_change main section table td p {
+    padding: 20px 0;
+    font-size: 20px; }
+    #setting_change main section table td p b {
+      font-size: 20px;
+      color: #B5C76A; }
+
+#setting_change main section > p a {
+  display: block;
+  background: #B5C76A;
+  color: #FFF;
+  border: 2px solid none;
+  font-size: 45px;
+  font-weight: bold;
+  width: 80%;
+  padding: 20px 0;
+  margin: 50px auto;
+  border-radius: 15px;
+  text-align: center; }
+  #setting_change main section > p a:active {
+    background: none;
+    color: #B5C76A;
+    border: 2px solid #B5C76A; }
+>>>>>>> fcc0ddc2b3f698411e15672717697b71365ce991
