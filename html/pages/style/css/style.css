@@ -45,8 +45,6 @@ footer {
           margin: 10px 0 0;
           font-weight: bold;
           color: #B5C76A; }
-<<<<<<< HEAD
-=======
 
 header {
   display: flex;
@@ -185,7 +183,7 @@ header {
       font-size: 45px;
       font-weight: bold; }
     #remake_corse main section article ul li p {
-      margin: 30px 0;
+      margin: 60px 0;
       font-size: 30px; }
       #remake_corse main section article ul li p b {
         font-size: 24px;
@@ -624,4 +622,3 @@ header {
     background: none;
     color: #B5C76A;
     border: 2px solid #B5C76A; }
->>>>>>> fcc0ddc2b3f698411e15672717697b71365ce991

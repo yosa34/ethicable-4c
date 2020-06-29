@@ -157,8 +157,6 @@
     <!-- main -->
     <main>
         <section>
-<<<<<<< HEAD
-=======
           <h1>リサイクル詳細確認</h1>
           <div>
               <p>イメージ名
@@ -225,6 +223,5 @@
               <input type="button" value="戻る">
               <input type="button" value="QRコード発行">
           </div>
->>>>>>> fcc0ddc2b3f698411e15672717697b71365ce991
         </section>
     </main>
