@@ -45,7 +45,6 @@
               <label class=qrcode-text-btn for="file_upload">
 
                 <input type="button" onclick="qrclick()" value="カメラを起動する">
-                <!-- 隠す -->
                 <input id="file_upload" type=file accept="image/*" capture=environment onclick="return showQRIntro();" onchange="openQRCamera(this);" tabindex=-1>
               
               </label>
