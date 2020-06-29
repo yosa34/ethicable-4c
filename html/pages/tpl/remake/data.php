@@ -6,6 +6,8 @@
     */
 ?>
 
+<script type="text/javascript" src="./js/remake_data.js"></script>
+
 <!-- REMAKE HOME画面 -->
 <title>ethicable｜REMAKE｜読み取りデータの確認</title>
 
@@ -20,28 +22,29 @@
             <h1>読み取りデータの確認</h1>
             <div>
                 <p>
-                    <img src="./image/product/414443.jpg" alt="商品画像">
+                    <img src="./image/product/<?php  echo($_GET['product_id']); ?>.jpg" alt="商品画像">
                 </p>
-                <p>商品ID:000000</p>
-                <h2>商品名</h2>
+                <p id='product_id'></p>
+                <h2 id='product_name'></h2>
                 <table>
                     <tr>
                         <th>カラー:</th>
-                        <td>aaa</td>
+                        <td id='color_name'></td>
                     </tr>
                     <tr>
                         <th>サイズ:</th>
-                        <td>bbb</td>
+                        <td id='size_name'></td>
                     </tr>
                     <tr>
                         <th>部門:</th>
-                        <td>ccc</td>
+                        <td id='department_name'></td>
+                        <!-- <td id='category_name'></td> -->
                     </tr>
                 </table>
             </div>
             <div>
-                <input type="button" value="戻る">
-                <input type="button" value="リメイク開始">
+                <input type="button" value="戻る">
+                <input type="button" onclick="remake_select()" value="リメイク開始">
             </div>
         </section>
     </main>

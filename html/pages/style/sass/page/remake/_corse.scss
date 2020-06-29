@@ -28,13 +28,12 @@
                             background: rgba(0, 0, 0, 0.300);
                         }
 
-
                         h2{
                             font-size: 45px;
                             font-weight: bold;
                         }
                         p{
-                            margin: 30px 0;
+                            margin: 60px 0;
                             font-size: 30px;
                             b{
                                 font-size: 24px;
@@ -51,6 +50,12 @@
             }
             input[type="button"]{
                 @include input_button(20px,$main_color,$botton_color,none);
+            }
+            #file_upload{
+                display:none;
+            }
+            .qrcode-text{
+                display:none;
             }
         }
     }

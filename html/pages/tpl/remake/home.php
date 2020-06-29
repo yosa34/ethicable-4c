@@ -69,5 +69,3 @@
         <section>
         </section>
     </main>
-
-
