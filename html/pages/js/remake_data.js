@@ -20,7 +20,6 @@
         let allCities = citiesRef.get().then(snapshot => {
             snapshot.forEach(doc => {
               const data = doc.data()
-              console.log(data);
 
               //商品IDの出力
               var elem = document.getElementById("product_id");
