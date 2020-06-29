@@ -1,20 +1,22 @@
 firebase.auth().onAuthStateChanged(function(user) {
 
-    //住所が入力されていなかった時、ボタンを押せないように設定
-    let citiesRef = db.collection('user').where("address", "==", null);
-      let allCities = citiesRef.get().then(snapshot => {
+    // ログイン状態のユーザー情報を取得する
+    let citiesRef = db.collection('user').where("user_id", "==", user.uid);
+    let allCities = citiesRef.get().then(snapshot => {
           snapshot.forEach(doc => {
             const data = doc.data()
-            //liを取得しid（none_click）を付与する
-            var list = document.getElementById("corse_list");
-            dokidoki_corse = list.children[1];
-            dokidoki_corse.id = 'none_click';
-  
-            // 選択できない時のコース情報の文字の代入
-            dokidoki_corse.innerHTML = 
+            //住所が入力されていなかった時、ボタンを押せないように設定
+              if (data.address == null) {
+                //liを取得しid（none_click）を付与する
+                var list = document.getElementById("corse_list");
+                dokidoki_corse = list.children[1];
+                dokidoki_corse.id = 'none_click';    
+                // 選択できない時のコース情報の文字の代入
+                dokidoki_corse.innerHTML = 
                 "<h2>ドキドキコース</h2>"+
                 "<p>「クレジット情報」または「住所情報」が入力されていないのでこのコースを選択することはできません。</br>"+
                 "<b><a href='#'>マイページへ移動</a></b></p>";
+                }
             });
         })
         .catch(err => {
@@ -30,7 +32,10 @@ firebase.auth().onAuthStateChanged(function(user) {
     // クリックされたコースにstyleを振りアクティブにさせる。
       $('#corse_list li').click(function(){
           //削除
-          $('#corse_list li').removeAttr('id');
+        //   $('#corse_list li').removeAttr('id');
+          var elm = document.getElementById("active");
+          elm.removeAttribute("id");
+        //   $('p').removeId('id');
           //styleを振る
           $(this).attr('id', 'active');
        });
