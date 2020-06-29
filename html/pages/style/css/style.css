@@ -45,6 +45,8 @@ footer {
           margin: 10px 0 0;
           font-weight: bold;
           color: #B5C76A; }
+<<<<<<< HEAD
+=======
 
 header {
   display: flex;
@@ -622,3 +624,4 @@ header {
     background: none;
     color: #B5C76A;
     border: 2px solid #B5C76A; }
+>>>>>>> fcc0ddc2b3f698411e15672717697b71365ce991

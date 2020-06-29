@@ -61,6 +61,8 @@
     <!-- main -->
     <main>
         <section>
+<<<<<<< HEAD
+=======
           <h1>リサイクルイメージ＆カラー<br>選択</h1>
 
           <ul>
@@ -118,5 +120,6 @@
               <input type="button" value="戻る">
               <input type="button" onclick="Confirmation()" value="確認">
           </div>
+>>>>>>> fcc0ddc2b3f698411e15672717697b71365ce991
         </section>
     </main>

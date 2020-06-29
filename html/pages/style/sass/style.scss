@@ -14,9 +14,14 @@
 // ページデザイン
 // @import "./page_style/ページネーム";
 
+<<<<<<< HEAD
+@import './page_style/index';
+@import './page_style/main';
+=======
 @import './base/**';
 
 @import './module/**';
 
 // page_styleの下層
 @import './page/**';
+>>>>>>> fcc0ddc2b3f698411e15672717697b71365ce991

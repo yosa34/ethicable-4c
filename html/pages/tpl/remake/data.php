@@ -127,6 +127,8 @@
     <!-- main -->
     <main>
         <section>
+<<<<<<< HEAD
+=======
             <h1>読み取りデータの確認</h1>
             <div>
                 <p>
@@ -154,5 +156,6 @@
                 <input type="button" value="戻る">
                 <input type="button" onclick="remake_select()" value="リメイク開始">
             </div>
+>>>>>>> fcc0ddc2b3f698411e15672717697b71365ce991
         </section>
     </main>
