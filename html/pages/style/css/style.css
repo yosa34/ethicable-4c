@@ -213,6 +213,9 @@ header {
     color: #B5C76A;
     border: 2px solid #B5C76A; }
 
+#remake_corse main section #file_upload {
+  display: none; }
+
 #remake_data h2 {
   font-size: 50px;
   text-align: center; }
