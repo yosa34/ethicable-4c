@@ -23,7 +23,7 @@
           <h1>コース選択</h1>
           <article>
             <ul id='corse_list'>
-              <li value="1">
+              <li value="1" id="active">
                 <h2>ワクワクコース</h2>
                 <p>
                   リサイクルする衣類を回収ボックスに入れて、<br>エコポイントを獲得することができるコースです。<br>
