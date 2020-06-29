@@ -24,8 +24,8 @@
                 <p>
                     <img src="./image/product/<?php  echo($_GET['product_id']); ?>.jpg" alt="商品画像">
                 </p>
-                <p>商品ID:000000</p>
-                <h2>商品名</h2>
+                <p id='product_id'></p>
+                <h2 id='product_name'></h2>
                 <table>
                     <tr>
                         <th>カラー:</th>

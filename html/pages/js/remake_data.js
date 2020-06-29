@@ -20,7 +20,16 @@
         let allCities = citiesRef.get().then(snapshot => {
             snapshot.forEach(doc => {
               const data = doc.data()
+              console.log(data);
 
+              //商品IDの出力
+              var elem = document.getElementById("product_id");
+              elem.innerHTML = "商品ID"+data.product_id;
+
+              //商品名の出力
+              var elem = document.getElementById("product_name");
+              elem.innerHTML = data.product_name;
+              
               //colorの取得
               db.collection("color").where("color_id", "==", data.color_id)
               .get().then(function(querySnapshot) {
@@ -28,7 +37,6 @@
                     const color = doc.data()
                     //colorの出力
                     var elem = document.getElementById("color_name");
-
                     elem.innerHTML = color.color_id+" "+color.color_name;
                   });
               })
