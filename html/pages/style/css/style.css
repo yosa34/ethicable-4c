@@ -160,6 +160,87 @@ header {
         color: #FFF;
         font-size: 30px; }
 
+#qr_detail main .pop {
+  width: 80vw;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  z-index: 9999;
+  border: 1px solid #B5C76A;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  display: none; }
+  #qr_detail main .pop > p:nth-of-type(1) {
+    font-size: 30px;
+    text-align: center;
+    width: 100%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #B5C76A;
+    color: white; }
+  #qr_detail main .pop > div > div:nth-of-type(1) {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 30px; }
+    #qr_detail main .pop > div > div:nth-of-type(1) > p {
+      margin-top: 40px; }
+  #qr_detail main .pop > div > div:nth-of-type(2) {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+    font-size: 30px; }
+    #qr_detail main .pop > div > div:nth-of-type(2) > a {
+      width: 80%;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+      margin-top: 20px;
+      justify-content: center; }
+      #qr_detail main .pop > div > div:nth-of-type(2) > a:nth-of-type(1) {
+        border: 1px solid red;
+        color: white;
+        background-color: #FF6A6A;
+        border-radius: 20px; }
+      #qr_detail main .pop > div > div:nth-of-type(2) > a:nth-of-type(2) {
+        border: 1px solid black;
+        margin-top: 40px;
+        border-radius: 20px; }
+
+#qr_detail main .pop_delete {
+  background-color: white; }
+  #qr_detail main .pop_delete > div > div > p:last-of-type {
+    margin-bottom: 250px; }
+
+#qr_detail main .qr_item_img {
+  width: 80%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 120px;
+  justify-content: center;
+  border: 1px solid black; }
+
+#qr_detail main .dark {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  background-color: black;
+  opacity: 0.4;
+  display: none; }
+
 #remake_corse main section article ul {
   width: 80%;
   margin: 0 auto; }
