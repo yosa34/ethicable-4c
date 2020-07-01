@@ -1,0 +1,53 @@
+#remake_history{
+    main{
+        >div{
+            background: $main_color;
+            text-align: center;
+            padding: 20px 10px;
+            p{
+                color: $font-color;
+                font-weight: bold;
+                font-size: 40px;
+            }
+        }
+        >p{
+            font-size: 40px;
+            padding: 50px 40px;
+            position: relative;
+            select{
+
+                background-color: white;
+                border: thin solid  $main_color;
+                border-radius: 4px;
+                display: inline-block;
+                font: inherit;
+                line-height: 1.5em;
+                padding: 10px 100px 10px 20px;
+
+                /* reset */
+                margin: 0;
+                box-sizing: border-box;
+                -webkit-appearance: none;
+                -moz-appearance: none;//矢印削除
+
+                // background
+                content:"";
+                width: 65%;
+                height: 60%;
+                right: 1em;
+                top: 30px;
+                position:absolute;
+                background-image: 
+                    linear-gradient(to bottom left, $main_color 30%, transparent 40%),
+                    linear-gradient(to bottom right, $main_color 30%, transparent 40%), linear-gradient(to right, #f1ffb8, #f1ffb8);
+                background-position:
+                calc(100% - 48px) calc(1em + 2px),
+                calc(100% - 18px) calc(1em + 2px),
+                100% 0;
+                background-size: 30px 30px, 30px 26px, 100px 100px;
+                background-repeat: no-repeat;
+
+            }
+        }
+    }
+}
