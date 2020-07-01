@@ -13,6 +13,7 @@
 
     // メイン
     main{
+     
       width: $width_main;     //100%
       margin: 0;
       padding: 0;
@@ -40,6 +41,16 @@
             font-size: 20px;
             width: 60%;
             margin: 20px auto;
+        }
+      }
+    }
+    .tree{
+      .inner {
+        width: 80%;
+        margin: 0 auto;
+        text-align: center;
+        img{
+          display: inline-block;
         }
       }
     }

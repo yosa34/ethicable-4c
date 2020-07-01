@@ -2,7 +2,7 @@
     /*
     ページ詳細：リメイクホーム画面
     作成者：小川紗世
-    編集者：2020/06/12小川紗世
+    編集者：2020/06/26 長谷川雄大
     */
 ?>
 
@@ -65,9 +65,38 @@
             </div>
             <a href="./remake_corse.php">リメイクする</a>
           </div>
+          </div>
         </section>
         <section>
         </section>
+        <div class="news">  
+          <div class="item">
+            <div class="inner">
+              <img src="./image/remake_home_news1.png">
+                <div class="inner2">
+                  <p>
+                    トレンド派もベーシック派も「着映えスカート」に注目！！
+                  </p>
+                  <h3>
+                   May 23,2020 WOMEN
+                 </h3>
+              </div>
+            </div>
+          </div>
+          <div class="item2">
+            <div class="inner">
+              <img src="./image/remake_home_news2.png">
+                <div class="inner2">
+                  <p>
+                  手間いらずで旬顔！一枚でキマる優秀ワンピース
+                  </p>
+                  <h3>
+                   May 13,2020 WOMEN
+                 </h3>
+              </div>
+            </div>
+          </div>
+        </div>
     </main>
 
 
