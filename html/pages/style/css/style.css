@@ -621,6 +621,137 @@ header {
     #order_confirmation main section:last-of-type > div table td {
       padding-left: 50px; }
 
+#settlement main {
+  margin-bottom: 200px; }
+  #settlement main h2 {
+    font-size: 70px;
+    text-align: center;
+    padding: 20px 0; }
+  #settlement main h3 {
+    font-size: 50px;
+    text-align: center;
+    padding: 30px 0; }
+  #settlement main > input[type="button"] {
+    display: block;
+    background: #B5C76A;
+    color: #FFF;
+    border: 2px solid none;
+    font-size: 45px;
+    font-weight: bold;
+    width: 80%;
+    padding: 20px 0;
+    margin: 50px auto;
+    border-radius: 15px;
+    text-align: center; }
+    #settlement main > input[type="button"]:active {
+      background: none;
+      color: #B5C76A;
+      border: 2px solid #B5C76A; }
+  #settlement main section > div {
+    width: 80%;
+    margin: 40px auto; }
+    #settlement main section > div dl {
+      padding: 20px 10px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 40px; }
+      #settlement main section > div dl dd b {
+        color: #B5C76A; }
+    #settlement main section > div > dl:first-of-type {
+      border-top: 2px solid #707070;
+      background: rgba(255, 175, 106, 0.3); }
+      #settlement main section > div > dl:first-of-type dd b {
+        font-size: 70px;
+        padding-right: 10px; }
+  #settlement main section:nth-of-type(2) {
+    background: #F5F5F5;
+    padding: 20px 0; }
+    #settlement main section:nth-of-type(2) > div {
+      border: 1px solid #707070;
+      background: #fff;
+      padding: 20px; }
+      #settlement main section:nth-of-type(2) > div > div:nth-child(1) {
+        display: flex;
+        justify-content: space-between;
+        font-size: 40px; }
+        #settlement main section:nth-of-type(2) > div > div:nth-child(1) input[type="button"] {
+          padding: 5px 50px;
+          font-size: 30px;
+          border: 1px solid #707070;
+          border-radius: 10px;
+          background: #F5F5F5; }
+          #settlement main section:nth-of-type(2) > div > div:nth-child(1) input[type="button"]:active {
+            background: #707070;
+            color: #fff; }
+      #settlement main section:nth-of-type(2) > div > div:nth-child(2) dl {
+        font-size: 30px;
+        padding: 20px 10px; }
+        #settlement main section:nth-of-type(2) > div > div:nth-child(2) dl dt {
+          width: 60%; }
+        #settlement main section:nth-of-type(2) > div > div:nth-child(2) dl:nth-child(1) {
+          border-bottom: 1px solid #707070; }
+        #settlement main section:nth-of-type(2) > div > div:nth-child(2) dl input[type="number"],
+        #settlement main section:nth-of-type(2) > div > div:nth-child(2) dl input[type="text"] {
+          width: 100%;
+          font-size: 40px;
+          text-align: right;
+          padding-right: 20px;
+          border-bottom: 1px solid #B5C76A;
+          color: #B5C76A; }
+      #settlement main section:nth-of-type(2) > div:nth-child(4) div > dl dt, #settlement main section:nth-of-type(2) > div:nth-child(3) div > dl dt {
+        text-align: right;
+        width: 30%; }
+      #settlement main section:nth-of-type(2) > div:nth-child(4) div > dl dd, #settlement main section:nth-of-type(2) > div:nth-child(3) div > dl dd {
+        width: 65%;
+        text-align: left; }
+        #settlement main section:nth-of-type(2) > div:nth-child(4) div > dl dd input[type="number"],
+        #settlement main section:nth-of-type(2) > div:nth-child(4) div > dl dd input[type="text"], #settlement main section:nth-of-type(2) > div:nth-child(3) div > dl dd input[type="number"],
+        #settlement main section:nth-of-type(2) > div:nth-child(3) div > dl dd input[type="text"] {
+          text-align: left;
+          color: #707070;
+          padding-bottom: 10px;
+          margin-bottom: 10px; }
+  #settlement main section:nth-of-type(3) ul {
+    width: 80%;
+    margin: 0 auto; }
+    #settlement main section:nth-of-type(3) ul li {
+      position: relative;
+      display: flex;
+      padding: 30px;
+      border-bottom: 1px solid #707070; }
+      #settlement main section:nth-of-type(3) ul li > p {
+        width: 30%; }
+        #settlement main section:nth-of-type(3) ul li > p img {
+          width: 100%; }
+      #settlement main section:nth-of-type(3) ul li > div {
+        width: 70%; }
+        #settlement main section:nth-of-type(3) ul li > div dl {
+          display: flex;
+          font-size: 30px;
+          align-items: center; }
+          #settlement main section:nth-of-type(3) ul li > div dl dt {
+            width: 55%;
+            text-align: right; }
+          #settlement main section:nth-of-type(3) ul li > div dl dd {
+            width: 45%;
+            display: flex;
+            padding: 10px 0; }
+            #settlement main section:nth-of-type(3) ul li > div dl dd img {
+              width: 70px; }
+            #settlement main section:nth-of-type(3) ul li > div dl dd span {
+              width: 70px;
+              height: 70px;
+              display: inline-block; }
+            #settlement main section:nth-of-type(3) ul li > div dl dd p {
+              line-height: 70px;
+              padding-left: 20px; }
+        #settlement main section:nth-of-type(3) ul li > div > p {
+          text-align: right;
+          font-size: 40px;
+          position: absolute;
+          bottom: 30px;
+          right: 30px; }
+
 #mypage {
   background: #F5F5F5; }
   #mypage main section:first-of-type {

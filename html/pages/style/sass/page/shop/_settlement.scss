@@ -1,3 +1,175 @@
-#cart_settlement{
+#settlement{
+    main{
+        margin-bottom: 200px;
+        h2{
+            font-size: 70px;
+            text-align: center;
+            padding: 20px 0;
+        }
+        h3{
+            font-size: 50px;
+            text-align: center;
+            padding: 30px 0;
+        }
+        >input[type="button"]{
+            @include input_button(20px,$main_color,$botton_color,none);
+        }
+        section{
+            >div{
+                width: 80%;
+                margin: 40px auto;
+                //　決済金額
+                dl{
+                    padding: 20px 10px;
+                    display: flex;
+                    justify-content: space-between;
+                    font-size: 40px;
+                    dd{
+                        b{
+                            color: $main_color;
+                        }
+                    }
+                }
 
+                >dl{
+                    &:first-of-type{
+                        border-top: 2px solid $header_border_color;
+                        background: rgba(255,175,106,0.3);
+                        dd{
+                            b{
+                                font-size: 70px;
+                                padding-right: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+            &:nth-of-type(2){
+                background: $background_color_sub;
+                padding: 20px 0;
+                >div{
+                    border: 1px solid $header_border_color;
+                    background: #fff;
+                    padding: 20px;
+                    >div{
+                        &:nth-child(1){
+                            display: flex;
+                            justify-content: space-between;
+                            font-size: 40px;
+                            input[type="button"]{
+                                padding: 5px 50px;
+                                font-size: 30px;
+                                border: 1px solid $header_border_color;
+                                border-radius: 10px;
+                                background: $background_color_sub;
+                                &:active{
+                                    background: $header_border_color;
+                                    color: #fff;
+                                }
+                            }
+                        }
+                        &:nth-child(2){
+                            dl{
+                                font-size: 30px;
+                                padding: 20px 10px;
+                                dt{
+                                    width: 60%;
+                                }
+                                &:nth-child(1){
+                                    border-bottom: 1px solid $header_border_color;
+                                }
+                                input[type="number"],
+                                input[type="text"]{
+                                    width: 100%;
+                                    font-size: 40px;
+                                    text-align: right;
+                                    padding-right: 20px;
+                                    border-bottom: 1px solid $main_color;
+                                    color: $main_color;
+                                }
+                            }
+                        }
+                    }
+                    // 発送先
+                    &:nth-child(4),
+                    &:nth-child(3){
+                        div{
+                            >dl{
+                                dt{
+                                    text-align: right;
+                                    width: 30%;
+                                }
+                                dd{
+                                    width: 65%;
+                                    text-align: left;
+
+                                    input[type="number"],
+                                    input[type="text"]{
+                                        text-align: left;
+                                        color: $header_border_color;
+                                        padding-bottom: 10px;
+                                        margin-bottom: 10px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &:nth-of-type(3){
+                ul{
+                    width: 80%;
+                    margin: 0 auto;
+                    li{
+                        position: relative;
+                        display: flex;
+                        padding: 30px;
+                        border-bottom: 1px solid $header_border_color;
+                        >p{
+                            width: 30%;
+                            img{
+                                width: 100%;
+                            }
+                        }
+                        >div{
+                            width: 70%;
+                            dl{
+                                display: flex;
+                                font-size: 30px;
+                                align-items: center;
+                                dt{
+                                    width: 55%;
+                                    text-align: right;
+                                }
+                                dd{
+                                    width: 45%;
+                                    display: flex;
+                                    padding: 10px 0;
+                                    img{
+                                        width: 70px;
+                                    }
+                                    span{
+                                        width: 70px;
+                                        height: 70px;
+                                        display: inline-block;
+                                    }
+                                    p{
+                                        line-height: 70px;
+                                        padding-left: 20px;
+                                    }
+                                }
+                            }
+                            >p{
+                                text-align: right;
+                                font-size: 40px;
+                                position: absolute;
+                                bottom: 30px;
+                                right: 30px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
