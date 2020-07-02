@@ -752,6 +752,96 @@ header {
           bottom: 30px;
           right: 30px; }
 
+#cart main > input[type="button"] {
+  display: block;
+  background: #B5C76A;
+  color: #FFF;
+  border: 2px solid none;
+  font-size: 45px;
+  font-weight: bold;
+  width: 80%;
+  padding: 20px 0;
+  margin: 50px auto;
+  border-radius: 15px;
+  text-align: center; }
+  #cart main > input[type="button"]:active {
+    background: none;
+    color: #B5C76A;
+    border: 2px solid #B5C76A; }
+
+#cart main section ul {
+  width: 80%;
+  margin: 0 auto; }
+  #cart main section ul li {
+    position: relative;
+    display: flex;
+    padding: 30px;
+    border-bottom: 1px solid #707070; }
+    #cart main section ul li > p {
+      width: 30%; }
+      #cart main section ul li > p img {
+        width: 100%; }
+    #cart main section ul li > div {
+      width: 70%; }
+      #cart main section ul li > div dl {
+        display: flex;
+        font-size: 30px;
+        align-items: center; }
+        #cart main section ul li > div dl dt {
+          width: 55%;
+          text-align: right; }
+        #cart main section ul li > div dl dd {
+          width: 45%;
+          display: flex;
+          padding: 10px 0; }
+          #cart main section ul li > div dl dd img {
+            width: 70px; }
+          #cart main section ul li > div dl dd span {
+            width: 70px;
+            height: 70px;
+            display: inline-block; }
+          #cart main section ul li > div dl dd p {
+            line-height: 70px;
+            padding-left: 20px; }
+      #cart main section ul li > div > p:nth-of-type(1) {
+        font-size: 40px;
+        padding-left: 35px; }
+      #cart main section ul li > div > p:nth-of-type(2) {
+        text-align: right;
+        font-size: 30px;
+        color: #5FB0E2;
+        position: absolute;
+        bottom: 30px;
+        right: 30px; }
+
+#cart main section > div {
+  width: 80%;
+  margin: 0 auto; }
+  #cart main section > div dl {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 40px 20px;
+    font-size: 50px; }
+    #cart main section > div dl dt span {
+      font-size: 30px; }
+
+#cart main section > dl {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 50px auto;
+  font-size: 40px; }
+  #cart main section > dl dd {
+    color: #B5C76A; }
+
+#cart main > p {
+  font-size: 50px;
+  text-align: center;
+  margin-top: 100px; }
+  #cart main > p b {
+    font-size: 70px;
+    color: #B5C76A; }
+
 #mypage {
   background: #F5F5F5; }
   #mypage main section:first-of-type {
