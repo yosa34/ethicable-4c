@@ -12,7 +12,7 @@
 <title>ethicable｜SHOP｜カート｜注文履歴</title>
 
 </head>
-  <body id="cart_order_confirmation">
+  <body id="order_confirmation">
     <!-- header -->
     <?php include "./tpl/header.html"; ?>
 

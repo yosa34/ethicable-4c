@@ -1,3 +1,15 @@
 #order_completed{
-    
+    section{
+        width: 80%;
+        margin: 0 auto;
+        p{
+            text-align: center;
+            font-size: 50px;
+            margin: 70px 0;
+            color: $header_border_color;
+        }
+        a{
+            @include input_button(30px,$main_color,$botton_color,none);
+        }
+    }
 }

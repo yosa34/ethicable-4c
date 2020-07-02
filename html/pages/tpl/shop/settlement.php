@@ -12,7 +12,7 @@
 <title>ethicable｜SHOP｜カート｜購入手続き</title>
 
 </head>
-  <body id="cart_settlement">
+  <body id="settlement">
     <!-- header -->
     <?php include "./tpl/header.html"; ?>
 
