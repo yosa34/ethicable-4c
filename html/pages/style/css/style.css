@@ -283,6 +283,15 @@ header {
       text-align: right; }
     #remake_data main section div table tr td {
       background: #FFF; }
+  #remake_data main section div table tr > td {
+    line-height: 60px; }
+  #remake_data main section div table #color_name {
+    display: flex; }
+    #remake_data main section div table #color_name span {
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      margin-right: 15px; }
 
 #remake_data main section div:last-of-type {
   display: flex;
