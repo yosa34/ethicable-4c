@@ -34,38 +34,38 @@
 
   <body id="login">
     <main>
-        <section>
-          <h1>ethicable</h1>
-          <!-- Googleアカウントを持っていない人用のログインフォーム-->
-          <div>
-            <p>
-              <img src="./image/icon/icon_mail.png" alt="メールアドレス">
-              <input type="email" name="email" id="email" >
-            </p>
-            <p>
-                <img src="./image/icon/icon_key.png" alt="ユーザーパスワード">
-                <input type="password" name="password" id="password" >
-            </p>
-            <a href="javascript:void(0)" onClick="email_login()">ログイン</a>
-          </div>
+      <section>
+        <h1>ethicable</h1>
+        <!-- Googleアカウントを持っていない人用のログインフォーム-->
+        <div>
+          <p>
+            <img src="./image/icon/icon_mail.png" alt="メールアドレス">
+            <input type="email" name="email" id="email" placeholder="Address">
+          </p>
+          <p>
+              <img src="./image/icon/icon_key.png" alt="ユーザーパスワード">
+              <input type="password" name="password" id="password" placeholder="Password">
+          </p>
+          <a href="javascript:void(0)" onClick="email_login()">ログイン</a>
+        </div>
 
+        <div>
+          <p>
+            <!-- 新規登録ボタン設置場所 -->
+            <a href="#">新規登録する方はこちら</a>
+          </p>
+          <p>または</p>
+            <!-- Googleサインインボタン設置場所 -->
+            <button type="submit" onClick="google_login()"><img src="./image/button/google_login.png" alt="" srcset=""></button>
+        </div>
+      </section>
+      <section>
           <div>
-            <p>
-              <!-- 新規登録ボタン設置場所 -->
-              <a href="#">新規登録する方はこちら</a>
-            </p>
-            <p>または</p>
-            <p>
-              <!-- Googleサインインボタン設置場所 -->
-              <button type="submit" onClick="google_login()">Sign in with Google Sample</button>
-            </p>
-          </div>
-        </section>
+              <div>
+                <img src="./image/icon/icon_tree.png" alt="木">
+              </div>
+            </div>
+      </section>
     </main>
-    <div class="tree"> 
-      <div class="inner">
-        <img src="./image/icon/icon_tree.png" alt="下部画像">
-      </div>
-   </div>
   </body>
 </html>

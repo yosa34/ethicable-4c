@@ -20,37 +20,77 @@
       section{
         background: $main_color;
         width: $width_main;
-        padding: 10px 0 30px;
-      }
-      div:nth-of-type(1){
-        margin: 0 auto;
-
-        p{
-            display: flex;
-            width: 200px;
-            margin: 20px auto;
-            border-bottom: 2px solid $border_color;
-            padding: 2px 10px;
-            img{
-                height: 100%;
+        padding: 40px 0;
+        &:last-of-type{
+          position: absolute;
+          bottom: 0;
+          background: none;
+          padding: 0;
+          div{
+            div{
+              width: 80%;
+              margin: 0 auto;
+              text-align: center;
+              img{
+                display: inline-block;
+              }
             }
-        }
-        a{
-            @include input_button(10px,$background_color_main,$border_color_sub,$border_color_sub);
-            border-width: 4px;
-            font-size: 20px;
-            width: 60%;
-            margin: 20px auto;
+          }
+      
         }
       }
-    }
-    .tree{
-      .inner {
-        width: 80%;
-        margin: 0 auto;
-        text-align: center;
-        img{
-          display: inline-block;
+      div{
+        &:nth-of-type(1){
+          margin: 0 auto;
+  
+          p{
+              display: flex;
+              width: 200px;
+              margin: 20px auto;
+              border-bottom: 2px solid $border_color;
+              padding: 2px 10px;
+          }
+          input{
+            color: #fff;
+            padding: 0 5px;
+            background: none;
+            &::placeholder {
+              color: #fff;
+            }
+          }
+          a{
+              @include input_button(10px,$background_color_main,$border_color_sub,$border_color_sub);
+              border-width: 4px;
+              font-size: 20px;
+              width: 60%;
+              margin: 20px auto;
+          }
+        }
+        &:nth-of-type(2){
+          p{
+            color: #fff;
+            margin: 10px 0;
+            text-align: center;
+            a{
+              color: #fff;
+              text-decoration: underline;
+            }
+          }
+          button{
+            width: 60%;
+            height: 50px;
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            padding: 0;
+            appearance: none;
+            img{
+              width: 100%;
+              margin: 0 auto;
+              height: 100%;
+            }
+          }
         }
       }
     }
