@@ -1,3 +1,79 @@
 #order_confirmation{
-    
+    main{
+        input[type="button"]{
+            @include input_button(20px,$main_color,$botton_color,none);
+        }
+        section{
+            >div{
+                width: 80%;
+                margin: 40px auto;
+                //　決済金額
+                &:nth-child(1){
+                    dl{
+                        padding: 20px 10px;
+                        display: flex;
+                        justify-content: space-between;
+                        font-size: 40px;
+                        dd{
+                            b{
+                                color: $main_color;
+                            }
+                        }
+                    }
+                    div{
+
+                    }
+                    >dl{
+                        &:first-of-type{
+                            border-top: 2px solid $header_border_color;
+                            background: rgba(255,175,106,0.3);
+                            dd{
+                                b{
+                                    font-size: 70px;
+                                    padding-right: 10px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            &:last-of-type{
+                //　支払い方法と発送先
+                >div{
+                    border: 1px solid $header_border_color;
+                    div{
+                        &:nth-child(1){
+                            padding: 30px;
+                            width: 100%;
+                            border-bottom: 1px solid $header_border_color;
+                            // background: $main_color;
+                            // color: #fff;
+                            p{
+                                font-size: 30px;
+                            }
+                        }
+                        &:nth-child(2){
+                            padding: 20px 0;
+                        }
+                    }
+                    table{
+                        width: 100%;
+                        font-size: 30px;
+                        tr{
+                            >*{
+                                padding: 10px 0;
+                            }
+                        }
+                        th{
+                            width: 30%;
+                            text-align: right;
+                        }
+                        td{
+                            padding-left: 50px;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
