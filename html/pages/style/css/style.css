@@ -272,8 +272,7 @@ header {
     #qr_detail main .qr_item_img > div:nth-of-type(1) > img {
       height: 200px; }
   #qr_detail main .qr_item_img > div > p:last-of-type {
-    font-size: 35px;
-    color: red; }
+    font-size: 35px; }
   #qr_detail main .qr_item_img > div:nth-of-type(2) {
     width: calc(100% - 250px);
     font-size: 30px; }
@@ -446,27 +445,70 @@ header {
     color: #B5C76A;
     border: 2px solid #B5C76A; }
 
-#remake_datails main section div table {
+#remake_datails main .dokidoki_select {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  height: 400px; }
+  #remake_datails main .dokidoki_select > div {
+    width: 350px;
+    height: 350px;
+    border-radius: 20;
+    margin: 0 auto; }
+    #remake_datails main .dokidoki_select > div > p {
+      font-size: 40px;
+      text-align: center; }
+    #remake_datails main .dokidoki_select > div > div {
+      margin: 30px auto;
+      margin-top: 30px;
+      width: 300px;
+      height: 300px;
+      border: 1px solid black;
+      border-radius: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      #remake_datails main .dokidoki_select > div > div > img {
+        width: 250px;
+        height: 250px; }
+
+#remake_datails main > section > div table {
   width: 80%;
   margin: 30px auto;
   background: #B5C76A; }
-  #remake_datails main section div table tr {
+  #remake_datails main > section > div table tr {
     font-size: 30px; }
-    #remake_datails main section div table tr th, #remake_datails main section div table tr td {
+    #remake_datails main > section > div table tr th, #remake_datails main > section > div table tr td {
       padding: 30px 20px; }
-    #remake_datails main section div table tr th {
+    #remake_datails main > section > div table tr th {
       color: #FFF;
       width: 25%;
       text-align: right; }
-    #remake_datails main section div table tr td {
+    #remake_datails main > section > div table tr td {
       background: #FFF; }
+  #remake_datails main > section > div table span {
+    display: block;
+    font-weight: bold;
+    font-size: 35px;
+    margin-bottom: 20px; }
+  #remake_datails main > section > div table #color_name > p {
+    display: flex;
+    width: 250px;
+    height: 250px;
+    border-radius: 40px;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    color: white; }
+  #remake_datails main > section > div table #product_explanation > p {
+    line-height: 45px; }
 
-#remake_datails main section div:last-of-type {
+#remake_datails main > section > div:last-of-type {
   display: flex;
   width: 80%;
   margin: 0 auto; }
 
-#remake_datails main section div > input[type="button"]:first-of-type {
+#remake_datails main > section > div > input[type="button"]:first-of-type {
   display: block;
   background: #F5F5F5;
   color: #707070;
@@ -479,12 +521,12 @@ header {
   border-radius: 15px;
   text-align: center;
   margin-right: 10px; }
-  #remake_datails main section div > input[type="button"]:first-of-type:active {
+  #remake_datails main > section > div > input[type="button"]:first-of-type:active {
     background: #707070;
     color: #F5F5F5;
     border: 2px solid #F5F5F5; }
 
-#remake_datails main section div > input[type="button"]:last-of-type {
+#remake_datails main > section > div > input[type="button"]:last-of-type {
   display: block;
   background: #B5C76A;
   color: #FFF;
@@ -497,7 +539,7 @@ header {
   border-radius: 15px;
   text-align: center;
   margin-left: 10px; }
-  #remake_datails main section div > input[type="button"]:last-of-type:active {
+  #remake_datails main > section > div > input[type="button"]:last-of-type:active {
     background: none;
     color: #B5C76A;
     border: 2px solid #B5C76A; }
