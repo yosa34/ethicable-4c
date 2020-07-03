@@ -8,7 +8,7 @@
 //==================================
 
 include "./tpl/head.php";
-include "./tpl/mypage.php";
+include "./tpl/user/mypage.php";
 include "./tpl/footer.html";
 
 //==================================

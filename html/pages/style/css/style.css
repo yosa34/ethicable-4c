@@ -13,7 +13,8 @@ footer {
   bottom: 5px;
   left: 0;
   right: 0;
-  border-top: 2px solid #B5C76A; }
+  border-top: 2px solid #B5C76A;
+  background: #FFF; }
   footer ul {
     width: 100%;
     height: 170px;
@@ -89,7 +90,18 @@ header {
     #login main section {
       background: #B5C76A;
       width: 100%;
-      padding: 10px 0 30px; }
+      padding: 40px 0; }
+      #login main section:last-of-type {
+        position: absolute;
+        bottom: 0;
+        background: none;
+        padding: 0; }
+        #login main section:last-of-type div div {
+          width: 80%;
+          margin: 0 auto;
+          text-align: center; }
+          #login main section:last-of-type div div img {
+            display: inline-block; }
     #login main div:nth-of-type(1) {
       margin: 0 auto; }
       #login main div:nth-of-type(1) p {
@@ -98,8 +110,12 @@ header {
         margin: 20px auto;
         border-bottom: 2px solid #FFF;
         padding: 2px 10px; }
-        #login main div:nth-of-type(1) p img {
-          height: 100%; }
+      #login main div:nth-of-type(1) input {
+        color: #fff;
+        padding: 0 5px;
+        background: none; }
+        #login main div:nth-of-type(1) input::placeholder {
+          color: #fff; }
       #login main div:nth-of-type(1) a {
         display: block;
         background: #FFF;
@@ -116,6 +132,179 @@ header {
         font-size: 20px;
         width: 60%;
         margin: 20px auto; }
+        #login main div:nth-of-type(1) a:active {
+          background: #B5C76A;
+          color: #FFF;
+          border: 2px solid #FFF; }
+    #login main div:nth-of-type(2) p {
+      color: #fff;
+      margin: 10px 0;
+      text-align: center; }
+      #login main div:nth-of-type(2) p a {
+        color: #fff;
+        text-decoration: underline; }
+    #login main div:nth-of-type(2) button {
+      width: 60%;
+      height: 50px;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+      outline: none;
+      padding: 0;
+      appearance: none; }
+      #login main div:nth-of-type(2) button img {
+        width: 100%;
+        margin: 0 auto;
+        height: 100%; }
+
+#qr_detail main > p {
+  font-size: 30px;
+  padding: 20px 30px 100px; }
+
+#qr_detail main section {
+  width: 80%;
+  margin: 0 auto; }
+  #qr_detail main section > p {
+    text-align: center;
+    font-size: 38px; }
+    #qr_detail main section > p b {
+      line-height: 3;
+      font-size: 30px; }
+  #qr_detail main section div:first-of-type {
+    width: 90%;
+    margin: 25px auto 200px;
+    height: 600px;
+    background: #FFF;
+    border: 2px solid #707070;
+    border-radius: 20px; }
+  #qr_detail main section div:last-of-type {
+    width: 80%;
+    margin: 20px auto;
+    position: absolute;
+    bottom: 300px;
+    left: 0;
+    right: 0;
+    background: #969696;
+    border: 2px solid #707070; }
+    #qr_detail main section div:last-of-type p {
+      text-align: center;
+      color: #FFF;
+      padding: 15px 0;
+      font-size: 39px; }
+      #qr_detail main section div:last-of-type p b {
+        color: #FFF;
+        font-size: 30px; }
+
+#qr_detail main .pop {
+  width: 90vw;
+  margin: 0 auto;
+  position: absolute;
+  top: 0;
+  z-index: 9999;
+  border: 1px solid #B5C76A;
+  background-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  display: none; }
+  #qr_detail main .pop > p:nth-of-type(1) {
+    font-size: 40px;
+    text-align: center;
+    width: 100%;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #B5C76A;
+    color: white; }
+  #qr_detail main .pop > div > div:nth-of-type(2) {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 30px; }
+    #qr_detail main .pop > div > div:nth-of-type(2) > p {
+      margin-top: 40px; }
+  #qr_detail main .pop > div > div:nth-of-type(3) {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    text-align: center;
+    font-size: 30px; }
+    #qr_detail main .pop > div > div:nth-of-type(3) > a {
+      width: 80%;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      margin: 0 auto;
+      margin-top: 20px;
+      justify-content: center; }
+      #qr_detail main .pop > div > div:nth-of-type(3) > a:nth-of-type(1) {
+        border: 1px solid red;
+        color: white;
+        background-color: #FF6A6A;
+        border-radius: 20px; }
+      #qr_detail main .pop > div > div:nth-of-type(3) > a:nth-of-type(2) {
+        border: 1px solid black;
+        margin-top: 40px;
+        border-radius: 20px; }
+
+#qr_detail main .pop_delete {
+  background-color: white; }
+  #qr_detail main .pop_delete > div > div > p:last-of-type {
+    margin-bottom: 250px; }
+
+#qr_detail main .qr_item_img {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 120px;
+  justify-content: center;
+  border: 1px solid black; }
+  #qr_detail main .qr_item_img > div:nth-of-type(1) {
+    width: 250px;
+    padding: 20px; }
+    #qr_detail main .qr_item_img > div:nth-of-type(1) > img {
+      height: 200px; }
+  #qr_detail main .qr_item_img > div > p:last-of-type {
+    font-size: 35px;
+    color: red; }
+  #qr_detail main .qr_item_img > div:nth-of-type(2) {
+    width: calc(100% - 250px);
+    font-size: 30px; }
+    #qr_detail main .qr_item_img > div:nth-of-type(2) > div {
+      width: auto;
+      display: flex; }
+      #qr_detail main .qr_item_img > div:nth-of-type(2) > div:nth-of-type(1) {
+        margin-top: 20px;
+        font-size: 25px; }
+        #qr_detail main .qr_item_img > div:nth-of-type(2) > div:nth-of-type(1) > p {
+          width: 50%;
+          text-align: left; }
+      #qr_detail main .qr_item_img > div:nth-of-type(2) > div:nth-of-type(2) {
+        margin-top: 20px; }
+        #qr_detail main .qr_item_img > div:nth-of-type(2) > div:nth-of-type(2) > div {
+          width: 83px;
+          height: 83px; }
+        #qr_detail main .qr_item_img > div:nth-of-type(2) > div:nth-of-type(2) > p {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 50%;
+          text-align: left; }
+
+#qr_detail main .dark {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  width: 100vw;
+  background-color: black;
+  opacity: 0.4;
+  display: none; }
 
 #remake_corse main section article ul {
   width: 80%;
@@ -140,7 +329,7 @@ header {
       font-size: 45px;
       font-weight: bold; }
     #remake_corse main section article ul li p {
-      margin: 30px 0;
+      margin: 60px 0;
       font-size: 30px; }
       #remake_corse main section article ul li p b {
         font-size: 24px;
@@ -163,6 +352,16 @@ header {
   margin: 50px auto;
   border-radius: 15px;
   text-align: center; }
+  #remake_corse main section input[type="button"]:active {
+    background: none;
+    color: #B5C76A;
+    border: 2px solid #B5C76A; }
+
+#remake_corse main section #file_upload {
+  display: none; }
+
+#remake_corse main section .qrcode-text {
+  display: none; }
 
 #remake_data h2 {
   font-size: 50px;
@@ -195,6 +394,15 @@ header {
       text-align: right; }
     #remake_data main section div table tr td {
       background: #FFF; }
+  #remake_data main section div table tr > td {
+    line-height: 60px; }
+  #remake_data main section div table #color_name {
+    display: flex; }
+    #remake_data main section div table #color_name span {
+      width: 50px;
+      height: 50px;
+      display: inline-block;
+      margin-right: 15px; }
 
 #remake_data main section div:last-of-type {
   display: flex;
@@ -218,6 +426,10 @@ header {
   border-radius: 15px;
   text-align: center;
   margin-right: 10px; }
+  #remake_data main section div > input[type="button"]:first-of-type:active {
+    background: #707070;
+    color: #F5F5F5;
+    border: 2px solid #F5F5F5; }
 
 #remake_data main section div > input[type="button"]:last-of-type {
   display: block;
@@ -232,6 +444,10 @@ header {
   border-radius: 15px;
   text-align: center;
   margin-left: 10px; }
+  #remake_data main section div > input[type="button"]:last-of-type:active {
+    background: none;
+    color: #B5C76A;
+    border: 2px solid #B5C76A; }
 
 #remake_datails main section div table {
   width: 80%;
@@ -270,6 +486,10 @@ header {
   border-radius: 15px;
   text-align: center;
   margin-right: 10px; }
+  #remake_datails main section div > input[type="button"]:first-of-type:active {
+    background: #707070;
+    color: #F5F5F5;
+    border: 2px solid #F5F5F5; }
 
 #remake_datails main section div > input[type="button"]:last-of-type {
   display: block;
@@ -284,6 +504,10 @@ header {
   border-radius: 15px;
   text-align: center;
   margin-left: 10px; }
+  #remake_datails main section div > input[type="button"]:last-of-type:active {
+    background: none;
+    color: #B5C76A;
+    border: 2px solid #B5C76A; }
 
 #remake_home main section:nth-child(1) {
   background: #F5F5F5;
@@ -311,6 +535,50 @@ header {
     width: 60%;
     padding: 30px 0;
     margin: 0 auto; }
+    #remake_home main section:nth-child(1) div > a:active {
+      border: none;
+      background: #B5C76A;
+      color: #FFF; }
+
+#remake_home main .news {
+  margin-top: 10px; }
+  #remake_home main .news .item {
+    border-top: solid 5px #ce7966;
+    border-bottom: solid 5px #ce7966;
+    padding: 10px; }
+    #remake_home main .news .item .inner {
+      display: flex;
+      height: 250px;
+      width: 100%; }
+      #remake_home main .news .item .inner img {
+        height: 250px; }
+      #remake_home main .news .item .inner .inner2 {
+        padding: 10px; }
+        #remake_home main .news .item .inner .inner2 p {
+          margin-top: 30px;
+          font-size: 35px;
+          font-weight: bold; }
+        #remake_home main .news .item .inner .inner2 h3 {
+          margin-top: 20px;
+          font-size: 20px; }
+  #remake_home main .news .item2 {
+    border-bottom: solid 5px #ce7966;
+    padding: 10px; }
+    #remake_home main .news .item2 .inner {
+      display: flex;
+      height: 250px;
+      width: 100%; }
+      #remake_home main .news .item2 .inner img {
+        height: 250px; }
+      #remake_home main .news .item2 .inner .inner2 {
+        padding: 10px; }
+        #remake_home main .news .item2 .inner .inner2 p {
+          margin-top: 30px;
+          font-size: 35px;
+          font-weight: bold; }
+        #remake_home main .news .item2 .inner .inner2 h3 {
+          margin-top: 20px;
+          font-size: 20px; }
 
 #remake_qr_add main section div {
   width: 70%;
@@ -370,6 +638,10 @@ header {
   border-radius: 15px;
   text-align: center;
   margin-right: 10px; }
+  #remake_select main section div > input[type="button"]:first-of-type:active {
+    background: #707070;
+    color: #F5F5F5;
+    border: 2px solid #F5F5F5; }
 
 #remake_select main section div > input[type="button"]:last-of-type {
   display: block;
@@ -384,3 +656,468 @@ header {
   border-radius: 15px;
   text-align: center;
   margin-left: 10px; }
+  #remake_select main section div > input[type="button"]:last-of-type:active {
+    background: none;
+    color: #B5C76A;
+    border: 2px solid #B5C76A; }
+
+#order_completed section {
+  width: 80%;
+  margin: 0 auto; }
+  #order_completed section p {
+    text-align: center;
+    font-size: 50px;
+    margin: 70px 0;
+    color: #707070; }
+  #order_completed section a {
+    display: block;
+    background: #B5C76A;
+    color: #FFF;
+    border: 2px solid none;
+    font-size: 45px;
+    font-weight: bold;
+    width: 80%;
+    padding: 30px 0;
+    margin: 50px auto;
+    border-radius: 15px;
+    text-align: center; }
+    #order_completed section a:active {
+      background: none;
+      color: #B5C76A;
+      border: 2px solid #B5C76A; }
+
+#order_confirmation main input[type="button"] {
+  display: block;
+  background: #B5C76A;
+  color: #FFF;
+  border: 2px solid none;
+  font-size: 45px;
+  font-weight: bold;
+  width: 80%;
+  padding: 20px 0;
+  margin: 50px auto;
+  border-radius: 15px;
+  text-align: center; }
+  #order_confirmation main input[type="button"]:active {
+    background: none;
+    color: #B5C76A;
+    border: 2px solid #B5C76A; }
+
+#order_confirmation main section > div {
+  width: 80%;
+  margin: 40px auto; }
+  #order_confirmation main section > div:nth-child(1) dl {
+    padding: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 40px; }
+    #order_confirmation main section > div:nth-child(1) dl dd b {
+      color: #B5C76A; }
+  #order_confirmation main section > div:nth-child(1) > dl:first-of-type {
+    border-top: 2px solid #707070;
+    background: rgba(255, 175, 106, 0.3); }
+    #order_confirmation main section > div:nth-child(1) > dl:first-of-type dd b {
+      font-size: 70px;
+      padding-right: 10px; }
+
+#order_confirmation main section:last-of-type > div {
+  border: 1px solid #707070; }
+  #order_confirmation main section:last-of-type > div div:nth-child(1) {
+    padding: 30px;
+    width: 100%;
+    border-bottom: 1px solid #707070; }
+    #order_confirmation main section:last-of-type > div div:nth-child(1) p {
+      font-size: 30px; }
+  #order_confirmation main section:last-of-type > div div:nth-child(2) {
+    padding: 20px 0; }
+  #order_confirmation main section:last-of-type > div table {
+    width: 100%;
+    font-size: 30px; }
+    #order_confirmation main section:last-of-type > div table tr > * {
+      padding: 10px 0; }
+    #order_confirmation main section:last-of-type > div table th {
+      width: 30%;
+      text-align: right; }
+    #order_confirmation main section:last-of-type > div table td {
+      padding-left: 50px; }
+
+#settlement main {
+  margin-bottom: 200px; }
+  #settlement main h2 {
+    font-size: 70px;
+    text-align: center;
+    padding: 20px 0; }
+  #settlement main h3 {
+    font-size: 50px;
+    text-align: center;
+    padding: 30px 0; }
+  #settlement main > input[type="button"] {
+    display: block;
+    background: #B5C76A;
+    color: #FFF;
+    border: 2px solid none;
+    font-size: 45px;
+    font-weight: bold;
+    width: 80%;
+    padding: 20px 0;
+    margin: 50px auto;
+    border-radius: 15px;
+    text-align: center; }
+    #settlement main > input[type="button"]:active {
+      background: none;
+      color: #B5C76A;
+      border: 2px solid #B5C76A; }
+  #settlement main section > div {
+    width: 80%;
+    margin: 40px auto; }
+    #settlement main section > div dl {
+      padding: 20px 10px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 40px; }
+      #settlement main section > div dl dd b {
+        color: #B5C76A; }
+    #settlement main section > div > dl:first-of-type {
+      border-top: 2px solid #707070;
+      background: rgba(255, 175, 106, 0.3); }
+      #settlement main section > div > dl:first-of-type dd b {
+        font-size: 70px;
+        padding-right: 10px; }
+  #settlement main section:nth-of-type(2) {
+    background: #F5F5F5;
+    padding: 20px 0; }
+    #settlement main section:nth-of-type(2) > div {
+      border: 1px solid #707070;
+      background: #fff;
+      padding: 20px; }
+      #settlement main section:nth-of-type(2) > div > div:nth-child(1) {
+        display: flex;
+        justify-content: space-between;
+        font-size: 40px; }
+        #settlement main section:nth-of-type(2) > div > div:nth-child(1) input[type="button"] {
+          padding: 5px 50px;
+          font-size: 30px;
+          border: 1px solid #707070;
+          border-radius: 10px;
+          background: #F5F5F5; }
+          #settlement main section:nth-of-type(2) > div > div:nth-child(1) input[type="button"]:active {
+            background: #707070;
+            color: #fff; }
+      #settlement main section:nth-of-type(2) > div > div:nth-child(2) dl {
+        font-size: 30px;
+        padding: 20px 10px; }
+        #settlement main section:nth-of-type(2) > div > div:nth-child(2) dl dt {
+          width: 60%; }
+        #settlement main section:nth-of-type(2) > div > div:nth-child(2) dl:nth-child(1) {
+          border-bottom: 1px solid #707070; }
+        #settlement main section:nth-of-type(2) > div > div:nth-child(2) dl input[type="number"],
+        #settlement main section:nth-of-type(2) > div > div:nth-child(2) dl input[type="text"] {
+          width: 100%;
+          font-size: 40px;
+          text-align: right;
+          padding-right: 20px;
+          border-bottom: 1px solid #B5C76A;
+          color: #B5C76A; }
+      #settlement main section:nth-of-type(2) > div:nth-child(4) div > dl dt, #settlement main section:nth-of-type(2) > div:nth-child(3) div > dl dt {
+        text-align: right;
+        width: 30%; }
+      #settlement main section:nth-of-type(2) > div:nth-child(4) div > dl dd, #settlement main section:nth-of-type(2) > div:nth-child(3) div > dl dd {
+        width: 65%;
+        text-align: left; }
+        #settlement main section:nth-of-type(2) > div:nth-child(4) div > dl dd input[type="number"],
+        #settlement main section:nth-of-type(2) > div:nth-child(4) div > dl dd input[type="text"], #settlement main section:nth-of-type(2) > div:nth-child(3) div > dl dd input[type="number"],
+        #settlement main section:nth-of-type(2) > div:nth-child(3) div > dl dd input[type="text"] {
+          text-align: left;
+          color: #707070;
+          padding-bottom: 10px;
+          margin-bottom: 10px; }
+  #settlement main section:nth-of-type(3) ul {
+    width: 80%;
+    margin: 0 auto; }
+    #settlement main section:nth-of-type(3) ul li {
+      position: relative;
+      display: flex;
+      padding: 30px;
+      border-bottom: 1px solid #707070; }
+      #settlement main section:nth-of-type(3) ul li > p {
+        width: 30%; }
+        #settlement main section:nth-of-type(3) ul li > p img {
+          width: 100%; }
+      #settlement main section:nth-of-type(3) ul li > div {
+        width: 70%; }
+        #settlement main section:nth-of-type(3) ul li > div dl {
+          display: flex;
+          font-size: 30px;
+          align-items: center; }
+          #settlement main section:nth-of-type(3) ul li > div dl dt {
+            width: 55%;
+            text-align: right; }
+          #settlement main section:nth-of-type(3) ul li > div dl dd {
+            width: 45%;
+            display: flex;
+            padding: 10px 0; }
+            #settlement main section:nth-of-type(3) ul li > div dl dd img {
+              width: 70px; }
+            #settlement main section:nth-of-type(3) ul li > div dl dd span {
+              width: 70px;
+              height: 70px;
+              display: inline-block; }
+            #settlement main section:nth-of-type(3) ul li > div dl dd p {
+              line-height: 70px;
+              padding-left: 20px; }
+        #settlement main section:nth-of-type(3) ul li > div > p {
+          text-align: right;
+          font-size: 40px;
+          position: absolute;
+          bottom: 30px;
+          right: 30px; }
+
+#cart main > input[type="button"] {
+  display: block;
+  background: #B5C76A;
+  color: #FFF;
+  border: 2px solid none;
+  font-size: 45px;
+  font-weight: bold;
+  width: 80%;
+  padding: 20px 0;
+  margin: 50px auto;
+  border-radius: 15px;
+  text-align: center; }
+  #cart main > input[type="button"]:active {
+    background: none;
+    color: #B5C76A;
+    border: 2px solid #B5C76A; }
+
+#cart main section ul {
+  width: 80%;
+  margin: 0 auto; }
+  #cart main section ul li {
+    position: relative;
+    display: flex;
+    padding: 30px;
+    border-bottom: 1px solid #707070; }
+    #cart main section ul li > p {
+      width: 30%; }
+      #cart main section ul li > p img {
+        width: 100%; }
+    #cart main section ul li > div {
+      width: 70%; }
+      #cart main section ul li > div dl {
+        display: flex;
+        font-size: 30px;
+        align-items: center; }
+        #cart main section ul li > div dl dt {
+          width: 55%;
+          text-align: right; }
+        #cart main section ul li > div dl dd {
+          width: 45%;
+          display: flex;
+          padding: 10px 0; }
+          #cart main section ul li > div dl dd img {
+            width: 70px; }
+          #cart main section ul li > div dl dd span {
+            width: 70px;
+            height: 70px;
+            display: inline-block; }
+          #cart main section ul li > div dl dd p {
+            line-height: 70px;
+            padding-left: 20px; }
+      #cart main section ul li > div > p:nth-of-type(1) {
+        font-size: 40px;
+        padding-left: 35px; }
+      #cart main section ul li > div > p:nth-of-type(2) {
+        text-align: right;
+        font-size: 30px;
+        color: #5FB0E2;
+        position: absolute;
+        bottom: 30px;
+        right: 30px; }
+
+#cart main section > div {
+  width: 80%;
+  margin: 0 auto; }
+  #cart main section > div dl {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 40px 20px;
+    font-size: 50px; }
+    #cart main section > div dl dt span {
+      font-size: 30px; }
+
+#cart main section > dl {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 50px auto;
+  font-size: 40px; }
+  #cart main section > dl dd {
+    color: #B5C76A; }
+
+#cart main > p {
+  font-size: 50px;
+  text-align: center;
+  margin-top: 100px; }
+  #cart main > p b {
+    font-size: 70px;
+    color: #B5C76A; }
+
+#mypage {
+  background: #F5F5F5; }
+  #mypage main section:first-of-type {
+    padding: 50px 30px; }
+    #mypage main section:first-of-type div {
+      display: flex;
+      width: 80%;
+      margin: 0 auto; }
+      #mypage main section:first-of-type div p:first-of-type {
+        background: #B5C76A;
+        width: 40%;
+        padding: 50px 0;
+        color: #FFF;
+        font-size: 40px;
+        text-align: center;
+        border-radius: 15px 0px 0px 15px; }
+      #mypage main section:first-of-type div p:last-of-type {
+        background: #FFF;
+        width: 60%;
+        padding: 30px;
+        text-align: right;
+        font-size: 60px;
+        font-weight: bold;
+        color: #B5C76A;
+        border-radius: 0px 15px 15px 0px; }
+        #mypage main section:first-of-type div p:last-of-type b {
+          padding-left: 30px;
+          font-size: 40px;
+          color: #B5C76A; }
+  #mypage main section:last-of-type div > p {
+    padding: 30px 20px 10px;
+    font-size: 30px; }
+  #mypage main section:last-of-type div ul {
+    border-top: 2px solid #707070;
+    border-bottom: 2px solid #707070; }
+    #mypage main section:last-of-type div ul li {
+      background: #FFF;
+      font-size: 40px;
+      border-bottom: 1px solid #707070; }
+      #mypage main section:last-of-type div ul li:last-of-type {
+        border-bottom: none; }
+      #mypage main section:last-of-type div ul li a {
+        padding: 40px 60px; }
+        #mypage main section:last-of-type div ul li a:active {
+          background: #707070;
+          color: #FFF; }
+  #mypage main section:last-of-type > p {
+    position: absolute;
+    bottom: 300px;
+    width: 100%;
+    background: #FFF;
+    padding: 20px 0;
+    font-size: 30px;
+    border-top: 2px solid #969696;
+    border-bottom: 2px solid #969696;
+    text-align: center;
+    color: #969696; }
+    #mypage main section:last-of-type > p:active {
+      background: #707070;
+      color: #FFF; }
+
+#purchase_history main > div {
+  background: #B5C76A;
+  text-align: center;
+  padding: 20px 10px; }
+  #purchase_history main > div p {
+    color: #FFF;
+    font-weight: bold;
+    font-size: 40px; }
+
+#remake_history main > div {
+  background: #B5C76A;
+  text-align: center;
+  padding: 20px 10px; }
+  #remake_history main > div p {
+    color: #FFF;
+    font-weight: bold;
+    font-size: 40px; }
+
+#remake_history main > p {
+  font-size: 40px;
+  padding: 50px 40px;
+  position: relative; }
+  #remake_history main > p select {
+    background-color: white;
+    border: thin solid #B5C76A;
+    border-radius: 4px;
+    display: inline-block;
+    font: inherit;
+    line-height: 1.5em;
+    padding: 10px 100px 10px 20px;
+    /* reset */
+    margin: 0;
+    box-sizing: border-box;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    content: "";
+    width: 65%;
+    height: 60%;
+    right: 1em;
+    top: 30px;
+    position: absolute;
+    background-image: linear-gradient(to bottom left, #B5C76A 30%, transparent 40%), linear-gradient(to bottom right, #B5C76A 30%, transparent 40%), linear-gradient(to right, #f1ffb8, #f1ffb8);
+    background-position: calc(100% - 48px) calc(1em + 2px), calc(100% - 18px) calc(1em + 2px), 100% 0;
+    background-size: 30px 30px, 30px 26px, 100px 100px;
+    background-repeat: no-repeat; }
+
+#setting_change main > div {
+  background: #B5C76A;
+  text-align: center;
+  padding: 20px 10px; }
+  #setting_change main > div p {
+    color: #FFF;
+    font-weight: bold;
+    font-size: 40px; }
+
+#setting_change main section table {
+  width: 80%;
+  margin: 30px auto;
+  background: #FFF; }
+  #setting_change main section table * {
+    font-size: 35px; }
+  #setting_change main section table tr {
+    font-size: 30px; }
+    #setting_change main section table tr th, #setting_change main section table tr td {
+      padding: 30px 20px; }
+    #setting_change main section table tr th {
+      color: #B5C76A;
+      width: 25%;
+      text-align: right; }
+    #setting_change main section table tr td {
+      background: #FFF; }
+  #setting_change main section table input {
+    border-bottom: 2px solid #B5C76A;
+    padding: 10px;
+    width: 100%; }
+  #setting_change main section table td p {
+    padding: 20px 0;
+    font-size: 20px; }
+    #setting_change main section table td p b {
+      font-size: 20px;
+      color: #B5C76A; }
+
+#setting_change main section > p a {
+  display: block;
+  background: #B5C76A;
+  color: #FFF;
+  border: 2px solid none;
+  font-size: 45px;
+  font-weight: bold;
+  width: 80%;
+  padding: 20px 0;
+  margin: 50px auto;
+  border-radius: 15px;
+  text-align: center; }
+  #setting_change main section > p a:active {
+    background: none;
+    color: #B5C76A;
+    border: 2px solid #B5C76A; }
