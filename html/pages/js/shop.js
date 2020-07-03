@@ -46,7 +46,7 @@
       @param number   取得したproduct_size
       @return String  product_sizeに対応するサイズ名
     **/
-      function get_product_size(size) {
+      function getProductSize(size) {
         // product_sizeの値によって対応するサイズ名を返す
         let sizeName;
         switch(size) {
@@ -188,6 +188,5 @@
             console.log("存在しないカラーIDです");
             break;
         }
-        console.log(colorName);
         return colorName;
       }
