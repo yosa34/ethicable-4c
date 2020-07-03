@@ -7,9 +7,35 @@
 ?>
 <script src="./js/shop.js"></script>
 <script>
+   function getProductSize(size) {
+        // product_sizeの値によって対応するサイズ名を返す
+        let sizeName;
+        switch(size) {
+          case 2:
+            sizeName = "XS";
+            break;
+          case 3:
+            sizeName = "S";
+            break;
+          case 4:
+            sizeName = "M";
+            break;
+          case 5:
+            sizeName = "L";
+            break;
+          case 6:
+            sizeName = "XL";
+            break;
+          default :
+            console.log("サイズが存在しません");
+            break;
+        }
+        // product_sizeに対応するサイズ名を返す
+        return sizeName;
+      }
   firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
-            console.log(user.uid);
+            // console.log(user.uid);
 
             /* ToDo
                本来はURLに含まれたremake_product_idを取り出してそれを元に検索・データの取得処理を行いますが。
@@ -30,11 +56,11 @@
                   let allRemake = remakeRef.get().then(snapshot => {
                       snapshot.forEach(doc => {
                         const data = doc.data()
-                        console.log(data);
+                        // console.log(data);
 
                         // リメイク商品情報を取得し格納
                         const remakeCategory = doc.data().category_id;
-                        console.log(remakeCategory);
+                        // console.log(remakeCategory);
                         // const remakeColor = doc.data().color_id;
 
                         // リメイク商品情報
@@ -61,7 +87,7 @@
                         .get().then(function(querySnapshot){
                             querySnapshot.forEach(function(doc) {
                               const stocks = doc.data()
-                              console.log(stocks);
+                              // console.log(stocks);
 
                               // リメイク商品画像の表示
                               elem1.src = stocks.remake_image;
@@ -78,7 +104,9 @@
                             querySnapshot.forEach(function(doc) {
                               const product = doc.data()
                               const productId = product.product_id;
-                              console.log("リメイク前カラーID" + product.color_id);
+                              // console.log("サイズ"+ product.product_size);
+                              // console.log("リメイク前カラーID" + product.color_id);
+
                               // リメイク前の商品のカラーIDを取得
                               const productColorId = product.color_id;
                               // リメイク前の画像を表示
@@ -103,7 +131,7 @@
                         .get().then(function(querySnapshot) {
                             querySnapshot.forEach(function(doc) {
                               const category = doc.data()
-                              console.log(category);
+                              // console.log(category);
                             });
                         })
                         .catch(function(error) {
@@ -163,15 +191,11 @@
              <div id="product_material"></div>
           </div>
 
-          <!-- カテゴリ絞り込みメニュー -->
-          <div>
-            <p id="category_menu"></p>
-          </div>
-
           <!-- 価格情報表示 -->
           <div>
             <p>税込価格</p>
             <p id="price"></p>
+            
             <!-- カートに遷移するボタン -->
             <button>カート</button>
         </section>
