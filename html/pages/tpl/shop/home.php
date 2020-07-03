@@ -51,7 +51,9 @@
       </nav>
       <section>
         <ul style="display: flex; flex-wrap: wrap;">
-          <li style="width: 50%;"><a id="product_details"><img id="remake_image" alt="リメイク商品画像"></a></li>
+          <li><a id="product_details"><img id="remake_image" alt="リメイク商品画像"></a></li>
+          <li><a id="product_details"><img id="remake_image" alt="リメイク商品画像"></a></li>
+          <li><a id="product_details"><img id="remake_image" alt="リメイク商品画像"></a></li>
         </ul>
       </section>
     </main>
