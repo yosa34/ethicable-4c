@@ -5,7 +5,7 @@
     編集者：2020/06/12小川紗世
     */
 ?>
-
+<script src="./js/shop.js"></script>
 <script type="text/javascript" src="./js/remake_data.js"></script>
 
 <!-- REMAKE HOME画面 -->

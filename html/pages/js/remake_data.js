@@ -36,7 +36,8 @@
                     const color = doc.data()
                     //colorの出力
                     var elem = document.getElementById("color_name");
-                    elem.innerHTML = color.color_id+" "+color.color_name;
+                    elem.innerHTML = "<span></span>"+color.color_id+" "+color.color_name;
+                    elem.firstElementChild.style.backgroundColor = getColorCode(color.color_id);
                   });
               })
               .catch(function(error) {
