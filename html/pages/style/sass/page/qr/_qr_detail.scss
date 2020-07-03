@@ -1,23 +1,26 @@
-#qr_detail{
-    main{
-        >p{
+#qr_detail {
+    main {
+        >p {
             font-size: 30px;
             padding: 20px 30px 100px;
         }
-        section{
+
+        section {
             width: 80%;
             margin: 0 auto;
 
-            >p{
+            >p {
                 text-align: center;
                 font-size: 38px;
-                b{
+
+                b {
                     line-height: 3;
                     font-size: 30px;
                 }
             }
-            div{
-                &:first-of-type{
+
+            div {
+                &:first-of-type {
                     width: 90%;
                     margin: 25px auto 200px;
                     height: 600px;
@@ -25,7 +28,8 @@
                     border: 2px solid $header_border_color;
                     border-radius: 20px;
                 }
-                &:last-of-type{
+
+                &:last-of-type {
                     width: 80%;
                     margin: 20px auto;
 
@@ -36,12 +40,14 @@
 
                     background: $botton_background;
                     border: 2px solid $header_border_color;
-                    p{
+
+                    p {
                         text-align: center;
                         color: $botton_color;
                         padding: 15px 0;
                         font-size: 39px;
-                        b{
+
+                        b {
                             color: $botton_color;
                             font-size: 30px;
                         }
@@ -49,11 +55,11 @@
                 }
             }
         }
+
         .pop {
-            width: 80vw;
+            width: 90vw;
             margin: 0 auto;
             position: absolute;
-  
             top: 0;
             z-index: 9999;
             border: 1px solid #B5C76A;
@@ -63,13 +69,13 @@
             transform: translate(-50%, -50%);
             -webkit-transform: translate(-50%, -50%);
             -ms-transform: translate(-50%, -50%);
-                      display: none;
-            >p{
-                 &:nth-of-type(1) {
-                    font-size: 30px;
+            display: none;
+            >p {
+                &:nth-of-type(1) {
+                    font-size: 40px;
                     text-align: center;
-                    width:100%;
-                    height:120px;
+                    width: 100%;
+                    height: 120px;
                     display: flex;
                     align-items: center;
                     justify-content: center;
@@ -77,31 +83,31 @@
                     color: white;
                 }
             }
+
             >div {
                 >div {
-                    &:nth-of-type(1) {
-                        >p{
-                            margin-top:40px;
+                    &:nth-of-type(2) {
+                        >p {
+                            margin-top: 40px;
                         }
                         width: 80%;
-                        // border: 1px solid black;
                         margin: 0 auto;
                         text-align: center;
                         font-size: 30px;
                     }
-                    &:nth-of-type(2) {
-                        >a{
-                            
+
+                    &:nth-of-type(3) {
+                        >a {
                             &:nth-of-type(1) {
-                                border:1px solid red;
+                                border: 1px solid red;
                                 color: white;
                                 background-color: #FF6A6A;
-                                border-radius:20px;
+                                border-radius: 20px;
                             }
                             &:nth-of-type(2) {
                                 border: 1px solid black;
                                 margin-top: 40px;
-                                border-radius:20px;
+                                border-radius: 20px;
                             }
                             width:80%;
                             height:80px;
@@ -111,9 +117,7 @@
                             margin-top:20px;
                             justify-content: center;
                         }
-
                         width: 80%;
-                        // border: 1px solid black;
                         margin: 0 auto;
                         margin-top:100px;
                         margin-bottom:100px;
@@ -121,26 +125,23 @@
                         font-size: 30px;
                     }
                 }
-
             }
-            
         }
         .pop_delete {
             background-color: white;
             >div {
                 >div {
                     >p {
-                        &:last-of-type{
-                             margin-bottom:250px;
+                        &:last-of-type {
+                            margin-bottom: 250px;
                         }
-           
+
                     }
                 }
             }
         }
         .qr_item_img {
-            width: 80%;
-            height: 200px;
+            width: 90%;
             display: flex;
             align-items: center;
             margin: 0 auto;
@@ -148,11 +149,61 @@
             margin-bottom: 120px;
             justify-content: center;
             border: 1px solid black;
+
+            >div {
+                &:nth-of-type(1) {
+                    width: 250px;
+                    padding: 20px;
+                    >img {
+                        // width: 200px;
+                        height: 200px;
+                    }
+                }
+
+                >p {
+                    &:last-of-type {
+                        font-size:35px;
+                        color: red;
+                    }
+                }
+
+                &:nth-of-type(2) {
+                    width : calc(100% - 250px);
+                    font-size:30px;
+                    >div {
+                        width: auto;
+                        display: flex;
+                        &:nth-of-type(1) {
+                            margin-top:20px;
+                        font-size: 25px;
+                            >p {
+                                width: 50%;
+                                text-align: left;
+                            }
+                        }
+                        &:nth-of-type(2) {
+                            margin-top:20px;
+                            >div {
+                                width: 83px;
+                                height: 83px;
+                            }
+                            >p {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                width: 50%;
+                                text-align: left;
+                            }
+                        }
+                    }
+                }
+            }
         }
-        .dark{
+
+        .dark {
             height: 100%;
             position: absolute;
-            top:0;
+            top: 0;
             width: 100vw;
             background-color: black;
             opacity: 0.4;
