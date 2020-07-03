@@ -2,7 +2,7 @@
     /*
     ページ詳細：商品ホーム画面
     作成者：小川紗世
-    編集者：2020/06/12小川紗世
+    編集者：2020/06/27粟津由香
     */
 ?>
 
@@ -11,12 +11,12 @@
 
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-        console.log(user.uid);
+        // console.log(user.uid);
         let remake_product_id;
         // 販売可能なリメイク商品の商品データを取得する(quantity:0【完売】 quantity:1 【販売中】)
         db.collection('stocks').where('quantity', '==', '1').get().then(querySnapshot => {
         querySnapshot.forEach(docs => {
-          console.log(docs.data()); // ログ出力
+          // console.log(docs.data()); // ログ出力
           // imgタグ要素を取得
           var elem1 = document.getElementById("remake_image");
           elem1.src = docs.data().remake_image;
