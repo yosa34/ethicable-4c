@@ -55,6 +55,7 @@ header {
   background: #FFF;
   border-bottom: 1px solid #707070;
   position: fixed;
+  z-index: 999;
   top: 0;
   left: 0;
   right: 0; }
@@ -558,7 +559,28 @@ header {
       height: 600px;
       background: #FFF;
       border: 2px solid #707070;
-      border-radius: 20px; }
+      border-radius: 20px;
+      position: relative; }
+      #remake_home main section:nth-child(1) div div ul li a > img {
+        width: 80%;
+        margin: 0 auto; }
+      #remake_home main section:nth-child(1) div div ul li a div {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        z-index: 1;
+        bottom: 40px;
+        left: 0;
+        right: 0;
+        width: 50%;
+        margin: 0 auto; }
+        #remake_home main section:nth-child(1) div div ul li a div img {
+          width: 100px; }
+        #remake_home main section:nth-child(1) div div ul li a div span {
+          width: 100px;
+          height: 100px;
+          text-align: center;
+          font-size: 100px; }
   #remake_home main section:nth-child(1) div > a {
     border: 4px solid #B5C76A;
     background: #FFF;
