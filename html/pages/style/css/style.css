@@ -662,7 +662,6 @@ header {
     color: #B5C76A;
     border: 2px solid #B5C76A; }
 
-<<<<<<< HEAD
 #shop_home main nav {
   /**
              * navを中心に
@@ -683,7 +682,7 @@ header {
     display: inline-flex;
     flex-wrap: wrap;
     width: 80%;
-    margin: 60px auto;
+    margin: 30px auto;
     text-align: center;
     justify-content: space-between; }
     #shop_home main section ul li {
@@ -691,7 +690,7 @@ header {
       #shop_home main section ul li a img {
         width: 100%;
         height: auto; }
-=======
+
 #order_completed section {
   width: 80%;
   margin: 0 auto; }
@@ -992,7 +991,6 @@ header {
   #cart main > p b {
     font-size: 70px;
     color: #B5C76A; }
->>>>>>> 66c49d9dc9a5a9902642d55fe91097269dffa0db
 
 #mypage {
   background: #F5F5F5; }
