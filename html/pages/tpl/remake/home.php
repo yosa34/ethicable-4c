@@ -108,8 +108,17 @@
           <div>
             <h2>現在発行中のQRコード</h2>
             <div>
+<<<<<<< Updated upstream
               <ul id="qr_ul">
                 
+=======
+              <ul>
+                <li>
+                  <a href="./qr_detail.php">
+                    QRコード表示場所
+                  </a>
+                </li>
+>>>>>>> Stashed changes
               </ul>
             </div>
             <a href="./remake_corse.php">リメイクする</a>
