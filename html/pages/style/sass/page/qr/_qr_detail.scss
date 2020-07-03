@@ -1,0 +1,52 @@
+#qr_detail{
+    main{
+        >p{
+            font-size: 30px;
+            padding: 20px 30px 100px;
+        }
+        section{
+            width: 80%;
+            margin: 0 auto;
+            >p{
+                text-align: center;
+                font-size: 38px;
+                b{
+                    line-height: 3;
+                    font-size: 30px;
+                }
+            }
+            div{
+                &:first-of-type{
+                    width: 90%;
+                    margin: 25px auto 200px;
+                    height: 600px;
+                    background: $background_color_main;
+                    border: 2px solid $header_border_color;
+                    border-radius: 20px;
+                }
+                &:last-of-type{
+                    width: 80%;
+                    margin: 20px auto;
+
+                    position: absolute;
+                    bottom: 300px;
+                    left: 0;
+                    right: 0;
+
+                    background: $botton_background;
+                    border: 2px solid $header_border_color;
+                    p{
+                        text-align: center;
+                        color: $botton_color;
+                        padding: 15px 0;
+                        font-size: 39px;
+                        b{
+                            color: $botton_color;
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

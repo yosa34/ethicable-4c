@@ -21,6 +21,7 @@
         var mail = document.getElementById('mail').value;
         var pass = document.getElementById('pass').value;
         var gender = document.getElementById('gender').value;
+        var age = document.getElementById('age').value;
         var address = document.getElementById( "address" ).value;
         var credit_card = document.getElementById( "credit_card" ).value;
 
@@ -29,6 +30,7 @@
           mail: mail,
           password: pass,
           gender:gender,
+          age:age,
           address:address,
           credit_card:credit_card,
         })
@@ -53,20 +55,13 @@
     <!-- main -->
     <main>
         <section>
-          <p>aaaa</p>
-          <p>aaaa</p>
-          <p>aaaa</p>
-          <p>aaaa</p>
-          <p>aaaa</p>
-          <p onClick="logout()">ログアウト</p>
-
           <div id="app">
-            <p>Gmail：<input type="text" id="mail" v-bind:value=mail></p>
-            <p>Password：<input type="text" id="pass" v-bind:value=pass></p>
-            <p>性別：<input type="text" id="gender" v-bind:value=gender></p>
-            <p>年齢：<input type="text" id="age" v-bind:value=age></p>
-            <p>住所：<input type="text" id="address"v-bind:value=address></p>
-            <p>クレジット：<input type="text" id="credit_card" v-bind:value=credit_card></p>
+            Gmail：<input type="text" id="mail" v-bind:value=mail><br>
+            Password：<input type="text" id="pass" v-bind:value=pass><br>
+            性別：<input type="text" id="gender" v-bind:value=gender><br>
+            年齢：<input type="text" id="age" v-bind:value=age><br>
+            住所：<input type="text" id="address"v-bind:value=address><br>
+            クレジット：<input type="text" id="credit_card" v-bind:value=credit_card><br>
           </div>
 
           <a href="javascript:void(0)" onClick="register()">更新する</a>
