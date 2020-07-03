@@ -16,7 +16,7 @@ for(i=0; url[i]; i++) {
     arg[k[0]] = k[1];
 }
 let product_id = arg.product_id;
-let category = arg.category;
+let product = arg.product;
 let color = arg.color;
 let corse_number = arg.corse_number;
 
@@ -30,27 +30,12 @@ db.collection("color").where("color_id", "==", Number(color))
             const color = doc.data()
             //colorの出力
             var elem = document.getElementById("select_color");
-            elem.innerHTML = color.color_id + " " + color.color_name;
-            var p2 = document.getElementById('select_color_box');
-            p2.style.backgroundColor = color.color_code;
+            elem.innerHTML = color.color_id+" "+color.color_name;
         });
     })
     .catch(function(error) {
         console.log("Error getting documents: ", error);
 });
-//かてごり
-db.collection("category").where("category_id", "==", Number(category))
-    .get().then(function (querySnapshot) {
-        querySnapshot.forEach(function (doc) {
-            const category = doc.data()
-            //colorの出力
-            var elem = document.getElementById("select_category");
-            elem.innerHTML = category.category_name;
-        });
-    })
-    .catch(function (error) {
-        console.log("Error getting documents: ", error);
-    });
 
 
 firebase.auth().onAuthStateChanged(function(user) {
@@ -84,11 +69,11 @@ firebase.auth().onAuthStateChanged(function(user) {
 
             //素材
             var elem3 = document.getElementById("product_material");
-            elem3.innerHTML = "<span>素材表地</span>"+data.product_material;
+            elem3.innerHTML = data.product_material;
 
             //説明
             var elem4 = document.getElementById("product_explanation");
-            elem4.innerHTML = "<span>特徴</span>" + "<p>" + data.product_explanation+"</p>";
+            elem4.innerHTML = data.product_explanation;
 
 
             //colorの取得
@@ -98,9 +83,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                 const color = doc.data()
                 //colorの出力
                 var elem = document.getElementById("color_name");
-                elem.innerHTML = "<span>カラー</span>" + "<p id='color_box'>" + color.color_id + color.color_name + "</p>";
-                var p = document.getElementById('color_box');
-                p.style.backgroundColor = color.color_code;
+                elem.innerHTML = color.color_code;
                 });
             })
             .catch(function(error) {
