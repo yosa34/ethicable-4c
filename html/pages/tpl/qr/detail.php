@@ -22,7 +22,18 @@
         remake_product_id = Number(remake_product_id);
         //firebase処理
         firebase.auth().onAuthStateChanged(function(user) {
-            if (user) {
+    if (user) {
+      // GET URLのパラメータ取得
+      let arg2  = new Object;
+      url = location.search.substring(1).split('&');
+      for(i=0; url[i]; i++) {
+        var k = url[i].split('=');
+        arg2[k[0]] = k[1];
+      }
+      let remake_product_id2 = arg2.remake_product_id;
+      console.log(remake_product_id2);
+      var qr_display = document.getElementById("qr_display");
+      qr_display.insertAdjacentHTML("beforeend","<img src='https://chart.apis.google.com/chart?chs=150x150&cht=qr&chl="+remake_product_id2+"' alt='QRコード'>");
                 //リメイク処理
                 db.collection('remake').where('remake_product_id', '==', remake_product_id).get().then(querySnapshot => {
                     querySnapshot.forEach(docs => {
@@ -74,10 +85,21 @@
             }, 500);
             setTimeout(function() {
                 $(".dark").fadeToggle("fast");
+                db.collection('remake').where('remake_product_id', '==', remake_product_id).get().then(querySnapshot => {
+                    querySnapshot.forEach(docs => {
+                        var dalete_product_id = docs.id;
+                        db.collection("remake").doc(dalete_product_id).update({
+                            date_qr_generate: null,
+                        })
+                        .then(() => {
+                        })
+                        .catch((error) => {
+                        });
+                    });
+                });
                 window.location.href = './remake_home.php';
             }, 10000);
         });
-
         function fadeToggle() {
             $(".pop_before").fadeToggle("fast");
             $(".dark").fadeToggle("fast");
@@ -93,13 +115,10 @@
     <!-- main -->
     <main>
         <p>
-            <a href="remake_home.html">
-                HOMEへ
-            </a>
         </p>
         <section>
-            <div>
-                QRコード表示場所
+            <div id="qr_display">
+                
             </div>
             <p>
                 QRコードをリサイクルボックスにある端末にかざして読み込ませてください。<br>
