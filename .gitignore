@@ -3,3 +3,4 @@ node_modules
 /html/pages/js/firebase.js
 /MeCab
 /vendor/
+.DS_Store
