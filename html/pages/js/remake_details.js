@@ -15,16 +15,15 @@ for(i=0; url[i]; i++) {
     var k = url[i].split('=');
     arg[k[0]] = k[1];
 }
-let product_id = arg.product_id;
-let product = arg.product;
-let color = arg.color;
-let corse_number = arg.corse_number;
+let product_id = Number(arg.product_id);
+let category = Number(arg.category);
+let color = Number(arg.color);
+let corse_number = Number(arg.corse_number);
 
 
 
-
-//リサイクルイメージ情報（イメージとカラー）
-db.collection("color").where("color_id", "==", Number(color))
+//ドキドキリサイクルイメージ情報（イメージとカラー）
+db.collection("color").where("color_id", "==", color)
     .get().then(function(querySnapshot) {
         querySnapshot.forEach(function(doc) {
             const color = doc.data()
@@ -44,7 +43,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     // DB 商品情報読み込み
     //QRで読み取った時の商品ID受け取り
 
-    let citiesRef = db.collection('product').where("product_id", "==", Number(product_id));
+    let citiesRef = db.collection('product').where("product_id", "==", product_id);
     let allCities = citiesRef.get().then(snapshot => {
         snapshot.forEach(doc => {
             const data = doc.data()
@@ -111,4 +110,59 @@ firebase.auth().onAuthStateChanged(function(user) {
     } else{
         location.href = "./index.html"
     }
-});   
+});
+
+function Qr_send() {
+
+    firebase.auth().onAuthStateChanged(function (user) {
+
+        let citiesRef = db.collection('remake');
+        let allCities = citiesRef.get().then(snapshot => {
+            var size = snapshot.size;
+            size = size + 1;
+
+            if (corse_number == 1) {
+                //remake ワクワクデータの
+                db.collection("remake").add({
+                    category_id: null,
+                    color_id: null,
+                    course_id:corse_number,
+                    date_qr_generate:firebase.firestore.FieldValue.serverTimestamp(),
+                    date_qr_read:null,
+                    product_id: product_id,
+                    remake_complete:null,
+                    remake_product_id:size,
+                    user_id: user.uid,
+                })
+
+            } else {
+                //remake ドキドキデータの
+                db.collection("remake").add({
+                    category_id: category,
+                    color_id: color,
+                    course_id:corse_number,
+                    date_qr_generate:firebase.firestore.FieldValue.serverTimestamp(),
+                    date_qr_read:null,
+                    product_id: product_id,
+                    remake_complete:null,
+                    remake_product_id:size,
+                    user_id: user.uid,
+                })
+                
+            }
+
+
+            var insert = function () {
+                
+                var next_page = "./emake_qr_add.php";
+                location.href = next_page + "?remake_product_id=" + remake_product_id;
+
+            }
+                setTimeout(insert, 2000);
+            });
+    });
+}
+
+
+
+
