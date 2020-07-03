@@ -91,10 +91,8 @@
                             date_qr_generate: null,
                         })
                         .then(() => {
-                            console.log("eee");
                         })
                         .catch((error) => {
-                            console.log("feed");
                         });
                 });
             });
