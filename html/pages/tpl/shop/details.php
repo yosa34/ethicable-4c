@@ -195,6 +195,7 @@
           <div>
             <p>税込価格</p>
             <p id="price"></p>
+            
             <!-- カートに遷移するボタン -->
             <button>カート</button>
         </section>
