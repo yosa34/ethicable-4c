@@ -184,8 +184,7 @@ header {
       border-radius: 20px; }
   #qr_detail main section div:last-of-type {
     width: 80%;
-    margin: 20px auto;
-    position: absolute;
+    margin: 150px auto 20px;
     bottom: 300px;
     left: 0;
     right: 0;
