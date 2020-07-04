@@ -33,7 +33,7 @@
             //ulタグを取得し、その中に<li><a><img></a></li>を作成
             //qr_detail.php => reamake_product_id
             var qr_ul = document.getElementById("qr_ul");
-            qr_ul.insertAdjacentHTML("beforeend","<li><a id='qr_a_"+cnt+"' href='qr_detail.php?remake_product_id="+doc.data().remake_product_id+"'><img src='https://chart.apis.google.com/chart?chs=150x150&cht=qr&chl="+doc.data().remake_product_id+"' alt='QRコード'></a></li>");
+            qr_ul.insertAdjacentHTML("beforeend","<li><a href='qr_detail.php?remake_product_id="+doc.data().remake_product_id+"'><img src='https://chart.apis.google.com/chart?chs=150x150&cht=qr&chl="+doc.data().remake_product_id+"' alt='QRコード'><div id='qr_a_"+cnt+"'></div></a></li>");
 
               //colorとcategoryを取得し、htmlにセットする
             
@@ -63,7 +63,9 @@
 
             //タグ取得=>タグ書き換え
             var qr_a = document.getElementById("qr_a_"+cnt);
-            qr_a.insertAdjacentHTML("beforeend","<span id='remake_color' style='width: 50px; height: 50px; display: block;'></span>");
+
+            qr_a.insertAdjacentHTML("beforeend","<span id='remake_color_"+cnt+"'></span>");
+
             //これで背景色を書き換えないとSCSSに潰されてる気がする
             var remake_color = document.getElementById("remake_color");
             remake_color.style.backgroundColor = getColorCode(doc.data().color_id);
@@ -84,8 +86,8 @@
           console.log("category"+category_id);
           //タグ取得=>タグ書き換え
           var qr_a = document.getElementById("qr_a_"+cnt);
-          qr_a.insertAdjacentHTML("beforeend","<img id='remake_icon' alt='リメイク希望のアイテムアイコン' style='width: 40px;'><span>×</span>");
 
+          qr_a.insertAdjacentHTML("beforeend","<img id='remake_icon_"+cnt+"' alt='リメイク希望のアイテムアイコン' ><span>×</span>");
 
           var elem2 = document.getElementById("remake_icon");
           // カテゴリーアイコンを表示
