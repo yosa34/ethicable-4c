@@ -780,7 +780,7 @@ header {
         font-size: 30px;
         padding: 20px; }
       #shop_details main section .details_box > div img {
-        width: 200px;
+        height: 200px;
         margin: 0; }
       #shop_details main section .details_box > div > div {
         width: 100%; }
@@ -1095,7 +1095,7 @@ header {
           display: flex;
           padding: 10px 0; }
           #cart main section ul li > div dl dd img {
-            width: 70px; }
+            height: 70px; }
           #cart main section ul li > div dl dd span {
             width: 70px;
             height: 70px;
