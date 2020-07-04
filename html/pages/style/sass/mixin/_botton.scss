@@ -1,6 +1,10 @@
 
 @mixin button_bottom_div() {
     display: flex;
+    position: absolute;
+    bottom: 200px;
+    right: 0;
+    left: 0;
     width: 80%;
     margin: 0 auto;
 }

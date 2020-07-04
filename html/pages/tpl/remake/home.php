@@ -63,9 +63,11 @@
 
             //タグ取得=>タグ書き換え
             var qr_a = document.getElementById("qr_a_"+cnt);
+
             qr_a.insertAdjacentHTML("beforeend","<span id='remake_color_"+cnt+"'></span>");
+
             //これで背景色を書き換えないとSCSSに潰されてる気がする
-            var remake_color = document.getElementById("remake_color_"+cnt);
+            var remake_color = document.getElementById("remake_color");
             remake_color.style.backgroundColor = getColorCode(doc.data().color_id);
           });
         })
@@ -84,12 +86,12 @@
           console.log("category"+category_id);
           //タグ取得=>タグ書き換え
           var qr_a = document.getElementById("qr_a_"+cnt);
+
           qr_a.insertAdjacentHTML("beforeend","<img id='remake_icon_"+cnt+"' alt='リメイク希望のアイテムアイコン' ><span>×</span>");
 
-          var elem2 = document.getElementById("remake_icon_"+cnt);
+          var elem2 = document.getElementById("remake_icon");
           // カテゴリーアイコンを表示
           elem2.src = getRemakeImg(category_id);
-          console.log("icon::"+getRemakeImg(category_id));
         });
       })
     }
