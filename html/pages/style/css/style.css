@@ -643,23 +643,19 @@ header {
 #remake_qr_add main section div {
   width: 70%;
   margin: 25px auto;
-  height: 600px;
   background: #FFF;
   border: 2px solid #707070;
   border-radius: 20px; }
+  #remake_qr_add main section div img {
+    width: 100%;
+    border-radius: 20px; }
 
 #remake_qr_add main section p {
   width: 70%;
   margin: 200px auto 0;
   text-align: center;
-  font-size: 40px; }
-  #remake_qr_add main section p:last-of-type {
-    margin-top: 20px; }
-    #remake_qr_add main section p:last-of-type a {
-      display: inline-block;
-      color: #B5C76A;
-      padding: 10px 30px;
-      border-bottom: 2px solid #B5C76A; }
+  font-size: 40px;
+  line-height: 1.7; }
 
 #remake_select main section div table {
   width: 80%;
