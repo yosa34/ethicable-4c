@@ -126,6 +126,7 @@ a{
 }
 img{
     display: block;
+    height: auto;
 }
 
 input[type="submit"], input[type="button"] { -webkit-appearance: none; }
