@@ -409,10 +409,6 @@ header {
 
 #remake_data main section div:last-of-type {
   display: flex;
-  position: absolute;
-  bottom: 200px;
-  right: 0;
-  left: 0;
   width: 80%;
   margin: 0 auto; }
 
@@ -512,10 +508,6 @@ header {
 
 #remake_datails main > section > div:last-of-type {
   display: flex;
-  position: absolute;
-  bottom: 200px;
-  right: 0;
-  left: 0;
   width: 80%;
   margin: 0 auto; }
 
@@ -681,10 +673,6 @@ header {
 
 #remake_select main section div:last-of-type {
   display: flex;
-  position: absolute;
-  bottom: 200px;
-  right: 0;
-  left: 0;
   width: 80%;
   margin: 0 auto; }
 
