@@ -309,6 +309,88 @@ header {
   opacity: 0.4;
   display: none; }
 
+#remake_shop_details main > p {
+  width: 90%;
+  margin: 0 auto; }
+
+#remake_shop_details main section {
+  width: 80%;
+  margin: 0 auto; }
+  #remake_shop_details main section > p {
+    padding: 10px 30px;
+    border: #B5C76A 1px solid;
+    color: #B5C76A; }
+  #remake_shop_details main section > div {
+    width: 80%;
+    margin: 20px auto; }
+    #remake_shop_details main section > div dl {
+      display: flex; }
+      #remake_shop_details main section > div dl dt {
+        width: 20%;
+        text-align: right; }
+      #remake_shop_details main section > div dl dd {
+        padding-left: 50px;
+        width: 80%; }
+      #remake_shop_details main section > div dl:nth-child(3) dd {
+        display: flex; }
+        #remake_shop_details main section > div dl:nth-child(3) dd img {
+          height: 100px;
+          margin: 0; }
+        #remake_shop_details main section > div dl:nth-child(3) dd > div {
+          position: relative;
+          width: 100%; }
+          #remake_shop_details main section > div dl:nth-child(3) dd > div > p {
+            padding: 15px 10px;
+            font-size: 20px; }
+          #remake_shop_details main section > div dl:nth-child(3) dd > div div {
+            display: flex;
+            padding: 0 10px; }
+            #remake_shop_details main section > div dl:nth-child(3) dd > div div > p {
+              padding-right: 20px; }
+            #remake_shop_details main section > div dl:nth-child(3) dd > div div:last-of-type span {
+              width: 20px;
+              height: 20px;
+              border-radius: 5px;
+              display: inline-block;
+              background: #000; }
+            #remake_shop_details main section > div dl:nth-child(3) dd > div div:last-of-type p {
+              line-height: 20px;
+              padding: 0 0 0 10px; }
+
+#remake_shop_home section {
+  width: 80%;
+  margin: 0 auto; }
+  #remake_shop_home section table {
+    width: 100%; }
+    #remake_shop_home section table tr {
+      width: 100%; }
+      #remake_shop_home section table tr td {
+        text-align: center; }
+        #remake_shop_home section table tr td img {
+          width: 50px;
+          margin: 10px auto; }
+        #remake_shop_home section table tr td span {
+          width: 50px;
+          height: 50px;
+          border-radius: 15px;
+          margin: 10px auto;
+          background: #000;
+          display: block; }
+        #remake_shop_home section table tr td:last-of-type p {
+          padding: 20px 0; }
+        #remake_shop_home section table tr td:last-of-type a {
+          padding: 10px 0;
+          background: #B5C76A;
+          color: #fff;
+          border-radius: 10px; }
+        #remake_shop_home section table tr td textarea {
+          vertical-align: middle; }
+      #remake_shop_home section table tr > th {
+        background: #B5C76A;
+        padding: 20px 0; }
+        #remake_shop_home section table tr > th p {
+          color: #fff; }
+
 #remake_corse main section article ul {
   width: 80%;
   margin: 0 auto; }
