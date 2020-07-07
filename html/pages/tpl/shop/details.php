@@ -137,41 +137,53 @@
     <!-- main -->
     <main>
         <section>
-        <div>
-          <!-- リメイク情報表示 -->
-          <!-- 取り敢えずstyleを記述しているだけなのであとで変更 -->
-          <img id="remake_image" alt="リメイク商品画像" style="width: 200px;">
           <div>
-            <p>リメイク情報</p>
-            <img id="remake_icon" alt="リメイク希望のアイテムアイコン" style="width: 40px;"><span>×</span><span id="remake_color" style="width: 50px; height: 50px; display: block;"></span>
-            <!-- お気に入りアイコン -->
-            <!-- <img src="" alt="お気に入り"> -->
+            <!-- リメイク情報表示 -->
+            <div>
+              <img id="remake_image" alt="リメイク商品画像">
+              <div>
+                <p>リメイク情報</p>
+                <img id="remake_icon" alt="リメイク希望のアイテムアイコン"><span>×</span><span id="remake_color"></span>
+              </div>
+              <!-- お気に入りアイコン -->
+            </div>
+            <!-- リメイク前の商品情報表示 -->
+            <div class="details_box">
+              <p>リメイク前の商品情報</p>
+              <div>
+                <img id="before_img" alt="リメイク前の商品画像">
+                <div>
+                  <div>
+                    <p id="product_id"></p>
+                    <p id="product_size"></p>
+                  </div>
+                  <p id="product_name"></p>
+                  <div>
+                    <span id="product_color"></span>
+                    <p id="product_color_name"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-
-          <!-- リメイク前の商品情報表示 -->
-          <!-- 取り敢えずstyleを記述しているだけなのであとで変更 -->
-          <div>
-            <p>リメイク前の商品情報</p>
-            <img id="before_img" alt="リメイク前の商品画像" style="width: 50px;">
-            <p id="product_id"></p>
-            <p id="product_name"></p>
-            <p id="product_size"></p>
-            <span id="product_color" style="width: 50px; height: 50px; display: block;"></span>
-            <p id="product_color_name"></p>
-          </div>
-
           <!-- 素材生地情報表示 -->
-          <div>
-             <p>素材生地</p>
-             <div id="product_material"></div>
+          <div class="details_box">
+            <p>素材生地</p>
+            <div>
+              <p id="product_material"></p>
+            </div>
           </div>
 
           <!-- 価格情報表示 -->
           <div>
-            <p>税込価格</p>
-            <p id="price"></p>
-
-            <!-- カートに遷移するボタン -->
-            <button>カート</button>
+            <div>
+              <div>
+                <p>税込価格</p>
+                <p id="price"></p>
+              </div>
+              <!-- カートに遷移するボタン -->
+              <p><a>カート</a></p>
+            </div>
+          </div>
         </section>
     </main>
