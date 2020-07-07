@@ -3,7 +3,3 @@ node_modules
 /html/pages/js/firebase.js
 /MeCab
 /vendor/
-.DS_Store
-html/.DS_Store
-html/pages/.DS_Store
-html/pages/tpl/.DS_Store

@@ -1,0 +1,46 @@
+#shop_home{
+    main{
+        nav{
+            /**
+             * navを中心に
+             * liを横並びに配置
+             */
+            ul{
+                //ul中央寄せ
+                text-align: center;
+            }
+            li{
+                //inline要素追加(リストを文字列に。)
+                display: inline-block;
+
+                //文字サイズを他ページのnavと合わせる
+                font-weight: bold;
+                font-size: 40px;
+            }
+        }
+        section{
+            /**
+             * 画像:横に2枚ずつ
+             */
+            ul{
+                display: inline-flex;
+                flex-wrap: wrap;
+                width:80%;
+                margin:30px auto;
+                text-align: center;
+                justify-content: space-between;
+
+                li{
+                    width:45%;
+
+                    a{
+                        img{
+                            width:100%;
+                            height:auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

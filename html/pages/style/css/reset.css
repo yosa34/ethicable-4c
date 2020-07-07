@@ -115,6 +115,7 @@ ul{
     margin: 0;
     padding: 0;
     font-size: 16px;
+    color: #707070;
 }
 html,body{
     margin: 0;
@@ -126,3 +127,5 @@ a{
 img{
     display: block;
 }
+
+input[type="submit"], input[type="button"] { -webkit-appearance: none; }
