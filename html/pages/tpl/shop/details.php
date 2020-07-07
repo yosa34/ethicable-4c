@@ -117,7 +117,25 @@
                     console.log('Error getting documents', err);
                     });
 
+                    // カートに入れる関数
+                    $('#add_to_cart').click(function() {
+                      // 各要素をcart_infoに入れていく
+                      var cart_info = {};
+                      cart_info.remake_image = $('#remake_image').attr('src');
+                      cart_info.product_color = $('#product_color').css('background-color');
+                      cart_info.product_color_name =$('#product_color_name').text();
+                      cart_info.price = $('#price').text().substr(1);
+                      cart_info.remake_icon = $('#remake_icon').attr('src');
+                      cart_info.category_id = $('#remake_icon').attr('src').charAt(17);
 
+                      var cart_submit = JSON.stringify(cart_info);
+
+                      // sessionへ格納する
+                      sessionStorage['cart'] = cart_submit;
+
+                      // カート画面へ
+                      window.location = "./mycart.php";
+                    })
 
           } else{
           }
@@ -173,6 +191,6 @@
             <p>税込価格</p>
             <p id="price"></p>
             <!-- カートに遷移するボタン -->
-            <button>カート</button>
+            <button id="add_to_cart">カート</button>
         </section>
     </main>
