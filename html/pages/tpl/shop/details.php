@@ -7,32 +7,7 @@
 ?>
 <script src="./js/shop.js"></script>
 <script>
-   function getProductSize(size) {
-        // product_sizeの値によって対応するサイズ名を返す
-        let sizeName;
-        switch(size) {
-          case 2:
-            sizeName = "XS";
-            break;
-          case 3:
-            sizeName = "S";
-            break;
-          case 4:
-            sizeName = "M";
-            break;
-          case 5:
-            sizeName = "L";
-            break;
-          case 6:
-            sizeName = "XL";
-            break;
-          default :
-            console.log("サイズが存在しません");
-            break;
-        }
-        // product_sizeに対応するサイズ名を返す
-        return sizeName;
-      }
+
   firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
             // console.log(user.uid);
