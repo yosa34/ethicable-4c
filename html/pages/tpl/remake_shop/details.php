@@ -38,6 +38,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     <!-- header -->
     <!-- main -->
     <main>
+        <p><a href="./remake_shop_home.php">リメイク依頼一覧に戻る</a></p>
         <p>依頼日：0000年00月00日</p>
         <section>
             <p>依頼内容</p>
@@ -89,6 +90,12 @@ firebase.auth().onAuthStateChanged(function(user) {
                         </select>
                     </dd>
                 </dl>
+                <dl>
+                    <dt>リメイク後の画像：</dt>
+                    <dd>
+                        <input type="file" name="datafile" id="filesend">
+                    </dd>
+                </dl>
             </div>
         </section>
         <section>
@@ -104,5 +111,6 @@ firebase.auth().onAuthStateChanged(function(user) {
                 </dl>
             </div>
         </section>
+        <input type="submit" value="リメイク完了">
     </main>
 

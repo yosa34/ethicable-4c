@@ -311,7 +311,7 @@ header {
 
 #remake_shop_details main > p {
   width: 90%;
-  margin: 0 auto; }
+  margin: 20px auto; }
 
 #remake_shop_details main section {
   width: 80%;
@@ -324,7 +324,8 @@ header {
     width: 80%;
     margin: 20px auto; }
     #remake_shop_details main section > div dl {
-      display: flex; }
+      display: flex;
+      padding: 10px 0; }
       #remake_shop_details main section > div dl dt {
         width: 20%;
         text-align: right; }
@@ -356,6 +357,25 @@ header {
             #remake_shop_details main section > div dl:nth-child(3) dd > div div:last-of-type p {
               line-height: 20px;
               padding: 0 0 0 10px; }
+
+#remake_shop_details main input[type="submit"] {
+  display: block;
+  background: #B5C76A;
+  color: #FFF;
+  border: 2px solid none;
+  font-size: 45px;
+  font-weight: bold;
+  width: 80%;
+  padding: 10px 0;
+  margin: 50px auto;
+  border-radius: 15px;
+  text-align: center;
+  width: 300px;
+  font-size: 20px; }
+  #remake_shop_details main input[type="submit"]:active {
+    background: none;
+    color: #B5C76A;
+    border: 2px solid #B5C76A; }
 
 #remake_shop_home section {
   width: 80%;
@@ -738,61 +758,89 @@ header {
   font-size: 40px;
   line-height: 1.7; }
 
-#remake_select main section div table {
-  width: 80%;
-  margin: 30px auto;
-  background: #B5C76A; }
-  #remake_select main section div table tr {
-    font-size: 30px; }
-    #remake_select main section div table tr th, #remake_select main section div table tr td {
-      padding: 30px 20px; }
-    #remake_select main section div table tr th {
-      color: #FFF;
-      width: 25%;
-      text-align: right; }
-    #remake_select main section div table tr td {
-      background: #FFF; }
-
-#remake_select main section div:last-of-type {
-  display: flex;
+#remake_select main section > div {
   width: 80%;
   margin: 0 auto; }
-
-#remake_select main section div > input[type="button"]:first-of-type {
-  display: block;
-  background: #F5F5F5;
-  color: #707070;
-  border: 2px solid #707070;
-  font-size: 45px;
-  font-weight: bold;
-  width: 80%;
-  padding: 20px 0;
-  margin: 50px auto;
-  border-radius: 15px;
-  text-align: center;
-  margin-right: 10px; }
-  #remake_select main section div > input[type="button"]:first-of-type:active {
-    background: #707070;
-    color: #F5F5F5;
-    border: 2px solid #F5F5F5; }
-
-#remake_select main section div > input[type="button"]:last-of-type {
-  display: block;
-  background: #B5C76A;
-  color: #FFF;
-  border: 2px solid none;
-  font-size: 45px;
-  font-weight: bold;
-  width: 80%;
-  padding: 20px 0;
-  margin: 50px auto;
-  border-radius: 15px;
-  text-align: center;
-  margin-left: 10px; }
-  #remake_select main section div > input[type="button"]:last-of-type:active {
-    background: none;
-    color: #B5C76A;
-    border: 2px solid #B5C76A; }
+  #remake_select main section > div > ul {
+    display: flex;
+    justify-content: space-between; }
+    #remake_select main section > div > ul > li {
+      height: 120px;
+      width: 49%;
+      border-radius: 20px 20px 0px 0px;
+      background-color: #707070;
+      color: white;
+      font-size: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      #remake_select main section > div > ul > li:nth-of-type(1) {
+        background-color: #707070; }
+  #remake_select main section > div .con_title {
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-left: 50px; }
+  #remake_select main section > div > div {
+    border: 1px solid #B5C76A; }
+    #remake_select main section > div > div > ul {
+      display: flex; }
+      #remake_select main section > div > div > ul > li {
+        width: 150px;
+        height: 150px;
+        border: 1px solid black; }
+  #remake_select main section > div table {
+    width: 80%;
+    margin: 30px auto;
+    background: #B5C76A; }
+    #remake_select main section > div table tr {
+      font-size: 30px; }
+      #remake_select main section > div table tr th, #remake_select main section > div table tr td {
+        padding: 30px 20px; }
+      #remake_select main section > div table tr th {
+        color: #FFF;
+        width: 25%;
+        text-align: right; }
+      #remake_select main section > div table tr td {
+        background: #FFF; }
+  #remake_select main section > div:last-of-type {
+    display: flex;
+    width: 80%;
+    margin: 0 auto; }
+  #remake_select main section > div > input[type="button"]:first-of-type {
+    display: block;
+    background: #F5F5F5;
+    color: #707070;
+    border: 2px solid #707070;
+    font-size: 45px;
+    font-weight: bold;
+    width: 80%;
+    padding: 20px 0;
+    margin: 50px auto;
+    border-radius: 15px;
+    text-align: center;
+    margin-right: 10px; }
+    #remake_select main section > div > input[type="button"]:first-of-type:active {
+      background: #707070;
+      color: #F5F5F5;
+      border: 2px solid #F5F5F5; }
+  #remake_select main section > div > input[type="button"]:last-of-type {
+    display: block;
+    background: #B5C76A;
+    color: #FFF;
+    border: 2px solid none;
+    font-size: 45px;
+    font-weight: bold;
+    width: 80%;
+    padding: 20px 0;
+    margin: 50px auto;
+    border-radius: 15px;
+    text-align: center;
+    margin-left: 10px; }
+    #remake_select main section > div > input[type="button"]:last-of-type:active {
+      background: none;
+      color: #B5C76A;
+      border: 2px solid #B5C76A; }
 
 #shop_details main section {
   background: #F5F5F5; }
@@ -903,22 +951,24 @@ header {
     text-align: center; }
   #shop_home main nav li {
     display: inline-block;
+    width: 45%;
     font-weight: bold;
     font-size: 40px; }
 
 #shop_home main section {
   /**
              * 画像:横に2枚ずつ
-             */ }
+             */
+  width: 80%;
+  margin: 0 auto; }
   #shop_home main section ul {
     display: inline-flex;
     flex-wrap: wrap;
-    width: 80%;
-    margin: 30px auto;
     text-align: center;
     justify-content: space-between; }
     #shop_home main section ul li {
-      width: 45%; }
+      width: 45%;
+      margin: 10px 0; }
       #shop_home main section ul li a img {
         width: 100%;
         height: auto; }
@@ -1293,6 +1343,48 @@ header {
     color: #FFF;
     font-weight: bold;
     font-size: 40px; }
+
+#purchase_history main section ul li div {
+  position: relative;
+  display: flex;
+  padding: 30px;
+  border-bottom: 1px solid #707070; }
+  #purchase_history main section ul li div > p {
+    width: 30%; }
+    #purchase_history main section ul li div > p img {
+      width: 100%; }
+  #purchase_history main section ul li div > div {
+    width: 70%; }
+    #purchase_history main section ul li div > div dl {
+      display: flex;
+      font-size: 30px;
+      align-items: center; }
+      #purchase_history main section ul li div > div dl dt {
+        width: 55%;
+        text-align: right; }
+      #purchase_history main section ul li div > div dl dd {
+        width: 45%;
+        display: flex;
+        padding: 10px 0; }
+        #purchase_history main section ul li div > div dl dd img {
+          height: 70px; }
+        #purchase_history main section ul li div > div dl dd span {
+          width: 70px;
+          height: 70px;
+          display: inline-block; }
+        #purchase_history main section ul li div > div dl dd p {
+          line-height: 70px;
+          padding-left: 20px; }
+    #purchase_history main section ul li div > div > p:nth-of-type(1) {
+      font-size: 40px;
+      padding-left: 35px; }
+    #purchase_history main section ul li div > div > p:nth-of-type(2) {
+      text-align: right;
+      font-size: 30px;
+      color: #5FB0E2;
+      position: absolute;
+      bottom: 30px;
+      right: 30px; }
 
 #remake_history main > div {
   background: #B5C76A;
