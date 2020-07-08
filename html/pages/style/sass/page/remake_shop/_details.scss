@@ -2,7 +2,7 @@
     main{
         >p{
             width: 90%;
-            margin: 0 auto;
+            margin: 20px auto;
         }
         section{
             width: 80%;
@@ -17,6 +17,7 @@
                 margin: 20px auto;
                 dl{
                     display: flex;
+                    padding: 10px 0;
                     dt{
                         width: 20%;
                         text-align: right;
