@@ -2,7 +2,7 @@
     /*
     ページ詳細：商品詳細画面
     作成者：小川紗世
-    編集者：2020/06/27粟津由香
+    編集者：2020/06/27粟津由香→2020/07/07三輪謙登
     */
 ?>
 <script src="./js/shop.js"></script>
@@ -23,14 +23,16 @@
             // get_remake_product_id = url[1];
             // console.log(url[0]+"=>"+url[1]);
           */
-            var remake_product_id = 2
-            var product_id = 426847;
+            var remake_product_id = 1
+            var product_id = 414443;
             // remakeコレクションの情報取得
             let remakeRef = db.collection('remake').where("remake_product_id", "==", Number(remake_product_id));
                   let allRemake = remakeRef.get().then(snapshot => {
                       snapshot.forEach(doc => {
                         const data = doc.data()
                         console.log(data);
+                        console.log(doc.id);
+
 
                         // リメイク商品情報を取得し格納
                         const remakeCategory = doc.data().category_id;
@@ -128,6 +130,7 @@
                       cart_info.remake_icon = $('#remake_icon').attr('src');
                       cart_info.category_id = $('#remake_icon').attr('src').charAt(17);
 
+                      // sessionはstring型でないと扱えないため、JSONを使用している
                       var cart_submit = JSON.stringify(cart_info);
 
                       // sessionへ格納する
