@@ -19,15 +19,19 @@
                コレクションの修正が完了次第下記のコードに変更する！！！
 
             // GET URLのパラメータ取得(remake_product_idが含まれている)
+            url = location.search.substring(1).split('=');
+            var get_remake_product_id;
+            get_remake_product_id = url[1];
+            console.log(url[0]+"=>"+url[1]);
+          */
+            var remake_product_id = 10
+            var product_id = 426847;
+            // remakeコレクションの情報取得
             // url = location.search.substring(1).split('=');
             // var get_remake_product_id;
             // get_remake_product_id = url[1];
             // console.log(url[0]+"=>"+url[1]);
-          */
-            var remake_product_id = 2
-            var product_id = 426847;
-            // remakeコレクションの情報取得
-            let remakeRef = db.collection('remake').where("remake_product_id", "==", Number(remake_product_id));
+            let remakeRef = db.collection('remake').where("remake_product_id", "==",remake_product_id);
                   let allRemake = remakeRef.get().then(snapshot => {
                       snapshot.forEach(doc => {
                         const data = doc.data()
@@ -58,11 +62,12 @@
                       elem2.src = getRemakeImg(remakeCategory);
 
                         // db.collection("stocks").where("remake_product_id", "==", remake_product_id)
-                        db.collection("stocks").where("remake_product_id", "==", "DSsswyu1p9SklvMstgiu")
+                        db.collection("stocks").where("remake_product_id", "==", 10)
                         .get().then(function(querySnapshot){
                             querySnapshot.forEach(function(doc) {
                               const stocks = doc.data()
-                              // console.log(stocks);
+                              console.log(stocks);
+                              console.log(doc.data().remake_image);
 
                               // リメイク商品画像の表示
                               elem1.src = stocks.remake_image;
@@ -137,41 +142,61 @@
     <!-- main -->
     <main>
         <section>
-        <div>
-          <!-- リメイク情報表示 -->
-          <!-- 取り敢えずstyleを記述しているだけなのであとで変更 -->
-          <img id="remake_image" alt="リメイク商品画像" style="width: 200px;">
           <div>
-            <p>リメイク情報</p>
-            <img id="remake_icon" alt="リメイク希望のアイテムアイコン" style="width: 40px;"><span>×</span><span id="remake_color" style="width: 50px; height: 50px; display: block;"></span>
-            <!-- お気に入りアイコン -->
-            <!-- <img src="" alt="お気に入り"> -->
+            <!-- リメイク情報表示 -->
+            <div>
+              <img id="remake_image" alt="リメイク商品画像">
+              <div>
+                <p>リメイク情報</p>
+                <img id="remake_icon" alt="リメイク希望のアイテムアイコン"><span>×</span><span id="remake_color"></span>
+              </div>
+              <!-- お気に入りアイコン -->
+            </div>
+            <!-- リメイク前の商品情報表示 -->
+            <div class="details_box">
+              <p>リメイク前の商品情報</p>
+              <div>
+                <img id="before_img" alt="リメイク前の商品画像">
+                <div>
+                  <div>
+                    <p id="product_id"></p>
+                    <p id="product_size"></p>
+                  </div>
+                  <p id="product_name"></p>
+                  <div>
+                    <span id="product_color"></span>
+                    <p id="product_color_name"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-
-          <!-- リメイク前の商品情報表示 -->
-          <!-- 取り敢えずstyleを記述しているだけなのであとで変更 -->
-          <div>
-            <p>リメイク前の商品情報</p>
-            <img id="before_img" alt="リメイク前の商品画像" style="width: 50px;">
-            <p id="product_id"></p>
-            <p id="product_name"></p>
-            <p id="product_size"></p>
-            <span id="product_color" style="width: 50px; height: 50px; display: block;"></span>
-            <p id="product_color_name"></p>
-          </div>
-
           <!-- 素材生地情報表示 -->
-          <div>
-             <p>素材生地</p>
-             <div id="product_material"></div>
+          <div class="details_box">
+            <p>素材生地</p>
+            <div>
+              <p id="product_material"></p>
+            </div>
           </div>
 
           <!-- 価格情報表示 -->
           <div>
+<<<<<<< HEAD
             <p>税込価格</p>
             <p id="price"></p>
 
             <!-- カートに遷移するボタン -->
             <button>カート</button>
+=======
+            <div>
+              <div>
+                <p>税込価格</p>
+                <p id="price"></p>
+              </div>
+              <!-- カートに遷移するボタン -->
+              <p><a>カート</a></p>
+            </div>
+          </div>
+>>>>>>> 7e81d9711906f5d08cb0a39d75bcd0c7bef7d6b9
         </section>
     </main>

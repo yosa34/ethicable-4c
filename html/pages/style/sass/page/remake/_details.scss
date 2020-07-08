@@ -1,26 +1,83 @@
-#remake_datails{
-    main{
-        section{
-            div{
+#remake_datails {
+    main {
+        .dokidoki_select {
+            width: 80%;
+            margin: 0 auto;
+            display: flex;
+            height: 400px;
+            >div {
+                width: 350px;
+                height: 350px;
+                border-radius: 20;
+                margin:0 auto;
+                >p {
+                    font-size: 40px;
+                    text-align: center;
+                }
+                >div {
+                    margin:30px auto;
+                    margin-top: 30px;
+                    width: 300px;
+                    height: 300px;
+                    border: 1px solid black;
+                    border-radius: 40px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    >img{
+                        width: 250px;
+                        height: 250px;
+                    }
+                }
+            }
 
+        }
+        >section {
+            >div {
                 // 商品情報テーブル
-                table{
+                table {
                     @include table_main;
+                    span{
+                        display: block;
+                        font-weight: bold;
+                        font-size:35px;
+                        margin-bottom: 20px;
+                    }
+                    #color_name{
+                        >p{
+                            display: flex;
+                            width: 250px;
+                            height:250px;
+                            border-radius: 40px;
+                            justify-content: center;
+                            align-items: center;
+                            margin: 0 auto;
+                            color:white;
+                        }
+                    }
+                    #product_explanation {
+                        >p {
+                            line-height: 45px;
+                        }
+                    }
                 }
 
                 // ボタンのdiv
-                &:last-of-type{
+                &:last-of-type {
                     @include button_bottom_div;
                 }
-                >input[type="button"]{
+
+                >input[type="button"] {
+
                     // 左のボタン
-                    &:first-of-type{
+                    &:first-of-type {
                         @include input_button(20px);
                         margin-right: 10px;
                     }
+
                     // 右のボタン
-                    &:last-of-type{
-                        @include input_button(20px, $border_color_sub, $botton_color,none );
+                    &:last-of-type {
+                        @include input_button(20px, $border_color_sub, $botton_color, none);
                         margin-left: 10px;
                     }
                 }
@@ -28,4 +85,5 @@
         }
 
     }
+
 }
