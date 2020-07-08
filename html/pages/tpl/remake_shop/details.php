@@ -14,7 +14,7 @@
     <!-- header -->
     <!-- main -->
     <main>
-        <p><a href="./remake_shop_home">リメイク依頼一覧に戻る</a></p>
+        <p><a href="./remake_shop_home.php">リメイク依頼一覧に戻る</a></p>
         <p>依頼日：0000年00月00日</p>
         <section>
             <p>依頼内容</p>
