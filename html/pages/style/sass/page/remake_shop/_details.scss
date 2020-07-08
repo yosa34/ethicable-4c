@@ -1,0 +1,72 @@
+#remake_shop_details{
+    main{
+        >p{
+            width: 90%;
+            margin: 20px auto;
+        }
+        section{
+            width: 80%;
+            margin: 0 auto;
+            >p{
+                padding: 10px 30px;
+                border: $main_color 1px solid;
+                color: $main_color;
+            }
+            >div{
+                width: 80%;
+                margin: 20px auto;
+                dl{
+                    display: flex;
+                    padding: 10px 0;
+                    dt{
+                        width: 20%;
+                        text-align: right;
+                    }
+                    dd{
+                        padding-left: 50px;
+                        width: 80%;
+                    }
+                    // 商品
+                    &:nth-child(3){
+                        dd{
+
+                            display: flex;
+                            img{
+                                height: 100px;
+                                margin: 0;
+                            }
+                            >div{
+                                position: relative;
+                                width: 100%;
+                                >p{
+                                    padding: 15px 10px;
+                                    font-size: 20px;
+                                }
+                                div{
+                                    display: flex;
+                                    padding: 0 10px;
+                                    >p{
+                                        padding-right: 20px;
+                                    }
+                                    &:last-of-type{
+                                        span{
+                                            width: 20px;
+                                            height: 20px;
+                                            border-radius: 5px;
+                                            display: inline-block;
+                                            background: #000;
+                                        }
+                                        p{
+                                            line-height: 20px;
+                                            padding: 0 0 0 10px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

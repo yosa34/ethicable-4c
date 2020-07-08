@@ -48,7 +48,7 @@
     **/
       function getProductSize(size) {
         // product_sizeの値によって対応するサイズ名を返す
-        let sizeName;
+        let sizeName = "";
         switch(size) {
           case 2:
             sizeName = "XS";
@@ -189,4 +189,19 @@
             break;
         }
         return colorName;
+      }
+
+      /**
+        取得したproduct_priceをもとに獲得ポイント（切り捨て）を返す
+
+        @param number 取得したproduct_price
+        @return number 獲得ポイント
+      */
+       function getPointAmount(price) {
+        let getPoint;
+        // 切り捨てる
+        getPoint = Math.floor(price/100);
+
+        // console.log(getPoint);
+        return getPoint;
       }

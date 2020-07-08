@@ -31,8 +31,8 @@
             });
 
             // リメイクイメージを取得するために使用する配列を作成
-            // stock_idを取る -> stockコレクションのremake_imageを持ってくる
-            var stock_id = '';
+            // remake_product_idを取る -> stockコレクションのremake_imageを持ってくる
+            var remake_product_id = '';
             var color_id = 0;
             var color_code = '';
             var remake_image= '';
@@ -46,8 +46,8 @@
             cnt = 1;
 
 
-            //stock_idとcolor_idを取得する
-            function get_stock_id_and_color_id() {
+            //remake_product_idとcolor_idを取得する
+            function get_remake_product_id_and_color_id() {
                 //コース使用履歴を取得
                 remake_collection.orderBy('date_qr_generate').onSnapshot(function(snapshot) {
                     snapshot.docChanges().forEach(function (change) {
@@ -55,28 +55,27 @@
                         /**
                             * 元商品画像 ローカルのimage/productの中にある！
                             * 商品番号 product_id
-                            * リメイク後イメージ stock_id -> remake_image
+                            * リメイク後イメージ remake_product_id -> remake_image
                             * リメイクカラー color_id
                             * リメイク完了日 remake_complete
                             */
-                            console.log(change.doc.data());
-
-                        stock_id =  change.doc.data().remake_product_id;
+                            // console.log(change.doc.data());
+                        remake_product_id =  change.doc.id;
                         color_id = change.doc.data().color_id;
-                        get_remake_image(stock_id,color_id);
+                        get_remake_image(remake_product_id,color_id);
                     }
                 });
             });
         }
 
         //remake_imageを取得する
-        function get_remake_image(stock_id,color_id) {
+        function get_remake_image(remake_product_id,color_id) {
             //リメイク画像を取得
-                //stock_idで一致したものの画像を別配列に入れ込む
+                //remake_product_idで一致したものの画像を別配列に入れ込む
                     stock_collection.orderBy('stock_id').onSnapshot(function(snapshot) {
                         snapshot.docChanges().forEach(function (change) {
                             //stock_idが入った配列にあるstock_idとstockコレクションの中のstock_idが同じならば...
-                            if (change.doc.data().stock_id == stock_id) {
+                            if (change.doc.data().remake_product_id == remake_product_id) {
                                 remake_image= change.doc.data().remake_image;
                                 get_color_code(color_id,remake_image);
                             }
@@ -87,10 +86,10 @@
             //color_codeを取得する
             function get_color_code(color_id,remake_image) {
             //リメイク画像を取得
-                //stock_idで一致したものの画像を別配列に入れ込む
+                //color_idで一致したものの画像を別配列に入れ込む
                     color_collection.orderBy('color_id').onSnapshot(function(snapshot) {
                         snapshot.docChanges().forEach(function (change) {
-                            //stock_idが入った配列にあるstock_idとstockコレクションの中のstock_idが同じならば...
+                            //color_idが入った配列にあるcolor_idとcolorコレクションの中のcolor_idが同じならば...
                             if (change.doc.data().color_id == color_id) {
                                 color_code= change.doc.data().color_code;
                                 display_history(remake_image,color_code);
@@ -124,7 +123,7 @@
                         '<img src="./image/product/' + change.doc.data().product_id + '.jpg">' +
                         '<p>' + change.doc.data().product_id + '</p>' +
                         '<img src="' + remake_image + '">' +
-                        '<div class="color-tile" style="background-color: ' + color_code + ';">' + color_code + '</div>' +
+                        '<div class="color-tile" style="background-color: ' + color_code + ';width: 100px;height:100px"></div>' +
                         '<p>取引日時：' + year + '/' + month + '/' + day + ' ' + hour + ':' + min + ':' + sec + '</p>'
                         );
                     }
@@ -133,15 +132,8 @@
                 });
             }
 
-            //関数実行 stock_idとcolor_idを取得→stocksコレクションから画像パスを取得→colorコレクションからカラーコードを取得→表示
-            get_stock_id_and_color_id();
-            // // 順番に呼び出し
-            // Promise.resolve().then(get_stock_id()).then(get_remake_image()).then(display_history());
-
-            /**
-             * 現在→firebase上の画像URLが取れていない
-             * カラーIDからカラーを取る処理を入れていない
-             */
+            //関数実行 remake_product_idとcolor_idを取得→stocksコレクションから画像パスを取得→colorコレクションからカラーコードを取得→表示
+            get_remake_product_id_and_color_id();
         }
 
         //urlパラメータを取得
@@ -150,7 +142,7 @@
         history_process();
         $('select').change(function() {
             course = $('[name=course] option:selected').val();
-            window.location.href = "http://localhost:8888/ethicable/html/pages/user_remake_history.php?corse=" + course;
+            window.location.href = "./user_remake_history.php?corse=" + course;
         });
 
 

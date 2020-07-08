@@ -7,32 +7,7 @@
 ?>
 <script src="./js/shop.js"></script>
 <script>
-   function getProductSize(size) {
-        // product_sizeの値によって対応するサイズ名を返す
-        let sizeName;
-        switch(size) {
-          case 2:
-            sizeName = "XS";
-            break;
-          case 3:
-            sizeName = "S";
-            break;
-          case 4:
-            sizeName = "M";
-            break;
-          case 5:
-            sizeName = "L";
-            break;
-          case 6:
-            sizeName = "XL";
-            break;
-          default :
-            console.log("サイズが存在しません");
-            break;
-        }
-        // product_sizeに対応するサイズ名を返す
-        return sizeName;
-      }
+
   firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
             // console.log(user.uid);
@@ -145,7 +120,25 @@
                     console.log('Error getting documents', err);
                     });
 
+                    // カートに入れる関数
+                    $('#add_to_cart').click(function() {
+                      // 各要素をcart_infoに入れていく
+                      var cart_info = {};
+                      cart_info.remake_image = $('#remake_image').attr('src');
+                      cart_info.product_color = $('#product_color').css('background-color');
+                      cart_info.product_color_name =$('#product_color_name').text();
+                      cart_info.price = $('#price').text().substr(1);
+                      cart_info.remake_icon = $('#remake_icon').attr('src');
+                      cart_info.category_id = $('#remake_icon').attr('src').charAt(17);
 
+                      var cart_submit = JSON.stringify(cart_info);
+
+                      // sessionへ格納する
+                      sessionStorage['cart'] = cart_submit;
+
+                      // カート画面へ
+                      window.location = "./mycart.php";
+                    })
 
           } else{
           }
