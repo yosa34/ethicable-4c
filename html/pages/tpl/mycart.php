@@ -100,11 +100,8 @@
             <dd>253ポイント(円相当)</dd>
           </dl>
         </section>
-<<<<<<< HEAD
         <!-- テスト用session削除ボタン -->
         <button onClick="window.sessionStorage.clear();">sessionクリア</button>
-=======
         <p>合計<b>10,500</b>円</p>
         <input type="button" value="購入手続き">
->>>>>>> 66e68cd673d3447504ffa315031e5dd2ad8f644f
     </main>

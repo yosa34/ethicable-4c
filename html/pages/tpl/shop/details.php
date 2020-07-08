@@ -31,13 +31,8 @@
                   let allRemake = remakeRef.get().then(snapshot => {
                       snapshot.forEach(doc => {
                         const data = doc.data()
-<<<<<<< HEAD
-                        console.log(data);
-                        console.log(doc.id);
 
-=======
                         // console.log(data);
->>>>>>> 66e68cd673d3447504ffa315031e5dd2ad8f644f
 
                         // リメイク商品情報を取得し格納
                         const remakeCategory = doc.data().category_id;
