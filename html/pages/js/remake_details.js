@@ -171,11 +171,14 @@ function Qr_send() {
 
             var insert = function () {
                 
-                var next_page = "./emake_qr_add.php";
-                location.href = next_page + "?remake_product_id=" + remake_product_id;
-
+                let citiesRef = db.collection('remake');
+                let allCities = citiesRef.get().then(snapshot => {
+                    var size = snapshot.size;
+                    var next_page = "./remake_qr_add.php";
+                    location.href = next_page + "?remake_product_id=" + size;
+                });
             }
-                setTimeout(insert, 2000);
+                setTimeout(insert, 1000);
             });
     });
 }
