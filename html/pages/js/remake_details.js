@@ -2,7 +2,7 @@
 // ロード後に走らせたい処理をここの内部で記述
 $(function () {
     //ワクワクコースの時リサイクル、カラー選択項目を非表示にする
-    if(corse_number == 1){
+    if(corse_number == 2){
         $(".dokidoki_select").remove();
     }
 });
@@ -29,12 +29,27 @@ db.collection("color").where("color_id", "==", color)
             const color = doc.data()
             //colorの出力
             var elem = document.getElementById("select_color");
-            elem.innerHTML = color.color_id+" "+color.color_name;
+            elem.innerHTML = color.color_id + " " + color.color_name;
+            var p2 = document.getElementById('select_color_box');
+            p2.style.backgroundColor = color.color_code;
         });
     })
     .catch(function(error) {
         console.log("Error getting documents: ", error);
 });
+//かてごり
+db.collection("category").where("category_id", "==", Number(category))
+    .get().then(function (querySnapshot) {
+        querySnapshot.forEach(function (doc) {
+            const category = doc.data()
+            //colorの出力
+            var elem = document.getElementById("select_category");
+            elem.innerHTML = category.category_name;
+        });
+    })
+    .catch(function (error) {
+        console.log("Error getting documents: ", error);
+    });
 
 
 firebase.auth().onAuthStateChanged(function(user) {
@@ -50,10 +65,10 @@ firebase.auth().onAuthStateChanged(function(user) {
 
             //それぞれの名前を出力する
             //コースの名前
-            if(corse_number == 1){
+            if(corse_number == 2){
                 var elem = document.getElementById("couse_name");
                 elem.innerHTML = "ワクワクコース";
-            }else if(corse_number == 2){
+            }else if(corse_number == 1){
                 var elem = document.getElementById("couse_name");
                 elem.innerHTML = "ドキドキコース";
             }
@@ -68,11 +83,11 @@ firebase.auth().onAuthStateChanged(function(user) {
 
             //素材
             var elem3 = document.getElementById("product_material");
-            elem3.innerHTML = data.product_material;
+            elem3.innerHTML = "<span>素材表地</span>"+data.product_material;
 
             //説明
             var elem4 = document.getElementById("product_explanation");
-            elem4.innerHTML = data.product_explanation;
+            elem4.innerHTML = "<span>特徴</span>" + "<p>" + data.product_explanation+"</p>";
 
 
             //colorの取得
@@ -82,7 +97,9 @@ firebase.auth().onAuthStateChanged(function(user) {
                 const color = doc.data()
                 //colorの出力
                 var elem = document.getElementById("color_name");
-                elem.innerHTML = color.color_code;
+                elem.innerHTML = "<span>カラー</span>" + "<p id='color_box'>" + color.color_id + color.color_name + "</p>";
+                var p = document.getElementById('color_box');
+                p.style.backgroundColor = color.color_code;
                 });
             })
             .catch(function(error) {
@@ -121,7 +138,7 @@ function Qr_send() {
             var size = snapshot.size;
             size = size + 1;
 
-            if (corse_number == 1) {
+            if (corse_number == 2) {
                 //remake ワクワクデータの
                 db.collection("remake").add({
                     category_id: null,
@@ -148,9 +165,7 @@ function Qr_send() {
                     remake_product_id:size,
                     user_id: user.uid,
                 })
-                
             }
-
 
             var insert = function () {
                 

@@ -7,9 +7,10 @@
 ?>
 <script src="./js/shop.js"></script>
 <script>
+
   firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
-            console.log(user.uid);
+            // console.log(user.uid);
 
             /* ToDo
                本来はURLに含まれたremake_product_idを取り出してそれを元に検索・データの取得処理を行いますが。
@@ -30,11 +31,11 @@
                   let allRemake = remakeRef.get().then(snapshot => {
                       snapshot.forEach(doc => {
                         const data = doc.data()
-                        console.log(data);
+                        // console.log(data);
 
                         // リメイク商品情報を取得し格納
                         const remakeCategory = doc.data().category_id;
-                        console.log(remakeCategory);
+                        // console.log(remakeCategory);
                         // const remakeColor = doc.data().color_id;
 
                         // リメイク商品情報
@@ -61,7 +62,7 @@
                         .get().then(function(querySnapshot){
                             querySnapshot.forEach(function(doc) {
                               const stocks = doc.data()
-                              console.log(stocks);
+                              // console.log(stocks);
 
                               // リメイク商品画像の表示
                               elem1.src = stocks.remake_image;
@@ -78,7 +79,9 @@
                             querySnapshot.forEach(function(doc) {
                               const product = doc.data()
                               const productId = product.product_id;
-                              console.log("リメイク前カラーID" + product.color_id);
+                              // console.log("サイズ"+ product.product_size);
+                              // console.log("リメイク前カラーID" + product.color_id);
+
                               // リメイク前の商品のカラーIDを取得
                               const productColorId = product.color_id;
                               // リメイク前の画像を表示
@@ -103,7 +106,7 @@
                         .get().then(function(querySnapshot) {
                             querySnapshot.forEach(function(doc) {
                               const category = doc.data()
-                              console.log(category);
+                              // console.log(category);
                             });
                         })
                         .catch(function(error) {
@@ -117,7 +120,25 @@
                     console.log('Error getting documents', err);
                     });
 
+                    // カートに入れる関数
+                    $('#add_to_cart').click(function() {
+                      // 各要素をcart_infoに入れていく
+                      var cart_info = {};
+                      cart_info.remake_image = $('#remake_image').attr('src');
+                      cart_info.product_color = $('#product_color').css('background-color');
+                      cart_info.product_color_name =$('#product_color_name').text();
+                      cart_info.price = $('#price').text().substr(1);
+                      cart_info.remake_icon = $('#remake_icon').attr('src');
+                      cart_info.category_id = $('#remake_icon').attr('src').charAt(17);
 
+                      var cart_submit = JSON.stringify(cart_info);
+
+                      // sessionへ格納する
+                      sessionStorage['cart'] = cart_submit;
+
+                      // カート画面へ
+                      window.location = "./mycart.php";
+                    })
 
           } else{
           }
@@ -134,45 +155,53 @@
     <!-- main -->
     <main>
         <section>
-        <div>
-          <!-- リメイク情報表示 -->
-          <!-- 取り敢えずstyleを記述しているだけなのであとで変更 -->
-          <img id="remake_image" alt="リメイク商品画像" style="width: 200px;">
           <div>
-            <p>リメイク情報</p>
-            <img id="remake_icon" alt="リメイク希望のアイテムアイコン" style="width: 40px;"><span>×</span><span id="remake_color" style="width: 50px; height: 50px; display: block;"></span>
-            <!-- お気に入りアイコン -->
-            <!-- <img src="" alt="お気に入り"> -->
+            <!-- リメイク情報表示 -->
+            <div>
+              <img id="remake_image" alt="リメイク商品画像">
+              <div>
+                <p>リメイク情報</p>
+                <img id="remake_icon" alt="リメイク希望のアイテムアイコン"><span>×</span><span id="remake_color"></span>
+              </div>
+              <!-- お気に入りアイコン -->
+            </div>
+            <!-- リメイク前の商品情報表示 -->
+            <div class="details_box">
+              <p>リメイク前の商品情報</p>
+              <div>
+                <img id="before_img" alt="リメイク前の商品画像">
+                <div>
+                  <div>
+                    <p id="product_id"></p>
+                    <p id="product_size"></p>
+                  </div>
+                  <p id="product_name"></p>
+                  <div>
+                    <span id="product_color"></span>
+                    <p id="product_color_name"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-
-          <!-- リメイク前の商品情報表示 -->
-          <!-- 取り敢えずstyleを記述しているだけなのであとで変更 -->
-          <div>
-            <p>リメイク前の商品情報</p>
-            <img id="before_img" alt="リメイク前の商品画像" style="width: 50px;">
-            <p id="product_id"></p>
-            <p id="product_name"></p>
-            <p id="product_size"></p>
-            <span id="product_color" style="width: 50px; height: 50px; display: block;"></span>
-            <p id="product_color_name"></p>
-          </div>
-
           <!-- 素材生地情報表示 -->
-          <div>
-             <p>素材生地</p>
-             <div id="product_material"></div>
-          </div>
-
-          <!-- カテゴリ絞り込みメニュー -->
-          <div>
-            <p id="category_menu"></p>
+          <div class="details_box">
+            <p>素材生地</p>
+            <div>
+              <p id="product_material"></p>
+            </div>
           </div>
 
           <!-- 価格情報表示 -->
           <div>
-            <p>税込価格</p>
-            <p id="price"></p>
-            <!-- カートに遷移するボタン -->
-            <button>カート</button>
+            <div>
+              <div>
+                <p>税込価格</p>
+                <p id="price"></p>
+              </div>
+              <!-- カートに遷移するボタン -->
+              <p><a>カート</a></p>
+            </div>
+          </div>
         </section>
     </main>

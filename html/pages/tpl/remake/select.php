@@ -5,7 +5,7 @@
     編集者：2020/06/12小川紗世
     */
 ?>
-
+<script src="./js/shop.js"></script>
 <script type="text/javascript" src="./js/remake_select.js"></script>
 
 <!-- REMAKE HOME画面 -->
@@ -54,19 +54,19 @@
               <li>
                 <p>
                   <label for="color1"></label>
-                  <input type="radio" name="color" id="color1" value="1">サンプル1
+                  <input type="radio" name="color" id="color1" value="1">
                 </p>
               </li>
               <li>
                 <p>
                   <label for="color2"></label>
-                  <input type="radio" name="color" id="color2" value="2">サンプル2
+                  <input type="radio" name="color" id="color2" value="2">
                 </p>
               </li>
               <li>
                 <p>
                   <label for="color3"></label>
-                  <input type="radio" name="color" id="color3" value="3">サンプル3
+                  <input type="radio" name="color" id="color3" value="3">
                 </p>
               </li>
             </ul>

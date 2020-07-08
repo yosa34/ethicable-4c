@@ -23,17 +23,18 @@
                 &:first-of-type {
                     width: 90%;
                     margin: 25px auto 200px;
-                    height: 600px;
                     background: $background_color_main;
                     border: 2px solid $header_border_color;
                     border-radius: 20px;
+                    img{
+                        width: 100%;
+                        border-radius: 20px;
+                    }
                 }
 
                 &:last-of-type {
                     width: 80%;
-                    margin: 20px auto;
-
-                    position: absolute;
+                    margin: 150px auto 20px;
                     bottom: 300px;
                     left: 0;
                     right: 0;
@@ -163,7 +164,6 @@
                 >p {
                     &:last-of-type {
                         font-size:35px;
-                        color: red;
                     }
                 }
 
