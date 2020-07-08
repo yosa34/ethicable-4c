@@ -87,5 +87,6 @@
                 </dl>
             </div>
         </section>
+        <input type="submit" value="リメイク完了">
     </main>
 
