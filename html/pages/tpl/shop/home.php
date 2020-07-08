@@ -48,7 +48,7 @@
     <main>
       <nav>
         <ul>
-          <li style="border-bottom: 1px;">新着</li>
+          <li>新着<span></span></li>
           <li>カテゴリ</li>
         </ul>
       </nav>
