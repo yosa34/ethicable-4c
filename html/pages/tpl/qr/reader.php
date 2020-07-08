@@ -10,19 +10,24 @@
 <title>ethicable｜REMAKE BOX｜リメイクボックス画面</title>
 
 </head>
-
-<!-- main -->
-<main>
-    <form name="myform" method="post">
-        <input name="date" type=text size=50 placeholder="Tracking Code" class=qrcode-text>
-        <label class=qrcode-text-btn for="file_upload">
-        <p>QR読み込みカメラ起動</p>
-        <input type="button" id="a" onclick="b();">aaaaa
-        <input id="file_upload" type=file accept="image/*" capture=environment onclick="return showQRIntro();" onchange="openQRCamera(this);" tabindex=-1>
-        </label>
-        <input class="hidden" type=text name="cn">
-    </form>
-</main>
+<body id="qr_reader">
+  <!-- main -->
+  <main>
+      <section>
+        <h1>リメイク BOX</h1>
+        <p>カメラを起動してリメイク依頼QRコードをかざして商品をリメイクBOXへ入れてください。</p>
+        <form name="myform" method="post">
+            <input name="date" type=text size=50 placeholder="Tracking Code" class="qrcode-text">
+            <label class="qrcode-text-btn" for="file_upload">
+            <p>カメラ起動</p>
+            <input type="button" id="a" onclick="b();">
+            <input id="file_upload" type=file accept="image/*" capture=environment onclick="return showQRIntro();" onchange="openQRCamera(this);" tabindex=-1>
+            </label>
+            <input class="hidden" type=text name="cn">
+        </form>
+      </section>
+  </main>
+</body>
 
 <script>
 

@@ -309,6 +309,41 @@ header {
   opacity: 0.4;
   display: none; }
 
+#qr_reader main {
+  margin: 0; }
+  #qr_reader main section {
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+    position: relative; }
+    #qr_reader main section p {
+      text-align: center; }
+    #qr_reader main section form {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      right: 0;
+      bottom: 150px; }
+      #qr_reader main section form p {
+        display: block;
+        background: #B5C76A;
+        color: #FFF;
+        border: 2px solid none;
+        font-size: 45px;
+        font-weight: bold;
+        width: 80%;
+        padding: 20px 0;
+        margin: 50px auto;
+        border-radius: 15px;
+        text-align: center; }
+        #qr_reader main section form p:active {
+          background: none;
+          color: #B5C76A;
+          border: 2px solid #B5C76A; }
+    #qr_reader main section #file_upload,
+    #qr_reader main section .qrcode-text {
+      display: none; }
+
 #remake_shop_details main > p {
   width: 90%;
   margin: 20px auto; }
