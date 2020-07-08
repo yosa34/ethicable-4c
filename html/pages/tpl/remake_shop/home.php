@@ -2,9 +2,29 @@
     /*
     ページ詳細：リメイクショップホーム画面
     作成者：小川紗世
-    編集者：2020/07/06小川紗世
+    編集者：2020/07/06 粟津由香
     */
 ?>
+<script>
+firebase.auth().onAuthStateChanged(function(user) {
+        if (user) {
+          // リメイク完了登録を行うリメイク依頼一覧(ドキドキコース)
+          db.collection("remake").where("course_id", "==", 1).get().then((querySnapshot) => {
+            let result = "";
+            querySnapshot.forEach((docs) => {
+             ;
+            });
+            for(var i = 0; i < arrRemakeProductId.length; i++) {
+              // console.log(arrRemakeImg[i]);
+              console.log(arrRemakeProductId[i]);
+                result += "<li><a href='shop_details.php?remake_product_id="+ arrRemakeProductId[i] +"'><img src= '"+ arrRemakeImg[i] +"'></a></li>";
+                document.querySelector('#result').innerHTML = result;
+              }
+          });
+        } else{
+        }
+});
+</script>
 
 <!-- SHOP HOME画面 -->
 <title>ethicable｜リメイクショップ</title>
