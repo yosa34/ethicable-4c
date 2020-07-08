@@ -12,7 +12,7 @@ footer {
   height: 170px;
   position: fixed;
   z-index: 999;
-  bottom: 5px;
+  bottom: 0;
   left: 0;
   right: 0;
   border-top: 2px solid #B5C76A;
