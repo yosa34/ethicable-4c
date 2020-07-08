@@ -3,6 +3,7 @@ footer{
     height: $footer_height;
 
     position: fixed;
+    z-index: 999;
     bottom: 5px;
     left: 0;
     right: 0;

@@ -7,32 +7,7 @@
 ?>
 <script src="./js/shop.js"></script>
 <script>
-   function getProductSize(size) {
-        // product_sizeの値によって対応するサイズ名を返す
-        let sizeName;
-        switch(size) {
-          case 2:
-            sizeName = "XS";
-            break;
-          case 3:
-            sizeName = "S";
-            break;
-          case 4:
-            sizeName = "M";
-            break;
-          case 5:
-            sizeName = "L";
-            break;
-          case 6:
-            sizeName = "XL";
-            break;
-          default :
-            console.log("サイズが存在しません");
-            break;
-        }
-        // product_sizeに対応するサイズ名を返す
-        return sizeName;
-      }
+
   firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
             // console.log(user.uid);
@@ -145,7 +120,25 @@
                     console.log('Error getting documents', err);
                     });
 
+                    // カートに入れる関数
+                    $('#add_to_cart').click(function() {
+                      // 各要素をcart_infoに入れていく
+                      var cart_info = {};
+                      cart_info.remake_image = $('#remake_image').attr('src');
+                      cart_info.product_color = $('#product_color').css('background-color');
+                      cart_info.product_color_name =$('#product_color_name').text();
+                      cart_info.price = $('#price').text().substr(1);
+                      cart_info.remake_icon = $('#remake_icon').attr('src');
+                      cart_info.category_id = $('#remake_icon').attr('src').charAt(17);
 
+                      var cart_submit = JSON.stringify(cart_info);
+
+                      // sessionへ格納する
+                      sessionStorage['cart'] = cart_submit;
+
+                      // カート画面へ
+                      window.location = "./mycart.php";
+                    })
 
           } else{
           }
@@ -162,41 +155,53 @@
     <!-- main -->
     <main>
         <section>
-        <div>
-          <!-- リメイク情報表示 -->
-          <!-- 取り敢えずstyleを記述しているだけなのであとで変更 -->
-          <img id="remake_image" alt="リメイク商品画像" style="width: 200px;">
           <div>
-            <p>リメイク情報</p>
-            <img id="remake_icon" alt="リメイク希望のアイテムアイコン" style="width: 40px;"><span>×</span><span id="remake_color" style="width: 50px; height: 50px; display: block;"></span>
-            <!-- お気に入りアイコン -->
-            <!-- <img src="" alt="お気に入り"> -->
+            <!-- リメイク情報表示 -->
+            <div>
+              <img id="remake_image" alt="リメイク商品画像">
+              <div>
+                <p>リメイク情報</p>
+                <img id="remake_icon" alt="リメイク希望のアイテムアイコン"><span>×</span><span id="remake_color"></span>
+              </div>
+              <!-- お気に入りアイコン -->
+            </div>
+            <!-- リメイク前の商品情報表示 -->
+            <div class="details_box">
+              <p>リメイク前の商品情報</p>
+              <div>
+                <img id="before_img" alt="リメイク前の商品画像">
+                <div>
+                  <div>
+                    <p id="product_id"></p>
+                    <p id="product_size"></p>
+                  </div>
+                  <p id="product_name"></p>
+                  <div>
+                    <span id="product_color"></span>
+                    <p id="product_color_name"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-
-          <!-- リメイク前の商品情報表示 -->
-          <!-- 取り敢えずstyleを記述しているだけなのであとで変更 -->
-          <div>
-            <p>リメイク前の商品情報</p>
-            <img id="before_img" alt="リメイク前の商品画像" style="width: 50px;">
-            <p id="product_id"></p>
-            <p id="product_name"></p>
-            <p id="product_size"></p>
-            <span id="product_color" style="width: 50px; height: 50px; display: block;"></span>
-            <p id="product_color_name"></p>
-          </div>
-
           <!-- 素材生地情報表示 -->
-          <div>
-             <p>素材生地</p>
-             <div id="product_material"></div>
+          <div class="details_box">
+            <p>素材生地</p>
+            <div>
+              <p id="product_material"></p>
+            </div>
           </div>
 
           <!-- 価格情報表示 -->
           <div>
-            <p>税込価格</p>
-            <p id="price"></p>
-            
-            <!-- カートに遷移するボタン -->
-            <button>カート</button>
+            <div>
+              <div>
+                <p>税込価格</p>
+                <p id="price"></p>
+              </div>
+              <!-- カートに遷移するボタン -->
+              <p><a>カート</a></p>
+            </div>
+          </div>
         </section>
     </main>

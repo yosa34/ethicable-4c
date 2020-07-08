@@ -11,6 +11,7 @@ footer {
   width: 100%;
   height: 170px;
   position: fixed;
+  z-index: 999;
   bottom: 5px;
   left: 0;
   right: 0;
@@ -175,14 +176,15 @@ header {
   #qr_detail main section div:first-of-type {
     width: 90%;
     margin: 25px auto 200px;
-    height: 600px;
     background: #FFF;
     border: 2px solid #707070;
     border-radius: 20px; }
+    #qr_detail main section div:first-of-type img {
+      width: 100%;
+      border-radius: 20px; }
   #qr_detail main section div:last-of-type {
     width: 80%;
-    margin: 20px auto;
-    position: absolute;
+    margin: 150px auto 20px;
     bottom: 300px;
     left: 0;
     right: 0;
@@ -306,6 +308,89 @@ header {
   background-color: black;
   opacity: 0.4;
   display: none; }
+
+#remake_shop_details main > p {
+  width: 90%;
+  margin: 20px auto; }
+
+#remake_shop_details main section {
+  width: 80%;
+  margin: 0 auto; }
+  #remake_shop_details main section > p {
+    padding: 10px 30px;
+    border: #B5C76A 1px solid;
+    color: #B5C76A; }
+  #remake_shop_details main section > div {
+    width: 80%;
+    margin: 20px auto; }
+    #remake_shop_details main section > div dl {
+      display: flex;
+      padding: 10px 0; }
+      #remake_shop_details main section > div dl dt {
+        width: 20%;
+        text-align: right; }
+      #remake_shop_details main section > div dl dd {
+        padding-left: 50px;
+        width: 80%; }
+      #remake_shop_details main section > div dl:nth-child(3) dd {
+        display: flex; }
+        #remake_shop_details main section > div dl:nth-child(3) dd img {
+          height: 100px;
+          margin: 0; }
+        #remake_shop_details main section > div dl:nth-child(3) dd > div {
+          position: relative;
+          width: 100%; }
+          #remake_shop_details main section > div dl:nth-child(3) dd > div > p {
+            padding: 15px 10px;
+            font-size: 20px; }
+          #remake_shop_details main section > div dl:nth-child(3) dd > div div {
+            display: flex;
+            padding: 0 10px; }
+            #remake_shop_details main section > div dl:nth-child(3) dd > div div > p {
+              padding-right: 20px; }
+            #remake_shop_details main section > div dl:nth-child(3) dd > div div:last-of-type span {
+              width: 20px;
+              height: 20px;
+              border-radius: 5px;
+              display: inline-block;
+              background: #000; }
+            #remake_shop_details main section > div dl:nth-child(3) dd > div div:last-of-type p {
+              line-height: 20px;
+              padding: 0 0 0 10px; }
+
+#remake_shop_home section {
+  width: 80%;
+  margin: 0 auto; }
+  #remake_shop_home section table {
+    width: 100%; }
+    #remake_shop_home section table tr {
+      width: 100%; }
+      #remake_shop_home section table tr td {
+        text-align: center; }
+        #remake_shop_home section table tr td img {
+          width: 50px;
+          margin: 10px auto; }
+        #remake_shop_home section table tr td span {
+          width: 50px;
+          height: 50px;
+          border-radius: 15px;
+          margin: 10px auto;
+          background: #000;
+          display: block; }
+        #remake_shop_home section table tr td:last-of-type p {
+          padding: 20px 0; }
+        #remake_shop_home section table tr td:last-of-type a {
+          padding: 10px 0;
+          background: #B5C76A;
+          color: #fff;
+          border-radius: 10px; }
+        #remake_shop_home section table tr td textarea {
+          vertical-align: middle; }
+      #remake_shop_home section table tr > th {
+        background: #B5C76A;
+        padding: 20px 0; }
+        #remake_shop_home section table tr > th p {
+          color: #fff; }
 
 #remake_corse main section article ul {
   width: 80%;
@@ -640,23 +725,19 @@ header {
 #remake_qr_add main section div {
   width: 70%;
   margin: 25px auto;
-  height: 600px;
   background: #FFF;
   border: 2px solid #707070;
   border-radius: 20px; }
+  #remake_qr_add main section div img {
+    width: 100%;
+    border-radius: 20px; }
 
 #remake_qr_add main section p {
   width: 70%;
   margin: 200px auto 0;
   text-align: center;
-  font-size: 40px; }
-  #remake_qr_add main section p:last-of-type {
-    margin-top: 20px; }
-    #remake_qr_add main section p:last-of-type a {
-      display: inline-block;
-      color: #B5C76A;
-      padding: 10px 30px;
-      border-bottom: 2px solid #B5C76A; }
+  font-size: 40px;
+  line-height: 1.7; }
 
 #remake_select main section > div {
   width: 80%;
@@ -777,6 +858,106 @@ header {
     background: none;
     color: #B5C76A;
     border: 2px solid #B5C76A; }
+
+#shop_details main section {
+  background: #F5F5F5; }
+  #shop_details main section > div {
+    background: #fff;
+    padding: 0px 0 10px; }
+    #shop_details main section > div:first-of-type > div {
+      position: relative; }
+      #shop_details main section > div:first-of-type > div:first-of-type img {
+        width: 100%;
+        margin: 0 auto; }
+      #shop_details main section > div:first-of-type > div:first-of-type div {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        width: 35%;
+        position: absolute;
+        bottom: 10px;
+        left: 10px; }
+        #shop_details main section > div:first-of-type > div:first-of-type div p {
+          width: 100%;
+          font-size: 30px;
+          padding-bottom: 10px; }
+        #shop_details main section > div:first-of-type > div:first-of-type div img {
+          width: 100px; }
+        #shop_details main section > div:first-of-type > div:first-of-type div span {
+          display: inline-block;
+          width: 100px;
+          height: 100px;
+          font-size: 100px; }
+    #shop_details main section > div:last-of-type {
+      width: 100%; }
+      #shop_details main section > div:last-of-type > div {
+        width: 80%;
+        padding: 50px 20px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between; }
+        #shop_details main section > div:last-of-type > div > div {
+          width: 70%;
+          vertical-align: bottom; }
+          #shop_details main section > div:last-of-type > div > div p {
+            font-size: 30px; }
+            #shop_details main section > div:last-of-type > div > div p:last-of-type {
+              font-size: 70px;
+              padding-top: 20px; }
+        #shop_details main section > div:last-of-type > div > p {
+          font-size: 40px;
+          text-align: center;
+          width: 30%; }
+          #shop_details main section > div:last-of-type > div > p a {
+            color: #fff;
+            padding: 40px 0;
+            background: #B5C76A; }
+            #shop_details main section > div:last-of-type > div > p a:active {
+              color: #B5C76A;
+              border: 3px solid #B5C76A;
+              background: #fff; }
+  #shop_details main section .details_box {
+    width: 80%;
+    margin: 60px auto;
+    background: #fff;
+    box-shadow: 3px 3px 7px gray; }
+    #shop_details main section .details_box > div {
+      display: flex; }
+      #shop_details main section .details_box > div > p {
+        font-size: 30px;
+        padding: 20px; }
+      #shop_details main section .details_box > div img {
+        height: 200px;
+        margin: 0; }
+      #shop_details main section .details_box > div > div {
+        width: 100%; }
+        #shop_details main section .details_box > div > div > p {
+          font-size: 30px;
+          text-align: center;
+          width: 100%; }
+        #shop_details main section .details_box > div > div div {
+          position: relative;
+          display: flex;
+          padding: 20px; }
+          #shop_details main section .details_box > div > div div p {
+            font-size: 20px; }
+          #shop_details main section .details_box > div > div div:last-of-type {
+            position: absolute;
+            bottom: 0;
+            right: 0; }
+            #shop_details main section .details_box > div > div div:last-of-type span {
+              width: 70px;
+              height: 70px;
+              display: inline-block; }
+            #shop_details main section .details_box > div > div div:last-of-type p {
+              line-height: 70px;
+              padding: 0 10px; }
+    #shop_details main section .details_box > p {
+      display: inline-block;
+      font-size: 30px;
+      padding: 20px;
+      background: #B5C76A;
+      color: #fff; }
 
 #shop_home main nav {
   /**
@@ -1061,7 +1242,7 @@ header {
           display: flex;
           padding: 10px 0; }
           #cart main section ul li > div dl dd img {
-            width: 70px; }
+            height: 70px; }
           #cart main section ul li > div dl dd span {
             width: 70px;
             height: 70px;
