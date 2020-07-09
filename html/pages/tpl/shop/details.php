@@ -19,15 +19,19 @@
                コレクションの修正が完了次第下記のコードに変更する！！！
 
             // GET URLのパラメータ取得(remake_product_idが含まれている)
+            url = location.search.substring(1).split('=');
+            var get_remake_product_id;
+            get_remake_product_id = url[1];
+            console.log(url[0]+"=>"+url[1]);
+          */
+            var remake_product_id = 10
+            var product_id = 426847;
+            // remakeコレクションの情報取得
             // url = location.search.substring(1).split('=');
             // var get_remake_product_id;
             // get_remake_product_id = url[1];
             // console.log(url[0]+"=>"+url[1]);
-          */
-            var remake_product_id = 2
-            var product_id = 426847;
-            // remakeコレクションの情報取得
-            let remakeRef = db.collection('remake').where("remake_product_id", "==", Number(remake_product_id));
+            let remakeRef = db.collection('remake').where("remake_product_id", "==",remake_product_id);
                   let allRemake = remakeRef.get().then(snapshot => {
                       snapshot.forEach(doc => {
                         const data = doc.data()
@@ -58,11 +62,12 @@
                       elem2.src = getRemakeImg(remakeCategory);
 
                         // db.collection("stocks").where("remake_product_id", "==", remake_product_id)
-                        db.collection("stocks").where("remake_product_id", "==", "DSsswyu1p9SklvMstgiu")
+                        db.collection("stocks").where("remake_product_id", "==", 10)
                         .get().then(function(querySnapshot){
                             querySnapshot.forEach(function(doc) {
                               const stocks = doc.data()
-                              // console.log(stocks);
+                              console.log(stocks);
+                              console.log(doc.data().remake_image);
 
                               // リメイク商品画像の表示
                               elem1.src = stocks.remake_image;
@@ -194,6 +199,16 @@
 
           <!-- 価格情報表示 -->
           <div>
+<<<<<<< HEAD
+<<<<<<< HEAD
+            <p>税込価格</p>
+            <p id="price"></p>
+
+            <!-- カートに遷移するボタン -->
+            <button>カート</button>
+=======
+=======
+>>>>>>> cc928e661575ecfc6c810ad90a1bc55209ea6401
             <div>
               <div>
                 <p>税込価格</p>
@@ -203,5 +218,9 @@
               <p><a>カート</a></p>
             </div>
           </div>
+<<<<<<< HEAD
+>>>>>>> 7e81d9711906f5d08cb0a39d75bcd0c7bef7d6b9
+=======
+>>>>>>> cc928e661575ecfc6c810ad90a1bc55209ea6401
         </section>
     </main>
