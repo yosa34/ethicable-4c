@@ -113,4 +113,5 @@ firebase.auth().onAuthStateChanged(function(user) {
         </section>
         <input type="submit" value="リメイク完了">
     </main>
-
+    </body>
+  </html>
