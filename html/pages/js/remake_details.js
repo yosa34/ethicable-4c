@@ -2,7 +2,7 @@
 // ロード後に走らせたい処理をここの内部で記述
 $(function () {
     //ワクワクコースの時リサイクル、カラー選択項目を非表示にする
-    if(corse_number == 1){
+    if(corse_number == 2){
         $(".dokidoki_select").remove();
     }
 });
@@ -65,10 +65,10 @@ firebase.auth().onAuthStateChanged(function(user) {
 
             //それぞれの名前を出力する
             //コースの名前
-            if(corse_number == 1){
+            if(corse_number == 2){
                 var elem = document.getElementById("couse_name");
                 elem.innerHTML = "ワクワクコース";
-            }else if(corse_number == 2){
+            }else if(corse_number == 1){
                 var elem = document.getElementById("couse_name");
                 elem.innerHTML = "ドキドキコース";
             }
@@ -138,7 +138,7 @@ function Qr_send() {
             var size = snapshot.size;
             size = size + 1;
 
-            if (corse_number == 1) {
+            if (corse_number == 2) {
                 //remake ワクワクデータの
                 db.collection("remake").add({
                     category_id: null,
@@ -165,9 +165,7 @@ function Qr_send() {
                     remake_product_id:size,
                     user_id: user.uid,
                 })
-                
             }
-
 
             var insert = function () {
                 
