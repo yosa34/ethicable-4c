@@ -53,8 +53,8 @@
         </ul>
       </nav>
       <section>
-        <ul style="display: flex; flex-wrap: wrap;">
-          <li style="width: 50%;" id="result"></li>
+        <ul id="result">
+          <li></li>
         </ul>
       </section>
     </main>

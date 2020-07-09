@@ -12,6 +12,7 @@
             li{
                 //inline要素追加(リストを文字列に。)
                 display: inline-block;
+                width: 45%;
 
                 //文字サイズを他ページのnavと合わせる
                 font-weight: bold;
@@ -22,16 +23,17 @@
             /**
              * 画像:横に2枚ずつ
              */
+            width:80%;
+            margin:0 auto;
             ul{
                 display: inline-flex;
                 flex-wrap: wrap;
-                width:80%;
-                margin:30px auto;
                 text-align: center;
                 justify-content: space-between;
 
                 li{
                     width:45%;
+                    margin:10px 0;
 
                     a{
                         img{
