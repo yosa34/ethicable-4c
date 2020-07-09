@@ -2,7 +2,7 @@
     /*
     ページ詳細：商品ホーム画面
     作成者：小川紗世
-    編集者：2020/06/27粟津由香
+    編集者：2020/07/09小川紗世
     */
 ?>
 
@@ -53,8 +53,6 @@
         </ul>
       </nav>
       <section>
-        <ul style="display: flex; flex-wrap: wrap;">
-          <li style="width: 50%;" id="result"></li>
         <ul id="result">
           <li></li>
         </ul>

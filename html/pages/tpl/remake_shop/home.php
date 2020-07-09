@@ -79,4 +79,5 @@ firebase.auth().onAuthStateChanged(function(user) {
             </table>
         </section>
     </main>
-
+  </body>
+  </html>
