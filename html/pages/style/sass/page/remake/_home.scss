@@ -10,14 +10,20 @@
                         font-size: 45px;
                         font-weight: bold;
                     }
-                    // 発行中未使用QRコート一覧
+                    // 発行中未使用QRコード一覧
                     div{
+                        margin-left:140px;
                         ul{
+                            display: flex;
+                            overflow: scroll;
+                            
                             li{
                                 width: 70%;
-                                margin: 25px auto;
+                                margin-right: 200px;
+                                margin-bottom: 20px;
+                                margin-top:20px;
                                 a{
-                                    width: 100%;
+                                    width: 70vw;
                                     height: 600px;
                                     background: $background_color_main;
                                     border: 2px solid $header_border_color;
@@ -30,6 +36,7 @@
                                     }
                                     // リメイク詳細
                                     div{
+                                        background-color: red;
                                         display: flex;
                                         justify-content: space-between;
                                         position: absolute;
