@@ -2,7 +2,7 @@
     /*
     ページ詳細：商品ホーム画面
     作成者：小川紗世
-    編集者：2020/06/12小川紗世
+    編集者：2020/07/09小川紗世
     */
 ?>
 
@@ -11,23 +11,26 @@
 
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-        console.log(user.uid);
-        let remake_product_id;
-        // 販売可能なリメイク商品の商品データを取得する(quantity:0【完売】 quantity:1 【販売中】)
-        db.collection('stocks').where('quantity', '==', '1').get().then(querySnapshot => {
-        querySnapshot.forEach(docs => {
-          console.log(docs.data()); // ログ出力
-          // imgタグ要素を取得
-          var elem1 = document.getElementById("remake_image");
-          elem1.src = docs.data().remake_image;
+          let arrRemakeProductId = [];
+          let arrRemakeImg = [];
 
-          // リメイクIDを取得
-          remake_product_id = docs.data().remake_product_id;
-          var url = document.getElementById("product_details");
-          // remake_product_idを含めたURLを生成
-          url.href = "shop_details.php?remake_product_id=" + remake_product_id;
-        });
-      });
+          // 販売可能なリメイク商品の商品データを取得する()
+          // コレクションの指定
+          db.collection("stocks").where("quantity", "==", "1").get().then((querySnapshot) => {
+            let result = "";
+            querySnapshot.forEach((docs) => {
+              arrRemakeProductId.push(docs.data().remake_product_id);
+              // console.log(arrRemakeProductId);
+              arrRemakeImg.push(docs.data().remake_image);
+              // console.log("全データ" +　docs.data());
+            });
+            for(var i = 0; i < arrRemakeProductId.length; i++) {
+              // console.log(arrRemakeImg[i]);
+              console.log(arrRemakeProductId[i]);
+                result += "<li><a href='shop_details.php?remake_product_id="+ arrRemakeProductId[i] +"'><img src= '"+ arrRemakeImg[i] +"'></a></li>";
+                document.querySelector('#result').innerHTML = result;
+              }
+          });
         } else{
         }
     });
@@ -50,8 +53,8 @@
         </ul>
       </nav>
       <section>
-        <ul style="display: flex; flex-wrap: wrap;">
-          <li style="width: 50%;"><a id="product_details"><img id="remake_image" alt="リメイク商品画像"></a></li>
+        <ul id="result">
+          <li></li>
         </ul>
       </section>
     </main>

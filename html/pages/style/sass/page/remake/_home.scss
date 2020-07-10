@@ -12,6 +12,7 @@
                     }
                     // 発行中未使用QRコード一覧
                     div{
+<<<<<<< HEAD
                         width:100%;
                         display: flex;
                         div{    
@@ -36,6 +37,46 @@
                                         background: $background_color_main;
                                         border: 2px solid $header_border_color;
                                         border-radius: 20px;
+=======
+                        ul{
+                            li{
+                                width: 70%;
+                                margin: 25px auto;
+                                a{
+                                    width: 100%;
+                                    height: 600px;
+                                    background: $background_color_main;
+                                    border: 2px solid $header_border_color;
+                                    border-radius: 20px;
+                                    position: relative;
+                                    //QRコード表示
+                                    >img{
+                                        width: 80%;
+                                        margin: 0 auto;
+                                    }
+                                    // リメイク詳細
+                                    div{
+                                        display: flex;
+                                        justify-content: space-between;
+                                        position: absolute;
+                                        z-index: 1;
+                                        bottom: 40px;
+                                        left: 0;
+                                        right: 0;
+                                        width: 50%;
+                                        margin: 0 auto;
+                                        // リメイクイメージ
+                                        img{
+                                            width: 100px;
+                                        }
+                                        // リメイクカラー&✖️
+                                        span{
+                                            width: 100px;
+                                            height: 100px;
+                                            text-align: center;
+                                            font-size: 100px
+                                        }
+>>>>>>> 684f7769086a4eef13e0a846f6624ba6b5364141
                                     }
                                 }
                             }

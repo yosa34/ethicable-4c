@@ -46,9 +46,9 @@
       @param number   取得したproduct_size
       @return String  product_sizeに対応するサイズ名
     **/
-      function get_product_size(size) {
+      function getProductSize(size) {
         // product_sizeの値によって対応するサイズ名を返す
-        let sizeName;
+        let sizeName = "";
         switch(size) {
           case 2:
             sizeName = "XS";
@@ -188,6 +188,52 @@
             console.log("存在しないカラーIDです");
             break;
         }
-        console.log(colorName);
         return colorName;
+      }
+
+      /**
+        取得したproduct_priceをもとに獲得ポイント（切り捨て）を返す
+
+        @param number 取得したproduct_price
+        @return number 獲得ポイント
+      */
+       function getPointAmount(price) {
+        let getPoint;
+        // 切り捨てる
+        getPoint = Math.floor(price/100);
+
+        // console.log(getPoint);
+        return getPoint;
+      }
+
+      /**
+          合計金額を返す
+
+          @param number 小計, 送料, 使用ポイント
+          @return number 獲得ポイント
+          (商品の小計 + 送料) - 使用ポイント = 総合計(お支払い金額)
+        */
+       function getBillingAmount(subtotal, postage, use_point) {
+        let billingAmount;
+        billingAmount = (subtotal + postage) - use_point;
+        // console.log(billingAmount);
+        return billingAmount;
+      }
+
+      /*
+          Date型をフォーマットする
+
+          @param date
+          @return date
+        */
+       function getDate(date) {
+        //「年」を取得する
+        let YYYY = date.getFullYear();
+        //「月」を取得する
+        let MM = date.getMonth()+1;
+        //「日」を取得する
+        let DD = date.getDate();
+        ftDate = YYYY + "年" + MM + "月" + DD + "日";
+        // console.log(ftDate);
+        return ftDate;
       }
