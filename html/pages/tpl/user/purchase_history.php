@@ -15,60 +15,60 @@
   
   firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
-            console.log('ログイン中のユーザ：' + user.uid);
+            //console.log('ログイン中のユーザ：' + user.uid);
 
             //historyコレクションから日ごとにデータを抽出
             //historyのユーザID == ログイン中のユーザID
             var db = firebase.firestore();
             db.collection('history').where('user_id', '==', user.uid).get().then(querySnapshot => {
-                console.log("抽出した【history】");
+                //console.log("抽出した【history】");
                 querySnapshot.forEach(history => {
                     //history取得確認
-                    console.log(history.data())
+                    //console.log(history.data())
 
 
                     //stocksコレクションからstock_idが同一のものを取得
                     //stocksのstock_id == 抽出したhistoryのstock_id
                     db.collection('stocks').where('stock_id', '==', history.data().stock_id).get().then(querySnapshot => {
-                        console.log("抽出した【stocks】");
+                        //console.log("抽出した【stocks】");
                         querySnapshot.forEach(stocks => {
                             //stocks取得確認
-                            console.log(stocks.data());
+                            //console.log(stocks.data());
 
 
                             //remakeコレクションからremake_product_idが同一のものを取得
                             //remakeのremake_product_id == 抽出したstocksのremake_product_id
                             db.collection('remake').where('remake_product_id', '==', stocks.data().remake_product_id).get().then(querySnapshot => {
-                                console.log("抽出した【remake】");
+                                //console.log("抽出した【remake】");
                                 querySnapshot.forEach(remake => {
                                     //stocks取得確認
-                                    console.log(remake.data());
+                                    //console.log(remake.data());
 
 
                                     //productコレクションからproduct_idが同一のものを取得
                                     //productのproduct_id == 抽出したremakeのproduct_id
                                     db.collection('product').where('product_id', '==', remake.data().product_id).get().then(querySnapshot => {
-                                        console.log("抽出した【product】");
+                                        //console.log("抽出した【product】");
                                         querySnapshot.forEach(product => {
                                             //product取得確認
-                                            console.log(product.data());
+                                            //console.log(product.data());
                                             var total = product.data().product_price;
 
                                             //colorコレクションから該当するデータを取得
                                             //colorのcolor_id == 抽出したproductのcolor_id
                                             db.collection('color').where('color_id', '==', product.data().color_id).get().then(querySnapshot => {
-                                                console.log("抽出した【color】");
+                                                //console.log("抽出した【color】");
                                                 querySnapshot.forEach(color => {
                                                     //product取得確認
-                                                    console.log(color.data());
+                                                    //console.log(color.data());
                                             
                                                     //categoryコレクションから該当するデータを取得
                                                     //categoryのcategory_id == 抽出したremakeのcategory_id
                                                     db.collection('category').where('category_id', '==', remake.data().category_id).get().then(querySnapshot => {
-                                                        console.log("抽出した【category】");
+                                                        //console.log("抽出した【category】");
                                                         querySnapshot.forEach(category => {
                                                             //product取得確認
-                                                            console.log(category.data());
+                                                            //console.log(category.data());
 
                                                             //コンテンツを表示
                                                             $('.cont').append(
