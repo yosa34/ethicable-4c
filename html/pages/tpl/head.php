@@ -5,7 +5,7 @@
   <meta http-equiv="content-language" content="ja">
   <meta charset="UTF-8"/>
   <!-- キーワード -->
-  <meta name="keywords" content="ethicable,エシカブル,リメイク,SDGs,3R">
+  <meta name="keywords" content="ethicable,エシカブル,リメイク,SDGs,3R,エシカル">
   <!-- 検索結果に表示される文字 -->
   <meta name="description" content="ethicable(エシカブル)は、お手持ちの不必要になった衣料を好みに応じてリメイクしたり回収してリメイクしリサイクルショップで販売することができます。">
   <!-- 検索エンジンクローラにURLをインデックスしないように(noindex)文書内のURLを辿らないように(nofollow)知らせるため -->
@@ -14,11 +14,14 @@
   <meta name="author" content="ethicable">
 
   <!-- ファビコン -->
-<link rel="icon" href="../../favicon.ico">
- 
- <!-- スマホ用アイコン -->
- <link rel="apple-touch-icon" sizes="180x180" href="./image/icon.png">
-  
+  <link rel="icon" href="../../favicon.ico">
+  <!-- スマホ用アイコン -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./image/icon.png">
+  <!-- Androidでタブの色を変更 -->
+  <meta name="theme-color" content="#B5C76A">
+  <!-- Windows用アイコン -->
+  <meta name="application-name" content="ethicable"/>
+  <meta name="msapplication-TileColor" content="#B5C76A"/>
 
   <!-- ファイルタイプ、文字エンコーディングの指定 -->
   <meta http-equiv="content-type" content="text/html" charset="UTF-8">
