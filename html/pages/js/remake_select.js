@@ -29,7 +29,30 @@ firebase.auth().onAuthStateChanged(function(user) {
       location.href = "./index.html"
   }
 });   
+<<<<<<< HEAD
+//jquery タブ切り替え
+$(function () {
+  $("input[type='radio']").removeAttr('checked');
+  $('#combi_select').css('background-color', '#B5C76A')
+  $('#combi_select').click(function (e) {
+    $('#cate_select').css('background-color', '#707070')
+    $('#combi_select').css('background-color', '#B5C76A')
+    $('.cate_con').fadeOut(1);
+    $('#combi_con').fadeIn(1);
+    $('input').prop('checked', false);
+  });
+  $('#cate_select').click(function (e) {
+    $("input").removeAttr('checked');
+    $('#cate_select').css('background-color', '#B5C76A')
+    $('#combi_select').css('background-color', '#707070')
+    $('.cate_con').fadeIn(1);
+    $('#combi_con').fadeOut(1);
+    $('input').prop('checked', false);
+  });
+})
+=======
 
+>>>>>>> 2eee30e58d78d4036ee1c1fa8cf82fb7fe7d92b3
 
 function Confirmation() {
 
