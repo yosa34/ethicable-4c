@@ -13,7 +13,9 @@
 
     // メイン
     main{
-     
+      position: relative;
+      height: 100vh;
+      min-height: 710px;
       width: $width_main;     //100%
       margin: 0;
       padding: 0;
@@ -28,10 +30,11 @@
           padding: 0;
           div{
             div{
-              width: 80%;
+              width: 60%;
               margin: 0 auto;
               text-align: center;
               img{
+                width: 100%;
                 display: inline-block;
               }
             }

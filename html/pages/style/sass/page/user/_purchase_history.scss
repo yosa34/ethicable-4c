@@ -13,17 +13,19 @@
         section{
             ul{
                 li{
-                    div{
+                    >div{
                         position: relative;
                         display: flex;
                         padding: 30px;
                         border-bottom: 1px solid $header_border_color;
+                        // リメイク後の画像
                         >p{
                             width: 30%;
                             img{
                                 width: 100%;
                             }
                         }
+                        // リメイク後の画像のデータ
                         >div{
                             width: 70%;
                             dl{
@@ -45,6 +47,7 @@
                                         width: 70px;
                                         height: 70px;
                                         display: inline-block;
+                                        background: #ccc;
                                     }
                                     p{
                                         line-height: 70px;
