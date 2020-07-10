@@ -695,52 +695,43 @@ header {
     font-size: 45px;
     font-weight: bold; }
   #remake_home main section:nth-child(1) div div {
-    width: 100%;
-    display: flex; }
-    #remake_home main section:nth-child(1) div div div ul {
+    margin-left: 140px; }
+    #remake_home main section:nth-child(1) div div ul {
       display: flex;
-      width: 100%;
-<<<<<<< HEAD
       overflow: scroll; }
-      #remake_home main section:nth-child(1) div div div ul li {
+      #remake_home main section:nth-child(1) div div ul li {
         width: 70%;
-        margin: 25px 100px; }
-        #remake_home main section:nth-child(1) div div div ul li:first-of-type {
-          margin-left: 160px; }
-        #remake_home main section:nth-child(1) div div div ul li a {
-          margin: auto;
-          width: 600px;
+        margin-right: 200px;
+        margin-bottom: 20px;
+        margin-top: 20px; }
+        #remake_home main section:nth-child(1) div div ul li a {
+          width: 70vw;
           height: 600px;
           background: #FFF;
           border: 2px solid #707070;
-          border-radius: 20px; }
-=======
-      height: 600px;
-      background: #FFF;
-      border: 2px solid #707070;
-      border-radius: 20px;
-      position: relative; }
-      #remake_home main section:nth-child(1) div div ul li a > img {
-        width: 80%;
-        margin: 0 auto; }
-      #remake_home main section:nth-child(1) div div ul li a div {
-        display: flex;
-        justify-content: space-between;
-        position: absolute;
-        z-index: 1;
-        bottom: 40px;
-        left: 0;
-        right: 0;
-        width: 50%;
-        margin: 0 auto; }
-        #remake_home main section:nth-child(1) div div ul li a div img {
-          width: 100px; }
-        #remake_home main section:nth-child(1) div div ul li a div span {
-          width: 100px;
-          height: 100px;
-          text-align: center;
-          font-size: 100px; }
->>>>>>> 684f7769086a4eef13e0a846f6624ba6b5364141
+          border-radius: 20px;
+          position: relative; }
+          #remake_home main section:nth-child(1) div div ul li a > img {
+            width: 80%;
+            margin: 0 auto; }
+          #remake_home main section:nth-child(1) div div ul li a div {
+            background-color: red;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            z-index: 1;
+            bottom: 40px;
+            left: 0;
+            right: 0;
+            width: 50%;
+            margin: 0 auto; }
+            #remake_home main section:nth-child(1) div div ul li a div img {
+              width: 100px; }
+            #remake_home main section:nth-child(1) div div ul li a div span {
+              width: 100px;
+              height: 100px;
+              text-align: center;
+              font-size: 100px; }
   #remake_home main section:nth-child(1) div > a {
     border: 4px solid #B5C76A;
     background: #FFF;

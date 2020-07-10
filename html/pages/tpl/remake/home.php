@@ -106,11 +106,9 @@
           <div>
             <h2>現在発行中のQRコード</h2>
             <div>
-              <div>
                 <ul id="qr_ul">
                   
                 </ul>
-              </div>
             </div>
             <a href="./remake_corse.php">リメイクする</a>
           </div>
