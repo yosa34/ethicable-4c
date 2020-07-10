@@ -10,6 +10,7 @@
 <title>ethicable｜REMAKE BOX｜リメイクボックス画面</title>
 
 </head>
+<script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
 <body id="qr_reader">
   <!-- main -->
   <main>
@@ -30,8 +31,6 @@
 </body>
 
 <script>
-
-    var db = firebase.firestore();
 
 function button(){
   document.getElementById("file_upload").click();

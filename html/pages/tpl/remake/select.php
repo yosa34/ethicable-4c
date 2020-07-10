@@ -5,7 +5,7 @@
     編集者：2020/06/12小川紗世
     */
 ?>
-<script src="./js/shop.js"></script>
+
 <script type="text/javascript" src="./js/remake_select.js"></script>
 
 <!-- REMAKE HOME画面 -->
@@ -23,57 +23,106 @@
       <h1>リサイクルイメージ＆カラー<br>選択</h1>
       <div>
         <ul>
-          <li>組み合わせで選択</li>
-          <li>項目ごとに選択</li>
+          <li id="combi_select">組み合わせで選択</li>
+          <li id="cate_select">項目ごとに選択</li>
         </ul>
-        <div>
+        <div class="cate_con">
           <p class="con_title">部門</p>
           <ul>
             <li>
               <p>
+                <input type="radio" name="category" id="category1" value="1">
                 <label for="category1"><img src="./image/category/1.png" alt=""></label>
-                <input type="radio" name="category" id="category1" value="1">ウィメンズ<br>ニット
+                部門：ウィメンズ<br>カテゴリー：ズボン
               </p>
             </li>
             <li>
               <p>
+                <input type="radio" name="category" id="category2" value="2">
                 <label for="category2"><img src="./image/category/2.png" alt=""></label>
-                <input type="radio" name="category" id="category2" value="2">ウィメンズ<br>ズボン
+                部門：ウィメンズ<br>カテゴリー：ズボン
               </p>
             </li>
             <li>
               <p>
+                <input type="radio" name="category" value="3" id="category3">
                 <label for="category3"><img src="./image/category/3.png" alt=""></label>
-                <input type="radio" name="category" id="category3" value="3">ウィメンズ<br>シャツ
+                部門：ウィメンズ<br>カテゴリー：ズボン
               </p>
             </li>
           </ul>
         </div>
-        <div>
+        <div class="cate_con">
           <p class="con_title">カラー</p>
           <ul>
             <li>
               <p>
+                <input type="radio" name="color" id="color1" value="1">
                 <label for="color1"></label>
-                <input type="radio" name="color" id="color1" value="1">サンプル1
+                カラー：60 NAVY
               </p>
             </li>
             <li>
               <p>
+                <input type="radio" name="color" id="color2" value="2">
                 <label for="color2"></label>
-                <input type="radio" name="color" id="color2" value="2">サンプル2
+                カラー：60 NAVY
               </p>
             </li>
             <li>
               <p>
+                <input type="radio" name="color" id="color3" value="3">
                 <label for="color3"></label>
-                <input type="radio" name="color" id="color3" value="3">サンプル3
+                カラー：60 NAVY
               </p>
             </li>
           </ul>
-        </div>
       </div>
-
+      <div id="combi_con">
+        <ul>
+          <li>
+            <input type="radio" name="combi" id="combi1" value="1">
+            <label for="combi1">
+                <ul>
+                  <li>
+                    <img src="./image/category/1.png" alt="">
+                    <p>部門1桁目:2 ウィメンズ<br>部門2桁目:6グッズ</p>
+                  </li>
+                  <li>
+                    <p>×</p>
+                  </li>
+                  <li>
+                    <div class="color_box_outer">
+                      <div class="color_box"></div>
+                    </div>
+                    <p>カラー：60 NAVY</p>
+                  </li>
+                </ul>
+            </label>
+          </li>
+          <li>
+            <input type="radio" name="combi" id="combi2" value="2">
+            <label for="combi2">
+                <ul>
+                  <li>
+                    <img src="./image/category/1.png" alt="">
+                    <p>部門1桁目:2 ウィメンズ<br>部門2桁目:6グッズ</p>
+                  </li>
+                  <li>
+                    <p>×</p>
+                  </li>
+                  <li>
+                    <div class="color_box_outer">
+                      <div class="color_box"></div>
+                    </div>
+                    <p>カラー：60 NAVY</p>
+                  </li>
+                </ul>
+            </label>
+          </li>
+        </ul>
+      </div>
+      </div>
 
       <div>
         <input type="button" value="戻る">
