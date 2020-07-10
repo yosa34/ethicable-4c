@@ -2,10 +2,30 @@
     section{
         width: 80%;
         margin:  0 auto;
+        ul{
+            display: flex;
+            width: 100%;
+            li{
+                width: 100%;
+                a{
+                    width: 100%;
+                    padding: 20px 0;
+                    text-align: center;
+                    color: #fff;
+                    border-top-right-radius: 15px;
+                    border-top-left-radius: 15px;
+                    background: $header_border_color;
+                    &[href^="#"]{
+                        background: $main_color;
+                    }
+                }
+            }
+        }
         table{
             width: 100%;
             tr{
                 width: 100%;
+                border-bottom: 1px solid $main_color;
                 td{
                     text-align: center;
                     img{

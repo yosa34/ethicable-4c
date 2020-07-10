@@ -313,6 +313,41 @@ header {
   opacity: 0.4;
   display: none; }
 
+#qr_reader main {
+  margin: 0; }
+  #qr_reader main section {
+    width: 80%;
+    height: 100vh;
+    margin: 0 auto;
+    position: relative; }
+    #qr_reader main section p {
+      text-align: center; }
+    #qr_reader main section form {
+      position: absolute;
+      width: 100%;
+      left: 0;
+      right: 0;
+      bottom: 150px; }
+      #qr_reader main section form p {
+        display: block;
+        background: #B5C76A;
+        color: #FFF;
+        border: 2px solid none;
+        font-size: 45px;
+        font-weight: bold;
+        width: 80%;
+        padding: 20px 0;
+        margin: 50px auto;
+        border-radius: 15px;
+        text-align: center; }
+        #qr_reader main section form p:active {
+          background: none;
+          color: #B5C76A;
+          border: 2px solid #B5C76A; }
+    #qr_reader main section #file_upload,
+    #qr_reader main section .qrcode-text {
+      display: none; }
+
 #remake_shop_details main > p {
   width: 90%;
   margin: 20px auto; }
@@ -365,10 +400,26 @@ header {
 #remake_shop_home section {
   width: 80%;
   margin: 0 auto; }
+  #remake_shop_home section ul {
+    display: flex;
+    width: 100%; }
+    #remake_shop_home section ul li {
+      width: 100%; }
+      #remake_shop_home section ul li a {
+        width: 100%;
+        padding: 20px 0;
+        text-align: center;
+        color: #fff;
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+        background: #707070; }
+        #remake_shop_home section ul li a[href^="#"] {
+          background: #B5C76A; }
   #remake_shop_home section table {
     width: 100%; }
     #remake_shop_home section table tr {
-      width: 100%; }
+      width: 100%;
+      border-bottom: 1px solid #B5C76A; }
       #remake_shop_home section table tr td {
         text-align: center; }
         #remake_shop_home section table tr td img {
@@ -914,42 +965,6 @@ header {
       color: #B5C76A;
       border: 2px solid #B5C76A; }
 
-#remake_select main section div > input[type="button"]:first-of-type {
-  display: block;
-  background: #F5F5F5;
-  color: #707070;
-  border: 2px solid #707070;
-  font-size: 45px;
-  font-weight: bold;
-  width: 80%;
-  padding: 20px 0;
-  margin: 50px auto;
-  border-radius: 15px;
-  text-align: center;
-  margin-right: 10px; }
-  #remake_select main section div > input[type="button"]:first-of-type:active {
-    background: #707070;
-    color: #F5F5F5;
-    border: 2px solid #F5F5F5; }
-
-#remake_select main section div > input[type="button"]:last-of-type {
-  display: block;
-  background: #B5C76A;
-  color: #FFF;
-  border: 2px solid none;
-  font-size: 45px;
-  font-weight: bold;
-  width: 80%;
-  padding: 20px 0;
-  margin: 50px auto;
-  border-radius: 15px;
-  text-align: center;
-  margin-left: 10px; }
-  #remake_select main section div > input[type="button"]:last-of-type:active {
-    background: none;
-    color: #B5C76A;
-    border: 2px solid #B5C76A; }
-
 #shop_details main section {
   background: #F5F5F5; }
   #shop_details main section > div {
@@ -1050,31 +1065,48 @@ header {
       background: #B5C76A;
       color: #fff; }
 
+#shop_home header {
+  border-bottom: none; }
+
 #shop_home main nav {
+  border-bottom: solid 3px;
   /**
              * navを中心に
              * liを横並びに配置
              */ }
+  #shop_home main nav span {
+    display: block;
+    background: #B5C76A;
+    width: 80%;
+    margin: 10px auto 0px;
+    border-radius: 15px;
+    height: 5px; }
   #shop_home main nav ul {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
     text-align: center; }
   #shop_home main nav li {
-    display: inline-block;
+    padding: 30px;
+    width: 100%;
     font-weight: bold;
     font-size: 40px; }
 
 #shop_home main section {
   /**
              * 画像:横に2枚ずつ
-             */ }
+             */
+  width: 80%;
+  margin: 0 auto; }
   #shop_home main section ul {
     display: inline-flex;
     flex-wrap: wrap;
-    width: 80%;
-    margin: 30px auto;
     text-align: center;
     justify-content: space-between; }
     #shop_home main section ul li {
-      width: 45%; }
+      width: 50%;
+      padding: 10px; }
       #shop_home main section ul li a img {
         width: 100%;
         height: auto; }

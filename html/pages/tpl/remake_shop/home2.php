@@ -50,10 +50,8 @@ firebase.auth().onAuthStateChanged(function(user) {
                 <td>`+ cnt + `</td>
                 <td>` + arrRemakeProductId[i] + `</td>
                 <td>` + getDate(arrRemakeDate[i]) + `</td>
-                <td>` + productName + `<img src=' ./image/product/` + arrProductID[i] + `.jpg' alt='商品画像' style='width: 150px;'></td>
+                <td>` + productName + `<img src=' ./image/product/` + arrProductID[i] + `.jpg' alt='商品画像'></td>
                 <td>` + course_name +`</td>
-                <td><span></span></td>
-                <td></td>
                 <td><p><a href='./remake_shop_details.php?remake_product_id=` + arrRemakeProductId[i] + `'>完了通知を送る</a></p></td>
                 </tr>`;
             }
@@ -66,8 +64,8 @@ firebase.auth().onAuthStateChanged(function(user) {
 });
 </script>
 
-<!-- SHOP HOME画面 -->
-<title>ethicable｜リメイクショップ</title>
+<!-- リメイクショップHOME画面 -->
+<title>ethicable｜リメイクショップ｜リメイク依頼一覧｜ドキドキコース</title>
 
 </head>
   <body id="remake_shop_home">
@@ -75,16 +73,18 @@ firebase.auth().onAuthStateChanged(function(user) {
     <!-- main -->
     <main>
         <section>
+            <ul>
+                <li><a href="./remake_shop_home.php?corse=1">ドキドキコース</a></li>
+                <li><a href="#">ワクワクコース</a></li>
+            </ul>
             <table >
                 <thead>
                     <tr>
-                        <th></th>
+                        <th><p>No</p></th>
                         <th><p>リメイクID</p></th>
                         <th><p>依頼日</p></th>
                         <th><p>商品</p></th>
                         <th><p>コース</p></th>
-                        <th><p>カラー</p></th>
-                        <th><p>カテゴリー</p></th>
                         <th></th>
                     </tr>
                 </thead>
