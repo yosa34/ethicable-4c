@@ -11,7 +11,14 @@
   <!-- 検索エンジンクローラにURLをインデックスしないように(noindex)文書内のURLを辿らないように(nofollow)知らせるため -->
   <meta name="robots" content="noindex,nofollow">
   <!-- 文書の作者 -->
-  <meta name="author" content="チャパーズ">
+  <meta name="author" content="ethical">
+
+  <!-- ファビコン -->
+<link rel="icon" href="../../favicon.ico">
+ 
+ <!-- スマホ用アイコン -->
+ <link rel="apple-touch-icon" sizes="180x180" href="./image/icon.png">
+  
 
   <!-- ファイルタイプ、文字エンコーディングの指定 -->
   <meta http-equiv="content-type" content="text/html" charset="UTF-8">
