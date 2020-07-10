@@ -988,7 +988,7 @@ header {
           font-size: 30px;
           padding-bottom: 10px; }
         #shop_details main section > div:first-of-type > div:first-of-type div img {
-          width: 100px; }
+          height: 100px; }
         #shop_details main section > div:first-of-type > div:first-of-type div span {
           display: inline-block;
           width: 100px;
