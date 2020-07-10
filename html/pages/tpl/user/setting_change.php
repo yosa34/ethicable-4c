@@ -16,6 +16,7 @@
         var mail = document.getElementById('mail').value;
         var pass = document.getElementById('pass').value;
         var gender = document.getElementById('gender').value;
+        var age = document.getElementById('age').value;
         var address = document.getElementById( "address" ).value;
         var credit_card = document.getElementById( "credit_card" ).value;
 
@@ -24,6 +25,7 @@
           mail: mail,
           password: pass,
           gender:gender,
+          age:age,
           address:address,
           credit_card:credit_card,
         })
@@ -88,14 +90,10 @@
     <script>
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
-            console.log(user.uid);
             // firebase データ読み込み
             db.collection('user').doc(user.uid).get().then((doc) => {
                 if (doc.exists) {
-
                 var data = doc.data();
-                console.log(data);
-
                 var app = new Vue({
                 el: '#app',
                 data: {

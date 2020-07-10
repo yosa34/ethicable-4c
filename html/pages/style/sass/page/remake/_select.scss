@@ -1,26 +1,202 @@
-#remake_select{
-    main{
-        section{
-            div{
+#remake_select {
+
+    main {
+        section {
+
+            >div {
+                width: 80%;
+                margin: 0 auto;
+
+                .cate_con {
+                    display: none;
+                }
+
+                >div {
+
+                    border: 1px solid #B5C76A;
+
+                    >ul {
+                        display: flex;
+                        margin-top: 30px;
+
+                        >li {
+                            width: 200px;
+                            height: 280px;
+                            margin: 0 auto;
+
+                            img {
+                                width: 184px;
+                                height: 184px;
+                            }
+
+                            input[type="radio"] {
+                                display: none;
+                                font-size: 20px;
+                            }
+
+                            label {
+                                display: flex;
+                                border: 2px solid black;
+                                width: 200px;
+                                height: 200px;
+                                justify-content: center;
+                                align-items: center;
+                                margin-bottom: 20px;
+                            }
+
+                            p {
+                                font-size: 20px;
+                            }
+
+                            input[type="radio"]:checked+label {
+                                border: 8px solid #31A9EE;
+                            }
+                        }
+                    }
+
+                    &:nth-of-type(3) {
+                        >ul {
+                            display: block;
+                            margin-top: 30px;
+                            margin-bottom: 30px;
+
+                            >li {
+                                width: 90%;
+
+                                >label {
+                                    width: 100%;
+                                    height: 280px;
+                                    margin: 0 auto;
+                                    margin-top: 50px;
+                                    display: flex;
+                                    align-items: center;
+
+                                    >ul {
+                                        display: flex;
+                                        width: 100%;
+                                        margin-top: 30px;
+                                        align-items: center;
+                                        margin: 0 auto;
+
+                                        >li {
+                                            width: 35%;
+                                            margin: 0 auto;
+                                            text-align: center;
+
+                                            &:nth-of-type(2) {
+                                                display: flex;
+                                                width: 10%;
+                                                margin: 0;
+                                                justify-content: center;
+                                                align-items: center;
+
+                                                >p {
+                                                    font-size: 130px;
+                                                }
+                                            }
+
+                                            &:nth-of-type(1) {
+                                                text-align: left;
+
+                                                img {
+                                                    width: 70%;
+                                                    height: auto;
+                                                    margin: 0 auto;
+                                                    border: 2px solid black;
+                                                }
+
+                                                >p {
+                                                    margin-top: 10px;
+                                                    line-height: 24px;
+                                                }
+                                            }
+
+                                            &:nth-of-type(3) {
+                                                >p {
+                                                    margin-top: 10px;
+                                                }
+                                            }
+
+                                            .color_box_outer {
+                                                position: relative;
+                                                width: 80%;
+                                                margin: 0 auto;
+                                            }
+
+                                            .color_box_outer:before {
+                                                content: "";
+                                                display: block;
+                                                padding-top: 100%;
+                                                /* 高さを幅の75%に固定 */
+                                            }
+
+                                            .color_box {
+                                                position: absolute;
+                                                top: 0;
+                                                left: 0;
+                                                bottom: 0;
+                                                right: 0;
+                                                background-color: red;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                >ul {
+                    display: flex;
+                    justify-content: space-between;
+
+                    >li {
+                        height: 120px;
+                        width: 49%;
+                        border-radius: 20px 20px 0px 0px;
+                        background-color: #707070;
+                        color: white;
+                        font-size: 40px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        &:nth-of-type(1) {
+                            background-color: #707070;
+                        }
+                    }
+                }
+
+                .con_title {
+                    font-size: 35px;
+                    font-weight: bold;
+                    margin-top: 30px;
+                    margin-left: 50px;
+                }
+
+
 
                 // 商品情報テーブル
-                table{
+                table {
                     @include table_main;
                 }
 
                 // ボタンのdiv
-                &:last-of-type{
+                &:last-of-type {
                     @include button_bottom_div;
                 }
-                >input[type="button"]{
+
+                >input[type="button"] {
+
                     // 左のボタン
-                    &:first-of-type{
+                    &:first-of-type {
                         @include input_button(20px);
                         margin-right: 10px;
                     }
+
                     // 右のボタン
-                    &:last-of-type{
-                        @include input_button(20px, $border_color_sub, $botton_color,none );
+                    &:last-of-type {
+                        @include input_button(20px, $border_color_sub, $botton_color, none);
                         margin-left: 10px;
                     }
                 }

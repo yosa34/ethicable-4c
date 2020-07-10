@@ -2,14 +2,23 @@ firebase.auth().onAuthStateChanged(function(user) {
     //ログイン状態判別
     if (user) {
         //colorの取得
-        db.collection("color").where("color_id", "==", data.color_id)
-        .get().then(function(querySnapshot) {
+        db.collection("color").orderBy("color_name").limit(3)
+            .get().then(function (querySnapshot) {
+            var num =  1;
             querySnapshot.forEach(function(doc) {
                 const color = doc.data()
                 //colorの出力
-                var elem = document.getElementById("color_name");
+                console.log(color);
+                var elem = document.getElementById("color" + num);
+                // console.log(elem);
 
-                elem.innerHTML = color.color_id+" "+color.color_name;
+                // elem.insertAdjacentHTML('afterbegin', '<b>Test:</b>');
+
+                // elem.innerHTML = "<span></span>"+color.color_id+" "+color.color_name;
+                // elem.firstElementChild.style.backgroundColor = getColorCode(color.color_id);
+
+                // num += 1;
+                // elem.innerHTML = color.color_id+" "+color.color_name;
             });
         })
         .catch(function(error) {
@@ -20,8 +29,30 @@ firebase.auth().onAuthStateChanged(function(user) {
       location.href = "./index.html"
   }
 });   
+<<<<<<< HEAD
+//jquery タブ切り替え
+$(function () {
+  $("input[type='radio']").removeAttr('checked');
+  $('#combi_select').css('background-color', '#B5C76A')
+  $('#combi_select').click(function (e) {
+    $('#cate_select').css('background-color', '#707070')
+    $('#combi_select').css('background-color', '#B5C76A')
+    $('.cate_con').fadeOut(1);
+    $('#combi_con').fadeIn(1);
+    $('input').prop('checked', false);
+  });
+  $('#cate_select').click(function (e) {
+    $("input").removeAttr('checked');
+    $('#cate_select').css('background-color', '#B5C76A')
+    $('#combi_select').css('background-color', '#707070')
+    $('.cate_con').fadeIn(1);
+    $('#combi_con').fadeOut(1);
+    $('input').prop('checked', false);
+  });
+})
+=======
 
-
+>>>>>>> 2eee30e58d78d4036ee1c1fa8cf82fb7fe7d92b3
 
 function Confirmation() {
 

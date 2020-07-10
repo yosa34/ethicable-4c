@@ -19,6 +19,15 @@
                コレクションの修正が完了次第下記のコードに変更する！！！
 
             // GET URLのパラメータ取得(remake_product_idが含まれている)
+            url = location.search.substring(1).split('=');
+            var get_remake_product_id;
+            get_remake_product_id = url[1];
+            console.log(url[0]+"=>"+url[1]);
+          */
+         /*
+            var remake_product_id = 10
+            var product_id = 426847;
+            // remakeコレクションの情報取得
             // url = location.search.substring(1).split('=');
             // var get_remake_product_id;
             // get_remake_product_id = url[1];

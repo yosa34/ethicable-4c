@@ -82,9 +82,10 @@
 
 
 
-            <div>
-                <input type="button" value="戻る">
-                <input type="button" value="QRコード発行">
-            </div>
+          
+          <div>
+              <input type="button" value="戻る">
+              <input type="button" value="QRコード発行" onclick='Qr_send()'>
+          </div>
         </section>
     </main>
