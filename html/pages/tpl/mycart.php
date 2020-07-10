@@ -193,7 +193,9 @@
               '<p>カートに商品が入っていません</p>'+
               '<p>是非お買い物をお楽しみください。ご利用をお待ちしております。</p>'+
             '</div>' +
-            '<button type="button" id="goShop">ショッピングページへ</button>');
+            '<p>'+
+            '<a href="./shop_home.php">ショッピングページへ</a>'+
+            '</p>');
 
             $('#goShop').click(function() {
               window.location.href='./shop_home.php' ;
@@ -218,5 +220,5 @@
         <section>
         </section>
         <!-- テスト用session削除ボタン -->
-        <button onClick="window.sessionStorage.clear();">sessionクリア</button>
+        <p onClick="window.sessionStorage.clear();">sessionクリア</p>
     </main>
