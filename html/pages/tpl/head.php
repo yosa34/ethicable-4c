@@ -22,6 +22,14 @@
   <!-- Windows用アイコン -->
   <meta name="application-name" content="ethicable"/>
   <meta name="msapplication-TileColor" content="#B5C76A"/>
+  <!-- SNS共有用のOG設定 -->
+  <meta property="og:title" content="ethicable" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="ethicable-4c.coresv.com" />
+  <meta property="og:image" content="./images/ethicable_image.png" />
+  <meta property="og:description" content="ethicable(エシカブル)は、お手持ちの不必要になった衣料を好みに応じてリメイクしたり回収してリメイクしリサイクルショップで販売することができます。" />
+  <meta property="og:site_name" content="ethicable" />
+  <meta name="twitter:card" content="summaryやsummary_large_imageなど" />
 
   <!-- ファイルタイプ、文字エンコーディングの指定 -->
   <meta http-equiv="content-type" content="text/html" charset="UTF-8">
