@@ -10,6 +10,8 @@
 <title>ethicable｜REMAKE BOX｜リメイクボックス画面</title>
 
 </head>
+<script src=“https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js”></script>
+
 <body id="qr_reader">
   <!-- main -->
   <main>
@@ -29,7 +31,6 @@
   </main>
 </body>
 
-<script src=“https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js”></script>
 <script>
 
 function button(){
