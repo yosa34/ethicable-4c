@@ -213,11 +213,13 @@
           <!-- 価格情報表示 -->
           <div>
             <div>
-              <p>税込価格</p>
-              <p id="price"></p>
+              <div>
+                <p>税込価格</p>
+                <p id="price"></p>
+              </div>
+              <!-- カートに遷移するボタン -->
+              <p id="add_to_cart"><a>カート</a></p>
             </div>
-            <!-- カートに遷移するボタン -->
-            <p id="add_to_cart"><a>カート</a></p>
           </div>
         </section>
     </main>
