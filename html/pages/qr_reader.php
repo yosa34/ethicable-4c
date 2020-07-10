@@ -9,6 +9,6 @@
 
 include "./tpl/head.php";
 include "./tpl/qr/reader.php";
-include "./tpl/footer.html";
+// include "./tpl/footer.html";
 
 //==================================
