@@ -2,23 +2,14 @@ firebase.auth().onAuthStateChanged(function(user) {
     //ログイン状態判別
     if (user) {
         //colorの取得
-        db.collection("color").orderBy("color_name").limit(3)
-            .get().then(function (querySnapshot) {
-            var num =  1;
+        db.collection("color").where("color_id", "==", data.color_id)
+        .get().then(function(querySnapshot) {
             querySnapshot.forEach(function(doc) {
                 const color = doc.data()
                 //colorの出力
-                console.log(color);
-                var elem = document.getElementById("color" + num);
-                // console.log(elem);
+                var elem = document.getElementById("color_name");
 
-                // elem.insertAdjacentHTML('afterbegin', '<b>Test:</b>');
-
-                // elem.innerHTML = "<span></span>"+color.color_id+" "+color.color_name;
-                // elem.firstElementChild.style.backgroundColor = getColorCode(color.color_id);
-
-                // num += 1;
-                // elem.innerHTML = color.color_id+" "+color.color_name;
+                elem.innerHTML = color.color_id+" "+color.color_name;
             });
         })
         .catch(function(error) {
@@ -53,6 +44,7 @@ $(function () {
 =======
 
 >>>>>>> 2eee30e58d78d4036ee1c1fa8cf82fb7fe7d92b3
+
 
 function Confirmation() {
 

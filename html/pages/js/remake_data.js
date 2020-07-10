@@ -103,11 +103,11 @@
 
   function remake_select(){
     
-    if(corse_number == 2){
+    if(corse_number == 1){
       //ワクワクコースの画面遷移
       var next_page = "./remake_details.php";
 
-    }else if(corse_number == 1){
+    }else if(corse_number == 2){
       //ドキドキコースの画面遷移
       var next_page = "./remake_select.php";
 

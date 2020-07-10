@@ -68,10 +68,5 @@
                 }
             }
         }
-        input[type="submit"]{
-            @include input_button(10px, $border_color_sub, $botton_color, none);
-            width: 300px;
-            font-size: 20px;
-        }
     }
 }
