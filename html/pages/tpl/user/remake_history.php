@@ -19,7 +19,7 @@
              //collection名指定
             var course_collection = db.collection('course');
             //コース名を取得
-            course_collection.orderBy('course_id').onSnapshot(function(snapshot) {
+            course_collection.onSnapshot(function(snapshot) {
                 snapshot.docChanges().forEach(function (change) {
                     //コースのプルダウンメニューを作成
                     if (change.doc.data().course_id == course) {
@@ -49,7 +49,7 @@
             //remake_product_idとcolor_idを取得する
             function get_remake_product_id_and_color_id() {
                 //コース使用履歴を取得
-                remake_collection.orderBy('date_qr_generate').onSnapshot(function(snapshot) {
+                remake_collection.onSnapshot(function(snapshot) {
                     snapshot.docChanges().forEach(function (change) {
                         if(change.doc.data().user_id == user.uid && change.doc.data().course_id == course && change.doc.data().date_qr_read != null) {
                         /**
@@ -60,7 +60,7 @@
                             * リメイク完了日 remake_complete
                             */
                             // console.log(change.doc.data());
-                        remake_product_id =  change.doc.id;
+                        remake_product_id =  change.doc.data().remake_product_id;
                         color_id = change.doc.data().color_id;
                         get_remake_image(remake_product_id,color_id);
                     }
@@ -72,7 +72,7 @@
         function get_remake_image(remake_product_id,color_id) {
             //リメイク画像を取得
                 //remake_product_idで一致したものの画像を別配列に入れ込む
-                    stock_collection.orderBy('stock_id').onSnapshot(function(snapshot) {
+                    stock_collection.onSnapshot(function(snapshot) {
                         snapshot.docChanges().forEach(function (change) {
                             //stock_idが入った配列にあるstock_idとstockコレクションの中のstock_idが同じならば...
                             if (change.doc.data().remake_product_id == remake_product_id) {
@@ -87,7 +87,7 @@
             function get_color_code(color_id,remake_image) {
             //リメイク画像を取得
                 //color_idで一致したものの画像を別配列に入れ込む
-                    color_collection.orderBy('color_id').onSnapshot(function(snapshot) {
+                    color_collection.onSnapshot(function(snapshot) {
                         snapshot.docChanges().forEach(function (change) {
                             //color_idが入った配列にあるcolor_idとcolorコレクションの中のcolor_idが同じならば...
                             if (change.doc.data().color_id == color_id) {
@@ -101,7 +101,7 @@
             //HTMLに表示する
             function display_history(remake_image,color_code) {
                 //コース使用履歴を取得
-                remake_collection.orderBy('date_qr_generate').onSnapshot(function(snapshot) {
+                remake_collection.onSnapshot(function(snapshot) {
                     $('#history_list').append('<li><div id="history' + cnt + '"></div></li>');
                     snapshot.docChanges().forEach(function (change) {
                     if(change.doc.data().user_id == user.uid && change.doc.data().course_id == course && change.doc.data().date_qr_read != null) {
