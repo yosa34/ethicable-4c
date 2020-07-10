@@ -29,9 +29,8 @@
   </main>
 </body>
 
+<script src=“https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js”></script>
 <script>
-
-    var db = firebase.firestore();
 
 function button(){
   document.getElementById("file_upload").click();

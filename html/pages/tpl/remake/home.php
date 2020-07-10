@@ -27,15 +27,14 @@
           cnt = 0;
           querySnapshot.forEach( (doc) => {
 
-            
 
             //ulタグを取得し、その中に<li><a><img></a></li>を作成
             //qr_detail.php => reamake_product_id
             var qr_ul = document.getElementById("qr_ul");
-            qr_ul.insertAdjacentHTML("beforeend","<li><a id='qr_a_"+cnt+"' href='qr_detail.php?remake_product_id="+doc.data().remake_product_id+"'><img src='https://chart.apis.google.com/chart?chs=150x150&cht=qr&chl="+doc.data().remake_product_id+"' alt='QRコード'><div id='qr_a_"+cnt+"'></div></a></li>");
+            qr_ul.insertAdjacentHTML("beforeend","<li><a href='qr_detail.php?remake_product_id="+doc.data().remake_product_id+"'><img src='https://chart.apis.google.com/chart?chs=150x150&cht=qr&chl="+doc.data().remake_product_id+"' alt='QRコード'><div id='qr_a_"+cnt+"'></div></a></li>");
 
               //colorとcategoryを取得し、htmlにセットする
-            
+
             category_id_select(doc.data().category_id,cnt);
             color_code_select(doc.data().color_id,cnt);
             cnt++;
@@ -116,7 +115,7 @@
         </section>
         <section>
         </section>
-        <div class="news">  
+        <div class="news">
           <div class="item">
             <div class="inner">
               <img src="./image/remake_home_news1.png">
