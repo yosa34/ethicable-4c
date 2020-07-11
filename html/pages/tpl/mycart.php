@@ -220,5 +220,5 @@
         <section>
         </section>
         <!-- テスト用session削除ボタン -->
-        <p onClick="window.sessionStorage.clear();">sessionクリア</p>
+        <p onClick="window.sessionStorage.clear();location.reload();">カート内商品全削除</p>
     </main>
