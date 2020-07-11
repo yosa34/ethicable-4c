@@ -722,7 +722,8 @@ header {
             width: 50%;
             margin: 0 auto; }
             #remake_home main section:nth-child(1) div div ul li a div img {
-              width: 100px; }
+              width: 100px;
+              height: 100px; }
             #remake_home main section:nth-child(1) div div ul li a div span {
               width: 100px;
               height: 100px;
@@ -988,7 +989,8 @@ header {
           font-size: 30px;
           padding-bottom: 10px; }
         #shop_details main section > div:first-of-type > div:first-of-type div img {
-          height: 100px; }
+          height: 100px;
+          width: 100px; }
         #shop_details main section > div:first-of-type > div:first-of-type div span {
           display: inline-block;
           width: 100px;
