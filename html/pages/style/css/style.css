@@ -1406,6 +1406,33 @@ header {
   #cart main section > dl dd {
     color: #B5C76A; }
 
+#cart main section > div.cart_error {
+  width: 80%; }
+  #cart main section > div.cart_error > div {
+    padding: 25px;
+    border: 3px solid #B5C76A;
+    font-size: 45px; }
+    #cart main section > div.cart_error > div p:first-of-type {
+      color: #B5C76A;
+      padding-bottom: 20px;
+      font-weight: bold; }
+  #cart main section > div.cart_error p a {
+    display: block;
+    background: #B5C76A;
+    color: #FFF;
+    border: 2px solid none;
+    font-size: 45px;
+    font-weight: bold;
+    width: 80%;
+    padding: 20px 0;
+    margin: 50px auto;
+    border-radius: 15px;
+    text-align: center; }
+    #cart main section > div.cart_error p a:active {
+      background: none;
+      color: #B5C76A;
+      border: 2px solid #B5C76A; }
+
 #cart main > p {
   font-size: 50px;
   text-align: center;

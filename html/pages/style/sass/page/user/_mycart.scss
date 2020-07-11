@@ -88,6 +88,27 @@
                     color: $main_color;
                 }
             }
+
+            >div.cart_error{
+                width: 80%;
+                >div{
+                    padding: 25px;
+                    border: 3px solid $main_color;
+                    font-size: 45px;
+                    p{
+                        &:first-of-type{
+                            color: $main_color;
+                            padding-bottom: 20px;
+                            font-weight: bold;
+                        }
+                    }
+                }
+                p{
+                    a{
+                        @include input_button(20px,$main_color,$botton_color,none);
+                    }
+                }
+            }
         }
         >p{
             font-size: 50px;

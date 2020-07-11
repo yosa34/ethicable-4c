@@ -2,7 +2,7 @@
     /*
     ページ詳細：カート画面
     作成者：小川紗世
-    編集者：2020/07/03三輪謙登
+    編集者：2020/07/11小川紗世
     */
 ?>
 
@@ -52,8 +52,10 @@
             $('section').append('<div id="subtotal"></div>');
             $('section').append('<dl id="acquisition"></dl>');
             $('main').append(
-              '<p id="total_amount">合計<b></b>円</p>' +
-              '<input type="button" value="購入手続き">'
+              `<!-- テスト用session削除ボタン -->
+                <p onClick="window.sessionStorage.clear();location.reload();">カート内商品全削除</p>
+                <p id="total_amount">合計<b></b>円</p>
+                <input type="button" value="購入手続き">`
             );
             // JSON形式でsessionに保存されているため、JSON.parseをしてJavaScriptで扱えるようにする
             var cart = {};
@@ -189,13 +191,14 @@
             cart_item_display(incidental_display);
           } else {
             $('section').append(
-            '<div>'+
+            '<div class="cart_error"><div>'+
               '<p>カートに商品が入っていません</p>'+
-              '<p>是非お買い物をお楽しみください。ご利用をお待ちしております。</p>'+
+              '<p>是非お買い物をお楽しみください。</p>'+
+              '<p>ご利用をお待ちしております。</p>'+
             '</div>' +
             '<p>'+
             '<a href="./shop_home.php">ショッピングページへ</a>'+
-            '</p>');
+            '</p></div>');
 
             $('#goShop').click(function() {
               window.location.href='./shop_home.php' ;
@@ -219,6 +222,4 @@
       <h1>カート</h1>
         <section>
         </section>
-        <!-- テスト用session削除ボタン -->
-        <p onClick="window.sessionStorage.clear();location.reload();">カート内商品全削除</p>
     </main>
