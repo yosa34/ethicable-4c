@@ -56,7 +56,7 @@ function openQRCamera(node) {
   
           var corse_number = document.getElementById("active").value;
 
-          //location.href = next_page+"?product_id=" + product_id +"&corse_number=" + corse_number;
+          location.href = next_page+"?product_id=" + product_id +"&corse_number=" + corse_number;
         }
       };
       qrcode.decode(reader.result);
