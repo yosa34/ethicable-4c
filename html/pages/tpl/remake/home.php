@@ -21,14 +21,14 @@
         var startDate = firebase.firestore.Timestamp.fromDate(new Date("December 10, 1999"));
 
         db.collection("remake").where("user_id", "==", user.uid).where("date_qr_read","==",null).orderBy("date_qr_generate", "asc").startAt(startDate)
+
+
         // db.collection("remake").where("user_id", "==", user.uid)
         .get()
         .then((querySnapshot) => {
           cnt = 0;
           querySnapshot.forEach( (doc) => {
-
             
-
             console.log("remake_product_id"+doc.data().remake_product_id);
             //ulタグを取得し、その中に<li><a><img></a></li>を作成
             //qr_detail.php => reamake_product_id

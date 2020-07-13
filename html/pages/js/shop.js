@@ -222,7 +222,6 @@
 
       /*
           Date型をフォーマットする
-
           @param date
           @return date
         */
@@ -236,4 +235,25 @@
         ftDate = YYYY + "年" + MM + "月" + DD + "日";
         // console.log(ftDate);
         return ftDate;
+       }
+
+      /**
+      取得したcouse_idをもとに対応するコース名を返す
+      @param number 取得したcouse_id
+      @return string couse_idに対応するコース名
+      **/
+      function getCouseName(couse_id) {
+
+        let couseName;
+          switch(couse_id) {
+          case 1:
+            couseName = "ドキドキコース";
+            break;
+          case 2:
+            couseName = "ワクワクコース";
+            break;
+        }
+        return couseName;
       }
+
+
