@@ -8,11 +8,17 @@
 <script src="./js/shop.js"></script>
 <script src="./js/function.js"></script>
 <script>
-    //ドキドキ
-    // var remake_product_id = 5;
 
-    //ワクワク
-    var remake_product_id = 11;
+    // GET URLのパラメータ取得
+    let arg  = new Object;
+    url = location.search.substring(1).split('&');
+
+    for(i=0; url[i]; i++) {
+        var k = url[i].split('=');
+        arg[k[0]] = k[1];
+    }
+    let remake_product_id = Number(arg.remake_product_id);
+
 
     //受け取ったリメイクIDにてリメイク情報を取得する
     let citiesRef = db.collection('remake').where("remake_product_id", "==", remake_product_id);
