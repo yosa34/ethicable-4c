@@ -28,15 +28,14 @@
         .then((querySnapshot) => {
           cnt = 0;
           querySnapshot.forEach( (doc) => {
-            
-            console.log("remake_product_id"+doc.data().remake_product_id);
+
             //ulタグを取得し、その中に<li><a><img></a></li>を作成
             //qr_detail.php => reamake_product_id
             var qr_ul = document.getElementById("qr_ul");
             qr_ul.insertAdjacentHTML("beforeend","<li><a href='qr_detail.php?remake_product_id="+doc.data().remake_product_id+"'><img src='https://chart.apis.google.com/chart?chs=150x150&cht=qr&chl="+doc.data().remake_product_id+"' alt='QRコード'><div id='qr_a_"+cnt+"'></div></a></li>");
 
               //colorとcategoryを取得し、htmlにセットする
-            
+
             category_id_select(doc.data().category_id,cnt);
             color_code_select(doc.data().color_id,cnt);
             cnt++;
@@ -57,9 +56,7 @@
       .then((querySnapshot) => {
           querySnapshot.forEach( (doc) => {
 
-            console.log(getColorCode(doc.data().color_id));
             get_color = getColorCode(doc.data().color_id);
-            console.log(get_color);
 
             //タグ取得=>タグ書き換え
             var qr_a = document.getElementById("qr_a_"+cnt);
@@ -67,7 +64,7 @@
             qr_a.insertAdjacentHTML("beforeend","<span id='remake_color_"+cnt+"'></span>");
 
             //これで背景色を書き換えないとSCSSに潰されてる気がする
-            var remake_color = document.getElementById("remake_color");
+            var remake_color = document.getElementById("remake_color_"+cnt);
             remake_color.style.backgroundColor = getColorCode(doc.data().color_id);
           });
         })
@@ -83,13 +80,12 @@
         querySnapshot.forEach((doc) => {
           const category_id = doc.data().category_id;
           
-          console.log("category"+category_id);
           //タグ取得=>タグ書き換え
           var qr_a = document.getElementById("qr_a_"+cnt);
 
           qr_a.insertAdjacentHTML("beforeend","<img id='remake_icon_"+cnt+"' alt='リメイク希望のアイテムアイコン' ><span>×</span>");
 
-          var elem2 = document.getElementById("remake_icon");
+          var elem2 = document.getElementById("remake_icon_"+cnt);
           // カテゴリーアイコンを表示
           elem2.src = getRemakeImg(category_id);
         });
@@ -120,7 +116,7 @@
         </section>
         <section>
         </section>
-        <div class="news">  
+        <div class="news">
           <div class="item">
             <div class="inner">
               <img src="./image/remake_home_news1.png">

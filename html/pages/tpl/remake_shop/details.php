@@ -2,7 +2,7 @@
     /*
     ページ詳細：リメイクショップホーム画面
     作成者：小川紗世
-    編集者：2020/07/06 粟津由香
+    編集者：2020/07/06小川紗世
     */
 ?>
 <script src="./js/shop.js"></script>
@@ -19,7 +19,6 @@
     let allCities = citiesRef.get().then(snapshot => {
         snapshot.forEach(doc => {
             const data = doc.data()
-            console.log(data);
 
             //リメイクID
             var elem = document.getElementById("remake_product_id");
@@ -270,5 +269,4 @@
         </section>
         <input type="submit" value="リメイク完了" onclick="Complete()">
     </main>
-    </body>
-  </html>
+
