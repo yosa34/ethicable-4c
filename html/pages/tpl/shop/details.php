@@ -25,20 +25,19 @@
                 }
             });
 
-            // aタグを無効にする
-            $('.noLinks').click(() => false);
-
             // remakeコレクションの情報取得
             url = location.search.substring(1).split('=');
             var remake_product_id;
             remake_product_id = url[1];
-            if (sessionStorage.cartList) {
 
+            // cartに該当商品があれば
+            var in_product_flg = false;
+            if (sessionStorage.cartList) {
               var cartList = JSON.parse(sessionStorage.cartList);
               cartList.forIn((key,value,index) => {
                 if (remake_product_id == value.remake_product_id) {
-                  $('#add_to_cart_btn').prop("background-color", "gray");
-                  $('#add_to_cart_btn').addClass('noLinks');
+                  $('#add_to_cart_btn').css({"background-color": "gray"});
+                  in_product_flg = true;
                 }
               });
             }
@@ -149,6 +148,8 @@
                       db.collection("color").where("color_id", "==", color_id)
                         .get().then(function(querySnapshot) {
                             querySnapshot.forEach(function(doc) {
+                              // 該当商品が入っていれば...
+                              if (!in_product_flg) {
                               // 各要素をcart_infoに入れていく
                               var cart_info = {};
                               cart_info.remake_product_id = remake_product_id;
@@ -164,8 +165,9 @@
                               //sessionへ格納する
                               sessionStorage['cart'] = cart_submit;
 
-                              //カート画面へ
-                              window.location = "./mycart.php";
+                                //カート画面へ
+                                window.location = "./mycart.php";
+                              }
                             });
                         })
                         .catch(function(error) {
