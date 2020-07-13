@@ -59,7 +59,9 @@
             var cart = {};
             // 商品オブジェクトを一つのオブジェクトにまとめる
             var cartList = {};
-            if (sessionStorage.cart) {
+            // sessionのcartがあるかどうかのフラグ
+            var cart_flg = true;
+            if (Object.keys(sessionStorage.cart).length) {
               // cartがある場合
               var saveCart = new Promise((resolve, reject) => {
                 cart = JSON.parse(sessionStorage.cart);
@@ -68,17 +70,23 @@
               // sessionに入っているcartを消す(二重登録を防ぐため)
               saveCart
                 .then((value) => {
-                  sessionStorage.removeItem(cart);
+                  sessionStorage.cart = '';
                 })
                 .catch((err) => {
-                  console.log(err);
+                  cart_flg = false;
                 });
               // カートリストのカウンター
-              if (sessionStorage.cartList) {
-                cartList = JSON.parse(sessionStorage.cartList);
-                cartList[Object.keys(cartList).length + 1] = cart;
-              } else {
-                cartList[1] = cart;
+              if (cart_flg) {
+                if (sessionStorage.cartList) {
+                  cartList = JSON.parse(sessionStorage.cartList);
+                  cartList[Object.keys(cartList).length + 1] = cart;
+                } else {
+                  cartList[1] = cart;
+                }
+                // sessionにcartListを保存
+                cartListJSON = JSON.stringify(cartList);
+
+                sessionStorage.cartList = cartListJSON;
               }
             } else {
               // cartがなかった場合
@@ -87,9 +95,11 @@
 
 
 
-            // sessionにcartListを保存
-            cartListJSON = JSON.stringify(cartList);
-            sessionStorage.cartList = cartListJSON;
+            // // sessionにcartListを保存
+            // cartListJSON = JSON.stringify(cartList);
+            // console.log(cartListJSON);
+
+            // sessionStorage.cartList = cartListJSON;
             // console.log(sessionStorage.cartList);
 
 
@@ -149,15 +159,15 @@
 
                           // cart_itemの表示
                           $('#item' + itemCount).append(
-                            '<p><img src="' + cart.remake_image + '" alt="リメイクイメージ"></p>'+
+                            '<p><img src="' + value.remake_image + '" alt="リメイクイメージ"></p>'+
                             '<div class="cart_items_item">'+
                             '<dl>'+
-                            '<dt>' + '部門(カテゴリー)：' + '</dt>' + '<dd><img src="' + cart.remake_icon + '" alt="リメイクアイコン">' + '<p>' + category_name + '</p>' + '</dd>'+
+                            '<dt>' + '部門(カテゴリー)：' + '</dt>' + '<dd><img src="' + value.remake_icon + '" alt="リメイクアイコン">' + '<p>' + category_name + '</p>' + '</dd>'+
                             '</dl>'+
                             '<dl>'+
-                            '<dt>' + 'カラー：' + '</dt>' + '<dd><span style="background-color: ' + cart.product_color + ';"></span>' + '<p>' + cart.product_color_name + '</p>' +  '</dd>'+
+                            '<dt>' + 'カラー：' + '</dt>' + '<dd><span style="background-color: ' + value.product_color + ';"></span>' + '<p>' + value.product_color_name + '</p>' +  '</dd>'+
                             '</dl>'+
-                            '<p>' + '価格：' + parseInt(cart.price).toLocaleString() + '円' + '</p>'+
+                            '<p>' + '価格：' + parseInt(value.price).toLocaleString() + '円' + '</p>'+
                             '<p>削除</p>'+
                             '</div> '
                             );
