@@ -1,6 +1,6 @@
 @charset "UTF-8";
 main {
-  margin: 100px 0 170px; }
+  margin: 100px 0 200px; }
   main h1 {
     font-size: 70px;
     text-align: center;
@@ -1345,46 +1345,48 @@ header {
   width: 80%;
   margin: 0 auto; }
   #cart main section ul li {
-    position: relative;
-    display: flex;
-    padding: 30px;
-    border-bottom: 1px solid #707070; }
-    #cart main section ul li > p {
-      width: 30%; }
-      #cart main section ul li > p img {
-        width: 100%; }
-    #cart main section ul li > div {
-      width: 70%; }
-      #cart main section ul li > div dl {
-        display: flex;
-        font-size: 30px;
-        align-items: center; }
-        #cart main section ul li > div dl dt {
-          width: 55%;
-          text-align: right; }
-        #cart main section ul li > div dl dd {
-          width: 45%;
+    position: relative; }
+    #cart main section ul li a {
+      display: flex;
+      width: 100%;
+      padding: 30px;
+      border-bottom: 1px solid #707070; }
+      #cart main section ul li a > p {
+        width: 30%; }
+        #cart main section ul li a > p img {
+          width: 100%; }
+      #cart main section ul li a > div {
+        width: 70%; }
+        #cart main section ul li a > div dl {
           display: flex;
-          padding: 10px 0; }
-          #cart main section ul li > div dl dd img {
-            height: 70px; }
-          #cart main section ul li > div dl dd span {
-            width: 70px;
-            height: 70px;
-            display: inline-block; }
-          #cart main section ul li > div dl dd p {
-            line-height: 70px;
-            padding-left: 20px; }
-      #cart main section ul li > div > p:nth-of-type(1) {
-        font-size: 40px;
-        padding-left: 35px; }
-      #cart main section ul li > div > p:nth-of-type(2) {
-        text-align: right;
-        font-size: 30px;
-        color: #5FB0E2;
-        position: absolute;
-        bottom: 30px;
-        right: 30px; }
+          font-size: 30px;
+          align-items: center; }
+          #cart main section ul li a > div dl dt {
+            width: 55%;
+            text-align: right; }
+          #cart main section ul li a > div dl dd {
+            width: 45%;
+            display: flex;
+            padding: 10px 0; }
+            #cart main section ul li a > div dl dd img {
+              height: 70px; }
+            #cart main section ul li a > div dl dd span {
+              width: 70px;
+              height: 70px;
+              display: inline-block; }
+            #cart main section ul li a > div dl dd p {
+              line-height: 70px;
+              padding-left: 20px; }
+        #cart main section ul li a > div > p:nth-of-type(1) {
+          font-size: 40px;
+          padding-left: 35px; }
+        #cart main section ul li a > div > p:nth-of-type(2) {
+          text-align: right;
+          font-size: 30px;
+          color: #5FB0E2;
+          position: absolute;
+          bottom: 30px;
+          right: 30px; }
 
 #cart main section > div {
   width: 80%;
@@ -1406,6 +1408,33 @@ header {
   #cart main section > dl dd {
     color: #B5C76A; }
 
+#cart main section > div.cart_error {
+  width: 80%; }
+  #cart main section > div.cart_error > div {
+    padding: 25px;
+    border: 3px solid #B5C76A;
+    font-size: 45px; }
+    #cart main section > div.cart_error > div p:first-of-type {
+      color: #B5C76A;
+      padding-bottom: 20px;
+      font-weight: bold; }
+  #cart main section > div.cart_error p a {
+    display: block;
+    background: #B5C76A;
+    color: #FFF;
+    border: 2px solid none;
+    font-size: 45px;
+    font-weight: bold;
+    width: 80%;
+    padding: 20px 0;
+    margin: 50px auto;
+    border-radius: 15px;
+    text-align: center; }
+    #cart main section > div.cart_error p a:active {
+      background: none;
+      color: #B5C76A;
+      border: 2px solid #B5C76A; }
+
 #cart main > p {
   font-size: 50px;
   text-align: center;
@@ -1413,6 +1442,8 @@ header {
   #cart main > p b {
     font-size: 70px;
     color: #B5C76A; }
+  #cart main > p:first-of-type {
+    color: #5FB0E2; }
 
 #mypage {
   background: #F5F5F5; }
@@ -1563,6 +1594,49 @@ header {
     background-position: calc(100% - 48px) calc(1em + 2px), calc(100% - 18px) calc(1em + 2px), 100% 0;
     background-size: 30px 30px, 30px 26px, 100px 100px;
     background-repeat: no-repeat; }
+
+#remake_history main > section > ul > li > div {
+  width: 90%;
+  margin: 0 auto; }
+  #remake_history main > section > ul > li > div > div {
+    width: 100%;
+    padding-bottom: 30px;
+    margin-bottom: 100px;
+    border-bottom: 1px solid #B5C76A; }
+    #remake_history main > section > ul > li > div > div > p:nth-of-type(1) {
+      text-align: right;
+      font-size: 20px; }
+    #remake_history main > section > ul > li > div > div > div {
+      display: flex;
+      margin: 0 auto; }
+      #remake_history main > section > ul > li > div > div > div > div {
+        display: flex;
+        width: 49%;
+        margin: 0; }
+        #remake_history main > section > ul > li > div > div > div > div > div > img {
+          width: 200px;
+          height: 200px; }
+        #remake_history main > section > ul > li > div > div > div > div > div > p {
+          margin-top: 10px;
+          font-size: 23px; }
+        #remake_history main > section > ul > li > div > div > div > div .dash {
+          width: 168px;
+          height: 100px;
+          margin-left: 30px;
+          border: none; }
+      #remake_history main > section > ul > li > div > div > div > div {
+        width: 49%;
+        margin: 0 auto;
+        align-items: center; }
+        #remake_history main > section > ul > li > div > div > div > div > img {
+          width: 150px;
+          height: 150px;
+          border: 2px solid #000000; }
+        #remake_history main > section > ul > li > div > div > div > div > p {
+          margin: 0 30px;
+          font-size: 100px; }
+        #remake_history main > section > ul > li > div > div > div > div .color-tile {
+          border: 2px solid #000000; }
 
 #setting_change main > div {
   background: #B5C76A;

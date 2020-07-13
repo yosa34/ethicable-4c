@@ -148,7 +148,7 @@
                               cart_info.remake_image = $('#remake_image').attr('src');
                               cart_info.product_color = $('#remake_color').css('background-color');
                               cart_info.product_color_name = doc.data().color_name;
-                              cart_info.price = $('#price').text().substr(1);
+                              cart_info.price = $('#price').text().substr(1).replace(/,/g, '');
                               cart_info.remake_icon = $('#remake_icon').attr('src');
                               cart_info.category_id = $('#remake_icon').attr('src').charAt(17);
                                //sessionはstring型でないと扱えないため、JSONを使用している
