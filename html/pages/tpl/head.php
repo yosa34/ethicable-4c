@@ -58,6 +58,7 @@
   <!-- firestoreDB接続 どっかで共通化てもいい-->
   <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-database.js"></script>
   <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-firestore.js"></script>	
+  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-storage.js"></script>
 
   <!-- firebase設定js -->
   <script type="text/javascript" src="./js/firebase.js"></script>
