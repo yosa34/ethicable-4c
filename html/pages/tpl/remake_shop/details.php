@@ -5,6 +5,198 @@
     編集者：2020/07/06小川紗世
     */
 ?>
+<script src="./js/shop.js"></script>
+<script src="./js/function.js"></script>
+<script>
+    //ドキドキ
+    // var remake_product_id = 5;
+
+    //ワクワク
+    var remake_product_id = 11;
+
+    //受け取ったリメイクIDにてリメイク情報を取得する
+    let citiesRef = db.collection('remake').where("remake_product_id", "==", remake_product_id);
+    let allCities = citiesRef.get().then(snapshot => {
+        snapshot.forEach(doc => {
+            const data = doc.data()
+
+            //リメイクID
+            var elem = document.getElementById("remake_product_id");
+            elem.innerHTML = remake_product_id;
+
+            //コース名
+            var couse_name = getCouseName(data.course_id);
+            var elem = document.getElementById("couse_name");
+            elem.innerHTML = couse_name;
+
+            //画像出力
+            var product_img = data.product_id;
+            var img = "<img src='./image/product/" + product_img + ".jpg'>";
+            var elem = document.getElementById("product_img");
+            elem.insertAdjacentHTML('afterbegin', img);
+
+            //商品ID
+            var elem = document.getElementById("product_id");
+            elem.insertAdjacentHTML('beforeend', data.product_id);
+
+            //商品情報の取得
+            db.collection("product").where("product_id", "==", data.product_id)
+            .get().then(function(querySnapshot) {
+                querySnapshot.forEach(function(doc) {
+                const productData = doc.data()
+                //サイズの取得
+                var elem = document.getElementById("product_size");
+                elem.insertAdjacentHTML('beforeend', getProductSize(productData.product_size));
+                //名前の取得
+                var elem = document.getElementById("product_name");
+                elem.insertAdjacentHTML('beforeend', productData.product_name);
+                });
+            })
+            .catch(function(error) {
+                console.log("Error getting documents: ", error);
+            });
+
+
+
+            //ドキドキコース
+            if(data.course_id == 1){
+                //カラー出力
+                var elem = document.getElementById("color_select");
+                elem.innerHTML = getColorCode(data.color_id);
+                //カテゴリー名出力
+                let citiesRef = db.collection('category').where("category_id", "==", data.category_id);
+                let allCities = citiesRef.get().then(snapshot => {
+                snapshot.forEach(doc => {
+                    const data = doc.data()
+                    var elem = document.getElementById("category_select");
+                    elem.innerHTML= data.category_name;
+                    })
+                });
+
+            }
+
+
+            //ワクワクコース
+            if(data.course_id == 2){
+
+                //カラー一覧情報の取得
+                let result = "<div>";
+                //Promiseで最初に処理を走らせてresolve(result)で値を渡す。
+                //成功時にthenに飛ばす感じ。
+                var selectColor = new Promise((resolve,reject) => {
+                    db.collection('color').get().then(snapshot => {
+                        snapshot.forEach(doc => {
+                            const data = doc.data();
+                            var code = data.color_code;
+                            var name = data.color_name;
+                            var id   = data.color_id;
+                            result +="<div><input type='radio' name='color' value='"+id+"'>"+name+code+"<span></span></div>";
+                        })
+                        resolve(result);
+                    });
+                });
+                selectColor.then((result) => {
+                    result += "</div>";
+                    var elem = document.getElementById("color_select");
+                    elem.innerHTML = result;
+                })
+
+                //一覧情報の取得
+                let result2 = "<select name='category' id='select_category'>";
+                //Promiseで最初に処理を走らせてresolve(result)で値を渡す。
+                //成功時にthenに飛ばす感じ。
+                var selectColor = new Promise((resolve,reject) => {
+                    db.collection('category').get().then(snapshot => {
+                        snapshot.forEach(doc => {
+                            const data = doc.data();
+                            var name = data.category_name;
+                            var id = data.category_id
+                            result2 +="<option value='"+id+"'>"+name+"</option>";
+                        })
+                        resolve(result2);
+                    });
+                });
+                selectColor.then((result) => {
+                    result2 += "</div>";
+                    var elem = document.getElementById("category_select");
+                    elem.innerHTML = result2;
+                })
+            }
+            
+        })
+    });
+
+    function Complete(){
+
+        db.collection('remake').where("remake_product_id", "==", remake_product_id)
+        .get().then(snapshot => {
+            snapshot.forEach(doc => {
+                const dataId = doc.id
+                const data = doc.data()
+                //ドキドキコース
+                if(data.course_id == 1){
+                    //現時間を登録する
+                    db.collection("remake").doc(dataId).update({
+                        remake_complete:firebase.firestore.FieldValue.serverTimestamp(),
+                    })
+                    .catch(function(error) {
+                        console.error("Error adding document: ", error);
+                    });
+                }
+                
+                //ワクワクコース
+                if(data.course_id == 2){
+                    //選択カテゴリーの取得
+                    var category_id = document.getElementById("select_category").value;
+
+                    //選択カラーの取得
+                    var color = document.getElementsByName( "color" ) ;
+                    // 選択状態の値を取得
+                    for ( var a="", i=color.length; i--; ) {
+                        if ( color[i].checked ) {
+                            var color_select = color[i].value ;
+                            break ;
+                        }
+                    }
+
+                    //remake登録
+                    db.collection("remake").doc(dataId).update({
+                        category_id:Number(category_id),
+                        color_id:Number(color_select),
+                        remake_complete:firebase.firestore.FieldValue.serverTimestamp(),
+                    })
+                    .catch(function(error) {
+                        console.error("Error adding document: ", error);
+                    });
+
+                    //stocksの件数を取得
+                    db.collection('stocks').get().then(snapshot => {
+                        var size = snapshot.size;
+                        size = size + 1;
+
+                        //stocksに新しいデータを保存
+                        db.collection("stocks").add({
+                            quantity: "1",
+                            remake_image: getImageUrl(remake_product_id),
+                            remake_product_id:remake_product_id,
+                            stock_id:size,
+                            stocks_time:firebase.firestore.FieldValue.serverTimestamp(),
+                        })
+                    })
+                }
+
+            });
+        });
+
+        //選択されたファイル画像をstorageに保存する
+        var files = document.getElementById('filesend').files;
+        var image = files[0];
+        var storageRef = firebase.storage().ref().child(remake_product_id+".jpg");
+            storageRef.put(image).then(function(snapshot) {
+            alert('アップロードしました');
+        });
+        }
+</script>
 
 <!-- SHOP HOME画面 -->
 <title>ethicable｜リメイクショップ｜リメイク依頼詳細</title>
@@ -16,54 +208,42 @@
     <main>
         <p><a href="./remake_shop_home.php">リメイク依頼一覧に戻る</a></p>
         <p>依頼日：0000年00月00日</p>
+        <p>1行ごとに色を変える</p>
         <section>
             <p>依頼内容</p>
             <div>
                 <dl>
                     <dt>リメイクID：</dt>
-                    <dd>000000</dd>
+                    <dd id='remake_product_id'></dd>
                 </dl>
                 <dl>
                     <dt>コースID：</dt>
-                    <dd>ドキドキコース</dd>
+                    <dd id="couse_name"></dd>
                 </dl>
                 <dl>
                     <dt>商品：</dt>
-                    <dd>
-                        <img src="./image/product/414443.jpg" alt="">
+                    <dd id="product_img">
                         <div>
                             <div>
-                                <p>商品ID:00000</p>
-                                <p>サイズ:Mサイズ</p>
+                                <p id="product_id">商品ID:</p>
+                                <p id="product_size">サイズ:</p>
                             </div>
-                            <p>商品名</p>
+                            <p id="product_name">商品名:</p>
                             <div>
                                 <span></span>
-                                <p>カラー</p>
+                                <p id="product_color">カラー</p>
                             </div>
                         </div>
                     </dd>
                 </dl>
                 <dl>
                     <dt>カラー：</dt>
-                    <dd>
-                        <span></span>
-                        <select>
-                            <option value="">#000000</option>
-                            <option value="">#000000</option>
-                            <option value="">#000000</option>
-                        </select>
+                    <dd id="color_select">
                     </dd>
                 </dl>
                 <dl>
                     <dt>カテゴリー：</dt>
-                    <dd>
-                        <span></span>
-                        <select>
-                            <option value="1">カテゴリー１</option>
-                            <option value="2">カテゴリー２</option>
-                            <option value="3">カテゴリー３</option>
-                        </select>
+                    <dd id="category_select">
                     </dd>
                 </dl>
                 <dl>
@@ -79,13 +259,14 @@
             <div>
                 <dl>
                     <dt>ユーザー名：</dt>
-                    <dd>ユーザー名</dd>
+                    <dd>User1</dd>
                 </dl>
                 <dl>
                     <dt>メールアドレス：</dt>
-                    <dd>mail@gmail.com</dd>
+                    <dd>user1234@gmail.com</dd>
                 </dl>
             </div>
         </section>
+        <input type="submit" value="リメイク完了" onclick="Complete()">
     </main>
 
