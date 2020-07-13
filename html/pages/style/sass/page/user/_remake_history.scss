@@ -49,5 +49,38 @@
 
             }
         }
+        >section{
+            >ul{
+                >li{
+                    >div{
+                        width:90%;
+                        margin: 0 auto;
+                        >div{
+                            width: 100%;
+                            >div{
+                                display: flex;
+                                >div{
+                                    >img {
+                                        width: 200px;
+                                        height: 200px;
+                                    }
+                                }
+                                >img {
+                                     width: 200px;
+                                     height: 200px;
+                                 }
+                                 >p{
+                                     :nth-of-type(1){
+                                         font-size: 100px;
+                                     }
+                                 }
+                            }
+                            
+                        }
+                        
+                    }
+                }
+            }
+        }
     }
 }

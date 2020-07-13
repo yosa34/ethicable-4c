@@ -29,7 +29,6 @@ firebase.auth().onAuthStateChanged(function(user) {
       location.href = "./index.html"
   }
 });   
-<<<<<<< HEAD
 //jquery タブ切り替え
 $(function () {
   $("input[type='radio']").removeAttr('checked');
@@ -50,9 +49,6 @@ $(function () {
     $('input').prop('checked', false);
   });
 })
-=======
-
->>>>>>> 2eee30e58d78d4036ee1c1fa8cf82fb7fe7d92b3
 
 function Confirmation() {
 
