@@ -123,12 +123,13 @@
                                 var sec = (d.getSeconds() < 10) ? '0' + d.getSeconds() : d.getSeconds();
 
                                 $('#history' + cnt).append(
-                                    '<div><div><div><img src="./image/product/' + change.doc.data().product_id + '.jpg" class="history_image">' +
+                                    '<div><div><div><div><img src="./image/product/' + change.doc.data().product_id + '.jpg" class="history_image">' +
                                     '<p>商品番号：' + change.doc.data().product_id + '</p></div>' +
-                                    '<img src="' + remake_image + '">' +
+                                    '<img src="./image/icon/icon_dash.png" class="dash"></div>' +
+                                    '<div><img src="' + remake_image + '">' +
                                     '<p>×</p>' +
-                                    '<div class="color-tile" style="background-color: ' + color_code + ';width: 100px;height:100px"></div></div>' +
-                                    '<p>取引日時：' + year + '/' + month + '/' + day + ' ' + hour + ':' + min + ':' + sec + '</p></div>'
+                                    '<div class="color-tile" style="background-color: ' + color_code + ';width: 150px;height:150px"</div></div></div>' +
+                                    '</div><p>取引日時：' + year + '/' + month + '/' + day + ' ' + hour + ':' + min + ':' + sec + '</p>'
                                 );
                             }
                         });
