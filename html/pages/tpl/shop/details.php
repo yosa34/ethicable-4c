@@ -12,30 +12,36 @@
           if (user) {
             // console.log(user.uid);
 
-            /* ToDo
-               本来はURLに含まれたremake_product_idを取り出してそれを元に検索・データの取得処理を行いますが。
-               remakeコレクションとstocksコレクションの値が合致しないのでエラーになります。
-               なので一旦任意のremake_product_idを指定しています。
-               コレクションの修正が完了次第下記のコードに変更する！！！
+            // オブジェクトをループさせるために使う関数(小計計算)
+            Object.defineProperty(Object.prototype, "forIn", {
+                value: function(fn, self) {
+                    self = self || this;
 
-            // GET URLのパラメータ取得(remake_product_idが含まれている)
-            url = location.search.substring(1).split('=');
-            var get_remake_product_id;
-            get_remake_product_id = url[1];
-            console.log(url[0]+"=>"+url[1]);
-          */
-         /*
-            var remake_product_id = 10
-            var product_id = 426847;
+                    Object.keys(this).forEach(function(key, index) {
+                        var value = this[key];
+
+                        fn.call(self, key, value, index);
+                    }, this);
+                }
+            });
+
+            // aタグを無効にする
+            $('.noLinks').click(() => false);
+
             // remakeコレクションの情報取得
-            // url = location.search.substring(1).split('=');
-            // var get_remake_product_id;
-            // get_remake_product_id = url[1];
-            // console.log(url[0]+"=>"+url[1]);
-          */
             url = location.search.substring(1).split('=');
             var remake_product_id;
             remake_product_id = url[1];
+            if (sessionStorage.cartList) {
+
+              var cartList = JSON.parse(sessionStorage.cartList);
+              cartList.forIn((key,value,index) => {
+                if (remake_product_id == value.remake_product_id) {
+                  $('#add_to_cart_btn').prop("background-color", "gray");
+                  $('#add_to_cart_btn').addClass('noLinks');
+                }
+              });
+            }
             var product_id;
             // remakeコレクションの情報取得
             let remakeRef = db.collection('remake').where("remake_product_id", "==", Number(remake_product_id));
@@ -145,6 +151,7 @@
                             querySnapshot.forEach(function(doc) {
                               // 各要素をcart_infoに入れていく
                               var cart_info = {};
+                              cart_info.remake_product_id = remake_product_id;
                               cart_info.remake_image = $('#remake_image').attr('src');
                               cart_info.product_color = $('#remake_color').css('background-color');
                               cart_info.product_color_name = doc.data().color_name;
@@ -226,7 +233,7 @@
                 <p id="price"></p>
               </div>
               <!-- カートに遷移するボタン -->
-              <p id="add_to_cart"><a>カート</a></p>
+              <p id="add_to_cart"><a id="add_to_cart_btn">カート</a></p>
             </div>
           </div>
         </section>
