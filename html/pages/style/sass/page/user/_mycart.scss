@@ -9,10 +9,11 @@
                 margin: 0 auto;
                 li{
                     position: relative;
-                    display: flex;
-                    padding: 30px;
-                    border-bottom: 1px solid $header_border_color;
                     a{
+                        display: flex;
+                        width: 100%;
+                        padding: 30px;
+                        border-bottom: 1px solid $header_border_color;
                         >p{
                             width: 30%;
                             img{
