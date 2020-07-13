@@ -1089,11 +1089,11 @@ header {
     width: 80%;
     margin: 0 auto;
     text-align: center; }
-  #shop_home main nav li {
-    padding: 30px;
-    width: 100%;
-    font-weight: bold;
-    font-size: 40px; }
+    #shop_home main nav ul li {
+      padding: 30px;
+      width: 100%;
+      font-weight: bold;
+      font-size: 40px; }
 
 #shop_home main section {
   /**
@@ -1105,7 +1105,8 @@ header {
     display: inline-flex;
     flex-wrap: wrap;
     text-align: center;
-    justify-content: space-between; }
+    justify-content: space-between;
+    width: 100%; }
     #shop_home main section ul li {
       width: 50%;
       padding: 10px; }
