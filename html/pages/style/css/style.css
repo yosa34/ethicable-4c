@@ -1,6 +1,6 @@
 @charset "UTF-8";
 main {
-  margin: 100px 0 170px; }
+  margin: 100px 0 200px; }
   main h1 {
     font-size: 70px;
     text-align: center;
@@ -12,7 +12,7 @@ footer {
   height: 170px;
   position: fixed;
   z-index: 999;
-  bottom: 0;
+  bottom: 5px;
   left: 0;
   right: 0;
   border-top: 2px solid #B5C76A;
@@ -397,32 +397,29 @@ header {
               line-height: 20px;
               padding: 0 0 0 10px; }
 
-#remake_shop_details main input[type="submit"] {
-  display: block;
-  background: #B5C76A;
-  color: #FFF;
-  border: 2px solid none;
-  font-size: 45px;
-  font-weight: bold;
-  width: 80%;
-  padding: 10px 0;
-  margin: 50px auto;
-  border-radius: 15px;
-  text-align: center;
-  width: 300px;
-  font-size: 20px; }
-  #remake_shop_details main input[type="submit"]:active {
-    background: none;
-    color: #B5C76A;
-    border: 2px solid #B5C76A; }
-
 #remake_shop_home section {
   width: 80%;
   margin: 0 auto; }
+  #remake_shop_home section ul {
+    display: flex;
+    width: 100%; }
+    #remake_shop_home section ul li {
+      width: 100%; }
+      #remake_shop_home section ul li a {
+        width: 100%;
+        padding: 20px 0;
+        text-align: center;
+        color: #fff;
+        border-top-right-radius: 15px;
+        border-top-left-radius: 15px;
+        background: #707070; }
+        #remake_shop_home section ul li a[href^="#"] {
+          background: #B5C76A; }
   #remake_shop_home section table {
     width: 100%; }
     #remake_shop_home section table tr {
-      width: 100%; }
+      width: 100%;
+      border-bottom: 1px solid #B5C76A; }
       #remake_shop_home section table tr td {
         text-align: center; }
         #remake_shop_home section table tr td img {
@@ -715,18 +712,18 @@ header {
             width: 80%;
             margin: 0 auto; }
           #remake_home main section:nth-child(1) div div ul li a div {
-            background-color: red;
             display: flex;
             justify-content: space-between;
             position: absolute;
             z-index: 1;
-            bottom: 40px;
+            bottom: 15px;
             left: 0;
             right: 0;
             width: 50%;
             margin: 0 auto; }
             #remake_home main section:nth-child(1) div div ul li a div img {
-              width: 100px; }
+              width: 100px;
+              height: 100px; }
             #remake_home main section:nth-child(1) div div ul li a div span {
               width: 100px;
               height: 100px;
@@ -992,6 +989,7 @@ header {
           font-size: 30px;
           padding-bottom: 10px; }
         #shop_details main section > div:first-of-type > div:first-of-type div img {
+          height: 100px;
           width: 100px; }
         #shop_details main section > div:first-of-type > div:first-of-type div span {
           display: inline-block;
@@ -1069,16 +1067,31 @@ header {
       background: #B5C76A;
       color: #fff; }
 
+#shop_home header {
+  border-bottom: none; }
+
 #shop_home main nav {
+  border-bottom: solid 3px;
   /**
              * navを中心に
              * liを横並びに配置
              */ }
+  #shop_home main nav span {
+    display: block;
+    background: #B5C76A;
+    width: 80%;
+    margin: 10px auto 0px;
+    border-radius: 15px;
+    height: 5px; }
   #shop_home main nav ul {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
     text-align: center; }
   #shop_home main nav li {
-    display: inline-block;
-    width: 45%;
+    padding: 30px;
+    width: 100%;
     font-weight: bold;
     font-size: 40px; }
 
@@ -1094,8 +1107,8 @@ header {
     text-align: center;
     justify-content: space-between; }
     #shop_home main section ul li {
-      width: 45%;
-      margin: 10px 0; }
+      width: 50%;
+      padding: 10px; }
       #shop_home main section ul li a img {
         width: 100%;
         height: auto; }
@@ -1332,46 +1345,48 @@ header {
   width: 80%;
   margin: 0 auto; }
   #cart main section ul li {
-    position: relative;
-    display: flex;
-    padding: 30px;
-    border-bottom: 1px solid #707070; }
-    #cart main section ul li > p {
-      width: 30%; }
-      #cart main section ul li > p img {
-        width: 100%; }
-    #cart main section ul li > div {
-      width: 70%; }
-      #cart main section ul li > div dl {
-        display: flex;
-        font-size: 30px;
-        align-items: center; }
-        #cart main section ul li > div dl dt {
-          width: 55%;
-          text-align: right; }
-        #cart main section ul li > div dl dd {
-          width: 45%;
+    position: relative; }
+    #cart main section ul li a {
+      display: flex;
+      width: 100%;
+      padding: 30px;
+      border-bottom: 1px solid #707070; }
+      #cart main section ul li a > p {
+        width: 30%; }
+        #cart main section ul li a > p img {
+          width: 100%; }
+      #cart main section ul li a > div {
+        width: 70%; }
+        #cart main section ul li a > div dl {
           display: flex;
-          padding: 10px 0; }
-          #cart main section ul li > div dl dd img {
-            height: 70px; }
-          #cart main section ul li > div dl dd span {
-            width: 70px;
-            height: 70px;
-            display: inline-block; }
-          #cart main section ul li > div dl dd p {
-            line-height: 70px;
-            padding-left: 20px; }
-      #cart main section ul li > div > p:nth-of-type(1) {
-        font-size: 40px;
-        padding-left: 35px; }
-      #cart main section ul li > div > p:nth-of-type(2) {
-        text-align: right;
-        font-size: 30px;
-        color: #5FB0E2;
-        position: absolute;
-        bottom: 30px;
-        right: 30px; }
+          font-size: 30px;
+          align-items: center; }
+          #cart main section ul li a > div dl dt {
+            width: 55%;
+            text-align: right; }
+          #cart main section ul li a > div dl dd {
+            width: 45%;
+            display: flex;
+            padding: 10px 0; }
+            #cart main section ul li a > div dl dd img {
+              height: 70px; }
+            #cart main section ul li a > div dl dd span {
+              width: 70px;
+              height: 70px;
+              display: inline-block; }
+            #cart main section ul li a > div dl dd p {
+              line-height: 70px;
+              padding-left: 20px; }
+        #cart main section ul li a > div > p:nth-of-type(1) {
+          font-size: 40px;
+          padding-left: 35px; }
+        #cart main section ul li a > div > p:nth-of-type(2) {
+          text-align: right;
+          font-size: 30px;
+          color: #5FB0E2;
+          position: absolute;
+          bottom: 30px;
+          right: 30px; }
 
 #cart main section > div {
   width: 80%;
@@ -1393,6 +1408,33 @@ header {
   #cart main section > dl dd {
     color: #B5C76A; }
 
+#cart main section > div.cart_error {
+  width: 80%; }
+  #cart main section > div.cart_error > div {
+    padding: 25px;
+    border: 3px solid #B5C76A;
+    font-size: 45px; }
+    #cart main section > div.cart_error > div p:first-of-type {
+      color: #B5C76A;
+      padding-bottom: 20px;
+      font-weight: bold; }
+  #cart main section > div.cart_error p a {
+    display: block;
+    background: #B5C76A;
+    color: #FFF;
+    border: 2px solid none;
+    font-size: 45px;
+    font-weight: bold;
+    width: 80%;
+    padding: 20px 0;
+    margin: 50px auto;
+    border-radius: 15px;
+    text-align: center; }
+    #cart main section > div.cart_error p a:active {
+      background: none;
+      color: #B5C76A;
+      border: 2px solid #B5C76A; }
+
 #cart main > p {
   font-size: 50px;
   text-align: center;
@@ -1400,6 +1442,8 @@ header {
   #cart main > p b {
     font-size: 70px;
     color: #B5C76A; }
+  #cart main > p:first-of-type {
+    color: #5FB0E2; }
 
 #mypage {
   background: #F5F5F5; }
@@ -1471,41 +1515,42 @@ header {
     font-weight: bold;
     font-size: 40px; }
 
-#purchase_history main section ul li div {
+#purchase_history main section ul li > div {
   position: relative;
   display: flex;
   padding: 30px;
   border-bottom: 1px solid #707070; }
-  #purchase_history main section ul li div > p {
+  #purchase_history main section ul li > div > p {
     width: 30%; }
-    #purchase_history main section ul li div > p img {
+    #purchase_history main section ul li > div > p img {
       width: 100%; }
-  #purchase_history main section ul li div > div {
+  #purchase_history main section ul li > div > div {
     width: 70%; }
-    #purchase_history main section ul li div > div dl {
+    #purchase_history main section ul li > div > div dl {
       display: flex;
       font-size: 30px;
       align-items: center; }
-      #purchase_history main section ul li div > div dl dt {
+      #purchase_history main section ul li > div > div dl dt {
         width: 55%;
         text-align: right; }
-      #purchase_history main section ul li div > div dl dd {
+      #purchase_history main section ul li > div > div dl dd {
         width: 45%;
         display: flex;
         padding: 10px 0; }
-        #purchase_history main section ul li div > div dl dd img {
+        #purchase_history main section ul li > div > div dl dd img {
           height: 70px; }
-        #purchase_history main section ul li div > div dl dd span {
+        #purchase_history main section ul li > div > div dl dd span {
           width: 70px;
           height: 70px;
-          display: inline-block; }
-        #purchase_history main section ul li div > div dl dd p {
+          display: inline-block;
+          background: #ccc; }
+        #purchase_history main section ul li > div > div dl dd p {
           line-height: 70px;
           padding-left: 20px; }
-    #purchase_history main section ul li div > div > p:nth-of-type(1) {
+    #purchase_history main section ul li > div > div > p:nth-of-type(1) {
       font-size: 40px;
       padding-left: 35px; }
-    #purchase_history main section ul li div > div > p:nth-of-type(2) {
+    #purchase_history main section ul li > div > div > p:nth-of-type(2) {
       text-align: right;
       font-size: 30px;
       color: #5FB0E2;
@@ -1590,6 +1635,8 @@ header {
         #remake_history main > section > ul > li > div > div > div > div > p {
           margin: 0 30px;
           font-size: 100px; }
+        #remake_history main > section > ul > li > div > div > div > div .color-tile {
+          border: 2px solid #000000; }
 
 #setting_change main > div {
   background: #B5C76A;

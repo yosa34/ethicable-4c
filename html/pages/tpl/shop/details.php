@@ -33,15 +33,18 @@
             // get_remake_product_id = url[1];
             // console.log(url[0]+"=>"+url[1]);
           */
-            var remake_product_id = 1
-            var product_id = 414443;
+            url = location.search.substring(1).split('=');
+            var remake_product_id;
+            remake_product_id = url[1];
+            var product_id;
             // remakeコレクションの情報取得
             let remakeRef = db.collection('remake').where("remake_product_id", "==", Number(remake_product_id));
                   let allRemake = remakeRef.get().then(snapshot => {
                       snapshot.forEach(doc => {
-                        const data = doc.data()
+                        const data = doc.data();
 
-                        // console.log(data);
+                        // product_idを取得
+                        product_id = doc.data().product_id;
 
                         // リメイク商品情報を取得し格納
                         const remakeCategory = doc.data().category_id;
@@ -53,10 +56,13 @@
                         var elem2 = document.getElementById("remake_icon");
                         var elem3 = document.getElementById("remake_color");
                         elem3.style.backgroundColor = getColorCode(doc.data().color_id);
+                        // カラーIDをdata属性に追加
+                        elem3.dataset.color = doc.data().color_id;
 
                         // リメイク前の商品情報
                         var elem4 = document.getElementById("before_img");
                         var elem5 = document.getElementById("product_id");
+
                         var elem6 = document.getElementById("product_color");
                         var elem7 = document.getElementById("product_color_name");
                         var elem8 = document.getElementById("product_material");
@@ -67,14 +73,11 @@
                       // カテゴリーアイコンを表示
                       elem2.src = getRemakeImg(remakeCategory);
 
-                      console.log(remake_product_id);
-
-                        db.collection("stocks").where("remake_product_id", "==", remake_product_id)
+                        db.collection("stocks").where("remake_product_id", "==", Number(remake_product_id))
                         // db.collection("stocks").where("remake_product_id", "==", "DSsswyu1p9SklvMstgiu")
                         .get().then(function(querySnapshot){
                             querySnapshot.forEach(function(doc) {
-                              const stocks = doc.data()
-                              console.log(stocks);
+                              const stocks = doc.data();
 
                               // リメイク商品画像の表示
                               elem1.src = stocks.remake_image;
@@ -134,28 +137,33 @@
 
                     // カートに入れる関数
                     $('#add_to_cart').click(function() {
-                      console.log('click!!');
+                      // color_idからcolor_nameを取得し、cart_infoにいれる
+                      var color_id = $('#remake_color').data('color');
+                      // categoryコレクションの取得
+                      db.collection("color").where("color_id", "==", color_id)
+                        .get().then(function(querySnapshot) {
+                            querySnapshot.forEach(function(doc) {
+                              // 各要素をcart_infoに入れていく
+                              var cart_info = {};
+                              cart_info.remake_image = $('#remake_image').attr('src');
+                              cart_info.product_color = $('#remake_color').css('background-color');
+                              cart_info.product_color_name = doc.data().color_name;
+                              cart_info.price = $('#price').text().substr(1).replace(/,/g, '');
+                              cart_info.remake_icon = $('#remake_icon').attr('src');
+                              cart_info.category_id = $('#remake_icon').attr('src').charAt(17);
+                               //sessionはstring型でないと扱えないため、JSONを使用している
+                              var cart_submit = JSON.stringify(cart_info);
 
-                      // 各要素をcart_infoに入れていく
-                      var cart_info = {};
-                      cart_info.remake_image = $('#remake_image').attr('src');
-                      cart_info.product_color = $('#product_color').css('background-color');
-                      cart_info.product_color_name =$('#product_color_name').text();
-                      cart_info.price = $('#price').text().substr(1);
-                      cart_info.remake_icon = $('#remake_icon').attr('src');
-                      cart_info.category_id = $('#remake_icon').attr('src').charAt(17);
+                              //sessionへ格納する
+                              sessionStorage['cart'] = cart_submit;
 
-                      console.log(cart_info);
-
-
-                      // sessionはstring型でないと扱えないため、JSONを使用している
-                      // var cart_submit = JSON.stringify(cart_info);
-
-                      // sessionへ格納する
-                      // sessionStorage['cart'] = cart_submit;
-
-                      // カート画面へ
-                      // window.location = "./mycart.php";
+                              //カート画面へ
+                              window.location = "./mycart.php";
+                            });
+                        })
+                        .catch(function(error) {
+                            console.log("Error getting documents:category  ", error);
+                        });
                     })
 
           } else{

@@ -9,55 +9,58 @@
                 margin: 0 auto;
                 li{
                     position: relative;
-                    display: flex;
-                    padding: 30px;
-                    border-bottom: 1px solid $header_border_color;
-                    >p{
-                        width: 30%;
-                        img{
-                            width: 100%;
-                        }
-                    }
-                    >div{
-                        width: 70%;
-                        dl{
-                            display: flex;
-                            font-size: 30px;
-                            align-items: center;
-                            dt{
-                                width: 55%;
-                                text-align: right;
-                            }
-                            dd{
-                                width: 45%;
-                                display: flex;
-                                padding: 10px 0;
-                                img{
-                                    height: 70px;
-                                }
-                                span{
-                                    width: 70px;
-                                    height: 70px;
-                                    display: inline-block;
-                                }
-                                p{
-                                    line-height: 70px;
-                                    padding-left: 20px;
-                                }
-                            }
-                        }
+                    a{
+                        display: flex;
+                        width: 100%;
+                        padding: 30px;
+                        border-bottom: 1px solid $header_border_color;
                         >p{
-                            &:nth-of-type(1){
-                                font-size: 40px;
-                                padding-left: 35px;
+                            width: 30%;
+                            img{
+                                width: 100%;
                             }
-                            &:nth-of-type(2){
-                                text-align: right;
+                        }
+                        >div{
+                            width: 70%;
+                            dl{
+                                display: flex;
                                 font-size: 30px;
-                                color: #5FB0E2;
-                                position: absolute;
-                                bottom: 30px;
-                                right: 30px;
+                                align-items: center;
+                                dt{
+                                    width: 55%;
+                                    text-align: right;
+                                }
+                                dd{
+                                    width: 45%;
+                                    display: flex;
+                                    padding: 10px 0;
+                                    img{
+                                        height: 70px;
+                                    }
+                                    span{
+                                        width: 70px;
+                                        height: 70px;
+                                        display: inline-block;
+                                    }
+                                    p{
+                                        line-height: 70px;
+                                        padding-left: 20px;
+                                    }
+                                }
+                            }
+                            >p{
+                                &:nth-of-type(1){
+                                    font-size: 40px;
+                                    padding-left: 35px;
+                                }
+                                &:nth-of-type(2){
+                                    text-align: right;
+                                    font-size: 30px;
+                                    color: #5FB0E2;
+                                    position: absolute;
+                                    bottom: 30px;
+                                    right: 30px;
+                                }
                             }
                         }
                     }
@@ -88,6 +91,27 @@
                     color: $main_color;
                 }
             }
+
+            >div.cart_error{
+                width: 80%;
+                >div{
+                    padding: 25px;
+                    border: 3px solid $main_color;
+                    font-size: 45px;
+                    p{
+                        &:first-of-type{
+                            color: $main_color;
+                            padding-bottom: 20px;
+                            font-weight: bold;
+                        }
+                    }
+                }
+                p{
+                    a{
+                        @include input_button(20px,$main_color,$botton_color,none);
+                    }
+                }
+            }
         }
         >p{
             font-size: 50px;
@@ -96,6 +120,10 @@
             b{
                 font-size: 70px;
                 color: $main_color;
+            }
+            &:first-of-type{
+                color: #5FB0E2;
+
             }
         }
     }
