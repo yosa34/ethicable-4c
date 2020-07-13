@@ -118,6 +118,10 @@
                 font-size: 70px;
                 color: $main_color;
             }
+            &:first-of-type{
+                color: #5FB0E2;
+
+            }
         }
     }
 }

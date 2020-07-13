@@ -53,7 +53,7 @@
             $('section').append('<dl id="acquisition"></dl>');
             $('main').append(
               `<!-- テスト用session削除ボタン -->
-                <p onClick="window.sessionStorage.clear();location.reload();">カート内商品全削除</p>
+                <p onClick="window.sessionStorage.clear();location.reload();">カートを空にする</p>
                 <p id="total_amount">合計<b></b>円</p>
                 <input type="button" value="購入手続き">`
             );
