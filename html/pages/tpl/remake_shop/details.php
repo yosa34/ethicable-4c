@@ -86,7 +86,7 @@
             if(data.course_id == 2){
 
                 //カラー一覧情報の取得
-                let result = "<div>";
+                let result = "<div style='display: flex; flex-wrap: wrap;'>";
                 //Promiseで最初に処理を走らせてresolve(result)で値を渡す。
                 //成功時にthenに飛ばす感じ。
                 var selectColor = new Promise((resolve,reject) => {
@@ -96,7 +96,7 @@
                             var code = data.color_code;
                             var name = data.color_name;
                             var id   = data.color_id;
-                            result +="<div><input type='radio' name='color' value='"+id+"'>"+name+code+"<span></span></div>";
+                            result +="<div style='width: 80px; margin-bottom: 1%;'><span style='width: 50px; height: 50px; margin: 0 auto; display: block; background-color:"+ code + ";'></span><p style='text-align: center; padding: 10px;'>" + name + "</p><input style='margin-left: 44%;' type='radio' name='color' value='"+id+"'></div>";
                         })
                         resolve(result);
                     });
