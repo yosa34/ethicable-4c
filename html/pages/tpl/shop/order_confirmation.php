@@ -7,6 +7,41 @@
 ?>
 
 <script>
+  firebase.auth().onAuthStateChanged(function(user) {
+    if (user) {
+      // sessionから受け取る
+      var cart_info = JSON.parse(sessionStorage.cart_info);
+
+      $('#cart_info').append(`
+          <div>
+              <dl>
+              <dt>小計(${cart_info.item_amount}商品)</dt>
+              <dd>${cart_info.subtotal.toLocaleString()}円</dd>
+              </dl>
+              <dl>
+              <dt>送料</dt>
+              <dd>無料</dd>
+              </dl>
+              <dl>
+              <dt>利用ポイント</dt>
+              <dd><b>0pt</b></dd>
+              </dl>
+          </div>
+          <dl>
+              <dt>総合計</dt>
+              <dd><b>${cart_info.total.toLocaleString()}</b>円</dd>
+          </dl>
+          <dl>
+              <dt>獲得予定</dt>
+              <dd><b>${cart_info.points}ポイント(円相当)</b></dd>
+          </dl>
+      `);
+      $('.submit').click(() => {
+          // 注文確認画面へ
+          location.href="./my_cart_order_completed.php"
+      });
+    }
+  });
 </script>
 <!-- SHOP ｜ カート ｜ 注文履歴画面 -->
 <title>ethicable｜SHOP｜カート｜注文履歴</title>
@@ -19,31 +54,10 @@
     <!-- main -->
     <main>
       <h1>注文確認</h1>
-      <input type="button" value="完了">
+      <input type="button" value="完了" class="submit">
       <section>
-        <div>
-          <div>
-            <dl>
-              <dt>小計(2商品)</dt>
-              <dd>9,000円</dd>
-            </dl>
-            <dl>
-              <dt>送料</dt>
-              <dd>送料無料</dd>
-            </dl>
-            <dl>
-              <dt>利用ポイント</dt>
-              <dd><b>-253pt</b></dd>
-            </dl>
-          </div>
-          <dl>
-            <dt>総合計</dt>
-            <dd><b>10,500</b>円</dd>
-          </dl>
-          <dl>
-            <dt>獲得予定</dt>
-            <dd><b>90ポイント(円相当)</b></dd>
-          </dl>
+        <div id="cart_info">
+
         </div>
       </section>
       <section>
@@ -98,5 +112,5 @@
         </div>
       </section>
 
-     <input type="button" value="完了">
+     <input type="button" value="完了" class="submit">
     </main>
