@@ -52,10 +52,9 @@
             $('section').append('<div id="subtotal"></div>');
             $('section').append('<dl id="acquisition"></dl>');
             $('main').append(
-              `<!-- テスト用session削除ボタン -->
-                <p onClick="window.sessionStorage.clear();location.reload();">カートを空にする</p>
+              `<p onClick="window.sessionStorage.clear();location.reload();">カートを空にする</p>
                 <p id="total_amount">合計<b></b>円</p>
-                <input type="button" value="購入手続き">`
+                <input type="button" value="購入手続き" id="submit">`
             );
             // JSON形式でsessionに保存されているため、JSON.parseをしてJavaScriptで扱えるようにする
             var cart = {};
@@ -146,7 +145,6 @@
             var cart_item_display = function(callback) {
               // オブジェクトのループ処理をいれる
               cartList.forIn(function(key, value, index) {
-                console.log(value);
 
                 value.forIn(function(itemKey, itemValue, itemIndex) {
                   if (itemKey == 'category_id') {
@@ -203,6 +201,23 @@
               $('#total_amount>b').append(total_amount.toLocaleString());
             }
             cart_item_display(incidental_display);
+
+            // 購入手続きボタンを押す
+            $('#submit').click(() => {
+              // 小計などの情報をまとめる
+              var cart_info = {};
+              cart_info.item_amount = item_amount;
+              cart_info.subtotal = subtotal;
+              cart_info.total = total_amount;
+              cart_info.points = points;
+              cart_info.postage = 0;
+
+              var cart_info_JSON = JSON.stringify(cart_info);
+              // sessionに保存
+              sessionStorage.cart_info = cart_info_JSON;
+              // 購入手続き画面へ
+              location.href='./my_cart_settlement.php';
+            });
           } else {
             $('section').append(
             '<div class="cart_error"><div>'+
