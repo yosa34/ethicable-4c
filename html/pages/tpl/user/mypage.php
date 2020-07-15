@@ -10,8 +10,25 @@
 
   //ログアウト処理
   function logout(){
-      firebase.auth().signOut();
+    firebase.auth().signOut();
   }
+  firebase.auth().onAuthStateChanged(function(user) {
+    //ログイン状態判別
+    if (user) {
+        // ユーザの所持ポイントを取得し表示する
+        db.collection("point").where("user_id", "==", user.uid).get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+              var elem1 = document.getElementById("points");
+              elem1.innerHTML= doc.data().point_amount+"<b>pt</b>";
+        });
+        })
+        .catch( (error) => {
+          console.log(`データの取得に失敗しました (${error})`);
+        });
+    }else{
+        location.href = "./index.html"
+    }
+    });
 </script>
 
 
@@ -28,7 +45,7 @@
         <section>
             <div>
                 <p>エコポイント</p>
-                <p>0<b>pt</b></p>
+                <p id="points"></p>
             </div>
         </section>
 
