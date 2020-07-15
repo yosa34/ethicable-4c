@@ -11,7 +11,7 @@
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
           if(sessionStorage.cart || sessionStorage.cartList){
-            // オブジェクトをループさせるために使う関数(小計計算)
+            // オブジェクトをループさせるために使う関数
             Object.defineProperty(Object.prototype, "forIn", {
                 value: function(fn, self) {
                     self = self || this;
@@ -146,6 +146,8 @@
             var cart_item_display = function(callback) {
               // オブジェクトのループ処理をいれる
               cartList.forIn(function(key, value, index) {
+                console.log(value);
+
                 value.forIn(function(itemKey, itemValue, itemIndex) {
                   if (itemKey == 'category_id') {
                     // カートからcategory_idを抽出
@@ -161,6 +163,7 @@
 
                           // cart_itemの表示
                           $('#item' + itemCount).append(
+                            '<a href="./shop_details.php?remake_product_id=' + value.remake_product_id + '">'+
                             '<p><img src="' + value.remake_image + '" alt="リメイクイメージ"></p>'+
                             '<div class="cart_items_item">'+
                             '<dl>'+
@@ -171,7 +174,8 @@
                             '</dl>'+
                             '<p>' + '価格：' + parseInt(value.price).toLocaleString() + '円' + '</p>'+
                             '<p>削除</p>'+
-                            '</div> '
+                            '</div> '+
+                            '</a>'
                             );
                             // カウントアップ
                             itemCount++;
