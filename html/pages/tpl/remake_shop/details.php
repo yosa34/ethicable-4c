@@ -68,7 +68,10 @@
             if(data.course_id == 1){
                 //カラー出力
                 var elem = document.getElementById("color_select");
-                elem.innerHTML = getColorCode(data.color_id);
+                // console.log(data.color_id);
+                elem.innerHTML = "<label style='width: 80px; margin-bottom: 1%; display:inline-block' for='"+data.color_id+"'><span style='width: 50px; height: 50px; margin: 0 auto; display: block; background-color:"+ getColorCode(data.color_id) + ";'></span><p style='text-align: center; padding: 10px;'>" + getColorCode(data.color_id) + "</p><input style='margin-left: 44%;' type='radio' name='color' id='"+data.color_id+"' value='"+data.color_id+"' checked></label>";
+
+                // elem.innerHTML = getColorCode(data.color_id);
                 //カテゴリー名出力
                 let citiesRef = db.collection('category').where("category_id", "==", data.category_id);
                 let allCities = citiesRef.get().then(snapshot => {
