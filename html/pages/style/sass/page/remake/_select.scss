@@ -130,13 +130,21 @@
                                                 /* 高さを幅の75%に固定 */
                                             }
 
-                                            .color_box {
+                                            .color_box1 {
                                                 position: absolute;
                                                 top: 0;
                                                 left: 0;
                                                 bottom: 0;
                                                 right: 0;
-                                                background-color: red;
+                                                background-color: #D5D3B5;
+                                            }
+                                            .color_box2{
+                                                position: absolute;
+                                                top: 0;
+                                                left: 0;
+                                                bottom: 0;
+                                                right: 0;
+                                                background-color: #CEB8A5;
                                             }
                                         }
                                     }

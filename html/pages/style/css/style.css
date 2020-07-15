@@ -348,9 +348,32 @@ header {
     #qr_reader main section .qrcode-text {
       display: none; }
 
+#remake_shop_details main input[type="submit"] {
+  display: block;
+  background: #B5C76A;
+  color: #FFF;
+  border: 2px solid none;
+  font-size: 45px;
+  font-weight: bold;
+  width: 80%;
+  padding: 10px 0;
+  margin: 50px auto;
+  border-radius: 15px;
+  text-align: center;
+  width: 30%;
+  font-size: 20px; }
+  #remake_shop_details main input[type="submit"]:active {
+    background: none;
+    color: #B5C76A;
+    border: 2px solid #B5C76A; }
+
 #remake_shop_details main > p {
   width: 90%;
   margin: 20px auto; }
+  #remake_shop_details main > p a {
+    color: #B5C76A; }
+    #remake_shop_details main > p a:active {
+      color: #FFAF6A; }
 
 #remake_shop_details main section {
   width: 80%;
@@ -886,13 +909,20 @@ header {
                 display: block;
                 padding-top: 100%;
                 /* 高さを幅の75%に固定 */ }
-              #remake_select main section > div > div:nth-of-type(3) > ul > li > label > ul > li .color_box {
+              #remake_select main section > div > div:nth-of-type(3) > ul > li > label > ul > li .color_box1 {
                 position: absolute;
                 top: 0;
                 left: 0;
                 bottom: 0;
                 right: 0;
-                background-color: red; }
+                background-color: #D5D3B5; }
+              #remake_select main section > div > div:nth-of-type(3) > ul > li > label > ul > li .color_box2 {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                background-color: #CEB8A5; }
   #remake_select main section > div > ul {
     display: flex;
     justify-content: space-between; }
@@ -1089,11 +1119,11 @@ header {
     width: 80%;
     margin: 0 auto;
     text-align: center; }
-  #shop_home main nav li {
-    padding: 30px;
-    width: 100%;
-    font-weight: bold;
-    font-size: 40px; }
+    #shop_home main nav ul li {
+      padding: 30px;
+      width: 100%;
+      font-weight: bold;
+      font-size: 40px; }
 
 #shop_home main section {
   /**
@@ -1105,7 +1135,8 @@ header {
     display: inline-flex;
     flex-wrap: wrap;
     text-align: center;
-    justify-content: space-between; }
+    justify-content: space-between;
+    width: 100%; }
     #shop_home main section ul li {
       width: 50%;
       padding: 10px; }

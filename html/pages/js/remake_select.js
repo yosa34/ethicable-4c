@@ -1,25 +1,3 @@
-firebase.auth().onAuthStateChanged(function(user) {
-    //ログイン状態判別
-    if (user) {
-        //colorの取得
-        db.collection("color").where("color_id", "==", data.color_id)
-        .get().then(function(querySnapshot) {
-            querySnapshot.forEach(function(doc) {
-                const color = doc.data()
-                //colorの出力
-                var elem = document.getElementById("color_name");
-
-                elem.innerHTML = color.color_id+" "+color.color_name;
-            });
-        })
-        .catch(function(error) {
-            console.log("Error getting documents: ", error);
-        });
-
-    } else{
-      location.href = "./index.html"
-  }
-});   
 //jquery タブ切り替え
 $(function () {
   $("input[type='radio']").removeAttr('checked');
@@ -42,10 +20,24 @@ $(function () {
 })
 
 
+//colorの表示
+$(document).ready( function(){
+    var color = document.getElementById('select_color_box1');
+    color.style.backgroundColor = '#A5ACD6';
+
+    var color = document.getElementById('select_color_box2');
+    color.style.backgroundColor = '#CEB8A5';
+
+    var color = document.getElementById('select_color_box3');
+    color.style.backgroundColor = "#D5D3B5";
+ });
+
+
 function Confirmation() {
 
+    //項目ごとに選択の時
     // product要素を取得
-    var category = document.getElementsByName( "category" ) ;
+    var category = document.getElementsByName("category");
     // 選択状態の値を取得
     for ( var a="", i=category.length; i--; ) {
       if ( category[i].checked ) {
@@ -53,9 +45,9 @@ function Confirmation() {
         break ;
       }
     }
-    
+
     // color要素を取得
-    var color = document.getElementsByName( "color" ) ;
+    var color = document.getElementsByName( "color" );
     // 選択状態の値を取得
     for ( var a="", i=color.length; i--; ) {
       if ( color[i].checked ) {
@@ -63,6 +55,23 @@ function Confirmation() {
         break ;
       }
     }
+
+    //組み合わせの時
+    var categoryColor = document.getElementsByName("combi");
+    // 選択状態の値を取得
+    for ( var a="", i=categoryColor.length; i--; ) {
+      if ( categoryColor[i].checked ) {
+        var select = categoryColor[i].value ;
+        break ;
+      }
+    }
+    if (select) {
+        var select_data = select.split(",");
+        category_select = select_data[0];
+        color_select = select_data[1];
+    
+    }
+
 
     // GET URLのパラメータ取得
     var arg  = new Object;

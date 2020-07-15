@@ -7,6 +7,7 @@
 ?>
 
 <script type="text/javascript" src="./js/remake_select.js"></script>
+<script type="text/javascript" src="./js/shop.js"></script>
 
 <!-- REMAKE HOME画面 -->
 <title>ethicable｜REMAKE｜リサイクルイメージ＆カラー選択</title>
@@ -33,21 +34,21 @@
               <p>
                 <input type="radio" name="category" id="category1" value="1">
                 <label for="category1"><img src="./image/category/1.png" alt=""></label>
-                部門：ウィメンズ<br>カテゴリー：ズボン
+                部門：ウィメンズ<br>カテゴリー：アウター
               </p>
             </li>
             <li>
               <p>
                 <input type="radio" name="category" id="category2" value="2">
                 <label for="category2"><img src="./image/category/2.png" alt=""></label>
-                部門：ウィメンズ<br>カテゴリー：ズボン
+                部門：ウィメンズ<br>カテゴリー：ボトムス
               </p>
             </li>
             <li>
               <p>
-                <input type="radio" name="category" value="3" id="category3">
+                <input type="radio" name="category" id="category3" value="3">
                 <label for="category3"><img src="./image/category/3.png" alt=""></label>
-                部門：ウィメンズ<br>カテゴリー：ズボン
+                部門：ウィメンズ<br>カテゴリー：シャツ
               </p>
             </li>
           </ul>
@@ -57,23 +58,23 @@
           <ul>
             <li>
               <p>
-                <input type="radio" name="color" id="color1" value="1">
-                <label for="color1"></label>
-                カラー：60 NAVY
+                <input type="radio" name="color" id="color1" value="64">
+                <label for="color1" id='select_color_box1'></label>
+                カラー：64 BLUE
               </p>
             </li>
             <li>
               <p>
-                <input type="radio" name="color" id="color2" value="2">
-                <label for="color2"></label>
-                カラー：60 NAVY
+                <input type="radio" name="color" id="color2" value="32">
+                <label for="color2" id='select_color_box2'></label>
+                カラー：32 BEIGE
               </p>
             </li>
             <li>
               <p>
-                <input type="radio" name="color" id="color3" value="3">
-                <label for="color3"></label>
-                カラー：60 NAVY
+                <input type="radio" name="color" id="color3" value="1">
+                <label for="color3" id='select_color_box3'></label>
+                カラー：1 OFF WHITE
               </p>
             </li>
           </ul>
@@ -81,41 +82,45 @@
       <div id="combi_con">
         <ul>
           <li>
-            <input type="radio" name="combi" id="combi1" value="1">
+            <input type="radio" name="combi" id="combi1" value="1,1">
             <label for="combi1">
                 <ul>
                   <li>
+                    <input type="hidden" id="category_hidden" value="1">
                     <img src="./image/category/1.png" alt="">
-                    <p>部門1桁目:2 ウィメンズ<br>部門2桁目:6グッズ</p>
+                    <p>部門1桁目:2 ウィメンズ<br>部門2桁目:アウター</p>
                   </li>
                   <li>
                     <p>×</p>
                   </li>
                   <li>
+                    <input type="hidden" id="color_hidden" value="1">
                     <div class="color_box_outer">
-                      <div class="color_box"></div>
+                      <div class="color_box1"></div>
                     </div>
-                    <p>カラー：60 NAVY</p>
+                    <p>カラー：1 OFF WHITE</p>
                   </li>
                 </ul>
             </label>
           </li>
           <li>
-            <input type="radio" name="combi" id="combi2" value="2">
+            <input type="radio" name="combi" id="combi2" value="2,69">
             <label for="combi2">
                 <ul>
                   <li>
+                  <input type="hidden" id="category_hidden2" value="2">
                     <img src="./image/category/1.png" alt="">
-                    <p>部門1桁目:2 ウィメンズ<br>部門2桁目:6グッズ</p>
+                    <p>部門1桁目:2 ウィメンズ<br>部門2桁目:ボトムス</p>
                   </li>
                   <li>
                     <p>×</p>
                   </li>
                   <li>
+                    <input type="hidden" id="color_hidden2" value="32">
                     <div class="color_box_outer">
-                      <div class="color_box"></div>
+                      <div class="color_box2"></div>
                     </div>
-                    <p>カラー：60 NAVY</p>
+                    <p>カラー：32 BEIGE</p>
                   </li>
                 </ul>
             </label>
