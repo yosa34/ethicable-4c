@@ -2,7 +2,7 @@
     /*
     ページ詳細：カート画面
     作成者：小川紗世
-    編集者：2020/07/03三輪謙登
+    編集者：2020/07/11小川紗世
     */
 ?>
 
@@ -11,7 +11,7 @@
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
           if(sessionStorage.cart || sessionStorage.cartList){
-            // オブジェクトをループさせるために使う関数(小計計算)
+            // オブジェクトをループさせるために使う関数
             Object.defineProperty(Object.prototype, "forIn", {
                 value: function(fn, self) {
                     self = self || this;
@@ -52,14 +52,17 @@
             $('section').append('<div id="subtotal"></div>');
             $('section').append('<dl id="acquisition"></dl>');
             $('main').append(
-              '<p id="total_amount">合計<b></b>円</p>' +
-              '<input type="button" value="購入手続き">'
+              `<p onClick="window.sessionStorage.clear();location.reload();">カートを空にする</p>
+                <p id="total_amount">合計<b></b>円</p>
+                <input type="button" value="購入手続き" id="submit">`
             );
             // JSON形式でsessionに保存されているため、JSON.parseをしてJavaScriptで扱えるようにする
             var cart = {};
             // 商品オブジェクトを一つのオブジェクトにまとめる
             var cartList = {};
-            if (sessionStorage.cart) {
+            // sessionのcartがあるかどうかのフラグ
+            var cart_flg = true;
+            if (Object.keys(sessionStorage.cart).length) {
               // cartがある場合
               var saveCart = new Promise((resolve, reject) => {
                 cart = JSON.parse(sessionStorage.cart);
@@ -68,17 +71,23 @@
               // sessionに入っているcartを消す(二重登録を防ぐため)
               saveCart
                 .then((value) => {
-                  sessionStorage.removeItem(cart);
+                  sessionStorage.cart = '';
                 })
                 .catch((err) => {
-                  console.log(err);
+                  cart_flg = false;
                 });
               // カートリストのカウンター
-              if (sessionStorage.cartList) {
-                cartList = JSON.parse(sessionStorage.cartList);
-                cartList[Object.keys(cartList).length + 1] = cart;
-              } else {
-                cartList[1] = cart;
+              if (cart_flg) {
+                if (sessionStorage.cartList) {
+                  cartList = JSON.parse(sessionStorage.cartList);
+                  cartList[Object.keys(cartList).length + 1] = cart;
+                } else {
+                  cartList[1] = cart;
+                }
+                // sessionにcartListを保存
+                cartListJSON = JSON.stringify(cartList);
+
+                sessionStorage.cartList = cartListJSON;
               }
             } else {
               // cartがなかった場合
@@ -87,9 +96,11 @@
 
 
 
-            // sessionにcartListを保存
-            cartListJSON = JSON.stringify(cartList);
-            sessionStorage.cartList = cartListJSON;
+            // // sessionにcartListを保存
+            // cartListJSON = JSON.stringify(cartList);
+            // console.log(cartListJSON);
+
+            // sessionStorage.cartList = cartListJSON;
             // console.log(sessionStorage.cartList);
 
 
@@ -134,6 +145,7 @@
             var cart_item_display = function(callback) {
               // オブジェクトのループ処理をいれる
               cartList.forIn(function(key, value, index) {
+
                 value.forIn(function(itemKey, itemValue, itemIndex) {
                   if (itemKey == 'category_id') {
                     // カートからcategory_idを抽出
@@ -149,17 +161,19 @@
 
                           // cart_itemの表示
                           $('#item' + itemCount).append(
-                            '<p><img src="' + cart.remake_image + '" alt="リメイクイメージ"></p>'+
+                            '<a href="./shop_details.php?remake_product_id=' + value.remake_product_id + '">'+
+                            '<p><img src="' + value.remake_image + '" alt="リメイクイメージ"></p>'+
                             '<div class="cart_items_item">'+
                             '<dl>'+
-                            '<dt>' + '部門(カテゴリー)：' + '</dt>' + '<dd><img src="' + cart.remake_icon + '" alt="リメイクアイコン">' + '<p>' + category_name + '</p>' + '</dd>'+
+                            '<dt>' + '部門(カテゴリー)：' + '</dt>' + '<dd><img src="' + value.remake_icon + '" alt="リメイクアイコン">' + '<p>' + category_name + '</p>' + '</dd>'+
                             '</dl>'+
                             '<dl>'+
-                            '<dt>' + 'カラー：' + '</dt>' + '<dd><span style="background-color: ' + cart.product_color + ';"></span>' + '<p>' + cart.product_color_name + '</p>' +  '</dd>'+
+                            '<dt>' + 'カラー：' + '</dt>' + '<dd><span style="background-color: ' + value.product_color + ';"></span>' + '<p>' + value.product_color_name + '</p>' +  '</dd>'+
                             '</dl>'+
-                            '<p>' + '価格：' + parseInt(cart.price).toLocaleString() + '円' + '</p>'+
+                            '<p>' + '価格：' + parseInt(value.price).toLocaleString() + '円' + '</p>'+
                             '<p>削除</p>'+
-                            '</div> '
+                            '</div> '+
+                            '</a>'
                             );
                             // カウントアップ
                             itemCount++;
@@ -187,13 +201,33 @@
               $('#total_amount>b').append(total_amount.toLocaleString());
             }
             cart_item_display(incidental_display);
+
+            // 購入手続きボタンを押す
+            $('#submit').click(() => {
+              // 小計などの情報をまとめる
+              var cart_info = {};
+              cart_info.item_amount = item_amount;
+              cart_info.subtotal = subtotal;
+              cart_info.total = total_amount;
+              cart_info.points = points;
+              cart_info.postage = 0;
+
+              var cart_info_JSON = JSON.stringify(cart_info);
+              // sessionに保存
+              sessionStorage.cart_info = cart_info_JSON;
+              // 購入手続き画面へ
+              location.href='./my_cart_settlement.php';
+            });
           } else {
             $('section').append(
-            '<div>'+
+            '<div class="cart_error"><div>'+
               '<p>カートに商品が入っていません</p>'+
-              '<p>是非お買い物をお楽しみください。ご利用をお待ちしております。</p>'+
+              '<p>是非お買い物をお楽しみください。</p>'+
+              '<p>ご利用をお待ちしております。</p>'+
             '</div>' +
-            '<button type="button" id="goShop">ショッピングページへ</button>');
+            '<p>'+
+            '<a href="./shop_home.php">ショッピングページへ</a>'+
+            '</p></div>');
 
             $('#goShop').click(function() {
               window.location.href='./shop_home.php' ;
@@ -217,6 +251,4 @@
       <h1>カート</h1>
         <section>
         </section>
-        <!-- テスト用session削除ボタン -->
-        <button onClick="window.sessionStorage.clear();">sessionクリア</button>
     </main>

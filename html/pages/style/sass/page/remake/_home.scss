@@ -16,7 +16,6 @@
                         ul{
                             display: flex;
                             overflow: scroll;
-                            
                             li{
                                 width: 70%;
                                 margin-right: 200px;
@@ -36,12 +35,11 @@
                                     }
                                     // リメイク詳細
                                     div{
-                                        background-color: red;
                                         display: flex;
                                         justify-content: space-between;
                                         position: absolute;
                                         z-index: 1;
-                                        bottom: 40px;
+                                        bottom: 15px;
                                         left: 0;
                                         right: 0;
                                         width: 50%;
@@ -49,6 +47,7 @@
                                         // リメイクイメージ
                                         img{
                                             width: 100px;
+                                            height: 100px;
                                         }
                                         // リメイクカラー&✖️
                                         span{
@@ -84,9 +83,6 @@
                         }
                     }
                 }
-            }
-            &:nth-child(2){
-
             }
         }
         .news{

@@ -32,7 +32,6 @@
 
 <script>
 
-
 function button(){
   document.getElementById("file_upload").click();
 }

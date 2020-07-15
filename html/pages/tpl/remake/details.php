@@ -25,7 +25,6 @@
                     <div>
                         <p id="select_category">イメージ名</p>
                         <div>
-                            <img src="./image/category/<?php echo ($_GET['category']); ?>.png" alt="イメージ画像">
                         </div>
                     </div>
                     <div>

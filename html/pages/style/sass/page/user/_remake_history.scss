@@ -1,23 +1,26 @@
-#remake_history{
-    main{
-        >div{
+#remake_history {
+    main {
+        >div {
             background: $main_color;
             text-align: center;
             padding: 20px 10px;
-            p{
+
+            p {
                 color: $font-color;
                 font-weight: bold;
                 font-size: 40px;
             }
         }
-        >p{
+
+        >p {
             font-size: 40px;
             padding: 50px 40px;
             position: relative;
-            select{
+
+            select {
 
                 background-color: white;
-                border: thin solid  $main_color;
+                border: thin solid $main_color;
                 border-radius: 4px;
                 display: inline-block;
                 font: inherit;
@@ -28,25 +31,105 @@
                 margin: 0;
                 box-sizing: border-box;
                 -webkit-appearance: none;
-                -moz-appearance: none;//矢印削除
+                -moz-appearance: none; //矢印削除
 
                 // background
-                content:"";
+                content: "";
                 width: 65%;
                 height: 60%;
                 right: 1em;
                 top: 30px;
-                position:absolute;
-                background-image: 
+                position: absolute;
+                background-image:
                     linear-gradient(to bottom left, $main_color 30%, transparent 40%),
                     linear-gradient(to bottom right, $main_color 30%, transparent 40%), linear-gradient(to right, #f1ffb8, #f1ffb8);
                 background-position:
-                calc(100% - 48px) calc(1em + 2px),
-                calc(100% - 18px) calc(1em + 2px),
-                100% 0;
+                    calc(100% - 48px) calc(1em + 2px),
+                    calc(100% - 18px) calc(1em + 2px),
+                    100% 0;
                 background-size: 30px 30px, 30px 26px, 100px 100px;
                 background-repeat: no-repeat;
 
+            }
+        }
+
+        >section {
+            >ul {
+                >li {
+                    >div {
+                        width: 90%;
+                        margin: 0 auto;
+
+                        >div {
+                            width: 100%;
+                            padding-bottom: 30px;
+                            margin-bottom: 100px;
+                            border-bottom: 1px solid #B5C76A;
+
+                            >p {
+                                &:nth-of-type(1) {
+                                    text-align: right;
+                                    font-size: 20px;
+                                }
+                            }
+
+                            >div {
+                                display: flex;
+                                margin: 0 auto;
+
+                                >div {
+                                    display: flex;
+                                    width: 49%;
+                                    margin: 0;
+
+                                    >div {
+                                        >img {
+                                            width: 200px;
+                                            height: 200px;
+                                        }
+
+                                        >p {
+                                            margin-top:10px;
+                                            font-size: 23px;
+                                        }
+                                    }
+
+
+                                    .dash {
+                                        width: 168px;
+                                        height: 100px;
+                                        margin-left: 30px;
+                                         border: none;
+                                    }
+                                }
+
+                                >div {
+                                    width: 49%;
+                                    margin: 0 auto;
+                                    align-items: center;
+
+                                    >img {
+                                        width: 150px;
+                                        height: 150px;
+                                        border: 2px solid #000000;
+                                    }
+
+                                    >p {
+                                        margin: 0 30px;
+                                        font-size: 100px;
+                                    }
+                                    .color-tile{
+                                        border: 2px solid #000000;
+                                    }
+                                }
+
+
+                            }
+
+                        }
+
+                    }
+                }
             }
         }
     }
