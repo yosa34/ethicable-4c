@@ -20,6 +20,19 @@ $(function () {
 })
 
 
+//colorの表示
+$(document).ready( function(){
+    var color = document.getElementById('select_color_box1');
+    color.style.backgroundColor = '#A5ACD6';
+
+    var color = document.getElementById('select_color_box2');
+    color.style.backgroundColor = '#CEB8A5';
+
+    var color = document.getElementById('select_color_box3');
+    color.style.backgroundColor = "#D5D3B5";
+ });
+
+
 function Confirmation() {
 
     //項目ごとに選択の時
