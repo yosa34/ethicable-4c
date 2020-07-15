@@ -1650,11 +1650,32 @@ header {
         #remake_history main > section > ul > li > div > div > div > div > div > p {
           margin-top: 10px;
           font-size: 23px; }
-        #remake_history main > section > ul > li > div > div > div > div .dash {
-          width: 168px;
+        #remake_history main > section > ul > li > div > div > div > div .three_sign {
+          display: flex;
+          width: 100px;
           height: 100px;
+          line-height: 200px;
           margin-left: 30px;
-          border: none; }
+          position: relative; }
+        #remake_history main > section > ul > li > div > div > div > div .three_sign span {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          padding-left: 30px;
+          color: #333;
+          text-decoration: none; }
+        #remake_history main > section > ul > li > div > div > div > div .three_sign span::before {
+          content: '';
+          width: 46px;
+          height: 46px;
+          border: 0;
+          border-top: solid 10px #333;
+          border-right: solid 10px #333;
+          position: absolute;
+          top: 40%;
+          left: 0;
+          margin-top: -4px;
+          transform: rotate(45deg); }
       #remake_history main > section > ul > li > div > div > div > div {
         width: 49%;
         margin: 0 auto;
@@ -1663,9 +1684,32 @@ header {
           width: 150px;
           height: 150px;
           border: 2px solid #000000; }
-        #remake_history main > section > ul > li > div > div > div > div > p {
-          margin: 0 30px;
-          font-size: 100px; }
+        #remake_history main > section > ul > li > div > div > div > div .x-mark {
+          display: inline-block;
+          width: 100px;
+          height: 100px;
+          position: relative;
+          margin-left: 10px;
+          margin-right: 10px; }
+        #remake_history main > section > ul > li > div > div > div > div .x-mark span::before,
+        #remake_history main > section > ul > li > div > div > div > div .x-mark span::after {
+          content: "";
+          display: block;
+          width: 100%;
+          /*バツ線の長さ*/
+          height: 10px;
+          /*バツ線の太さ*/
+          background: #000;
+          transform: rotate(45deg);
+          transform-origin: 0% 50%;
+          position: absolute;
+          top: calc(14% - 5px);
+          left: 14%; }
+        #remake_history main > section > ul > li > div > div > div > div .x-mark span::after {
+          transform: rotate(-45deg);
+          transform-origin: 100% 50%;
+          left: auto;
+          right: 14%; }
         #remake_history main > section > ul > li > div > div > div > div .color-tile {
           border: 2px solid #000000; }
 
