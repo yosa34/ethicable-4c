@@ -25,6 +25,11 @@
     let allCities = citiesRef.get().then(snapshot => {
         snapshot.forEach(doc => {
             const data = doc.data()
+            console.log(data.date_qr_read);
+
+            //依頼日
+            var elem = document.getElementById("qr_read");
+            elem.insertAdjacentHTML('beforeend',getDate(data.date_qr_read.toDate()));
 
             //リメイクID
             var elem = document.getElementById("remake_product_id");
@@ -87,6 +92,7 @@
 
                 //カラー一覧情報の取得
                 let result = "<div style='display: flex; flex-wrap: wrap;'>";
+
                 //Promiseで最初に処理を走らせてresolve(result)で値を渡す。
                 //成功時にthenに飛ばす感じ。
                 var selectColor = new Promise((resolve,reject) => {
@@ -213,7 +219,7 @@
     <!-- main -->
     <main>
         <p><a href="./remake_shop_home.php">リメイク依頼一覧に戻る</a></p>
-        <p>依頼日：0000年00月00日</p>
+        <p id='qr_read'>依頼日：</p>
         <p>1行ごとに色を変える</p>
         <section>
             <p>依頼内容</p>

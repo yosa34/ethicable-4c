@@ -19,6 +19,10 @@ $(function () {
   });
 })
 
+var p2 = document.getElementById('select_color_box');
+// p2.style.backgroundColor = getColorCode(64);
+p2.style.backgroundColor = 'red';
+
 
 function Confirmation() {
 

@@ -7,6 +7,7 @@
 ?>
 
 <script type="text/javascript" src="./js/remake_select.js"></script>
+<script type="text/javascript" src="./js/shop.js"></script>
 
 <!-- REMAKE HOME画面 -->
 <title>ethicable｜REMAKE｜リサイクルイメージ＆カラー選択</title>
@@ -58,7 +59,7 @@
             <li>
               <p>
                 <input type="radio" name="color" id="color1" value="64">
-                <label for="color1"></label>
+                <label for="color1" id='select_color_box'></label>
                 カラー：64 BLUE
               </p>
             </li>
