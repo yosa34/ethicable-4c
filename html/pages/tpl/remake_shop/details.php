@@ -223,7 +223,6 @@
     <main>
         <p><a href="./remake_shop_home.php">リメイク依頼一覧に戻る</a></p>
         <p id='qr_read'>依頼日：</p>
-        <p>1行ごとに色を変える</p>
         <section>
             <p>依頼内容</p>
             <div>
