@@ -96,7 +96,7 @@
                             var code = data.color_code;
                             var name = data.color_name;
                             var id   = data.color_id;
-                            result +="<div style='width: 80px; margin-bottom: 1%;'><span style='width: 50px; height: 50px; margin: 0 auto; display: block; background-color:"+ code + ";'></span><p style='text-align: center; padding: 10px;'>" + name + "</p><input style='margin-left: 44%;' type='radio' name='color' value='"+id+"'></div>";
+                            result +="<label style='width: 80px; margin-bottom: 1%; display:inline-block' for='"+id+"'><span style='width: 50px; height: 50px; margin: 0 auto; display: block; background-color:"+ code + ";'></span><p style='text-align: center; padding: 10px;'>" + name + "</p><input style='margin-left: 44%;' type='radio' name='color' id='"+id+"' value='"+id+"'></label>";
                         })
                         resolve(result);
                     });

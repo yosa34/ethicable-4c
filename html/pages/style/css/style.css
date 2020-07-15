@@ -348,9 +348,32 @@ header {
     #qr_reader main section .qrcode-text {
       display: none; }
 
+#remake_shop_details main input[type="submit"] {
+  display: block;
+  background: #B5C76A;
+  color: #FFF;
+  border: 2px solid none;
+  font-size: 45px;
+  font-weight: bold;
+  width: 80%;
+  padding: 10px 0;
+  margin: 50px auto;
+  border-radius: 15px;
+  text-align: center;
+  width: 30%;
+  font-size: 20px; }
+  #remake_shop_details main input[type="submit"]:active {
+    background: none;
+    color: #B5C76A;
+    border: 2px solid #B5C76A; }
+
 #remake_shop_details main > p {
   width: 90%;
   margin: 20px auto; }
+  #remake_shop_details main > p a {
+    color: #B5C76A; }
+    #remake_shop_details main > p a:active {
+      color: #FFAF6A; }
 
 #remake_shop_details main section {
   width: 80%;
