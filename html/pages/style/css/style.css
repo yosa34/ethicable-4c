@@ -886,13 +886,20 @@ header {
                 display: block;
                 padding-top: 100%;
                 /* 高さを幅の75%に固定 */ }
-              #remake_select main section > div > div:nth-of-type(3) > ul > li > label > ul > li .color_box {
+              #remake_select main section > div > div:nth-of-type(3) > ul > li > label > ul > li .color_box1 {
                 position: absolute;
                 top: 0;
                 left: 0;
                 bottom: 0;
                 right: 0;
-                background-color: red; }
+                background-color: #D5D3B5; }
+              #remake_select main section > div > div:nth-of-type(3) > ul > li > label > ul > li .color_box2 {
+                position: absolute;
+                top: 0;
+                left: 0;
+                bottom: 0;
+                right: 0;
+                background-color: #CEB8A5; }
   #remake_select main section > div > ul {
     display: flex;
     justify-content: space-between; }

@@ -59,21 +59,21 @@
             <li>
               <p>
                 <input type="radio" name="color" id="color1" value="64">
-                <label for="color1" id='select_color_box'></label>
+                <label for="color1" id='select_color_box1'></label>
                 カラー：64 BLUE
               </p>
             </li>
             <li>
               <p>
-                <input type="radio" name="color" id="color2" value="69">
-                <label for="color2"></label>
-                カラー：69 NAVY
+                <input type="radio" name="color" id="color2" value="32">
+                <label for="color2" id='select_color_box2'></label>
+                カラー：32 BEIGE
               </p>
             </li>
             <li>
               <p>
                 <input type="radio" name="color" id="color3" value="1">
-                <label for="color3"></label>
+                <label for="color3" id='select_color_box3'></label>
                 カラー：1 OFF WHITE
               </p>
             </li>
@@ -96,7 +96,7 @@
                   <li>
                     <input type="hidden" id="color_hidden" value="1">
                     <div class="color_box_outer">
-                      <div class="color_box"></div>
+                      <div class="color_box1"></div>
                     </div>
                     <p>カラー：1 OFF WHITE</p>
                   </li>
@@ -116,11 +116,11 @@
                     <p>×</p>
                   </li>
                   <li>
-                    <input type="hidden" id="color_hidden2" value="69">
+                    <input type="hidden" id="color_hidden2" value="32">
                     <div class="color_box_outer">
-                      <div class="color_box"></div>
+                      <div class="color_box2"></div>
                     </div>
-                    <p>カラー：69 NAVY</p>
+                    <p>カラー：32 BEIGE</p>
                   </li>
                 </ul>
             </label>
