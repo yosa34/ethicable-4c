@@ -25,6 +25,11 @@
     let allCities = citiesRef.get().then(snapshot => {
         snapshot.forEach(doc => {
             const data = doc.data()
+            console.log(data.date_qr_read);
+
+            //依頼日
+            var elem = document.getElementById("qr_read");
+            elem.insertAdjacentHTML('beforeend',getDate(data.date_qr_read.toDate()));
 
             //リメイクID
             var elem = document.getElementById("remake_product_id");
@@ -68,7 +73,10 @@
             if(data.course_id == 1){
                 //カラー出力
                 var elem = document.getElementById("color_select");
-                elem.innerHTML = getColorCode(data.color_id);
+                // console.log(data.color_id);
+                elem.innerHTML = "<label style='width: 80px; margin-bottom: 1%; display:inline-block' for='"+data.color_id+"'><span style='width: 50px; height: 50px; margin: 0 auto; display: block; background-color:"+ getColorCode(data.color_id) + ";'></span><p style='text-align: center; padding: 10px;'>" + getColorCode(data.color_id) + "</p><input style='margin-left: 44%;' type='radio' name='color' id='"+data.color_id+"' value='"+data.color_id+"' checked></label>";
+
+                // elem.innerHTML = getColorCode(data.color_id);
                 //カテゴリー名出力
                 let citiesRef = db.collection('category').where("category_id", "==", data.category_id);
                 let allCities = citiesRef.get().then(snapshot => {
@@ -86,7 +94,8 @@
             if(data.course_id == 2){
 
                 //カラー一覧情報の取得
-                let result = "<div>";
+                let result = "<div style='display: flex; flex-wrap: wrap;'>";
+
                 //Promiseで最初に処理を走らせてresolve(result)で値を渡す。
                 //成功時にthenに飛ばす感じ。
                 var selectColor = new Promise((resolve,reject) => {
@@ -96,7 +105,7 @@
                             var code = data.color_code;
                             var name = data.color_name;
                             var id   = data.color_id;
-                            result +="<div><input type='radio' name='color' value='"+id+"'>"+name+code+"<span></span></div>";
+                            result +="<label style='width: 80px; margin-bottom: 1%; display:inline-block' for='"+id+"'><span style='width: 50px; height: 50px; margin: 0 auto; display: block; background-color:"+ code + ";'></span><p style='text-align: center; padding: 10px;'>" + name + "</p><input style='margin-left: 44%;' type='radio' name='color' id='"+id+"' value='"+id+"'></label>";
                         })
                         resolve(result);
                     });
@@ -213,8 +222,7 @@
     <!-- main -->
     <main>
         <p><a href="./remake_shop_home.php">リメイク依頼一覧に戻る</a></p>
-        <p>依頼日：0000年00月00日</p>
-        <p>1行ごとに色を変える</p>
+        <p id='qr_read'>依頼日：</p>
         <section>
             <p>依頼内容</p>
             <div>

@@ -11,7 +11,7 @@
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
           if(sessionStorage.cart || sessionStorage.cartList){
-            // オブジェクトをループさせるために使う関数(小計計算)
+            // オブジェクトをループさせるために使う関数
             Object.defineProperty(Object.prototype, "forIn", {
                 value: function(fn, self) {
                     self = self || this;
@@ -52,10 +52,9 @@
             $('section').append('<div id="subtotal"></div>');
             $('section').append('<dl id="acquisition"></dl>');
             $('main').append(
-              `<!-- テスト用session削除ボタン -->
-                <p onClick="window.sessionStorage.clear();location.reload();">カートを空にする</p>
+              `<p onClick="window.sessionStorage.clear();location.reload();">カートを空にする</p>
                 <p id="total_amount">合計<b></b>円</p>
-                <input type="button" value="購入手続き">`
+                <input type="button" value="購入手続き" id="submit">`
             );
             // JSON形式でsessionに保存されているため、JSON.parseをしてJavaScriptで扱えるようにする
             var cart = {};
@@ -146,6 +145,7 @@
             var cart_item_display = function(callback) {
               // オブジェクトのループ処理をいれる
               cartList.forIn(function(key, value, index) {
+
                 value.forIn(function(itemKey, itemValue, itemIndex) {
                   if (itemKey == 'category_id') {
                     // カートからcategory_idを抽出
@@ -161,6 +161,7 @@
 
                           // cart_itemの表示
                           $('#item' + itemCount).append(
+                            '<a href="./shop_details.php?remake_product_id=' + value.remake_product_id + '">'+
                             '<p><img src="' + value.remake_image + '" alt="リメイクイメージ"></p>'+
                             '<div class="cart_items_item">'+
                             '<dl>'+
@@ -171,7 +172,8 @@
                             '</dl>'+
                             '<p>' + '価格：' + parseInt(value.price).toLocaleString() + '円' + '</p>'+
                             '<p>削除</p>'+
-                            '</div> '
+                            '</div> '+
+                            '</a>'
                             );
                             // カウントアップ
                             itemCount++;
@@ -199,6 +201,23 @@
               $('#total_amount>b').append(total_amount.toLocaleString());
             }
             cart_item_display(incidental_display);
+
+            // 購入手続きボタンを押す
+            $('#submit').click(() => {
+              // 小計などの情報をまとめる
+              var cart_info = {};
+              cart_info.item_amount = item_amount;
+              cart_info.subtotal = subtotal;
+              cart_info.total = total_amount;
+              cart_info.points = points;
+              cart_info.postage = 0;
+
+              var cart_info_JSON = JSON.stringify(cart_info);
+              // sessionに保存
+              sessionStorage.cart_info = cart_info_JSON;
+              // 購入手続き画面へ
+              location.href='./my_cart_settlement.php';
+            });
           } else {
             $('section').append(
             '<div class="cart_error"><div>'+

@@ -390,4 +390,3 @@ function getProductName(product_id){
   }
   return couseName;
 }
-
