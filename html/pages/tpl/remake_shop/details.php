@@ -287,9 +287,6 @@
             });
         });
 
-<<<<<<< HEAD
-    }
-=======
         //選択されたファイル画像をstorageに保存する
         var files = document.getElementById('filesend').files;
         var image = files[0];
@@ -300,7 +297,6 @@
             window.location = "./remake_shop_home.php";
         });
         }
->>>>>>> baaacec9505a50fe6d863d54db7efddd56b90b67
 </script>
 
 <!-- SHOP HOME画面 -->
