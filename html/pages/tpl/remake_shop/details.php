@@ -55,12 +55,19 @@
             .get().then(function(querySnapshot) {
                 querySnapshot.forEach(function(doc) {
                 const productData = doc.data()
+                console.log(productData);
                 //サイズの取得
                 var elem = document.getElementById("product_size");
                 elem.insertAdjacentHTML('beforeend', getProductSize(productData.product_size));
                 //名前の取得
                 var elem = document.getElementById("product_name");
                 elem.insertAdjacentHTML('beforeend', productData.product_name);
+                //カラーの取得
+                var elem = $("#product_color");
+                elem.text( getColorName(productData.color_id));
+
+                var elem = $("#product_color_box");
+                elem.css({"background":getColorCode(productData.color_id)});
                 });
             })
             .catch(function(error) {
@@ -246,8 +253,9 @@
                             </div>
                             <p id="product_name">商品名:</p>
                             <div>
-                                <span></span>
-                                <p id="product_color">カラー</p>
+                                カラー:
+                                <span id="product_color_box"></span>
+                                <p id="product_color"></p>
                             </div>
                         </div>
                     </dd>
