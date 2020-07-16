@@ -90,6 +90,7 @@
     <script>
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
+                console.log(user.uid);
             // firebase データ読み込み
             db.collection('user').doc(user.uid).get().then((doc) => {
                 if (doc.exists) {
