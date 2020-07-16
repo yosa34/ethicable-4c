@@ -72,7 +72,10 @@
             if(data.course_id == 1){
                 //カラー出力
                 var elem = document.getElementById("color_select");
-                elem.innerHTML = getColorCode(data.color_id);
+                // console.log(data.color_id);
+                elem.innerHTML = "<label style='width: 80px; margin-bottom: 1%; display:inline-block' for='"+data.color_id+"'><span style='width: 50px; height: 50px; margin: 0 auto; display: block; background-color:"+ getColorCode(data.color_id) + ";'></span><p style='text-align: center; padding: 10px;'>" + getColorCode(data.color_id) + "</p><input style='margin-left: 44%;' type='radio' name='color' id='"+data.color_id+"' value='"+data.color_id+"' checked></label>";
+
+                // elem.innerHTML = getColorCode(data.color_id);
                 //カテゴリー名出力
                 let citiesRef = db.collection('category').where("category_id", "==", data.category_id);
                 let allCities = citiesRef.get().then(snapshot => {
@@ -101,7 +104,7 @@
                             var code = data.color_code;
                             var name = data.color_name;
                             var id   = data.color_id;
-                            result +="<div style='width: 80px; margin-bottom: 1%;'><span style='width: 50px; height: 50px; margin: 0 auto; display: block; background-color:"+ code + ";'></span><p style='text-align: center; padding: 10px;'>" + name + "</p><input style='margin-left: 44%;' type='radio' name='color' value='"+id+"'></div>";
+                            result +="<label style='width: 80px; margin-bottom: 1%; display:inline-block' for='"+id+"'><span style='width: 50px; height: 50px; margin: 0 auto; display: block; background-color:"+ code + ";'></span><p style='text-align: center; padding: 10px;'>" + name + "</p><input style='margin-left: 44%;' type='radio' name='color' id='"+id+"' value='"+id+"'></label>";
                         })
                         resolve(result);
                     });
@@ -277,7 +280,20 @@
             });
         });
 
+<<<<<<< HEAD
     }
+=======
+        //選択されたファイル画像をstorageに保存する
+        var files = document.getElementById('filesend').files;
+        var image = files[0];
+        var storageRef = firebase.storage().ref().child(remake_product_id+".jpg");
+            storageRef.put(image).then(function(snapshot) {
+            alert('アップロードしました');
+            // リメイク依頼一覧に戻る
+            window.location = "./remake_shop_home.php";
+        });
+        }
+>>>>>>> baaacec9505a50fe6d863d54db7efddd56b90b67
 </script>
 
 <!-- SHOP HOME画面 -->
@@ -290,7 +306,6 @@
     <main>
         <p><a href="./remake_shop_home.php">リメイク依頼一覧に戻る</a></p>
         <p id='qr_read'>依頼日：</p>
-        <p>1行ごとに色を変える</p>
         <section>
             <p>依頼内容</p>
             <div>
