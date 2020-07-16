@@ -210,7 +210,7 @@
             storageRef.put(image).then(function(snapshot) {
             alert('アップロードしました');
             // リメイク依頼一覧に戻る
-            window.location = "./remake_shop_hoem.php";
+            window.location = "./remake_shop_home.php";
         });
         }
 </script>
