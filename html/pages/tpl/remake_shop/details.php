@@ -209,6 +209,8 @@
         var storageRef = firebase.storage().ref().child(remake_product_id+".jpg");
             storageRef.put(image).then(function(snapshot) {
             alert('アップロードしました');
+            // リメイク依頼一覧に戻る
+            window.location = "./remake_shop_hoem.php";
         });
         }
 </script>
