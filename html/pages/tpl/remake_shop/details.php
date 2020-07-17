@@ -54,12 +54,19 @@
             .get().then(function(querySnapshot) {
                 querySnapshot.forEach(function(doc) {
                 const productData = doc.data()
+                console.log(productData);
                 //サイズの取得
                 var elem = document.getElementById("product_size");
                 elem.insertAdjacentHTML('beforeend', getProductSize(productData.product_size));
                 //名前の取得
                 var elem = document.getElementById("product_name");
                 elem.insertAdjacentHTML('beforeend', productData.product_name);
+                //カラーの取得
+                var elem = $("#product_color");
+                elem.text( getColorName(productData.color_id));
+
+                var elem = $("#product_color_box");
+                elem.css({"background":getColorCode(productData.color_id)});
                 });
             })
             .catch(function(error) {
@@ -274,7 +281,20 @@
             });
         });
 
+<<<<<<< HEAD
     }
+=======
+        //選択されたファイル画像をstorageに保存する
+        var files = document.getElementById('filesend').files;
+        var image = files[0];
+        var storageRef = firebase.storage().ref().child(remake_product_id+".jpg");
+            storageRef.put(image).then(function(snapshot) {
+            alert('アップロードしました');
+            // リメイク依頼一覧に戻る
+            window.location = "./remake_shop_home.php";
+        });
+        }
+>>>>>>> 8216dec6d7266c36af6a94a0a06281e47cd9e7c7
 </script>
 
 <!-- SHOP HOME画面 -->
@@ -308,8 +328,9 @@
                             </div>
                             <p id="product_name">商品名:</p>
                             <div>
-                                <span></span>
-                                <p id="product_color">カラー</p>
+                                カラー:
+                                <span id="product_color_box"></span>
+                                <p id="product_color"></p>
                             </div>
                         </div>
                     </dd>

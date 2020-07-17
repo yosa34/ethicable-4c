@@ -12,7 +12,7 @@
   function logout(){
       firebase.auth().signOut();
   }
-  
+
   firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
             //console.log('ログイン中のユーザ：' + user.uid);
@@ -61,7 +61,7 @@
                                                 querySnapshot.forEach(color => {
                                                     //product取得確認
                                                     //console.log(color.data());
-                                            
+
                                                     //categoryコレクションから該当するデータを取得
                                                     //categoryのcategory_id == 抽出したremakeのcategory_id
                                                     db.collection('category').where('category_id', '==', remake.data().category_id).get().then(querySnapshot => {
@@ -75,7 +75,7 @@
                                                                 '<li>' +
                                                                     '<p>購入日時：' + getDate(history.data().history_date.toDate()) + '</p>'+
                                                                     '<div>'+
-                                                                        '<p><img src="' + stocks.data().remake_image + '" alt=""></p>'+                        
+                                                                        '<p><img src="' + stocks.data().remake_image + '" alt=""></p>'+
                                                                         '<div>' +
                                                                             '<dl>'+
                                                                                 '<dt>部門(カテゴリー)：</dt>'+
@@ -111,7 +111,7 @@
                     });
                 });
             });
-          } 
+          }
           else{
           }
       });
@@ -133,7 +133,7 @@
         </div>
         <section>
             <ul class='cont'>
-                
+
             </ul>
         </section>
     </main>

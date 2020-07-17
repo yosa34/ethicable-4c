@@ -2,7 +2,7 @@
     /*
     ページ詳細：注文完了画面
     作成者：小川紗世
-    編集者：2020/07/02小川紗世
+    編集者：2020/07/17三輪謙登
     */
 ?>
 
@@ -30,59 +30,84 @@
         var cartList = JSON.parse(sessionStorage.cartList);
         var remake_product_id;
 
-        cartList.forIn((key,value,index) => {
-          var value_setting = new Promise((resolve,reject) => {
-            remake_product_id = value.remake_product_id;
-            resolve(remake_product_id);
-          });
-          value_setting.then((val) => {
-
-          // カートにあるremakeテーブルの商品のクォンティティを文字列の0に変更
-            db.collection('stocks').get().then(querySnapshot => {
-              querySnapshot.forEach(docs => {
-                if (docs.data().remake_product_id == val) {
-                  db.collection('stocks').doc(docs.id).update({
-                      quantity: "0"
-                  })
-                  .then(() => {
-                  })
-                  .catch((error) => {
-                  });
-                }
-              })
+        var purchase_promise = new Promise((resolve,reject) => {
+          // purchase_promise開始
+          cartList.forIn((key,value,index) => {
+            var value_setting = new Promise((resolve,reject) => {
+              remake_product_id = value.remake_product_id;
+              resolve(remake_product_id);
             });
-          });
+            value_setting.then((val) => {
 
-          // historyコレクションへデータを追加
-          var get_remake_product_id = new Promise((resolve,reject) => {
-            remake_product_id = value.remake_product_id;
-            resolve(remake_product_id);
-          });
-          get_remake_product_id.then((value) => {
-            // ここから
-            db.collection('stocks').get().then(querySnapshot => {
-              querySnapshot.forEach(docs => {
-                if (docs.data().remake_product_id == value) {
-                  // ifここから
-                  // stock_idを取得
-                  var stock_id = docs.data().stock_id;
-                  //historyに新しいデータを保存
-                  db.collection('history').add({
-                      history_date: firebase.firestore.FieldValue.serverTimestamp(),
-                      stock_id: parseInt(stock_id),
-                      user_id: user.uid
-                  });
-                  // ifここまで
-                }
+            // カートにあるremakeテーブルの商品のクォンティティを文字列の0に変更
+              db.collection('stocks').get().then(querySnapshot => {
+                querySnapshot.forEach(docs => {
+                  if (docs.data().remake_product_id == val) {
+                    db.collection('stocks').doc(docs.id).update({
+                        quantity: "0"
+                    })
+                    .then(() => {
+                    })
+                    .catch((error) => {
+                    });
+                  }
+                })
               });
             });
-            // ここまで
+
+            // historyコレクションへデータを追加
+            var get_remake_product_id = new Promise((resolve,reject) => {
+              remake_product_id = value.remake_product_id;
+              resolve(remake_product_id);
+            });
+            get_remake_product_id.then((value) => {
+              // ここから
+              db.collection('stocks').get().then(querySnapshot => {
+                querySnapshot.forEach(docs => {
+                  if (docs.data().remake_product_id == value) {
+                    // ifここから
+                    // stock_idを取得
+                    var stock_id = docs.data().stock_id;
+                    //historyに新しいデータを保存
+                    db.collection('history').add({
+                        history_date: firebase.firestore.FieldValue.serverTimestamp(),
+                        stock_id: parseInt(stock_id),
+                        user_id: user.uid
+                    });
+                    // ifここまで
+                  }
+                });
+              });
+              // ここまで
+            });
+
           });
 
+          var use_point = parseInt(cart_info.use_point);
+          var get_point = parseInt(cart_info.points);
+          // pointコレクション
+          db.collection('point').get().then(querySnapshot => {
+            querySnapshot.forEach(docs => {
+              if (docs.data().user_id == user.uid) {
+                var now_point = parseInt(docs.data().point_amount);
+                db.collection('point').doc(docs.id).update({
+                  point_amount: now_point - use_point + get_point
+                })
+                .then(() => {
+                })
+                .catch((error) => {
+                });
+              }
+            })
+          });
+          // purchase_promise終了
         });
 
-        // sessionを削除
-        window.sessionStorage.clear();
+        // 購入処理が完了したら...
+        purchase_promise.then(() => {
+          // sessionを削除
+          window.sessionStorage.clear();
+        });
         // sessionStorageのifここまで
       }
     }
