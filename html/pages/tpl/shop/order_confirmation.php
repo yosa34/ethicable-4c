@@ -105,8 +105,18 @@
         });
       });
       $('.submit').click(() => {
-          // 注文確認画面へ
-          location.href="./my_cart_order_completed.php"
+        var statement = {};
+        statement.payment_method = '支払い方法：　クレジット';
+        statement.card_company = 'カード会社：　VISA';
+        statement.card_number = 'カード番号：　'+card_number;
+        statement.expiration_date = '有効期限：　10月2026年';
+        statement.nominee = '名義人：　'+name;
+        statement.name = '氏名：　'+name;
+        statement.address = '住所：　'+postal_code+'_'+address;
+        var statement_JSON = JSON.stringify(statement);
+        sessionStorage.statement = statement_JSON;
+        // 注文確認画面へ
+        location.href="./my_cart_order_completed.php"
       });
     }
   });
