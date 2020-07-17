@@ -67,9 +67,24 @@
              // ポイント処理
             $('#change_point').click(() => {
               var use_point = $('#use_point').val();
-              var total_amount = getBillingAmount(cart_info.total, 0, use_point);
-              $('#use_point_display').text(use_point);
-              $('#cart_total').text(total_amount.toLocaleString());
+              var poss_point_display = parseInt($('#possession').text());
+              var use_point_promise = new Promise((resolve,reject) => {
+                if (use_point > poss_point_display) { // 使用ポイントが保有ポイントを超過していた場合
+                  use_point = poss_point_display; // 使用ポイントを保有ポイント最大と等しくする
+                } else if(use_point < 0) { // 使用ポイントが0未満の数字だった場合
+                  use_point = 0; // 使用ポイントを0にする
+                }
+                resolve(use_point);
+              });
+              use_point_promise.then((point) => {
+                var total_amount = getBillingAmount(cart_info.total, 0, point);
+                // 使用ポイントのテキストボックスに入れる
+                $('#use_point').val(point);
+                // 小計の下の利用ポイントの項目に入れる
+                $('#use_point_display').text(point);
+                // 合計金額を変更する
+                $('#cart_total').text(total_amount.toLocaleString());
+              });
             });
           }
         })
