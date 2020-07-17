@@ -174,7 +174,8 @@ header {
     padding: 40px 0; }
   #info_home main section .info_list {
     width: 100%;
-    height: 100vh; }
+    height: auto;
+    padding-bottom: 200px; }
   #info_home main section ul {
     width: 100%; }
   #info_home main section li {
