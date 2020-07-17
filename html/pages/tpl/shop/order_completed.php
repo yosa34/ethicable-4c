@@ -2,7 +2,7 @@
     /*
     ページ詳細：注文完了画面
     作成者：小川紗世
-    編集者：2020/07/02小川紗世
+    編集者：2020/07/17三輪謙登
     */
 ?>
 
@@ -79,6 +79,24 @@
             // ここまで
           });
 
+        });
+
+        var use_point = parseInt(cart_info.use_point);
+        var get_point = parseInt(cart_info.points);
+        // カートにあるremakeテーブルの商品のクォンティティを文字列の0に変更
+        db.collection('point').get().then(querySnapshot => {
+          querySnapshot.forEach(docs => {
+            if (docs.data().user_id == user.uid) {
+              var now_point = parseInt(docs.data().point_amount);
+              db.collection('point').doc(docs.id).update({
+                point_amount: now_point - use_point + get_point
+              })
+              .then(() => {
+              })
+              .catch((error) => {
+              });
+            }
+          })
         });
 
         // sessionを削除
