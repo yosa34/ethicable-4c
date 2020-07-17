@@ -19,7 +19,7 @@
     <!-- main -->
     <main>
         <section>
-            <h1>リサイクル詳細確認</h1>
+            <h1>リメイク詳細確認</h1>
             <div>
                 <section class="dokidoki_select">
                     <div>
