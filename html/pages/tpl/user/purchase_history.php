@@ -12,7 +12,7 @@
   function logout(){
       firebase.auth().signOut();
   }
-  
+
   firebase.auth().onAuthStateChanged(function(user) {
           if (user) {
             //console.log('ログイン中のユーザ：' + user.uid);
@@ -61,7 +61,7 @@
                                                 querySnapshot.forEach(color => {
                                                     //product取得確認
                                                     //console.log(color.data());
-                                            
+
                                                     //categoryコレクションから該当するデータを取得
                                                     //categoryのcategory_id == 抽出したremakeのcategory_id
                                                     db.collection('category').where('category_id', '==', remake.data().category_id).get().then(querySnapshot => {
@@ -75,7 +75,7 @@
                                                                 '<li>' +
                                                                     '<div>'+
                                                                         '<p>購入日時：' + getDate(history.data().history_date.toDate()) + '</p>'+
-                                                                        '<p><img src="' + stocks.data().remake_image + '" alt=""></p>'+                        
+                                                                        '<p><img src="' + stocks.data().remake_image + '" alt=""></p>'+
                                                                         '<div>' +
                                                                             '<dl>'+
                                                                                 '<dt>部門(カテゴリー)：</dt>'+
@@ -91,7 +91,7 @@
                                                                             '</dl>' +
                                                                             '<p>価格：￥' + product.data().product_price.toLocaleString() + '</p>' +
                                                                         '</div>'+
-                                                                        
+
                                                                         '<p>合計：￥' + getBillingAmount(total, 0, 0).toLocaleString() + '</p>' +
                                                                         '<p>獲得ポイント：' + getPointAmount(total) + 'pt</p>' +
                                                                     '</div>'+
@@ -109,7 +109,7 @@
                     });
                 });
             });
-          } 
+          }
           else{
           }
       });
@@ -131,7 +131,7 @@
         </div>
         <section>
             <ul class='cont'>
-                
+
             </ul>
         </section>
     </main>
