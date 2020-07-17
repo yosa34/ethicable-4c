@@ -281,20 +281,7 @@
             });
         });
 
-<<<<<<< HEAD
     }
-=======
-        //選択されたファイル画像をstorageに保存する
-        var files = document.getElementById('filesend').files;
-        var image = files[0];
-        var storageRef = firebase.storage().ref().child(remake_product_id+".jpg");
-            storageRef.put(image).then(function(snapshot) {
-            alert('アップロードしました');
-            // リメイク依頼一覧に戻る
-            window.location = "./remake_shop_home.php";
-        });
-        }
->>>>>>> 8216dec6d7266c36af6a94a0a06281e47cd9e7c7
 </script>
 
 <!-- SHOP HOME画面 -->
