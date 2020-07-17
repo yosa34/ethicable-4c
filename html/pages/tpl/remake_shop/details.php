@@ -72,10 +72,7 @@
             if(data.course_id == 1){
                 //カラー出力
                 var elem = document.getElementById("color_select");
-                // console.log(data.color_id);
                 elem.innerHTML = "<label style='width: 80px; margin-bottom: 1%; display:inline-block' for='"+data.color_id+"'><span style='width: 50px; height: 50px; margin: 0 auto; display: block; background-color:"+ getColorCode(data.color_id) + ";'></span><p style='text-align: center; padding: 10px;'>" + getColorCode(data.color_id) + "</p><input style='margin-left: 44%;' type='radio' name='color' id='"+data.color_id+"' value='"+data.color_id+"' checked></label>";
-
-                // elem.innerHTML = getColorCode(data.color_id);
                 //カテゴリー名出力
                 let citiesRef = db.collection('category').where("category_id", "==", data.category_id);
                 let allCities = citiesRef.get().then(snapshot => {
@@ -195,12 +192,10 @@
                                             const data = doc.data()
                                             let point = data.point_amount;
                                             point += product_price
-
                                             //ポイントを付与する
                                             db.collection("point").doc(dataId).update({
                                                 point_amount:point,
                                             })
-                                            console.log("1");
                                         })
                                     })                                    
 
@@ -236,7 +231,6 @@
                     db.collection('stocks').get().then(snapshot => {
                         var size = snapshot.size;
                         size = size + 1;
-
                         //stocksに新しいデータを保存
                         db.collection("stocks").add({
                             quantity: "1",
@@ -266,8 +260,8 @@
                                 let product_name = productData.product_name
 
                                 //完了ページへ
-                                // var next_page = "./remake_shop_complete.php";
-                                // location.href = next_page + "?remake_product_id=" + remake_product_id + "&product_name=" + product_name + "&email=" + user.email;
+                                var next_page = "./remake_shop_complete.php";
+                                location.href = next_page + "?remake_product_id=" + remake_product_id + "&product_name=" + product_name + "&email=" + user.email;
 
                                 });
                             })
@@ -280,20 +274,7 @@
             });
         });
 
-<<<<<<< HEAD
     }
-=======
-        //選択されたファイル画像をstorageに保存する
-        var files = document.getElementById('filesend').files;
-        var image = files[0];
-        var storageRef = firebase.storage().ref().child(remake_product_id+".jpg");
-            storageRef.put(image).then(function(snapshot) {
-            alert('アップロードしました');
-            // リメイク依頼一覧に戻る
-            window.location = "./remake_shop_home.php";
-        });
-        }
->>>>>>> baaacec9505a50fe6d863d54db7efddd56b90b67
 </script>
 
 <!-- SHOP HOME画面 -->
