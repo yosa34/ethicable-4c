@@ -26,6 +26,10 @@
         snapshot.forEach(doc => {
             const data = doc.data()
 
+            //依頼日
+            var elem = document.getElementById("qr_read");
+            elem.insertAdjacentHTML('beforeend',getDate(data.date_qr_read.toDate()));
+
             //リメイクID
             var elem = document.getElementById("remake_product_id");
             elem.innerHTML = remake_product_id;
@@ -90,6 +94,7 @@
 
                 //カラー一覧情報の取得
                 let result = "<div style='display: flex; flex-wrap: wrap;'>";
+
                 //Promiseで最初に処理を走らせてresolve(result)で値を渡す。
                 //成功時にthenに飛ばす感じ。
                 var selectColor = new Promise((resolve,reject) => {
@@ -135,6 +140,7 @@
         })
     });
 
+    //完了時
     function Complete(){
 
         db.collection('remake').where("remake_product_id", "==", remake_product_id)
@@ -142,6 +148,47 @@
             snapshot.forEach(doc => {
                 const dataId = doc.id
                 const data = doc.data()
+                console.log(data);
+
+                //以下商品金額の取得
+                db.collection('product').where("product_id", "==",Number(data.product_id))
+                .get().then(snapshot => {
+                    snapshot.forEach(doc => {
+                        const data = doc.data()
+
+                        //商品の金額から付与するポイントを取得
+                        let product_price = getPointAmount(data.product_price)
+
+                        //user情報取得
+                        firebase.auth().onAuthStateChanged(function(user) {
+                            if (user) {
+
+                                //userのポイント情報を取得する
+                                db.collection('point').where("user_id", "==",user.uid)
+                                .get().then(snapshot => {
+                                    snapshot.forEach(doc => {
+                                        const dataId = doc.id
+                                        const data = doc.data()
+                                        let point = data.point_amount;
+                                        point += product_price
+
+                                        //ポイントを付与する
+                                        db.collection("point").doc(dataId).update({
+                                            point_amount:point,
+                                        })
+                                    })
+                                })//新規userの時の処理
+                                .catch( (error) => {
+                                    db.collection("point").add({
+                                        point_amount:product_price,
+                                        user_id:user.uid,
+                                })
+                            });
+                            }
+                        })
+                    })
+                })
+
                 //ドキドキコース
                 if(data.course_id == 1){
                     //現時間を登録する
@@ -151,6 +198,7 @@
                     .catch(function(error) {
                         console.error("Error adding document: ", error);
                     });
+
                 }
                 
                 //ワクワクコース
@@ -191,20 +239,42 @@
                             stock_id:size,
                             stocks_time:firebase.firestore.FieldValue.serverTimestamp(),
                         })
+
                     })
                 }
+                //選択されたファイル画像をstorageに保存する
+                var files = document.getElementById('filesend').files;
+                var image = files[0];
+                var storageRef = firebase.storage().ref().child(remake_product_id+".jpg");
+                    storageRef.put(image).then(function(snapshot) {
+                        //user情報取得
+                        firebase.auth().onAuthStateChanged(function(user) {
+                            //ページ遷移
 
+                            //商品情報の取得
+                            db.collection("product").where("product_id", "==", data.product_id)
+                            .get().then(function(querySnapshot) {
+                                querySnapshot.forEach(function(doc) {
+                                let productData = doc.data()
+                                //名前の取得
+                                let product_name = productData.product_name
+
+                                //完了ページへ
+                                var next_page = "./remake_shop_complete.php";
+                                location.href = next_page + "?remake_product_id=" + remake_product_id + "&product_name=" + product_name + "&email=" + user.email;
+
+                                });
+                            })
+                            .catch(function(error) {
+                                console.log("Error getting documents: ", error);
+                            });
+
+                        })
+                });
             });
         });
 
-        //選択されたファイル画像をstorageに保存する
-        var files = document.getElementById('filesend').files;
-        var image = files[0];
-        var storageRef = firebase.storage().ref().child(remake_product_id+".jpg");
-            storageRef.put(image).then(function(snapshot) {
-            alert('アップロードしました');
-        });
-        }
+    }
 </script>
 
 <!-- SHOP HOME画面 -->
@@ -216,7 +286,7 @@
     <!-- main -->
     <main>
         <p><a href="./remake_shop_home.php">リメイク依頼一覧に戻る</a></p>
-        <p>依頼日：0000年00月00日</p>
+        <p id='qr_read'>依頼日：</p>
         <p>1行ごとに色を変える</p>
         <section>
             <p>依頼内容</p>
