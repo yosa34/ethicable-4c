@@ -54,12 +54,19 @@
             .get().then(function(querySnapshot) {
                 querySnapshot.forEach(function(doc) {
                 const productData = doc.data()
+                console.log(productData);
                 //サイズの取得
                 var elem = document.getElementById("product_size");
                 elem.insertAdjacentHTML('beforeend', getProductSize(productData.product_size));
                 //名前の取得
                 var elem = document.getElementById("product_name");
                 elem.insertAdjacentHTML('beforeend', productData.product_name);
+                //カラーの取得
+                var elem = $("#product_color");
+                elem.text( getColorName(productData.color_id));
+
+                var elem = $("#product_color_box");
+                elem.css({"background":getColorCode(productData.color_id)});
                 });
             })
             .catch(function(error) {
@@ -148,46 +155,6 @@
             snapshot.forEach(doc => {
                 const dataId = doc.id
                 const data = doc.data()
-                console.log(data);
-
-                //以下商品金額の取得
-                db.collection('product').where("product_id", "==",Number(data.product_id))
-                .get().then(snapshot => {
-                    snapshot.forEach(doc => {
-                        const data = doc.data()
-
-                        //商品の金額から付与するポイントを取得
-                        let product_price = getPointAmount(data.product_price)
-
-                        //user情報取得
-                        firebase.auth().onAuthStateChanged(function(user) {
-                            if (user) {
-
-                                //userのポイント情報を取得する
-                                db.collection('point').where("user_id", "==",user.uid)
-                                .get().then(snapshot => {
-                                    snapshot.forEach(doc => {
-                                        const dataId = doc.id
-                                        const data = doc.data()
-                                        let point = data.point_amount;
-                                        point += product_price
-
-                                        //ポイントを付与する
-                                        db.collection("point").doc(dataId).update({
-                                            point_amount:point,
-                                        })
-                                    })
-                                })//新規userの時の処理
-                                .catch( (error) => {
-                                    db.collection("point").add({
-                                        point_amount:product_price,
-                                        user_id:user.uid,
-                                })
-                            });
-                            }
-                        })
-                    })
-                })
 
                 //ドキドキコース
                 if(data.course_id == 1){
@@ -203,6 +170,52 @@
                 
                 //ワクワクコース
                 if(data.course_id == 2){
+                    //以下商品金額の取得
+                    db.collection('product').where("product_id", "==",Number(data.product_id))
+                    .get().then(snapshot => {
+                        snapshot.forEach(doc => {
+                            const data = doc.data()
+
+                            //商品の金額から付与するポイントを取得
+                            let product_price = getPointAmount(data.product_price)
+
+                            
+                            //user情報取得
+                            firebase.auth().onAuthStateChanged(function(user) {
+                                
+
+                                if (user) {
+                                    //userのポイント情報を取得する
+                                    db.collection('point').where("user_id", "==",user.uid)
+                                    .get().then(snapshot => {
+                                        //新規ユーザーの時
+                                        if(!snapshot.exists){
+                                            //新規ポイントを付与する
+                                            db.collection("point").add({
+                                                point_amount:product_price,
+                                                user_id:user.uid,
+                                            })
+                                        }
+                                        //一回でもポイントを付与したことがある人
+                                        snapshot.forEach(doc => {
+                                            const dataId = doc.id
+                                            const data = doc.data()
+                                            let point = data.point_amount;
+                                            point += product_price
+
+                                            //ポイントを付与する
+                                            db.collection("point").doc(dataId).update({
+                                                point_amount:point,
+                                            })
+                                            console.log("1");
+                                        })
+                                    })                                    
+
+                                }
+                            })
+                        })
+                    })
+
                     //選択カテゴリーの取得
                     var category_id = document.getElementById("select_category").value;
 
@@ -260,8 +273,8 @@
                                 let product_name = productData.product_name
 
                                 //完了ページへ
-                                var next_page = "./remake_shop_complete.php";
-                                location.href = next_page + "?remake_product_id=" + remake_product_id + "&product_name=" + product_name + "&email=" + user.email;
+                                // var next_page = "./remake_shop_complete.php";
+                                // location.href = next_page + "?remake_product_id=" + remake_product_id + "&product_name=" + product_name + "&email=" + user.email;
 
                                 });
                             })
@@ -274,7 +287,16 @@
             });
         });
 
-    }
+        //選択されたファイル画像をstorageに保存する
+        var files = document.getElementById('filesend').files;
+        var image = files[0];
+        var storageRef = firebase.storage().ref().child(remake_product_id+".jpg");
+            storageRef.put(image).then(function(snapshot) {
+            alert('アップロードしました');
+            // リメイク依頼一覧に戻る
+            window.location = "./remake_shop_home.php";
+        });
+        }
 </script>
 
 <!-- SHOP HOME画面 -->
@@ -287,7 +309,6 @@
     <main>
         <p><a href="./remake_shop_home.php">リメイク依頼一覧に戻る</a></p>
         <p id='qr_read'>依頼日：</p>
-        <p>1行ごとに色を変える</p>
         <section>
             <p>依頼内容</p>
             <div>
@@ -309,8 +330,9 @@
                             </div>
                             <p id="product_name">商品名:</p>
                             <div>
-                                <span></span>
-                                <p id="product_color">カラー</p>
+                                カラー:
+                                <span id="product_color_box"></span>
+                                <p id="product_color"></p>
                             </div>
                         </div>
                     </dd>

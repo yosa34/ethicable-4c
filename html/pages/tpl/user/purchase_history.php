@@ -73,8 +73,8 @@
                                                             //コンテンツを表示
                                                             $('.cont').append(
                                                                 '<li>' +
+                                                                    '<p>購入日時：' + getDate(history.data().history_date.toDate()) + '</p>'+
                                                                     '<div>'+
-                                                                        '<p>購入日時：' + getDate(history.data().history_date.toDate()) + '</p>'+
                                                                         '<p><img src="' + stocks.data().remake_image + '" alt=""></p>'+                        
                                                                         '<div>' +
                                                                             '<dl>'+
@@ -87,15 +87,17 @@
 
                                                                             '<dl>'+
                                                                                 '<dt>カラー：</dt>'+
-                                                                                '<dd><span></span><p>' + color.data().color_name + '</p></dd>'+
+                                                                                '<dd><span style="background: '+ color.data().color_code +'"></span><p>' + color.data().color_name + '</p></dd>'+
                                                                             '</dl>' +
-                                                                            '<p>価格：￥' + product.data().product_price.toLocaleString() + '</p>' +
+                                                                            '<p>小計：￥' + product.data().product_price.toLocaleString() + '</p>' +
                                                                         '</div>'+
-                                                                        
-                                                                        '<p>合計：￥' + getBillingAmount(total, 0, 0).toLocaleString() + '</p>' +
-                                                                        '<p>獲得ポイント：' + getPointAmount(total) + 'pt</p>' +
                                                                     '</div>'+
-                                                                '</li>'
+                                                                '</li>' +
+
+                                                                '<div class="total">'+
+                                                                    '<p>　　　　合計：￥' + getBillingAmount(total, 0, 0).toLocaleString() + '</p>' +
+                                                                    '<p>獲得ポイント：' + getPointAmount(total) + 'pt</p>' +
+                                                                '</div>'
                                                             );
                                                         });
                                                     });

@@ -111,9 +111,9 @@
                     $('#history' + cnt).append(
                         '<div><div><div><div><img src="./image/product/' + product_id + '.jpg" class="history_image">' +
                         '<p>商品番号：' + product_id + '</p></div>' +
-                        '<img src="./image/icon/icon_dash.png" class="dash"></div>' +
+                        '<div class="three_sign"><span></span><span></span><span></span></div></div>' +
                         '<div><img src="' + category_icon + '">' +
-                        '<p>×</p>' +
+                        '<div class="x-mark"><span class="inner"></span></div>' +
                         '<div class="color-tile" style="background-color: ' + color_code + ';width: 150px;height:150px"</div></div></div>' +
                         '</div><p>取引日時：' + date + '</p>'
                     );
