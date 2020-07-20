@@ -8,10 +8,10 @@
 <script src="./js/shop.js"></script>
 <script>
 
-    //ログアウト処理
-    function logout(){
-        firebase.auth().signOut();
-    }
+  //ログアウト処理
+  function logout(){
+      firebase.auth().signOut();
+  }
 
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
