@@ -100,14 +100,16 @@
               }
             })
           });
+          resolve('ok');
           // purchase_promise終了
         });
 
         // 購入処理が完了したら...
-        purchase_promise.then(() => {
+        purchase_promise.then((flg) => {
           // sessionを削除
           window.sessionStorage.clear();
         });
+
         // sessionStorageのifここまで
       }
     }
@@ -118,6 +120,7 @@
 
 </head>
   <body id="order_completed">
+
     <!-- header -->
     <?php include "./tpl/header.html"; ?>
 
