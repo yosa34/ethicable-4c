@@ -115,7 +115,7 @@
                         '<div><img src="' + category_icon + '">' +
                         '<div class="x-mark"><span class="inner"></span></div>' +
                         '<div class="color-tile" style="background-color: ' + color_code + ';width: 150px;height:150px"</div></div></div>' +
-                        '</div><p>取引日時：' + date + '</p>'
+                        '</div><p class="text">取引日時：' + date + '</p>'
                     );
                     cnt++;
                 }
