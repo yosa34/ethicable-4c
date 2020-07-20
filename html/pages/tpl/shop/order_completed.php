@@ -122,32 +122,15 @@
           var address = statement.address;
           // sessionを削除
           window.sessionStorage.clear();
+<<<<<<< HEAD
           console.log(flg);
           window.location = "./shop_complete.php?item_amount="+item_amount+"&subtotal="+subtotal+"&total="+total+"&use_point="+use_point+"&points="+points+"&payment_method="+payment_method+"&card_company="+card_company+"&card_number="+card_number+"&expiration_date="+expiration_date+"&nominee="+nominee+"&name="+name+"&address="+address+"&email="+user.email;
+=======
+>>>>>>> 07f49c44d1a105aef2abb8bcd8bdc80fc231330f
         });
 
         // sessionStorageのifここまで
       }
-
-      /**
-      <!-- header -->
-        <?php include "./tpl/header.html"; ?>
-
-        <!-- main -->
-        <main>
-        <h1>注文完了</h1>
-
-          <section>
-          <p>注文が完了しました</p>
-          <p>アカウントのメールアドレス宛に注文完了通知が送られます</p>
-          <p>ご確認ください</p>
-
-          <p><a href="shop_home.php">ショップへ</a></p>
-
-          </section>
-
-        </main>
-       */
     }
   });
 </script>
@@ -156,3 +139,21 @@
 
 </head>
   <body id="order_completed">
+
+    <!-- header -->
+    <?php include "./tpl/header.html"; ?>
+
+    <!-- main -->
+    <main>
+    <h1>注文完了</h1>
+
+      <section>
+      <p>注文が完了しました</p>
+      <p>アカウントのメールアドレス宛に注文完了通知が送られます</p>
+      <p>ご確認ください</p>
+
+      <p><a href="shop_home.php">ショップへ</a></p>
+
+      </section>
+
+    </main>

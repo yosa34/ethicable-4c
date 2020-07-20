@@ -164,60 +164,6 @@ header {
         margin: 0 auto;
         height: 100%; }
 
-#info_home main {
-  margin: 0; }
-  #info_home main section h1 {
-    margin-top: 100px;
-    border-bottom: 4px solid #B5C76A;
-    font-size: 50px;
-    text-align: center;
-    padding: 40px 0; }
-  #info_home main section .info_list {
-    width: 100%;
-    height: auto;
-    padding-bottom: 200px; }
-  #info_home main section ul {
-    width: 100%; }
-  #info_home main section li {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    border-bottom: 3px solid #6e6e6e; }
-    #info_home main section li > div {
-      margin: 0 auto;
-      overflow: hidden; }
-  #info_home main section .normal_text {
-    margin-top: 50px;
-    font-size: 40px;
-    line-height: 50px; }
-  #info_home main section .small_text {
-    display: flex;
-    align-items: center;
-    margin-top: 28px;
-    height: 35px;
-    font-size: 32px;
-    margin-bottom: 30px;
-    color: #6e6e6e; }
-  #info_home main section .small_text img {
-    width: 32px;
-    margin-right: 3px; }
-  #info_home main section .icon {
-    width: 100px; }
-  #info_home main section .left_box {
-    width: 15%;
-    display: flex;
-    align-items: center;
-    justify-content: center; }
-  #info_home main section .right_box {
-    width: 85%; }
-  #info_home main section .head_title {
-    width: 100%;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-bottom: 2px solid #B5C76A; }
-
 #qr_detail main > p {
   font-size: 30px;
   padding: 20px 30px 100px; }
@@ -1610,49 +1556,50 @@ header {
   padding-bottom: 20px;
   padding-left: 30px; }
 
-#purchase_history main section ul li > div {
+#purchase_history main section ul li > .cont_box {
   position: relative;
   display: flex;
   padding: 30px; }
-  #purchase_history main section ul li > div > p {
+  #purchase_history main section ul li > .cont_box > p {
     width: 30%; }
-    #purchase_history main section ul li > div > p img {
+    #purchase_history main section ul li > .cont_box > p img {
       width: 100%; }
-  #purchase_history main section ul li > div > div {
+  #purchase_history main section ul li > .cont_box > div {
     width: 70%; }
-    #purchase_history main section ul li > div > div dl {
+    #purchase_history main section ul li > .cont_box > div dl {
       width: 95%;
       display: flex;
       font-size: 30px;
       align-items: center; }
-      #purchase_history main section ul li > div > div dl dt {
+      #purchase_history main section ul li > .cont_box > div dl dt {
         width: 55%;
         text-align: right; }
-      #purchase_history main section ul li > div > div dl dd {
+      #purchase_history main section ul li > .cont_box > div dl dd {
         width: 45%;
         display: flex;
         padding: 10px 0; }
-        #purchase_history main section ul li > div > div dl dd img {
+        #purchase_history main section ul li > .cont_box > div dl dd img {
           height: 70px; }
-        #purchase_history main section ul li > div > div dl dd span {
+        #purchase_history main section ul li > .cont_box > div dl dd span {
           width: 70px;
           height: 70px;
           display: inline-block; }
-        #purchase_history main section ul li > div > div dl dd p {
+        #purchase_history main section ul li > .cont_box > div dl dd p {
           line-height: 70px;
           padding-left: 20px; }
-    #purchase_history main section ul li > div > div > p {
+    #purchase_history main section ul li > .cont_box > div > p {
       font-size: 40px;
       padding-left: 200px; }
 
-#purchase_history main section ul .total {
+#purchase_history main section ul li .total {
   width: 80%;
   margin: 0 auto;
   padding-top: 20px;
   border-top: 5px solid #B5C76A; }
-  #purchase_history main section ul .total > p {
+  #purchase_history main section ul li .total > p {
     font-size: 40px;
-    padding-left: 250px; }
+    text-align: right;
+    padding-right: 100px; }
 
 #remake_history main > div {
   background: #B5C76A;
@@ -1715,32 +1662,11 @@ header {
         #remake_history main > section > ul > li > div > div > div > div > div > p {
           margin-top: 10px;
           font-size: 23px; }
-        #remake_history main > section > ul > li > div > div > div > div .three_sign {
-          display: flex;
-          width: 100px;
+        #remake_history main > section > ul > li > div > div > div > div .dash {
+          width: 168px;
           height: 100px;
-          line-height: 200px;
           margin-left: 30px;
-          position: relative; }
-        #remake_history main > section > ul > li > div > div > div > div .three_sign span {
-          position: relative;
-          display: flex;
-          justify-content: center;
-          padding-left: 30px;
-          color: #333;
-          text-decoration: none; }
-        #remake_history main > section > ul > li > div > div > div > div .three_sign span::before {
-          content: '';
-          width: 46px;
-          height: 46px;
-          border: 0;
-          border-top: solid 10px #333;
-          border-right: solid 10px #333;
-          position: absolute;
-          top: 40%;
-          left: 0;
-          margin-top: -4px;
-          transform: rotate(45deg); }
+          border: none; }
       #remake_history main > section > ul > li > div > div > div > div {
         width: 49%;
         margin: 0 auto;
@@ -1749,32 +1675,9 @@ header {
           width: 150px;
           height: 150px;
           border: 2px solid #000000; }
-        #remake_history main > section > ul > li > div > div > div > div .x-mark {
-          display: inline-block;
-          width: 100px;
-          height: 100px;
-          position: relative;
-          margin-left: 10px;
-          margin-right: 10px; }
-        #remake_history main > section > ul > li > div > div > div > div .x-mark span::before,
-        #remake_history main > section > ul > li > div > div > div > div .x-mark span::after {
-          content: "";
-          display: block;
-          width: 100%;
-          /*バツ線の長さ*/
-          height: 10px;
-          /*バツ線の太さ*/
-          background: #000;
-          transform: rotate(45deg);
-          transform-origin: 0% 50%;
-          position: absolute;
-          top: calc(14% - 5px);
-          left: 14%; }
-        #remake_history main > section > ul > li > div > div > div > div .x-mark span::after {
-          transform: rotate(-45deg);
-          transform-origin: 100% 50%;
-          left: auto;
-          right: 14%; }
+        #remake_history main > section > ul > li > div > div > div > div > p {
+          margin: 0 30px;
+          font-size: 100px; }
         #remake_history main > section > ul > li > div > div > div > div .color-tile {
           border: 2px solid #000000; }
 
