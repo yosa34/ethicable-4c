@@ -10,7 +10,7 @@ firebase.auth().onAuthStateChanged(function(user) {
                 //liを取得しid（none_click）を付与する
                 var list = document.getElementById("corse_list");
                 dokidoki_corse = list.children[1];
-                dokidoki_corse.id = 'none_click';    
+                dokidoki_corse.id = 'none_click';
                 // 選択できない時のコース情報の文字の代入
                 dokidoki_corse.innerHTML = 
                 "<h2>ドキドキコース</h2>"+

@@ -1,8 +1,20 @@
 #remake_shop_details{
     main{
+        input[type="submit"]{
+            @include input_button(10px,$main_color,$botton_color,none);
+            width: 30%;
+            font-size: 20px;
+        }
+
         >p{
             width: 90%;
             margin: 20px auto;
+            a{
+                color: $main_color;
+                &:active{
+                    color: $alert_color;
+                }
+            }
         }
         section{
             width: 80%;
