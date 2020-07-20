@@ -122,11 +122,8 @@
           var address = statement.address;
           // sessionを削除
           window.sessionStorage.clear();
-<<<<<<< HEAD
-          console.log(flg);
+          // console.log(flg);
           window.location = "./shop_complete.php?item_amount="+item_amount+"&subtotal="+subtotal+"&total="+total+"&use_point="+use_point+"&points="+points+"&payment_method="+payment_method+"&card_company="+card_company+"&card_number="+card_number+"&expiration_date="+expiration_date+"&nominee="+nominee+"&name="+name+"&address="+address+"&email="+user.email;
-=======
->>>>>>> 07f49c44d1a105aef2abb8bcd8bdc80fc231330f
         });
 
         // sessionStorageのifここまで
