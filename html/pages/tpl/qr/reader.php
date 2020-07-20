@@ -48,7 +48,6 @@ function openQRCamera(node) {
         node.parentNode.previousElementSibling.value = res;
         remake_product_id = parseInt(res);
         
-        console.log(remake_product_id);
         //リメイクボックスで読み取ったremake_product_idを元にdate_qr_readに現在時刻を入れる
         db.collection('remake').where('remake_product_id', '==', remake_product_id).get().then(querySnapshot => {
           querySnapshot.forEach(docs => {
@@ -62,6 +61,7 @@ function openQRCamera(node) {
               });
           });
         });
+        alert("読み取り成功しました");
       }
     };
     qrcode.decode(reader.result);
