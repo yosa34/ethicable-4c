@@ -178,6 +178,7 @@
 
                             
                             //user情報取得
+                            //var user = firebase.auth().currentUser;
                             firebase.auth().onAuthStateChanged(function(user) {
                                 
 
@@ -186,26 +187,26 @@
                                     db.collection('point').where("user_id", "==",user.uid)
                                     .get().then(snapshot => {
                                         //新規ユーザーの時
-                                        if(!snapshot.exists){
+                                        if(snapshot.empty){
                                             //新規ポイントを付与する
                                             db.collection("point").add({
                                                 point_amount:product_price,
                                                 user_id:user.uid,
                                             })
-                                        }
-                                        //一回でもポイントを付与したことがある人
-                                        snapshot.forEach(doc => {
-                                            const dataId = doc.id
-                                            const data = doc.data()
-                                            let point = data.point_amount;
-                                            point += product_price
-                                            //ポイントを付与する
-                                            db.collection("point").doc(dataId).update({
-                                                point_amount:point,
+                                        }else{
+                                            //一回でもポイントを付与したことがある人
+                                            snapshot.forEach(doc => {
+                                                const dataId = doc.id
+                                                const data = doc.data()
+                                                let point = data.point_amount;
+                                                point += product_price
+                                                //ポイントを付与する
+                                                db.collection("point").doc(dataId).update({
+                                                    point_amount:point,
+                                                })
                                             })
-                                        })
-                                    })                                    
-
+                                        }
+                                    })
                                 }
                             })
                         })
@@ -238,6 +239,7 @@
                     db.collection('stocks').get().then(snapshot => {
                         var size = snapshot.size;
                         size = size + 1;
+
                         //stocksに新しいデータを保存
                         db.collection("stocks").add({
                             quantity: "1",
