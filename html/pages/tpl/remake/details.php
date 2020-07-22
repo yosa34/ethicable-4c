@@ -1,6 +1,6 @@
 <?php
 /*
-    ページ詳細：リサイクル詳細確認
+    ページ詳細：リメイク詳細確認
     作成者：小川紗世
     編集者：2020/06/12小川紗世
     */
@@ -8,7 +8,7 @@
 <script type="text/javascript" src="./js/remake_details.js"></script>
 
 <!-- REMAKE HOME画面 -->
-<title>ethicable｜REMAKE｜リサイクル詳細確認</title>
+<title>ethicable｜REMAKE｜リメイク詳細確認</title>
 
 </head>
 
