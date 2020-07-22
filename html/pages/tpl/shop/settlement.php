@@ -101,12 +101,12 @@
             $('#payment_info').append(`
               <div>
                 <p>お支払方法</p>
-                <input type="button" value="更新">
+                <input type="button" id="payment_update" value="更新">
               </div>
               <div>
                 <dl>
                   <dt>カード番号:</dt>
-                  <dd><input type="number" name="" id="" value="${card_number}"></dd>
+                  <dd><input type="number" name="" id="card_number" value="${card_number}"></dd>
                 </dl>
               </div>
             `);
