@@ -268,7 +268,8 @@
                         var max_id = Math.max.apply(null, size);
                         // console.log(size);
                         // console.log(Math.max.apply(null, size));
-                        // MAX＋１を
+                        
+                        // MAX＋１をstock_idへ代入
                         stock_id = max_id + 1;
 
                         //stocksに新しいデータを保存
@@ -388,11 +389,11 @@
             <div>
                 <dl>
                     <dt>ユーザー名：</dt>
-                    <dd id="user_name">User1</dd>
+                    <dd id="user_name"></dd>
                 </dl>
                 <dl>
                     <dt>メールアドレス：</dt>
-                    <dd id="user_mail">user1234@gmail.com</dd>
+                    <dd id="user_mail"></dd>
                 </dl>
             </div>
         </section>
