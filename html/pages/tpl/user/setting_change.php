@@ -29,6 +29,10 @@
           address:address,
           credit_card:credit_card,
         })
+        .then(function () {
+            //登録したらリダイレクト
+            location.href = "./mypage.php"
+        })
         .catch(function(error) {
             console.error("Error adding document: ", error);
         });

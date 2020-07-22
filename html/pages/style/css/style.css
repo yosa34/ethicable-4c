@@ -217,6 +217,8 @@ header {
     align-items: center;
     justify-content: center;
     border-bottom: 2px solid #B5C76A; }
+  #info_home main section .text {
+    font-size: 30px; }
 
 #qr_detail main > p {
   font-size: 30px;
@@ -1610,49 +1612,50 @@ header {
   padding-bottom: 20px;
   padding-left: 30px; }
 
-#purchase_history main section ul li > div {
+#purchase_history main section ul li > .cont_box {
   position: relative;
   display: flex;
   padding: 30px; }
-  #purchase_history main section ul li > div > p {
+  #purchase_history main section ul li > .cont_box > p {
     width: 30%; }
-    #purchase_history main section ul li > div > p img {
+    #purchase_history main section ul li > .cont_box > p img {
       width: 100%; }
-  #purchase_history main section ul li > div > div {
+  #purchase_history main section ul li > .cont_box > div {
     width: 70%; }
-    #purchase_history main section ul li > div > div dl {
+    #purchase_history main section ul li > .cont_box > div dl {
       width: 95%;
       display: flex;
       font-size: 30px;
       align-items: center; }
-      #purchase_history main section ul li > div > div dl dt {
+      #purchase_history main section ul li > .cont_box > div dl dt {
         width: 55%;
         text-align: right; }
-      #purchase_history main section ul li > div > div dl dd {
+      #purchase_history main section ul li > .cont_box > div dl dd {
         width: 45%;
         display: flex;
         padding: 10px 0; }
-        #purchase_history main section ul li > div > div dl dd img {
+        #purchase_history main section ul li > .cont_box > div dl dd img {
           height: 70px; }
-        #purchase_history main section ul li > div > div dl dd span {
+        #purchase_history main section ul li > .cont_box > div dl dd span {
           width: 70px;
           height: 70px;
           display: inline-block; }
-        #purchase_history main section ul li > div > div dl dd p {
+        #purchase_history main section ul li > .cont_box > div dl dd p {
           line-height: 70px;
           padding-left: 20px; }
-    #purchase_history main section ul li > div > div > p {
+    #purchase_history main section ul li > .cont_box > div > p {
       font-size: 40px;
       padding-left: 200px; }
 
-#purchase_history main section ul .total {
+#purchase_history main section ul li .total {
   width: 80%;
   margin: 0 auto;
   padding-top: 20px;
   border-top: 5px solid #B5C76A; }
-  #purchase_history main section ul .total > p {
+  #purchase_history main section ul li .total > p {
     font-size: 40px;
-    padding-left: 250px; }
+    text-align: right;
+    padding-right: 100px; }
 
 #remake_history main > div {
   background: #B5C76A;
@@ -1699,9 +1702,6 @@ header {
     padding-bottom: 30px;
     margin-bottom: 100px;
     border-bottom: 1px solid #B5C76A; }
-    #remake_history main > section > ul > li > div > div > p:nth-of-type(1) {
-      text-align: right;
-      font-size: 20px; }
     #remake_history main > section > ul > li > div > div > div {
       display: flex;
       margin: 0 auto; }
@@ -1777,6 +1777,11 @@ header {
           right: 14%; }
         #remake_history main > section > ul > li > div > div > div > div .color-tile {
           border: 2px solid #000000; }
+
+.text {
+  font-size: 35px;
+  text-align: right;
+  height: 36px; }
 
 #setting_change main > div {
   background: #B5C76A;

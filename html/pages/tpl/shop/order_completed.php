@@ -106,8 +106,24 @@
 
         // 購入処理が完了したら...
         purchase_promise.then((flg) => {
+          var item_amount = cart_info.item_amount;
+          var subtotal = cart_info.subtotal;
+          var total = cart_info.total;
+          var use_point = cart_info.use_point;
+          var points = cart_info.points;
+
+          var statement = JSON.parse(sessionStorage.statement);
+          var payment_method = statement.payment_method;
+          var card_company = statement.card_company;
+          var card_number = statement.card_number;
+          var expiration_date = statement.expiration_date;
+          var nominee = statement.nominee;
+          var name = statement.name;
+          var address = statement.address;
           // sessionを削除
           window.sessionStorage.clear();
+          // console.log(flg);
+          window.location = "./shop_complete.php?item_amount="+item_amount+"&subtotal="+subtotal+"&total="+total+"&use_point="+use_point+"&points="+points+"&payment_method="+payment_method+"&card_company="+card_company+"&card_number="+card_number+"&expiration_date="+expiration_date+"&nominee="+nominee+"&name="+name+"&address="+address+"&email="+user.email;
         });
 
         // sessionStorageのifここまで
