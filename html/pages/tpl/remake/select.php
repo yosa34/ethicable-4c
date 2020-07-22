@@ -10,7 +10,7 @@
 <script type="text/javascript" src="./js/shop.js"></script>
 
 <!-- REMAKE HOME画面 -->
-<title>ethicable｜REMAKE｜リサイクルイメージ＆カラー選択</title>
+<title>ethicable｜REMAKE｜リメイクイメージ＆カラー選択</title>
 
 </head>
 
