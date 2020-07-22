@@ -153,8 +153,8 @@
                 const dataId = doc.id
                 const data = doc.data()
 
-                //ドキドキコース
-                if(data.course_id == 1){
+                //ワクワクコース
+                if(data.course_id == 2){
                     //現時間を登録する
                     db.collection("remake").doc(dataId).update({
                         remake_complete:firebase.firestore.FieldValue.serverTimestamp(),
@@ -165,8 +165,8 @@
 
                 }
                 
-                //ワクワクコース
-                if(data.course_id == 2){
+                //ドキドキコース
+                if(data.course_id == 1){
                     //以下商品金額の取得
                     db.collection('product').where("product_id", "==",Number(data.product_id))
                     .get().then(snapshot => {
@@ -264,14 +264,24 @@
                             db.collection("product").where("product_id", "==", data.product_id)
                             .get().then(function(querySnapshot) {
                                 querySnapshot.forEach(function(doc) {
-                                let productData = doc.data()
-                                //名前の取得
-                                let product_name = productData.product_name
+                                    let productData = doc.data()
+                                    //名前の取得
+                                    let product_name = productData.product_name
 
-                                //完了ページへ
-                                var next_page = "./remake_shop_complete.php";
-                                location.href = next_page + "?remake_product_id=" + remake_product_id + "&product_name=" + product_name + "&email=" + user.email;
-
+                                    //ユーザー情報の取得
+                                    if(data.user_id){
+                                        db.collection("user").where("user_id", "==", data.user_id)
+                                        .get().then(function(querySnapshot) {
+                                            querySnapshot.forEach(function(doc) {
+                                                let userData = doc.data();
+                                                //完了ページへ
+                                                var next_page = "./remake_shop_complete.php";
+                                                location.href = next_page + "?remake_product_id=" + remake_product_id + "&product_name=" + product_name + "&email=" + userData.mail;
+                                            });
+                                        }).catch(function(error) {
+                                            console.log("Error getting documents: ", error);
+                                        });
+                                    }
                                 });
                             })
                             .catch(function(error) {
