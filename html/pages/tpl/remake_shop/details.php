@@ -68,6 +68,26 @@
                 var elem = $("#product_color_box");
                 elem.css({"background":getColorCode(productData.color_id)});
                 });
+
+                // リメイク依頼したユーザーデータの取得
+                //ユーザー情報の取得
+                if(data.user_id){
+                    db.collection("user").where("user_id", "==", data.user_id)
+                    .get().then(function(querySnapshot) {
+                        querySnapshot.forEach(function(doc) {
+                            let userData = doc.data();
+                            // ユーザー名
+                            var elem = $("#user_name");
+                            elem.text(userData.name);
+                            // ユーザーメールアドレス
+                            var elem = $("#user_mail");
+                            elem.text(userData.mail);
+                        });
+                    }).catch(function(error) {
+                        console.log("Error getting documents: ", error);
+                    });
+                }
+
             })
             .catch(function(error) {
                 console.log("Error getting documents: ", error);
