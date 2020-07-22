@@ -104,7 +104,7 @@
             </label>
           </li>
           <li>
-            <input type="radio" name="combi" id="combi2" value="2,69">
+            <input type="radio" name="combi" id="combi2" value="2,32">
             <label for="combi2">
                 <ul>
                   <li>

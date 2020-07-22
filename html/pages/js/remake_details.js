@@ -45,6 +45,10 @@ db.collection("category").where("category_id", "==", Number(category))
             //colorの出力
             var elem = document.getElementById("select_category");
             elem.innerHTML = category.category_name;
+
+            var elem = document.getElementById("select_category_box");
+            elem.innerHTML = '<img src="./image/category/'+category.category_id+'.png" alt="'+category.category_name+'"></img>';
+
         });
     })
     .catch(function (error) {

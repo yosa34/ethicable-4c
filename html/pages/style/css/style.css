@@ -1396,7 +1396,8 @@ header {
             display: flex;
             padding: 10px 0; }
             #settlement main section:nth-of-type(3) ul li > div dl dd img {
-              width: 70px; }
+              width: 70px;
+              height: 70px; }
             #settlement main section:nth-of-type(3) ul li > div dl dd span {
               width: 70px;
               height: 70px;

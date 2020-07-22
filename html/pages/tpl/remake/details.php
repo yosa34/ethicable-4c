@@ -24,8 +24,7 @@
                 <section class="dokidoki_select">
                     <div>
                         <p id="select_category">イメージ名</p>
-                        <div>
-                        </div>
+                        <div id="select_category_box"></div>
                     </div>
                     <div>
                         <p id='select_color'>選択カラー</p>
