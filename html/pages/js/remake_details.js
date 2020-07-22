@@ -139,8 +139,20 @@ function Qr_send() {
 
         let citiesRef = db.collection('remake');
         let allCities = citiesRef.get().then(snapshot => {
-            var size = snapshot.size;
-            size = size + 1;
+            // stock_id配列初期値
+            var size = [];
+            snapshot.forEach(doc => {
+                const data = doc.data()
+                // stock_idを配列にpushしていく
+                size.push(data.remake_product_id);
+            })
+            // stock_id配列からMAXの値を算出
+            var max_id = Math.max.apply(null, size);
+            // console.log("配列："+size);
+            // console.log("最大数："+max_id);
+            
+            // MAX＋１をstock_idへ代入
+            remake_product_id = max_id + 1;
 
             if (corse_number == 2) {
                 //remake ワクワクデータの
@@ -152,7 +164,7 @@ function Qr_send() {
                     date_qr_read:null,
                     product_id: product_id,
                     remake_complete:null,
-                    remake_product_id:size,
+                    remake_product_id:remake_product_id,
                     user_id: user.uid,
                 })
 
@@ -166,7 +178,7 @@ function Qr_send() {
                     date_qr_read:null,
                     product_id: product_id,
                     remake_complete:null,
-                    remake_product_id:size,
+                    remake_product_id:remake_product_id,
                     user_id: user.uid,
                 })
                 
