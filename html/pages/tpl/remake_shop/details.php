@@ -54,7 +54,7 @@
             .get().then(function(querySnapshot) {
                 querySnapshot.forEach(function(doc) {
                 const productData = doc.data()
-                console.log(productData);
+                // console.log(productData);
                 //サイズの取得
                 var elem = document.getElementById("product_size");
                 elem.insertAdjacentHTML('beforeend', getProductSize(productData.product_size));
@@ -289,6 +289,8 @@
             });
         });
     }
+    // メール送信関数
+    // 引数：data　remakeコレクションデータ
     function sendMail(data){
         //選択されたファイル画像をstorageに保存する
         var files = document.getElementById('filesend').files;
