@@ -153,8 +153,8 @@
                 const dataId = doc.id
                 const data = doc.data()
 
-                //ワクワクコース
-                if(data.course_id == 2){
+                //ドキドキコース
+                if(data.course_id == 1){
                     //現時間を登録する
                     db.collection("remake").doc(dataId).update({
                         remake_complete:firebase.firestore.FieldValue.serverTimestamp(),
@@ -165,8 +165,8 @@
 
                 }
                 
-                //ドキドキコース
-                if(data.course_id == 1){
+                //ワクワクコース
+                if(data.course_id == 2){
                     //以下商品金額の取得
                     db.collection('product').where("product_id", "==",Number(data.product_id))
                     .get().then(snapshot => {
@@ -237,8 +237,16 @@
 
                     //stocksの件数を取得
                     db.collection('stocks').get().then(snapshot => {
-                        var size = snapshot.size;
-                        size = size + 1;
+                        var size = [];
+                        // var size = snapshot.size;
+                        snapshot.forEach(doc => {
+                            const data = doc.data()
+                            size.push(data.stock_id);
+                        })
+                        var max_id = Math.max.apply(null, size);
+                        // console.log(size);
+                        // console.log(Math.max.apply(null, size));
+                        size = max_id + 1;
 
                         //stocksに新しいデータを保存
                         db.collection("stocks").add({
@@ -357,11 +365,11 @@
             <div>
                 <dl>
                     <dt>ユーザー名：</dt>
-                    <dd>User1</dd>
+                    <dd id="user_name">User1</dd>
                 </dl>
                 <dl>
                     <dt>メールアドレス：</dt>
-                    <dd>user1234@gmail.com</dd>
+                    <dd id="user_mail">user1234@gmail.com</dd>
                 </dl>
             </div>
         </section>
