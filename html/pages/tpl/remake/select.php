@@ -21,7 +21,7 @@
   <!-- main -->
   <main>
     <section>
-      <h1>リサイクルイメージ＆カラー<br>選択</h1>
+      <h1>リメイクイメージ＆カラー<br>選択</h1>
       <div>
         <ul>
           <li id="combi_select">組み合わせで選択</li>
