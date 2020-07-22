@@ -257,23 +257,26 @@
 
                     //stocksの件数を取得
                     db.collection('stocks').get().then(snapshot => {
+                        // stock_id配列初期値
                         var size = [];
-                        // var size = snapshot.size;
                         snapshot.forEach(doc => {
                             const data = doc.data()
+                            // stock_idを配列にpushしていく
                             size.push(data.stock_id);
                         })
+                        // stock_id配列からMAXの値を算出
                         var max_id = Math.max.apply(null, size);
                         // console.log(size);
                         // console.log(Math.max.apply(null, size));
-                        size = max_id + 1;
+                        // MAX＋１を
+                        stock_id = max_id + 1;
 
                         //stocksに新しいデータを保存
                         db.collection("stocks").add({
                             quantity: "1",
                             remake_image: getImageUrl(remake_product_id),
                             remake_product_id:remake_product_id,
-                            stock_id:size,
+                            stock_id:stock_id,
                             stocks_time:firebase.firestore.FieldValue.serverTimestamp(),
                         })
 
