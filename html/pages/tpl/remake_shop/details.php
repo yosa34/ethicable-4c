@@ -183,7 +183,7 @@
                         console.error("Error adding document: ", error);
                     });
 
-                }
+                }//ドキドキコース処理//
                 
                 //ワクワクコース
                 if(data.course_id == 2){
@@ -282,45 +282,46 @@
                         })
 
                     })
-                }
+                }//ワクワクコース処理//
+
                 //選択されたファイル画像をstorageに保存する
                 var files = document.getElementById('filesend').files;
                 var image = files[0];
                 var storageRef = firebase.storage().ref().child(remake_product_id+".jpg");
-                    storageRef.put(image).then(function(snapshot) {
+                storageRef.put(image).then(function(snapshot) {
                         //user情報取得
-                        firebase.auth().onAuthStateChanged(function(user) {
-                            //ページ遷移
+                        // firebase.auth().onAuthStateChanged(function(user) {
+                    //ページ遷移
 
-                            //商品情報の取得
-                            db.collection("product").where("product_id", "==", data.product_id)
-                            .get().then(function(querySnapshot) {
-                                querySnapshot.forEach(function(doc) {
-                                    let productData = doc.data()
-                                    //名前の取得
-                                    let product_name = productData.product_name
+                    //商品情報の取得
+                    db.collection("product").where("product_id", "==", data.product_id)
+                    .get().then(function(querySnapshot) {
+                        querySnapshot.forEach(function(doc) {
+                            let productData = doc.data()
+                            //名前の取得
+                            let product_name = productData.product_name
 
-                                    //ユーザー情報の取得
-                                    if(data.user_id){
-                                        db.collection("user").where("user_id", "==", data.user_id)
-                                        .get().then(function(querySnapshot) {
-                                            querySnapshot.forEach(function(doc) {
-                                                let userData = doc.data();
-                                                //完了ページへ
-                                                var next_page = "./remake_shop_complete.php";
-                                                location.href = next_page + "?remake_product_id=" + remake_product_id + "&product_name=" + product_name + "&email=" + userData.mail;
-                                            });
-                                        }).catch(function(error) {
-                                            console.log("Error getting documents: ", error);
-                                        });
-                                    }
+                            //ユーザー情報の取得
+                            if(data.user_id){
+                                db.collection("user").where("user_id", "==", data.user_id)
+                                .get().then(function(querySnapshot) {
+                                    querySnapshot.forEach(function(doc) {
+                                        let userData = doc.data();
+                                        //完了ページへ
+                                        var next_page = "./remake_shop_complete.php";
+                                        location.href = next_page + "?remake_product_id=" + remake_product_id + "&product_name=" + product_name + "&email=" + userData.mail;
+                                    });
+                                }).catch(function(error) {
+                                    console.log("Error getting documents: ", error);
                                 });
-                            })
-                            .catch(function(error) {
-                                console.log("Error getting documents: ", error);
-                            });
+                            }
+                        });
+                    })
+                    .catch(function(error) {
+                        console.log("Error getting documents: ", error);
+                    });
 
-                        })
+                        // })
                 });
             });
         });
