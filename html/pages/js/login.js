@@ -23,16 +23,67 @@ function logout(){
 }
 
 firebase.auth().onAuthStateChanged(function (user) {
-    
+
     if (user) {
-        
-        setTimeout(function () {
-            location.href = "./remake_home.php"
-        }, 1000);
+
+        var provider = '';
+        //ログインしたプロバイダーを取得
+        user.providerData.forEach(function (profile) {
+            provider = profile.providerId;
+        });
+
+        //新規ユーザーか判別
+        var docRef = db.collection("user").doc(user.uid);
+        docRef.get().then(function (doc) {
+            //ユーザー情報がない時
+            if (!doc.exists) {
+                //プロバイダーごとの新規登録
+                if (provider == 'password') {
+                    //現在は新規登録ページがないのでリダイレクト
+                    //location.href = "./remake_home.php"
+                }
+
+                if (provider == 'google.com') {
+                    var user_add = new Promise((resolve,reject) => {
+                        db.collection("point").doc(user.uid).set({
+                            point_amount: 0,
+                            user_id:user.uid
+                        });
+                        setTimeout(resolve('ok'),2000);
+                    });
+                    user_add.then((flg) => {
+                        console.log(flg);
+                        db.collection("user").doc(user.uid).set({
+                            address: null,
+                            age: null,
+                            credit_card:null,
+                            gender:null,
+                            mail: user.email,
+                            name:user.displayName,
+                            postal_code:null,
+                            user_id:user.uid,
+                        })
+                            .then(function () {
+                            //登録したらリダイレクト
+                            location.href = "./remake_home.php"
+                        })
+                        .catch(function(error) {
+                            console.error("Error writing document: ", error);
+                        });
+                    });
+                }
+            } else {
+                location.href = "./remake_home.php"
+
+            }
+        }).catch(function(error) {
+            console.log("Error getting document:", error);
+        });
+
 
     } else {
         console.log('logout');
     }
-});   
+});
 
 

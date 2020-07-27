@@ -1,6 +1,6 @@
 <?php
 /*
-    ページ詳細：リサイクル詳細確認
+    ページ詳細：リメイク詳細確認
     作成者：小川紗世
     編集者：2020/06/12小川紗世
     */
@@ -8,7 +8,7 @@
 <script type="text/javascript" src="./js/remake_details.js"></script>
 
 <!-- REMAKE HOME画面 -->
-<title>ethicable｜REMAKE｜リサイクル詳細確認</title>
+<title>ethicable｜REMAKE｜リメイク詳細確認</title>
 
 </head>
 
@@ -19,13 +19,12 @@
     <!-- main -->
     <main>
         <section>
-            <h1>リサイクル詳細確認</h1>
+            <h1>リメイク詳細確認</h1>
             <div>
                 <section class="dokidoki_select">
                     <div>
                         <p id="select_category">イメージ名</p>
-                        <div>
-                        </div>
+                        <div id="select_category_box"></div>
                     </div>
                     <div>
                         <p id='select_color'>選択カラー</p>

@@ -10,7 +10,7 @@
 <script type="text/javascript" src="./js/shop.js"></script>
 
 <!-- REMAKE HOME画面 -->
-<title>ethicable｜REMAKE｜リサイクルイメージ＆カラー選択</title>
+<title>ethicable｜REMAKE｜リメイクイメージ＆カラー選択</title>
 
 </head>
 
@@ -21,7 +21,7 @@
   <!-- main -->
   <main>
     <section>
-      <h1>リサイクルイメージ＆カラー<br>選択</h1>
+      <h1>リメイクイメージ＆カラー<br>選択</h1>
       <div>
         <ul>
           <li id="combi_select">組み合わせで選択</li>
@@ -104,7 +104,7 @@
             </label>
           </li>
           <li>
-            <input type="radio" name="combi" id="combi2" value="2,69">
+            <input type="radio" name="combi" id="combi2" value="2,32">
             <label for="combi2">
                 <ul>
                   <li>

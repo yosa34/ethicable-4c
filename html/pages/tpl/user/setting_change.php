@@ -29,6 +29,10 @@
           address:address,
           credit_card:credit_card,
         })
+        .then(function () {
+            //登録したらリダイレクト
+            location.href = "./mypage.php"
+        })
         .catch(function(error) {
             console.error("Error adding document: ", error);
         });
@@ -90,6 +94,7 @@
     <script>
         firebase.auth().onAuthStateChanged(function(user) {
             if (user) {
+                console.log(user.uid);
             // firebase データ読み込み
             db.collection('user').doc(user.uid).get().then((doc) => {
                 if (doc.exists) {

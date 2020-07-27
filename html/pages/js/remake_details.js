@@ -2,7 +2,7 @@
 // ロード後に走らせたい処理をここの内部で記述
 $(function () {
     //ワクワクコースの時リサイクル、カラー選択項目を非表示にする
-    if(corse_number == 1){
+    if(corse_number == 2){
         $(".dokidoki_select").remove();
     }
 });
@@ -45,6 +45,10 @@ db.collection("category").where("category_id", "==", Number(category))
             //colorの出力
             var elem = document.getElementById("select_category");
             elem.innerHTML = category.category_name;
+
+            var elem = document.getElementById("select_category_box");
+            elem.innerHTML = '<img src="./image/category/'+category.category_id+'.png" alt="'+category.category_name+'"></img>';
+
         });
     })
     .catch(function (error) {
@@ -65,10 +69,10 @@ firebase.auth().onAuthStateChanged(function(user) {
 
             //それぞれの名前を出力する
             //コースの名前
-            if(corse_number == 1){
+            if(corse_number == 2){
                 var elem = document.getElementById("couse_name");
                 elem.innerHTML = "ワクワクコース";
-            }else if(corse_number == 2){
+            }else if(corse_number == 1){
                 var elem = document.getElementById("couse_name");
                 elem.innerHTML = "ドキドキコース";
             }
@@ -135,10 +139,22 @@ function Qr_send() {
 
         let citiesRef = db.collection('remake');
         let allCities = citiesRef.get().then(snapshot => {
-            var size = snapshot.size;
-            size = size + 1;
+            // remake_product_id配列初期値
+            var size = [];
+            snapshot.forEach(doc => {
+                const data = doc.data()
+                // remake_product_idを配列にpushしていく
+                size.push(data.remake_product_id);
+            })
+            // remake_product_id配列からMAXの値を算出
+            var max_id = Math.max.apply(null, size);
+            // console.log("配列："+size);
+            // console.log("最大数："+max_id);
+            
+            // MAX＋１をremake_product_idへ代入
+            remake_product_id = max_id + 1;
 
-            if (corse_number == 1) {
+            if (corse_number == 2) {
                 //remake ワクワクデータの
                 db.collection("remake").add({
                     category_id: null,
@@ -148,7 +164,7 @@ function Qr_send() {
                     date_qr_read:null,
                     product_id: product_id,
                     remake_complete:null,
-                    remake_product_id:size,
+                    remake_product_id:remake_product_id,
                     user_id: user.uid,
                 })
 
@@ -162,7 +178,7 @@ function Qr_send() {
                     date_qr_read:null,
                     product_id: product_id,
                     remake_complete:null,
-                    remake_product_id:size,
+                    remake_product_id:remake_product_id,
                     user_id: user.uid,
                 })
                 

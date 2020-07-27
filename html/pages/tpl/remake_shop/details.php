@@ -25,7 +25,6 @@
     let allCities = citiesRef.get().then(snapshot => {
         snapshot.forEach(doc => {
             const data = doc.data()
-            console.log(data.date_qr_read);
 
             //依頼日
             var elem = document.getElementById("qr_read");
@@ -55,13 +54,40 @@
             .get().then(function(querySnapshot) {
                 querySnapshot.forEach(function(doc) {
                 const productData = doc.data()
+                // console.log(productData);
                 //サイズの取得
                 var elem = document.getElementById("product_size");
                 elem.insertAdjacentHTML('beforeend', getProductSize(productData.product_size));
                 //名前の取得
                 var elem = document.getElementById("product_name");
                 elem.insertAdjacentHTML('beforeend', productData.product_name);
+                //カラーの取得
+                var elem = $("#product_color");
+                elem.text( getColorName(productData.color_id));
+
+                var elem = $("#product_color_box");
+                elem.css({"background":getColorCode(productData.color_id)});
                 });
+
+                // リメイク依頼したユーザーデータの取得
+                //ユーザー情報の取得
+                if(data.user_id){
+                    db.collection("user").where("user_id", "==", data.user_id)
+                    .get().then(function(querySnapshot) {
+                        querySnapshot.forEach(function(doc) {
+                            let userData = doc.data();
+                            // ユーザー名
+                            var elem = $("#user_name");
+                            elem.text(userData.name);
+                            // ユーザーメールアドレス
+                            var elem = $("#user_mail");
+                            elem.text(userData.mail);
+                        });
+                    }).catch(function(error) {
+                        console.log("Error getting documents: ", error);
+                    });
+                }
+
             })
             .catch(function(error) {
                 console.log("Error getting documents: ", error);
@@ -73,10 +99,7 @@
             if(data.course_id == 1){
                 //カラー出力
                 var elem = document.getElementById("color_select");
-                // console.log(data.color_id);
                 elem.innerHTML = "<label style='width: 80px; margin-bottom: 1%; display:inline-block' for='"+data.color_id+"'><span style='width: 50px; height: 50px; margin: 0 auto; display: block; background-color:"+ getColorCode(data.color_id) + ";'></span><p style='text-align: center; padding: 10px;'>" + getColorCode(data.color_id) + "</p><input style='margin-left: 44%;' type='radio' name='color' id='"+data.color_id+"' value='"+data.color_id+"' checked></label>";
-
-                // elem.innerHTML = getColorCode(data.color_id);
                 //カテゴリー名出力
                 let citiesRef = db.collection('category').where("category_id", "==", data.category_id);
                 let allCities = citiesRef.get().then(snapshot => {
@@ -141,6 +164,7 @@
         })
     });
 
+    //完了時
     function Complete(){
 
         db.collection('remake').where("remake_product_id", "==", remake_product_id)
@@ -148,6 +172,7 @@
             snapshot.forEach(doc => {
                 const dataId = doc.id
                 const data = doc.data()
+
                 //ドキドキコース
                 if(data.course_id == 1){
                     //現時間を登録する
@@ -157,10 +182,57 @@
                     .catch(function(error) {
                         console.error("Error adding document: ", error);
                     });
-                }
+                    sendMail(data);
+
+                }//ドキドキコース処理//
                 
                 //ワクワクコース
                 if(data.course_id == 2){
+                    //以下商品金額の取得
+                    db.collection('product').where("product_id", "==",Number(data.product_id))
+                    .get().then(snapshot => {
+                        snapshot.forEach(doc => {
+                            const data = doc.data()
+
+                            //商品の金額から付与するポイントを取得
+                            let product_price = getPointAmount(data.product_price)
+
+                            
+                            //user情報取得
+                            //var user = firebase.auth().currentUser;
+                            firebase.auth().onAuthStateChanged(function(user) {
+                                
+
+                                if (user) {
+                                    //userのポイント情報を取得する
+                                    db.collection('point').where("user_id", "==",user.uid)
+                                    .get().then(snapshot => {
+                                        //新規ユーザーの時
+                                        if(snapshot.empty){
+                                            //新規ポイントを付与する
+                                            db.collection("point").add({
+                                                point_amount:product_price,
+                                                user_id:user.uid,
+                                            })
+                                        }else{
+                                            //一回でもポイントを付与したことがある人
+                                            snapshot.forEach(doc => {
+                                                const dataId = doc.id
+                                                const data = doc.data()
+                                                let point = data.point_amount;
+                                                point += product_price
+                                                //ポイントを付与する
+                                                db.collection("point").doc(dataId).update({
+                                                    point_amount:point,
+                                                })
+                                            })
+                                        }
+                                    })
+                                }
+                            })
+                        })
+                    })
+
                     //選択カテゴリーの取得
                     var category_id = document.getElementById("select_category").value;
 
@@ -186,31 +258,81 @@
 
                     //stocksの件数を取得
                     db.collection('stocks').get().then(snapshot => {
-                        var size = snapshot.size;
-                        size = size + 1;
+                        // stock_id配列初期値
+                        var size = [];
+                        snapshot.forEach(doc => {
+                            const data = doc.data()
+                            // stock_idを配列にpushしていく
+                            size.push(data.stock_id);
+                        })
+                        // stock_id配列からMAXの値を算出
+                        var max_id = Math.max.apply(null, size);
+                        // console.log("配列："+size);
+                        // console.log("最大数："+max_id);
+                        
+                        // MAX＋１をstock_idへ代入
+                        stock_id = max_id + 1;
 
                         //stocksに新しいデータを保存
                         db.collection("stocks").add({
                             quantity: "1",
                             remake_image: getImageUrl(remake_product_id),
                             remake_product_id:remake_product_id,
-                            stock_id:size,
+                            stock_id:stock_id,
                             stocks_time:firebase.firestore.FieldValue.serverTimestamp(),
                         })
-                    })
-                }
 
+                    })
+                    // homeへ戻る
+                    location.href = "./remake_shop_home.php";
+                }//ワクワクコース処理//
             });
         });
-
+    }
+    // メール送信関数
+    // 引数：data　remakeコレクションデータ
+    function sendMail(data){
         //選択されたファイル画像をstorageに保存する
         var files = document.getElementById('filesend').files;
         var image = files[0];
         var storageRef = firebase.storage().ref().child(remake_product_id+".jpg");
-            storageRef.put(image).then(function(snapshot) {
-            alert('アップロードしました');
+        storageRef.put(image).then(function(snapshot) {
+            //user情報取得
+            // firebase.auth().onAuthStateChanged(function(user) {
+            //ページ遷移
+
+            //商品情報の取得
+            db.collection("product").where("product_id", "==", data.product_id)
+            .get().then(function(querySnapshot) {
+                querySnapshot.forEach(function(doc) {
+                    let productData = doc.data()
+                    //名前の取得
+                    let product_name = productData.product_name
+
+                    //ユーザー情報の取得
+                    if(data.user_id){
+                        db.collection("user").where("user_id", "==", data.user_id)
+                        .get().then(function(querySnapshot) {
+                            querySnapshot.forEach(function(doc) {
+                                let userData = doc.data();
+                                //完了ページへ
+                                var next_page = "./remake_shop_complete.php";
+                                location.href = next_page + "?remake_product_id=" + remake_product_id + "&product_name=" + product_name + "&email=" + userData.mail;
+                            });
+                        }).catch(function(error) {
+                            console.log("Error getting documents: ", error);
+                        });
+                    }
+                });
+            })
+            .catch(function(error) {
+                console.log("Error getting documents: ", error);
+            });
+
+            // })
         });
-        }
+    }
+
 </script>
 
 <!-- SHOP HOME画面 -->
@@ -244,8 +366,9 @@
                             </div>
                             <p id="product_name">商品名:</p>
                             <div>
-                                <span></span>
-                                <p id="product_color">カラー</p>
+                                カラー:
+                                <span id="product_color_box"></span>
+                                <p id="product_color"></p>
                             </div>
                         </div>
                     </dd>
@@ -273,11 +396,11 @@
             <div>
                 <dl>
                     <dt>ユーザー名：</dt>
-                    <dd>User1</dd>
+                    <dd id="user_name"></dd>
                 </dl>
                 <dl>
                     <dt>メールアドレス：</dt>
-                    <dd>user1234@gmail.com</dd>
+                    <dd id="user_mail"></dd>
                 </dl>
             </div>
         </section>

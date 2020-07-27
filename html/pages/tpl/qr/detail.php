@@ -1,13 +1,13 @@
 <?php
 /*
-    ページ詳細：リサイクル詳細確認
+    ページ詳細：リメイク詳細確認
     作成者：小川紗世
     編集者：2020/07/02冨上由喬
     */
 ?>
 
 <!-- REMAKE HOME画面 -->
-<title>ethicable｜REMAKE｜リサイクル詳細確認</title>
+<title>ethicable｜REMAKE｜リメイク詳細確認</title>
 <script type="text/javascript">
     $(function() {
         //ゲット取得処理
@@ -121,7 +121,7 @@
 
             </div>
             <p>
-                QRコードをリサイクルボックスにある端末にかざして読み込ませてください。<br>
+                QRコードをリメイクボックスにある端末にかざして読み込ませてください。<br>
                 <b>「読み込み完了」と表示されるまでかざしてください。</b>
             </p>
             <div id="deleteBtn">

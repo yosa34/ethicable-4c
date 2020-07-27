@@ -61,6 +61,7 @@ function openQRCamera(node) {
               });
           });
         });
+        alert("読み取り成功しました");
       }
     };
     qrcode.decode(reader.result);
