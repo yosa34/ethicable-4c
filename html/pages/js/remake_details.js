@@ -139,19 +139,19 @@ function Qr_send() {
 
         let citiesRef = db.collection('remake');
         let allCities = citiesRef.get().then(snapshot => {
-            // stock_id配列初期値
+            // remake_product_id配列初期値
             var size = [];
             snapshot.forEach(doc => {
                 const data = doc.data()
-                // stock_idを配列にpushしていく
+                // remake_product_idを配列にpushしていく
                 size.push(data.remake_product_id);
             })
-            // stock_id配列からMAXの値を算出
+            // remake_product_id配列からMAXの値を算出
             var max_id = Math.max.apply(null, size);
             // console.log("配列："+size);
             // console.log("最大数："+max_id);
             
-            // MAX＋１をstock_idへ代入
+            // MAX＋１をremake_product_idへ代入
             remake_product_id = max_id + 1;
 
             if (corse_number == 2) {

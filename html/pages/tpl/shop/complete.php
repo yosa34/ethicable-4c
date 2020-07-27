@@ -69,4 +69,4 @@ $message .= "Mailer Error: " . $mail->ErrorInfo;
 } else {
 $message  = "ユーザにメールを送信しました。";
 }
-header( "Location: remake_home.php" ) ;
+header( "Location: ./remake_home.php" ) ;
